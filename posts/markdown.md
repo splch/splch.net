@@ -166,6 +166,7 @@ if __name__ == "main":
 
 ## Math
 
+Block Style:
 ```
 $$
 \frac{1}{\sqrt{2}}
@@ -175,3 +176,5 @@ $$
 \end{bmatrix}
 $$
 ```
+
+Inline: `$i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)$`

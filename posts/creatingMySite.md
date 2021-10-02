@@ -19,8 +19,6 @@ Having to create new markdown files on the server was tedious and the website wa
 
 I'm sure more will come with the site, but having a built-in editor makes creating posts like these a breeze. To make the experience nicer, I started using [EasyMDE](https://easy-markdown-editor.tk/) to create and edit posts, and [Marked](https://marked.js.org/) to render the markdown to <abbr title="HyperText Markup Language">HTML</abbr>. Then, [DOMPurify](https://cure53.de/purify) sanitizes the HTML before populating. I also implemented [KaTex](https://katex.org/) for math and [highlight.js](https://highlightjs.org/) for code appearances:
 
-Edit (9/6/2021) - I removed EasyMDE and highlight.js to decrease load times. I now render code with a replit iFrame.
-
 <iframe class="container" width="100%" frameborder="0" src="https://replit.com/@splch/hadamard?lite=1"></iframe>
 
 ```python
@@ -42,3 +40,5 @@ $$
 ```
 
 It's fun to have this framework for posting — I'm having a more positive experience using <abbr title="Content Delivery Network">CDN</abbr>s to host the external libraries. Not having to worry about updating libraries I'm using is relaxing as I can focus on improving my own scripts and posts. Clearly, I'm excited about this website and hope to share it with more people! I want to make this code open-source and create a helpful template site; however, I'll first need to improve the code a bit. But I'm very happy to say that the major work is done and the functionality is here! 🥳
+
+Edit (9/6/2021) — I removed EasyMDE to decrease load times. I also render code with a Replit <abbr title="Inline Frame">IFrame</abbr>. The site is now open-source! Check out [this post](/#Grokking%20Go) to see the server running 🤩

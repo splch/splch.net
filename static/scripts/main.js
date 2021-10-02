@@ -1,4 +1,3 @@
-const siteUrl = "slc.is";
 let imageChange = { "interval": null, "image": 1 };
 
 function startEditor(title, value) {
@@ -13,7 +12,7 @@ function startEditor(title, value) {
     div.appendChild(submit);
     document.getElementById("top").appendChild(div);
 
-    getServer("https://" + siteUrl + "/api/draft", "");
+    getServer("api/draft", "");
 }
 
 function toHTML(markdown) {
@@ -61,7 +60,7 @@ function prepareSubmit() {
         let key = document.getElementById("password").value;
         if (mde) {
             editMarkdown(
-                "https://" + siteUrl + "/api/edit",
+                "api/edit",
                 key,
                 mde,
             );
@@ -71,7 +70,7 @@ function prepareSubmit() {
             let r = confirm("You will delete:\n" + title);
             if (r) {
                 editMarkdown(
-                    "https://" + siteUrl + "/api/delete",
+                    "api/delete",
                     key,
                     title,
                 );
@@ -185,7 +184,7 @@ function createSearch(query = null) {
     search.onkeyup = e => {
         if (e.key === "Enter") {
             if (e.target.value) {
-                getServer("https://" + siteUrl + "/api/search", "query=" + e.target.value);
+                getServer("api/search", "query=" + e.target.value);
             }
         }
     };
@@ -220,7 +219,7 @@ function setBody(markdown, title) {
     }
     if (title === "Blog") {
         createSearch();
-        getServer("https://" + siteUrl + "/api/all", "");
+        getServer("api/all", "");
     }
 }
 
@@ -339,7 +338,7 @@ function setFull(rsp) {
     clearPage();
     setPage(post);
     if (window.location.hash.substr(1) === "Home") {
-        getServer("https://" + siteUrl + "/api/latest", "");
+        getServer("api/latest", "");
     }
 }
 
@@ -359,18 +358,18 @@ function getServer(url, args) {
     xhr.open("GET", req);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            if (url.split("/")[4] === "get") {
+            if (url.split("/")[1] === "get") {
                 setFull(this.responseText);
             }
             else if (["all", "draft", "latest"].includes(
-                        url.split("/")[4])
+                        url.split("/")[1])
                     ) {
                 setPreview(this.responseText);
             }
-            else if (url.split("/")[4] === "markdown") {
+            else if (url.split("/")[1] === "markdown") {
                 setMarkdown(this.responseText);
             }
-            else if (url.split("/")[4] === "search") {
+            else if (url.split("/")[1] === "search") {
                 setSearch(this.responseText, args);
             }
         }
@@ -389,7 +388,7 @@ function updatePage(element, isBlog, pop = false) {
         newActive(document.getElementsByClassName("link")[1]);
         document.title = "Blog";
     }
-    getServer("https://" + siteUrl + "/api/get", "query=" + title);
+    getServer("api/get", "query=" + title);
     if (!pop) {
         window.history.pushState(title, title, "#" + encodeURI(title));
     }
@@ -490,7 +489,7 @@ function start() {
     });
     document.getElementById("logo").onclick = _ => {
         const query = decodeURI(window.location.hash.substr(1));
-        getServer("https://" + siteUrl + "/api/markdown", "query=" + query);
+        getServer("api/markdown", "query=" + query);
 
     };
     console.log(

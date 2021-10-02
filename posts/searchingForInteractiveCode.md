@@ -27,4 +27,4 @@ It may prove useful for others to have a list of IDEs and their features, but I 
 
 If I *were* to recommend one, however, I would vouch for [Replit](https://replit.com). I used their platform for the first two years of university and actually paid $5 a month for the Hacker plan. They're constantly innovating and adding unique and useful features. I just hope they can improve its appearance on smaller screens. When that happens, I'll have the difficult task of choosing between my seamless `code tags` and Replit's interactive embeddings.
 
-Edit (9/6/2021) - I'm more unhappy with loading times, so I actually did decide to use replit for code highlighting + execution. It saves quite a bit of space on initial load.
+Edit (9/25/2021) — I decided that in some cases running code is helpful, so I'm including Replit embeddings.

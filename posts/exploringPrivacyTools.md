@@ -1,11 +1,11 @@
 ---
 title: Exploring Privacy Tools
 date: 9/2/2021
-image: eff.webp, duckEmail.webp
+image: duckEmail.webp, eff.webp
 draft: false
 ---
 
-The brain has been hacked and security patches come much too slow. In order to avoid targeted ads and refining _my_ digital consciousness, I'm making steady progress toward respectful technology.
+The brain has been hacked and its security patches come slowly. In order to avoid targeted ads and refining *my* digital consciousness, I'm making steady progress toward respectful technology.
 
 After learning more about <abbr title="Artificial Intelligence">[AI](/#Neural%20Networks%20From%20Scratch)</abbr>, I began to understand the importance of privacy. Everyone has their own reasons for protecting their data, and mine is to reduce the ability of models to fit me. This ties into preventing <abbr title="Advertisement">ad</abbr> recommendations and other popular motivations broadly, but I doubt we understand the implications of modelling human behavior.
 
