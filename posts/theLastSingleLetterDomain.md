@@ -1,7 +1,7 @@
 ---
 title: The Last Single-Letter Domain
 date: 9/22/2021
-image: is.webp
+image: https://www.isnic.is/en/tolur/image?name=stafafjoldi
 draft: false
 ---
 

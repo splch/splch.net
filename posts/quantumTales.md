@@ -9,4 +9,4 @@ Shortly after becoming an IBM Qiskit Advocate, I was introduced to the Unitary F
 
 With the help of the [Unitary Fund](https://unitary.fund), I was able to realize this dream. I created a series of stories that teach various quantum algorithms. The stories are all rooted in classic fairy tales from around the world, except the protagonist now employees their quantum prowess to succeed.
 
-<iframe class="pdf" src="data/quantumTales.pdf" width="50%" height="50%"></iframe>
+<iframe class="pdf" src="data/quantumTales.pdf" width="50%#view=FitW" height="50%"></iframe>

@@ -17,11 +17,6 @@ body {
   margin: 0.5em;
 }
 
-#title {
-  font-size: 26pt;
-  text-align: center;
-}
-
 p,
 ol,
 ul,
@@ -51,8 +46,8 @@ header {
   position: sticky;
   top: 0;
   user-select: none;
-  min-width: 45ch;
   max-width: 100ch;
+  min-width: 45ch;
   z-index: 2;
 }
 
@@ -178,8 +173,14 @@ summary:focus {
 #page {
   background: #ffffffbf;
   margin: auto;
-  min-width: 45ch;
   max-width: 80ch;
+  min-width: 45ch;
+  width: 80%;
+}
+
+#title {
+  font-size: 26pt;
+  text-align: center;
 }
 
 #background {

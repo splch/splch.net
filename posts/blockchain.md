@@ -2,7 +2,7 @@
 title: Future of Blockchain Domains
 date: 5/14/2021
 image: blockchain.webp
-draft: false
+draft: true
 ---
 
 I bought this domain (splch.zil) today! I have a .dev/net domain, but I don't like the idea of renting a space. When I discovered blockchain domain names and <abbr title="InterPlanetary File System">IPFS</abbr> hosting, I knew it suited me.

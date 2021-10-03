@@ -33,11 +33,11 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	gfs := gziphandler.GzipHandler(Headers(fs))
 
-    im := http.FileServer(http.Dir("posts/images"))
-    gim := gziphandler.GzipHandler(Headers(im))
+	im := http.FileServer(http.Dir("posts/images"))
+	gim := gziphandler.GzipHandler(Headers(im))
 
-    da := http.FileServer(http.Dir("posts/data"))
-    gda := gziphandler.GzipHandler(Headers(da))
+	da := http.FileServer(http.Dir("posts/data"))
+	gda := gziphandler.GzipHandler(Headers(da))
 
 	head := func(f func(w http.ResponseWriter, r *http.Request)) http.Handler {
 		return gziphandler.GzipHandler(Headers(http.HandlerFunc(f)))
@@ -49,8 +49,8 @@ func main() {
 
 	// mux.Handle("/", hfs)
 	mux.Handle("/", gfs)
-    mux.Handle("/images/", http.StripPrefix("/images/", gim))
-    mux.Handle("/data/", http.StripPrefix("/data/", gda))
+	mux.Handle("/images/", http.StripPrefix("/images/", gim))
+	mux.Handle("/data/", http.StripPrefix("/data/", gda))
 	mux.Handle("/api/latest", head(LatestPost))
 	mux.Handle("/api/all", head(AllPosts))
 	mux.Handle("/api/draft", head(AllDrafts))
@@ -182,12 +182,12 @@ func appendPosts(files []os.FileInfo, path string, draft bool) []Post {
 	for _, file := range files {
 		content, _ := ioutil.ReadFile(path + file.Name())
 		blog := strings.Split(string(content), "\n")
-        if len(blog) > 6 {
-            post := setPost(blog)
-            if post.Draft == draft && unicode.IsLower(rune(file.Name()[0])) {
-                posts = append(posts, post)
-            }
-        }
+		if len(blog) > 6 {
+			post := setPost(blog)
+			if post.Draft == draft && unicode.IsLower(rune(file.Name()[0])) {
+				posts = append(posts, post)
+			}
+		}
 	}
 	sort.Slice(posts, func(i, j int) bool {
 		return posts[i].Date.After(posts[j].Date)
@@ -199,13 +199,13 @@ func searchTitles(query string, files []os.FileInfo, path string) Post {
 	for _, file := range files {
 		content, _ := ioutil.ReadFile(path + file.Name())
 		blog := strings.Split(string(content), "\n")
-        if len(blog) > 6 {
-            post := setPost(blog)
+		if len(blog) > 6 {
+			post := setPost(blog)
 
-            if query == post.Title[0] {
-                return post
-            }
-        }
+			if query == post.Title[0] {
+				return post
+			}
+		}
 	}
 	return searchTitles("Error Page Not Found", files, path)
 }
@@ -215,20 +215,20 @@ func searchBodies(query string, files []os.FileInfo, path string) []Post {
 	for _, file := range files {
 		content, _ := ioutil.ReadFile(path + file.Name())
 		blog := strings.Split(string(content), "\n")
-        if len(blog) > 6 {
-            post := setPost(blog)
-            title := strings.Join(post.Title, " ")
+		if len(blog) > 6 {
+			post := setPost(blog)
+			title := strings.Join(post.Title, " ")
 
-            if strings.Contains(strings.ToLower(string(post.Body))+" "+strings.ToLower(title), strings.ToLower(query)) {
-                if !post.Draft {
-                    preview := strings.Split(string(post.Body), " ")
-                    post.Body = markdown(strings.Join(preview[:min(len(preview), 9)], " ") + " …")
-                    posts = append(posts, post)
-                }
-            }
-        }
+			if strings.Contains(strings.ToLower(string(post.Body))+" "+strings.ToLower(title), strings.ToLower(query)) {
+				if !post.Draft {
+					preview := strings.Split(string(post.Body), " ")
+					post.Body = markdown(strings.Join(preview[:min(len(preview), 9)], " ") + " …")
+					posts = append(posts, post)
+				}
+			}
+		}
 	}
-    sort.Slice(posts, func(i, j int) bool {
+	sort.Slice(posts, func(i, j int) bool {
 		return posts[i].Date.After(posts[j].Date)
 	})
 	return posts
@@ -238,13 +238,13 @@ func searchMarkdown(query string, files []os.FileInfo, path string) markdown {
 	for _, file := range files {
 		content, _ := ioutil.ReadFile(path + file.Name())
 		blog := strings.Split(string(content), "\n")
-        if len(blog) > 6 {
-            post := setPost(blog)
+		if len(blog) > 6 {
+			post := setPost(blog)
 
-            if query == post.Title[0] {
-                return markdown(content)
-            }
-        }
+			if query == post.Title[0] {
+				return markdown(content)
+			}
+		}
 	}
 	return markdown("")
 }
@@ -265,13 +265,13 @@ func searchFiles(title string, files []os.FileInfo, path string) string {
 		} else {
 			content, _ := ioutil.ReadFile(path + file.Name())
 			blog := strings.Split(string(content), "\n")
-            if len(blog) > 6 {
-                titles := getMeta(blog[1])
+			if len(blog) > 6 {
+				titles := getMeta(blog[1])
 
-                if title == titles[0] {
-                    return path + file.Name()
-                }
-            }
+				if title == titles[0] {
+					return path + file.Name()
+				}
+			}
 		}
 	}
 
@@ -288,16 +288,16 @@ func EditPost(w http.ResponseWriter, r *http.Request) {
 	blog := strings.Split(strings.Join(data[1:], ","), "\n")
 
 	password := getPassword()
-	if key == string(password) {
-        if len(blog) > 6 {
-            post := setPost(blog)
-            if len(post.Title) != 0 {
-                files, path := getFiles("posts/")
-                fileName := searchFiles(post.Title[0], files, path)
-                content := []byte(strings.Join(blog, "\n"))
-                ioutil.WriteFile(fileName, content, 0644)
-            }
-        }
+	if key == password {
+		if len(blog) > 6 {
+			post := setPost(blog)
+			if len(post.Title) != 0 {
+				files, path := getFiles("posts/")
+				fileName := searchFiles(post.Title[0], files, path)
+				content := []byte(strings.Join(blog, "\n"))
+				ioutil.WriteFile(fileName, content, 0644)
+			}
+		}
 	} else {
 		fmt.Fprint(w, "Denied")
 	}
@@ -310,7 +310,7 @@ func DeletePost(w http.ResponseWriter, r *http.Request) {
 	title := data[1]
 
 	password := getPassword()
-	if key == string(password) {
+	if key == password {
 		if len(title) != 0 {
 			files, path := getFiles("posts/")
 			fileName := searchFiles(title, files, path)

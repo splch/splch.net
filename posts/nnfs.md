@@ -25,4 +25,4 @@ Near the release of <abbr title="Neural Networks From Scratch">NNFS</abbr>, Harr
 
 Through editing NNFS, I went from having a typical computer science student's understanding of machine learning to knowing enough to get **first place in three AI hackathons**.
 
-<iframe class="pdf" src="data/nnfs.pdf" width="50%" height="50%"></iframe>
+<iframe class="pdf" src="data/nnfs.pdf#view=FitW" width="50%" height="50%"></iframe>
