@@ -198,18 +198,6 @@ function createSearch(query = null) {
     }
 }
 
-function createLink(href) {
-    let link = document.createElement("link");
-    link.href = href;
-    return link;
-}
-
-function createScript(src) {
-    let script = document.createElement("script");
-    script.src = src;
-    return script;
-}
-
 function setBody(markdown, title) {
     if (markdown) {
         let el = document.createElement("div");
@@ -475,6 +463,17 @@ function darkMode() {
         document.getElementById("page").style.color = "#ffffff";
         document.getElementById("page").style.background = "var(--background)";
     }
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(e => {
+        if (e.matches) {
+            darkMode();
+        }
+        else {
+            document.documentElement.style.removeProperty("--background");
+            document.documentElement.style.removeProperty("--hover");
+            document.getElementById("page").style.removeProperty("background");
+            document.getElementById("page").style.removeProperty("color");
+        }
+    });
 }
 
 function start() {
@@ -490,29 +489,15 @@ function start() {
     document.getElementById("logo").onclick = _ => {
         const query = decodeURI(window.location.hash.substr(1));
         getServer("api/markdown", "query=" + query);
-
     };
+    window.onpopstate = e => {
+        loadPage(e.state, true);
+    }
     console.log(
         "%cQuite a sight, isn't it? 😉", "color: " +
         getComputedStyle(document.body).getPropertyValue("--light") +
         "; font-size: 12pt;"
     );
-}
-
-window.matchMedia("(prefers-color-scheme: dark)").addListener(e => {
-    if (e.matches) {
-        darkMode();
-    }
-    else {
-        document.documentElement.style.removeProperty("--background");
-        document.documentElement.style.removeProperty("--hover");
-        document.getElementById("page").style.removeProperty("background");
-        document.getElementById("page").style.removeProperty("color");
-    }
-});
-
-window.onpopstate = e => {
-    loadPage(e.state, true);
 }
 
 window.onload = start;

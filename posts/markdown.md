@@ -87,11 +87,11 @@ name@example.com
 
 # Image
 
-![Image](images/favicon/favicon-16x16.png)
-![Image with Title](images/favicon/favicon-16x16.png "Optional title")
+![Image](favicon.svg)
+![Image with Title](favicon.svg "Optional title")
 ![Image by Reference][2]
 
-[2]: favicon.ico
+[2]: favicon.svg
 
 ---
 

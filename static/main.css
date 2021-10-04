@@ -1,9 +1,9 @@
 :root {
-  --code: #dcdcdc;
   --active: #e05d5d;
+  --background: #ffffff;
+  --code: #dcdcdc;
   --hover: #f9f7f7;
   --light: #3f72af;
-  --background: #ffffff;
   --round: 10px;
 }
 
@@ -40,6 +40,7 @@ header {
   align-items: center;
   background-color: var(--light);
   border-radius: var(--round);
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -56,7 +57,6 @@ h2 {
 }
 
 header h2 {
-  color: #ffffff;
   font-weight: normal;
   margin: 0 0.5% 0 0.5%;
   padding: 1% 0 1% 0;
@@ -79,6 +79,7 @@ header h2.link.active {
 
 img {
   border-radius: var(--round);
+  max-width: 80%;
 }
 
 table {
@@ -153,7 +154,6 @@ summary:focus {
 }
 
 #topleft p {
-  color: #ffffff;
   font-size: 12pt;
   margin: 0;
 }
@@ -166,12 +166,12 @@ summary:focus {
 }
 
 #cover {
-  max-height: 23vh;
+  max-height: 30vh;
+  max-width: 100%;
   vertical-align: middle;
 }
 
 #page {
-  background: #ffffffbf;
   margin: auto;
   max-width: 80ch;
   min-width: 45ch;

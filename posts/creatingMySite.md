@@ -9,7 +9,7 @@ I bought my first domain through [Google Domains](https://domains.google.com) an
 
 Distributed networks are an amazing technology, and I was drawn to IPFS hosting. I used [Pinata](https://www.pinata.cloud/) to pin my new site, but when I tried using an HTTP request for a different page, it _failed_. Instead of fetching pages dynamically, I created a site that downloaded every page on load. This was **not** scalable. The method I ended up using for posts was incredibly simple, though. All I needed to do was create a javascript file and import it into `main.js`.
 
-While still hosting on IPFS, I connected my GitHub <abbr title="Repository">repo</abbr> to Pinata and enjoyed automatic deployment; however, this was nearing my interest in [Go](https://go.dev). I saw how effective Go was for serving, so I decided to take my site off the IPFS network and deploy with Go.
+While still hosting on [<abbr title="ipfs://QmcHWkXpaBs8QB6EWBAWGANAsyq2gGhBQzosUsJECgyowm">IPFS</abbr>](https://cloudflare-ipfs.com/ipfs/QmcHWkXpaBs8QB6EWBAWGANAsyq2gGhBQzosUsJECgyowm), I connected my GitHub <abbr title="Repository">repo</abbr> to Pinata and enjoyed automatic deployment; however, this was nearing my interest in [Go](https://go.dev). I saw how effective Go was for serving, so I decided to take my site off the IPFS network and deploy with Go.
 
 Now that I had a house-hold server hosting my website, I could begin to move toward a scalable design. Slowly but surely, I converted all posts to pure <abbr title="Markdown">.md</abbr> files and handled `GET` requests from the server. At that point I had a fully functioning Go server, but I wasn't finished yet.
 
@@ -39,7 +39,7 @@ $$
 
 It's fun to have this framework for posting — I'm having a more positive experience using <abbr title="Content Delivery Network">CDN</abbr>s to host the external libraries. Not having to worry about updating libraries I'm using is relaxing as I can focus on improving my own scripts and posts. Clearly, I'm excited about this website and hope to share it with more people! I want to make this code open-source and create a helpful template site; however, I'll first need to improve the code a bit. But I'm very happy to say that the major work is done and the functionality is here! 🥳
 
-Edit (9/6/2021) — I removed EasyMDE to decrease load times. I also render code with a Replit <abbr title="Inline Frame">IFrame</abbr>. The site is now open-source! Check out [this post](/#Grokking%20Go) to see the server running 🤩
+Edit (9/6/2021) — I removed EasyMDE to decrease load times. I also render code with a Replit <abbr title="Inline Frame">IFrame</abbr>. The site is now open-source! Check out [this post](/#Grokking%20Go) to see the server running or [this repo](https://github.com/splch/slc.is) for the code! 🤩
 
 ---
 
