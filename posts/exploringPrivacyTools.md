@@ -1,7 +1,7 @@
 ---
 title: Exploring Privacy Tools
 date: 9/2/2021
-image: duckEmail.webp, eff.webp
+image: eff.webp
 draft: false
 ---
 

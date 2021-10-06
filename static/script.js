@@ -17,7 +17,7 @@ function startEditor(title, value) {
 
 function toHTML(markdown) {
     return DOMPurify.sanitize(
-        marked(markdown),
+        marked.parse(markdown),
         { ADD_TAGS: ["iframe"] },
     );
 }
@@ -442,7 +442,7 @@ function startMarkdown() {
             return "<div style=\"overflow-x:auto;\"><table>" +
                 head + body +
                 "</table></div>\n";
-        }
+        },
     }
     marked.setOptions({
         breaks: true,

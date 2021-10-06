@@ -28,6 +28,59 @@ There isn't much room for unique answering strategies here, but the time to show
 
 The hosting round, where you match with Google teams, comes quickly and is at a first-come basis. Because of this, completing your phone interviews as quickly as possible is very important. The sooner you can progress to hosting the better in terms of obtaining an internship, in my opinion.
 
+---
+
+## Study Guide
+
+### Algorithms
+* Transform datasets
+- Big O
+- Runtime + Space complexity
+- NP / NP-complete
+- Recursion
+- Quick Sort + Merge Sort + Heap Sort
+- Breadth First Search + Depth First Search
+- Tree + Graph traversal
+    - Inorder, Postorder, Preorder
+
+### Data Structures
+* Construct and Traverse
+- Array
+- Hash Table
+- Tree
+    - Binary, N-ary, Trie-
+    - Balanced
+        - Red/Black + Splay + AVL
+- Min Heap + Max Heap
+- Graph
+    - Objects + Pointers, Matrix, Adjacency List
+- Linked List
+- Stack
+- Queue + Priority Queue
+
+### Operating Systems
+* Implement system routines
+- Processes
+- Threads
+- Concurrency Issues
+- Locks
+- Mutexes
+- Semaphores
+- Monitors
+- Deadlock
+- Livelock
+- Context Switching
+- Scheduling
+
+### Discrete Match
+* Mine data
+- Counting
+- Probability
+- Combinatorics
+- Choose
+
+---
+
 # Timeline
 
 ## Software Engineering Intern, Bachelors, Winter 2022
@@ -38,3 +91,5 @@ The hosting round, where you match with Google teams, comes quickly and is at a 
 | September 29<super>th</super>, 2021 | Passed Resume Review                          |
 | October 4<super>th</super>, 2021    | Completed Snapshot Survey and Coding Exercise |
 | October 5<super>th</super>, 2021    | Passed Survey and Exercise Stage              |
+| October 6<super>th</super>, 2021    | Scheduled Phone Interview                     |
+| October 11<super>th</super>, 2021   | Completed Phone Interview                     |
