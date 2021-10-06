@@ -146,8 +146,9 @@ function createImg(alt, src) {
 function createDiv() {
     const div = document.createElement("div");
     div.classList.add("template");
-    div.style.display = "flex";
     div.style.alignItems = "center";
+    div.style.display = "flex";
+    div.style.minHeight = "15vh"; // height for lazy loading
     return div;
 }
 
@@ -335,7 +336,7 @@ function setPreview(rsp) {
     const title = window.location.hash.substr(1);
     if (title === "Blog" || (title === "Home" && posts.length === 1) || document.getElementsByTagName("textarea").length === 1) {
         posts.forEach(post => {
-            populatePreview(post);
+            div = populatePreview(post);
         });
     }
 }
