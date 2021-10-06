@@ -1,6 +1,6 @@
 ---
 title: Assembly Neural Network on Pico
-date: 9/10/2021
+date: 9/28/2021
 image: pico.webp
 draft: false
 ---
