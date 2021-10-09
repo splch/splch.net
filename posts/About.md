@@ -20,6 +20,8 @@ Changing pace, I recently got very interested in crowdfunding campaigns after le
 
 For the future, I want a job that enables me to travel to different countries' offices. A company like IBM or Google would be perfect in that sense. The IBM Quantum team is great, so I'm aiming for them! I just know I want to work in quantum and be part of the huge growth that's about to occur.
 
+# [Résumé](data/resume/resume.pdf)
+
 <iframe class="pdf" src="data/resume/resume.pdf#view=FitW" width="50%" height="50%"></iframe>
 
 ---

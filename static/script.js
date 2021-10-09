@@ -18,7 +18,10 @@ function startEditor(title, value) {
 function toHTML(markdown) {
     return DOMPurify.sanitize(
         marked.parse(markdown),
-        { ADD_TAGS: ["iframe"] },
+        {
+            ADD_TAGS: ["iframe"],
+            ALLOW_UNKNOWN_PROTOCOLS: true, 
+        },
     );
 }
 
@@ -111,7 +114,7 @@ function createHr() {
 function createP(text) {
     const p = document.createElement("p");
     p.innerText = text;
-    p.style.color = "#787878";
+    p.style.color = "#6f6f6f";
     p.style.margin = "0 0 0 2vh";
     p.style.overflow = "auto";
     return p;
@@ -148,7 +151,7 @@ function createDiv() {
     div.classList.add("template");
     div.style.alignItems = "center";
     div.style.display = "flex";
-    div.style.minHeight = "15vh"; // height for lazy loading
+    div.style.minHeight = "10vh"; // height for lazy loading
     return div;
 }
 
@@ -423,7 +426,7 @@ function startMarkdown() {
     }
 
     const renderer = {
-        code(code, language, _) {
+        code(code, language, escaped) {
             const math = makeMath(code);
             if (math && !language) {
                 return math;
@@ -447,13 +450,13 @@ function startMarkdown() {
     }
     marked.setOptions({
         breaks: true,
+        headerIds: false,
         highlight: (code, language) => {
             if (hljs.listLanguages().includes(language)) {
                 return hljs.highlight(code, { language }).value;
             }
             return code;
         },
-        smartypants: true,
     }).use({ renderer });
 }
 

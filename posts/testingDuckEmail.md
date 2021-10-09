@@ -1,8 +1,8 @@
 ---
 title: Testing DuckDuckGo's Email
-date: 10/6/2021
+date: 9/1/2021
 image: duckEmail.webp
-draft: true
+draft: false
 ---
 
 DuckDuckGo began releasing `@duck.com` emails. These emails are currently in beta and only act as an email-forwarding account. The purpose of this post is to stess-test the service and see where it earns the `beta` tag.
