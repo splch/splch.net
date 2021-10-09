@@ -9,6 +9,13 @@ I'm using this server for my own [blog](https://slc.is) and wanted to share the 
 
 ---
 
+# Features
+
+1. KaTex Math Rendering
+2. Highlight.js Syntax Highlighting
+3. Marked Blog Post Markdown Rendering
+4. DOMPurify HTML Cleaner
+
 # Requirements
 
 All the work is done by the Go server, so there are no other dependencies. The Go server is using the New York Times' gzip library because using the standard library wasn't compressing audio well.
