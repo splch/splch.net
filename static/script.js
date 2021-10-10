@@ -15,26 +15,6 @@ function startEditor(title, value) {
     getServer("api/draft", "");
 }
 
-function toHTML(markdown) {
-    return DOMPurify.sanitize(marked.parse(markdown), {
-        ADD_TAGS: ["iframe"],
-        ALLOW_UNKNOWN_PROTOCOLS: true,
-    });
-}
-
-function parseText(markdown) {
-    let div = document.createElement("div");
-    div.innerHTML = toHTML(markdown);
-    return div.innerText;
-}
-
-function summarize(title, markdown) {
-    let text = parseText(markdown);
-    let summarizer = new JsSummarize();
-    let summary = summarizer.summarize(title, text);
-    return summary[0].split(" ").slice(0, 10).join(" ") + "…";
-}
-
 function prepareTextArea(title, value) {
     const id = "mde";
     let textArea = createTextArea();
@@ -386,6 +366,19 @@ function loadPage(title, pop) {
     updatePage(element, isBlog, pop);
 }
 
+function toHTML(markdown) {
+    return DOMPurify.sanitize(marked.parse(markdown), {
+        ADD_TAGS: ["iframe"],
+        ALLOW_UNKNOWN_PROTOCOLS: true,
+    });
+}
+
+function parseText(markdown) {
+    let div = document.createElement("div");
+    div.innerHTML = toHTML(markdown);
+    return div.innerText;
+}
+
 function startMarkdown() {
     function makeMath(expr) {
         var n, displayMode;
@@ -441,7 +434,7 @@ function darkMode() {
         document.getElementById("page").style.color = "#ffffff";
         document.getElementById("page").style.background = "var(--background)";
     }
-    window.matchMedia("(prefers-color-scheme: dark)").addListener((e) => {
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(e => {
         if (e.matches) {
             darkMode();
         } else {

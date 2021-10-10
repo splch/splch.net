@@ -28,6 +28,8 @@ type Post struct {
 	Body  markdown
 }
 
+var path string = "posts/"
+
 func main() {
 	mux := http.NewServeMux()
 	fs := http.FileServer(http.Dir("static"))
@@ -150,14 +152,13 @@ func getPassword() string {
 	return os.Getenv("password")
 }
 
-func setPost(blog []string) Post {
-	var post Post
+func setPost(blog []string) (post Post) {
 	post.Title = getMeta(blog[1])
 	post.Date = getDate(getMeta(blog[2])[0])
 	post.Image = getMeta(blog[3])
 	post.Draft, _ = strconv.ParseBool(getMeta(blog[4])[0])
 	post.Body = markdown(strings.Join(blog[6:], "\n"))
-	return post
+	return
 }
 
 func getDate(date string) time.Time {
@@ -172,13 +173,12 @@ func getDate(date string) time.Time {
 	return time.Date(int(year), time.Month(month), int(day), 0, 0, 0, 0, time.UTC)
 }
 
-func getFiles(path string) ([]os.FileInfo, string) {
-	files, _ := ioutil.ReadDir(path)
-	return files, path
+func getFiles(path string) (files []os.FileInfo) {
+	files, _ = ioutil.ReadDir(path)
+	return
 }
 
-func appendPosts(files []os.FileInfo, path string, draft bool) []Post {
-	var posts []Post
+func appendPosts(files []os.FileInfo, path string, draft bool) (posts []Post) {
 	for _, file := range files {
 		content, _ := ioutil.ReadFile(path + file.Name())
 		blog := strings.Split(string(content), "\n")
@@ -192,26 +192,25 @@ func appendPosts(files []os.FileInfo, path string, draft bool) []Post {
 	sort.Slice(posts, func(i, j int) bool {
 		return posts[i].Date.After(posts[j].Date)
 	})
-	return posts
+	return
 }
 
-func searchTitles(query string, files []os.FileInfo, path string) Post {
+func searchTitles(query string, files []os.FileInfo, path string) (post Post) {
 	for _, file := range files {
 		content, _ := ioutil.ReadFile(path + file.Name())
 		blog := strings.Split(string(content), "\n")
 		if len(blog) > 6 {
-			post := setPost(blog)
+			post = setPost(blog)
 
 			if query == post.Title[0] {
-				return post
+				return
 			}
 		}
 	}
 	return searchTitles("Error Page Not Found", files, path)
 }
 
-func searchBodies(query string, files []os.FileInfo, path string) []Post {
-	var posts []Post
+func searchBodies(query string, files []os.FileInfo, path string) (posts []Post) {
 	for _, file := range files {
 		content, _ := ioutil.ReadFile(path + file.Name())
 		blog := strings.Split(string(content), "\n")
@@ -231,7 +230,7 @@ func searchBodies(query string, files []os.FileInfo, path string) []Post {
 	sort.Slice(posts, func(i, j int) bool {
 		return posts[i].Date.After(posts[j].Date)
 	})
-	return posts
+	return
 }
 
 func searchMarkdown(query string, files []os.FileInfo, path string) markdown {
@@ -292,7 +291,7 @@ func EditPost(w http.ResponseWriter, r *http.Request) {
 		if len(blog) > 6 {
 			post := setPost(blog)
 			if len(post.Title) != 0 {
-				files, path := getFiles("posts/")
+				files := getFiles(path)
 				fileName := searchFiles(post.Title[0], files, path)
 				content := []byte(strings.Join(blog, "\n"))
 				ioutil.WriteFile(fileName, content, 0644)
@@ -312,7 +311,7 @@ func DeletePost(w http.ResponseWriter, r *http.Request) {
 	password := getPassword()
 	if key == password {
 		if len(title) != 0 {
-			files, path := getFiles("posts/")
+			files := getFiles(path)
 			fileName := searchFiles(title, files, path)
 			if fileName != "" {
 				os.Remove(fileName)
@@ -326,7 +325,7 @@ func DeletePost(w http.ResponseWriter, r *http.Request) {
 func GetMarkdown(w http.ResponseWriter, r *http.Request) {
 	query := strings.Split(r.RequestURI, "?query=")[1]
 	query, _ = url.QueryUnescape(query)
-	files, path := getFiles("posts/")
+	files := getFiles(path)
 
 	if query == "Blog" {
 		query = "Template Post"
@@ -339,7 +338,7 @@ func GetMarkdown(w http.ResponseWriter, r *http.Request) {
 func GetPost(w http.ResponseWriter, r *http.Request) {
 	query := strings.Split(r.RequestURI, "?query=")[1]
 	query, _ = url.QueryUnescape(query)
-	files, path := getFiles("posts/")
+	files := getFiles(path)
 	post := searchTitles(query, files, path)
 	rsp, _ := json.Marshal(post)
 
@@ -347,7 +346,7 @@ func GetPost(w http.ResponseWriter, r *http.Request) {
 }
 
 func AllPosts(w http.ResponseWriter, r *http.Request) {
-	files, path := getFiles("posts/")
+	files := getFiles(path)
 	posts := appendPosts(files, path, false)
 	for i := range posts {
 		preview := strings.Split(string(posts[i].Body), " ")
@@ -359,7 +358,7 @@ func AllPosts(w http.ResponseWriter, r *http.Request) {
 }
 
 func AllDrafts(w http.ResponseWriter, r *http.Request) {
-	files, path := getFiles("posts/")
+	files := getFiles(path)
 	posts := appendPosts(files, path, true)
 	for i := range posts {
 		preview := strings.Split(string(posts[i].Body), " ")
@@ -371,7 +370,7 @@ func AllDrafts(w http.ResponseWriter, r *http.Request) {
 }
 
 func LatestPost(w http.ResponseWriter, r *http.Request) {
-	files, path := getFiles("posts/")
+	files := getFiles(path)
 	post := appendPosts(files, path, false)[:1]
 	preview := strings.Split(string(post[0].Body), " ")
 	post[0].Body = markdown(strings.Join(preview[:min(len(preview), 9)], " ") + " …")
@@ -383,7 +382,7 @@ func LatestPost(w http.ResponseWriter, r *http.Request) {
 func SearchPosts(w http.ResponseWriter, r *http.Request) {
 	query := strings.Split(r.RequestURI, "?query=")[1]
 	query, _ = url.QueryUnescape(query)
-	files, path := getFiles("posts/")
+	files := getFiles(path)
 	posts := searchBodies(query, files, path)
 	rsp, _ := json.Marshal(posts)
 
