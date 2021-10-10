@@ -157,10 +157,10 @@ Fenced code block
 
 ```python
 def main():
-	msg = "Hadamard Gate:"
+	msg = "Hadamard Gate ="
 	print(msg)
 
-if __name__ == "main":
+if __name__ == "__main__":
 	main()
 ```
 

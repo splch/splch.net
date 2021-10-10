@@ -24,7 +24,8 @@ def main():
 	msg = "Hadamard Gate ="
 	print(msg)
 
-main()
+if __name__ == "__main__":
+	main()
 ```
 
 ```
