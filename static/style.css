@@ -111,7 +111,7 @@ pre > code {
     overflow: auto;
     padding: 2%;
     tab-size: 4;
-    width: calc(96% - 0.5em);;
+    width: calc(96% - 0.5em);
     word-wrap: normal;
 }
 

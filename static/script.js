@@ -1,4 +1,4 @@
-let imageChange = { "interval": null, "image": 1 };
+let imageChange = { interval: null, image: 1 };
 
 function startEditor(title, value) {
     let textArea = prepareTextArea(title, value);
@@ -16,13 +16,10 @@ function startEditor(title, value) {
 }
 
 function toHTML(markdown) {
-    return DOMPurify.sanitize(
-        marked.parse(markdown),
-        {
-            ADD_TAGS: ["iframe"],
-            ALLOW_UNKNOWN_PROTOCOLS: true, 
-        },
-    );
+    return DOMPurify.sanitize(marked.parse(markdown), {
+        ADD_TAGS: ["iframe"],
+        ALLOW_UNKNOWN_PROTOCOLS: true,
+    });
 }
 
 function parseText(markdown) {
@@ -58,28 +55,19 @@ function preparePassword() {
 function prepareSubmit() {
     let submit = createButton();
     submit.innerText = "Submit";
-    submit.onclick = _ => {
+    submit.onclick = (_) => {
         let mde = document.getElementById("mde").value;
         let key = document.getElementById("password").value;
         if (mde) {
-            editMarkdown(
-                "api/edit",
-                key,
-                mde,
-            );
-        }
-        else {
+            editMarkdown("api/edit", key, mde);
+        } else {
             let title = document.getElementById("mde").title;
             let r = confirm("You will delete:\n" + title);
             if (r) {
-                editMarkdown(
-                    "api/delete",
-                    key,
-                    title,
-                );
+                editMarkdown("api/delete", key, title);
             }
         }
-    }
+    };
     return submit;
 }
 
@@ -128,18 +116,16 @@ function createImg(alt, src) {
         let imgSrc;
         if (src[0].substring(0, 4) === "http") {
             imgSrc = src[0];
-        }
-        else {
+        } else {
             imgSrc = `images/${src[0]}`;
         }
         img.src = imgSrc;
         img.style.width = "15vh";
-        img.onclick = e => {
+        img.onclick = (e) => {
             updatePage(e.target, true);
         };
         img.style.cursor = "pointer";
-    }
-    else {
+    } else {
         img.src = "";
         img.style.width = "0";
     }
@@ -158,7 +144,7 @@ function createDiv() {
 function createH2(text) {
     const h2 = document.createElement("h2");
     h2.innerText = text;
-    h2.onclick = e => {
+    h2.onclick = (e) => {
         updatePage(e.target, true);
     };
     h2.classList.add("template");
@@ -185,7 +171,7 @@ function createSearch(query = null) {
     const search = document.createElement("input");
     search.type = "text";
     search.placeholder = "Search…";
-    search.onkeyup = e => {
+    search.onkeyup = (e) => {
         if (e.key === "Enter") {
             if (e.target.value) {
                 getServer("api/search", "query=" + e.target.value);
@@ -220,8 +206,7 @@ function updateImg(src, title) {
         let imgSrc;
         if (src.substring(0, 4) === "http") {
             imgSrc = src;
-        }
-        else {
+        } else {
             imgSrc = `images/${src}`;
         }
         document.getElementById("cover").src = imgSrc;
@@ -233,7 +218,7 @@ function setImages(srcs, title) {
     updateImg(srcs[0], title);
     let image = 1;
     if (srcs.length > 1) {
-        imageChange.interval = setInterval(_ => {
+        imageChange.interval = setInterval((_) => {
             const src = srcs[image % srcs.length];
             updateImg(src, title);
             image++;
@@ -246,8 +231,7 @@ function setPageInfo(title, date) {
     document.getElementById("title").innerText = title;
     if (date === "0001-01-01T00:00:00Z") {
         date = "";
-    }
-    else {
+    } else {
         date = date.split("T")[0].split("-");
         date = [date[1], date[2], date[0]].join("/");
     }
@@ -263,7 +247,7 @@ function setPage(post) {
 }
 
 function clearTemplates() {
-    document.querySelectorAll(".template").forEach(e => {
+    document.querySelectorAll(".template").forEach((e) => {
         e.parentElement.removeChild(e);
     });
 }
@@ -277,7 +261,7 @@ function clearPage() {
 }
 
 function newActive(element) {
-    document.querySelectorAll(".link").forEach(link => {
+    document.querySelectorAll(".link").forEach((link) => {
         link.classList.remove("active");
     });
     element.classList.add("active");
@@ -299,8 +283,7 @@ function editMarkdown(url, ...args) {
         if (this.readyState === 4 && this.status === 200) {
             if (xhr.responseText != "Denied") {
                 window.location.reload();
-            }
-            else {
+            } else {
                 document.getElementById("password").style.background = "red";
             }
         }
@@ -319,7 +302,7 @@ function setSearch(rsp, args) {
     if (posts && window.location.hash.substr(1) === "Blog") {
         clearTemplates();
         createSearch(args.split("=")[1]);
-        posts.forEach(post => {
+        posts.forEach((post) => {
             populatePreview(post);
         });
     }
@@ -338,7 +321,7 @@ function setPreview(rsp) {
     const posts = JSON.parse(rsp);
     const title = window.location.hash.substr(1);
     if (title === "Blog" || (title === "Home" && posts.length === 1) || document.getElementsByTagName("textarea").length === 1) {
-        posts.forEach(post => {
+        posts.forEach((post) => {
             div = populatePreview(post);
         });
     }
@@ -352,16 +335,11 @@ function getServer(url, args) {
         if (this.readyState === 4 && this.status === 200) {
             if (url.split("/")[1] === "get") {
                 setFull(this.responseText);
-            }
-            else if (["all", "draft", "latest"].includes(
-                        url.split("/")[1])
-                    ) {
+            } else if (["all", "draft", "latest"].includes(url.split("/")[1])) {
                 setPreview(this.responseText);
-            }
-            else if (url.split("/")[1] === "markdown") {
+            } else if (url.split("/")[1] === "markdown") {
                 setMarkdown(this.responseText);
-            }
-            else if (url.split("/")[1] === "search") {
+            } else if (url.split("/")[1] === "search") {
                 setSearch(this.responseText, args);
             }
         }
@@ -375,8 +353,7 @@ function updatePage(element, isBlog, pop = false) {
     if (!isBlog) {
         newActive(element);
         document.title = title;
-    }
-    else if (!document.getElementsByClassName("active").length) {
+    } else if (!document.getElementsByClassName("active").length) {
         newActive(document.getElementsByClassName("link")[1]);
         document.title = "Blog";
     }
@@ -419,10 +396,7 @@ function startMarkdown() {
             n = 1;
             displayMode = false;
         }
-        return n ? katex.renderToString(
-            expr.substr(n, expr.length - 2 * n),
-            { displayMode }
-        ) : null;
+        return n ? katex.renderToString(expr.substr(n, expr.length - 2 * n), { displayMode }) : null;
     }
 
     const renderer = {
@@ -442,22 +416,22 @@ function startMarkdown() {
         },
         table(head, body) {
             head = "<thead>" + head + "</thead>";
-            body = (body = body && "<tbody>" + body + "</tbody>");
-            return "<div style=\"overflow-x:auto;\"><table>" +
-                head + body +
-                "</table></div>\n";
+            body = body = body && "<tbody>" + body + "</tbody>";
+            return '<div style="overflow-x:auto;"><table>' + head + body + "</table></div>\n";
         },
-    }
-    marked.setOptions({
-        breaks: true,
-        headerIds: false,
-        highlight: (code, language) => {
-            if (hljs.listLanguages().includes(language)) {
-                return hljs.highlight(code, { language }).value;
-            }
-            return code;
-        },
-    }).use({ renderer });
+    };
+    marked
+        .setOptions({
+            breaks: true,
+            headerIds: false,
+            highlight: (code, language) => {
+                if (hljs.listLanguages().includes(language)) {
+                    return hljs.highlight(code, { language }).value;
+                }
+                return code;
+            },
+        })
+        .use({ renderer });
 }
 
 function darkMode() {
@@ -467,11 +441,10 @@ function darkMode() {
         document.getElementById("page").style.color = "#ffffff";
         document.getElementById("page").style.background = "var(--background)";
     }
-    window.matchMedia("(prefers-color-scheme: dark)").addListener(e => {
+    window.matchMedia("(prefers-color-scheme: dark)").addListener((e) => {
         if (e.matches) {
             darkMode();
-        }
-        else {
+        } else {
             document.documentElement.style.removeProperty("--background");
             document.documentElement.style.removeProperty("--hover");
             document.getElementById("page").style.removeProperty("background");
@@ -485,23 +458,19 @@ function start() {
     startMarkdown();
     const title = window.location.hash.substr(1) || "Home";
     loadPage(decodeURI(title), false);
-    document.querySelectorAll(".link").forEach(link => {
-        link.onclick = e => {
+    document.querySelectorAll(".link").forEach((link) => {
+        link.onclick = (e) => {
             updatePage(e.target, false);
         };
     });
-    document.getElementById("logo").onclick = _ => {
+    document.getElementById("logo").onclick = (_) => {
         const query = decodeURI(window.location.hash.substr(1));
         getServer("api/markdown", "query=" + query);
     };
-    window.onpopstate = e => {
+    window.onpopstate = (e) => {
         loadPage(e.state, true);
-    }
-    console.log(
-        "%cQuite a sight, isn't it? 😉", "color: " +
-        getComputedStyle(document.body).getPropertyValue("--light") +
-        "; font-size: 12pt;"
-    );
+    };
+    console.log("%cQuite a sight, isn't it? 😉", "color: " + getComputedStyle(document.body).getPropertyValue("--light") + "; font-size: 12pt;");
 }
 
 window.onload = start;
