@@ -18,7 +18,7 @@ My current research interest is in how quantum will change optimizations like gr
 
 Changing pace, I recently got very interested in crowdfunding campaigns after learning more about [planned obsolescence](https://youtu.be/j5v8D-alAKE). I want to own resilient products like nice leather journals with titanium pens and the sort.
 
-For the future, I want a job that enables me to travel to different countries' offices. A company like IBM or Google would be perfect in that sense. The IBM Quantum team is great, so I'm aiming for them! I just know I want to work in quantum and be part of the huge growth that's about to occur.
+For the future, I want a job that enables me to travel to different countries' offices. A company like Google or IBM would be perfect in that sense. Both teams are making huge contributions to the field of quantum computing, so I'd love to be part of that growth. Whatever's in store, I'm ready!
 
 # [Résumé](data/resume/resume.pdf)
 

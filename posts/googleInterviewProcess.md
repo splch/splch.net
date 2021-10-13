@@ -26,11 +26,15 @@ There isn't much room for unique answering strategies here, but the time to show
 
 # Phone Interviews
 
-The hosting round, where you match with Google teams, comes quickly and is at a first-come basis. Because of this, completing your phone interviews as quickly as possible is very important. The sooner you can progress to hosting the better in terms of obtaining an internship, in my opinion.
+I solved each question proposed in the interviews, but didn't have time to complete their second parts. The questions were straightforward but added a slight twist on common data structures. Once I completed the first question in the interviews, I opted to stop coding and instead talk to the interviewer. Hopefully that was the right move, and I'll find out within two weeks whether I move to hosting.
+
+The hosting round, where you match with Google teams, comes quickly and is on a first-come basis. Because of this, completing your phone interviews as quickly as possible is very important. The sooner you can progress to hosting the better in terms of obtaining an internship, _in my opinion_.
 
 ---
 
-## Study Guide
+<details>
+
+<summary>Study Guide</summary>
 
 ### Skills
 1. Code Analysis
@@ -281,6 +285,8 @@ The hosting round, where you match with Google teams, comes quickly and is at a 
     <summary>Choose</summary>
 
 1. https://www.cs.utexas.edu/~isil/cs311h/lecture-combinatorics2-6up.pdf
+
+</details>
 
 </details>
 
