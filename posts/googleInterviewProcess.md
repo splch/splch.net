@@ -7,6 +7,24 @@ draft: true
 
 I'll use this post as a progress report of the Google Internship application process. The only unique thing I did in regards with the initial application was specifying my interest in the ChromeOS team. In addition, I submitted a bug report to the ChromeOS team and mentioned my application. I don't know if this helped move me forward, but it was something different I did compared to previous applications. 
 
+<pre>
+┌────────────────────┐
+│  October     2021  │
+├──┬──┬──┬──┬──┬──┬──┤
+│Su│Mo│Tu│We│Th│Fr│Sa│
+├──┼──┼──┼──┼──┼──┼──┤
+│▒▒│▒▒│▒▒│▒▒│▒▒│01│02│
+├──╔══╗──┼──┼──┼──┼──┤
+│03║04║05│06│07│08│09│ Started on the 4th
+├──╚══╝──┼──┼──┼──┼──┤
+│10│11│12│13│14│15│16│
+├──┼──┼──┼──┼──┼──┼──┤
+│17│18│19│20│21│22│23│
+├──╔══╗──┼──┼──┼──┼──┤
+│24║25║26│27│28│29│30│ Finished on the 25th
+└──╚══╝──┴──┴──┴──┴──┘
+</pre>
+
 # Snapshot Survey
 
 **The survey autosaves**, so use the answer history to indicate confidence in some and confliction in other answers.
@@ -27,6 +45,8 @@ There isn't much room for unique answering strategies here, but the time to show
 # Phone Interviews
 
 I solved each question proposed in the interviews, but didn't have time to complete their second parts. The questions were straightforward but added a slight twist on common data structures. Once I completed the first question in the interviews, I opted to stop coding and instead talk to the interviewer. Hopefully that was the right move, and I'll find out within two weeks whether I move to hosting.
+
+My first interview was stronger than my second, so [as expected](), I got scheduled for a third interview.
 
 The hosting round, where you match with Google teams, comes quickly and is on a first-come basis. Because of this, completing your phone interviews as quickly as possible is very important. The sooner you can progress to hosting the better in terms of obtaining an internship, _in my opinion_.
 
@@ -294,24 +314,6 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
 
 # Timeline
 
-<pre>
-┌────────────────────┐
-│  October     2021  │
-├──┬──┬──┬──┬──┬──┬──┤
-│Su│Mo│Tu│We│Th│Fr│Sa│
-├──┼──┼──┼──┼──┼──┼──┤
-│▒▒│▒▒│▒▒│▒▒│▒▒│01│02│
-├──╔══╗──┼──┼──┼──┼──┤
-│03║04║05│06│07│08│09│
-├──╚══╝──┼──┼──┼──┼──┤
-│10│11│12│13│14│15│16│
-├──┼──┼──┼──┼──┼──┼──┤
-│17│18│19│20│21│22│23│
-├──╔══╗──┼──┼──┼──┼──┤
-│24║25║26│27│28│29│30│
-└──╚══╝──┴──┴──┴──┴──┘
-</pre>
-
 ## Software Engineering Intern, Bachelors, Winter 2022
 
 | Date                                | Event                                         |
@@ -322,3 +324,6 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
 | October 5<super>th</super>, 2021    | Passed Survey and Exercise Stage              |
 | October 6<super>th</super>, 2021    | Scheduled Phone Interviews                    |
 | October 11<super>th</super>, 2021   | Completed Phone Interviews                    |
+| October 14<super>th</super>, 2021   | Scheduled Third Phone Interview               |
+| October 20<super>th</super>, 2021   | Completed Third Phone Interview               |
+| October 23<super>rd</super>, 2021   | Passed / Failed Phone Interviews              |
