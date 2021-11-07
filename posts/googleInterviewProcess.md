@@ -2,7 +2,7 @@
 title: Short and Sweet Google Interview Process
 date: 9/29/2021
 image: google.webp
-draft: true
+draft: false
 ---
 
 I'll use this post as a progress report of the Google Internship application process. The only unique thing I did in regards with the initial application was specifying my interest in the ChromeOS team. In addition, I submitted a bug report to the ChromeOS team and mentioned my application. I don't know if this helped move me forward, but it was something different I did compared to previous applications. 
@@ -15,14 +15,14 @@ I'll use this post as a progress report of the Google Internship application pro
 ├──┼──┼──┼──┼──┼──┼──┤
 │▒▒│▒▒│▒▒│▒▒│▒▒│01│02│
 ├──╔══╗──┼──┼──┼──┼──┤
-│03║04║05│06│07│08│09│ Started on the 4th
+│03║04║05│06│07│08│09│ Started on the 4<super>th</super>
 ├──╚══╝──┼──┼──┼──┼──┤
 │10│11│12│13│14│15│16│
 ├──┼──┼──┼──┼──┼──┼──┤
 │17│18│19│20│21│22│23│
-├──╔══╗──┼──┼──┼──┼──┤
-│24║25║26│27│28│29│30│ Finished on the 25th
-└──╚══╝──┴──┴──┴──┴──┘
+├──┼──┼──┼──┼──╔══╗──┤
+│24│25│26│27│28║29║30│ Finished on the 29<super>th</super>
+└──┴──┴──┴──┴──╚══╝──┘
 </pre>
 
 # Snapshot Survey
@@ -326,4 +326,4 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
 | October 11<super>th</super>, 2021   | Completed Phone Interviews                    |
 | October 14<super>th</super>, 2021   | Scheduled Third Phone Interview               |
 | October 20<super>th</super>, 2021   | Completed Third Phone Interview               |
-| October 23<super>rd</super>, 2021   | Passed / Failed Phone Interviews              |
+| October 29<super>th</super>, 2021   | Failed Phone Interviews                       |

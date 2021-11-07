@@ -24,6 +24,23 @@ All the work is done by the Go server, so there are no other dependencies. The G
 -   Go `1.14`
     -   gziphandler `1.1.1`
 
+I use [ZeroSSL](https://app.zerossl.com/) for the certificate. Name the certificate and key `tls.crt` and `tls.key`, respectively.
+
 # Tutorial
 
 I explain how the template works in this [video](https://youtu.be/3qFqnuqIcm8) if you'd like a quick rundown.
+
+## To run on boot on Raspberry Pi:
+
+Add this code block in `/etc/rc.local` before `return 0`.
+
+```shell
+cd /server/location/
+
+export password=************
+
+export PATH=$PATH:/usr/local/go/bin && \
+    go build main.go && \
+    sudo setcap CAP_NET_BIND_SERVICE=+eip main && \
+    ./main &
+```

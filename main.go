@@ -43,13 +43,11 @@ func main() {
 
 	head := func(f func(w http.ResponseWriter, r *http.Request)) http.Handler {
 		return gziphandler.GzipHandler(Headers(http.HandlerFunc(f)))
-		// return Headers(http.HandlerFunc(f))
 	}
 
-	// fmt.Printf("Enabling HTTP Redirect...\n")
-	// go httpRedirect()
+	fmt.Printf("Enabling HTTP Redirect...\n")
+	go httpRedirect()
 
-	// mux.Handle("/", hfs)
 	mux.Handle("/", gfs)
 	mux.Handle("/images/", http.StripPrefix("/images/", gim))
 	mux.Handle("/data/", http.StripPrefix("/data/", gda))
@@ -67,7 +65,7 @@ func main() {
 	srv := configureServer(mux, cfg)
 
 	fmt.Print("Server Starting...\n")
-	log.Fatal(srv.ListenAndServe())
+	log.Fatal(srv.ListenAndServeTLS("tls.crt", "tls.key"))
 }
 
 func Headers(fs http.Handler) http.HandlerFunc {
