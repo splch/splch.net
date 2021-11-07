@@ -32,7 +32,7 @@ I explain how the template works in this [video](https://youtu.be/3qFqnuqIcm8) i
 
 ## To run on boot on Raspberry Pi:
 
-Add this code block in `/etc/rc.local` before `return 0`.
+Add this code block in `/etc/rc.local` before `exit 0`.
 
 ```shell
 cd /server/location/
