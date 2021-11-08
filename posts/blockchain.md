@@ -18,5 +18,3 @@ My current worry is keeping this site small enough to be held in many IPFS nodes
 Despite what the future holds for blockchain domains, this is the start of a hopefully long stream of thoughts and things I come across!
 
 > As I stand on the edge of quantum, it only seems right that I support the new IPFS internet.
-
-Image credit: https://beatingbetting.co.uk/
