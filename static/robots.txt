@@ -1,5 +1,3 @@
-Sitemap: https://slc.is/sitemap.xml
-
 User-agent: *
 
 Crawl-Delay: 10
