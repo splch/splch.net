@@ -9,6 +9,8 @@ After seeing [Kris' solar-powered website](https://solar.lowtechmagazine.com/), 
 
 There is a [thorough article](https://www.jeremymorgan.com/tutorials/raspberry-pi/raspberry-pi-web-server-comparison/) comparing servers' abilities handling different types of data; however, I opted to use Go's built-in web server. My primary reason is the ease of adding new features with Go is too much to trade for C's minor improvements.
 
+The way my site works is it populates the initial HTML with markdown files. Instead of reloading an entire page, files are dynamically requested. Markdown rendering occurs on the client-side, reducing server usage past what an established framework currently offers (to my knowledge). If you'd like to check out how my site works, visit the [GitHub repo](https://github.com/splch/slc.is).
+
 This isn't too big of a deal, though, because the Pi uses barely any energy. In fact, an average load only draws around 200 mA.
 
 <details>
@@ -32,4 +34,4 @@ The math above is a little disorganized since I used this write-up to figure it 
 
 I definitely recommend giving the Raspberry Pi Zero 2 W a look. It's extremely energy-friendly and packs quite a punch. The power per watt is nothing to laugh at — with the new unified memory design, there's definitely an air of M1 about. Of course, at 512 Mb of <abbr title="Random-Access Memory">RAM</abbr> this won't be viable for some people, but it's a step in the right direction. If you're thinking about some hobby projects, keep sustainable tech in mind.
 
-Hopefully this helps someone get the gear they need to host their solar sites! If you're able to read this article, then the <abbr title="Solar Server Pi">S.S. Pi</abbr> is chuggin' along.
+Hopefully this helps someone get the gear they need to host their solar sites! If you're able to read this article, then the <abbr title="Solar Server Pi">S.S. Pi</abbr> 🥧 is chuggin' along.

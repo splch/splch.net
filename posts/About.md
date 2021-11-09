@@ -22,7 +22,7 @@ For the future, I want a job that enables me to travel to different countries' o
 
 # [Résumé](data/resume/resume.pdf)
 
-<iframe class="pdf" src="data/resume/resume.pdf#view=FitW" width="50%" height="50%"></iframe>
+<!-- <iframe class="pdf" src="data/resume/resume.pdf#view=FitW" width="50%" height="50%"></iframe> -->
 
 ---
 

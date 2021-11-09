@@ -9,6 +9,6 @@ draft: true
 
 Please try the following:
 
-1. Validate the <abbr title="Uniform Resource Locator">URL</abbr> after the octothorpe (#)
-2. Return to the <a href="/#Blog">Blog</a> tab
-3. Refresh the page
+1. [Refresh]() the page
+2. Validate the <abbr title="Uniform Resource Locator">URL</abbr>
+3. Return to the [Blog](#Blog) tab
