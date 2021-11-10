@@ -210,18 +210,17 @@ summary {
     margin: 0.5vh;
 }
 
-.container {
-    aspect-ratio: 16/9;
-    max-width: 100%;
-    position: relative;
-}
-
 .pdf {
     aspect-ratio: 8.5/11;
-    max-width: 100%;
+    width: 100%;
 }
 
 .video {
-    height: 100%;
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+.web {
+    aspect-ratio: 16/10;
     width: 100%;
 }

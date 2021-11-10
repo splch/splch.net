@@ -13,4 +13,4 @@ I am really enjoying Go, though. I'm more comfortable with interpreted languages
 
 This is the code for my Go server hosted on Replit. [Replit](https://replit.com) makes for an easy hosting provider, as well. I can make updates quickly without worrying about power outages causing the site to go down. Initially, I was using the <abbr title="GNU's Not Unix! ZIP">gzip</abbr> package from Go's standard library, but audio couldn't be decoded. I opted to use the package by the New York Times instead. The server configuration is primarily based on three sources: [Cloudflare](https://blog.cloudflare.com/exposing-go-on-the-internet/), [Mozilla](https://ssl-config.mozilla.org/#server=go&version=1.16.7&config=intermediate&guideline=5.6), and their [observatory](https://observatory.mozilla.org/) tool.
 
-<iframe class="container" width="100%" frameborder="0" src="https://replit.com/@splch/slcis?lite=1"></iframe>
+<iframe class="web" width="100%" frameborder="0" src="https://replit.com/@splch/slcis?lite=1"></iframe>

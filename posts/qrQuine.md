@@ -17,4 +17,4 @@ data:text/html,<!DOCTYPE html><html lang=en><head><title>q</title><canvas id=C><
 
 When this text is pasted into a browser's URL, it loads a QR code containing the same link. Here, a QR code is generated, but this is just a little better than having a QR code link to itself.
 
-<iframe class="container" width="100%" frameborder="0" src="https://replit.com/@splch/qr-quine?lite=1"></iframe>
+<iframe class="web" width="100%" frameborder="0" src="https://replit.com/@splch/qr-quine?lite=1"></iframe>

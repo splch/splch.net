@@ -224,7 +224,7 @@ I trained an identical model on a dataset in Python and transferred over the wei
 
 I used UCI's [Wine dataset](https://kaggle.com/uciml/red-wine-quality-cortez-et-al-2009) since it's popular and easily categorical. I preprocessed the data by dropping every column except *citric acid*, *volatile acidity*, and *quality*, and removing outlier data with a z-index greater than 3. Then I made all wines with a quality below 5 a **0**, and all wines above 7 a **1**. I used the remaining data to fit the nine tunable parameters (I really didn't have to worry about overfitting 😂) of the neural network and finally copied them into assembly. The file below will, with 82% accuracy, determine whether a wine is good or bad given its alcohol and salt contents.
 
-<iframe class="container" width="100%" frameborder="0" src="https://replit.com/@splch/WineNet?lite=1"></iframe>
+<iframe class="web" width="100%" frameborder="0" src="https://replit.com/@splch/WineNet?lite=1"></iframe>
 
 `assembly.s`
 
