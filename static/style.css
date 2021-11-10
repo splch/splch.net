@@ -212,18 +212,16 @@ summary {
 
 .container {
     aspect-ratio: 16/9;
-    min-height: 500px;
+    max-width: 100%;
     position: relative;
 }
 
 .pdf {
     aspect-ratio: 8.5/11;
+    max-width: 100%;
 }
 
 .video {
     height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
     width: 100%;
 }

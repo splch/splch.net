@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Solar + Battery Calculator</title>
+    <style type="text/css">
+        :root {
+        	--round: 10px;
+        }
+        
+        body {
+            font-size: 16pt;
+        }
+
+        input {
+            border-radius: var(--round);
+            margin: 0.63em;
+            padding: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    Latitude: <input id="lat" max="90" min="-90" placeholder="Degree" step="any" type="number"></input>
+    Usable Sunlight: <input id="hour" max="24" min="0" placeholder="Hour" required step="any" type="number"></input>
+    <br>
+    Voltage: <input id="v" min="0" placeholder="Voltage" step="any" type="number"></input>
+    <br>
+    Current: <input id="i" min="0" placeholder="Ampere" step="any" type="number"></input>
+    <hr>
+    Power: <input id="p" min="0" placeholder="Wattage" required step="any" type="number"></input>
+    <hr>
+    Solar Panel: <input id="panel" readonly></input>
+    <br>
+    Battery Amperage: <input id="battery" readonly></input>
+    <script type="text/javascript">
+        document.getElementById("lat").onkeyup = (e) => {
+            // https://www.desmos.com/calculator/6zd18zneeh
+            if (e.target.value) {
+                // latitude
+                const L = parseFloat(e.target.value);
+                // angle of sunrise
+                const P = (x) => Math.asin(0.39795 * Math.cos(0.2163108 + 2 * Math.atan(0.9671396 * Math.tan(0.00860 * (x - 186)))));
+                // hours of daylight
+                const D = (x, y) => 24 - 7.639437268410976 * Math.acos(Math.sin(0.014543828656869 + Math.sin(x * 0.017453292519943) * Math.sin(y)) / (Math.cos(x * 0.017453292519943) * Math.cos(y)));
+                // average of min and max
+                const hours = (D(L, P(1)) + D(L, P(183))) / 2;
+                document.getElementById("hour").value = (hours ? hours : 12) / 2.312;
+                calc();
+            }
+        }
+        document.getElementById("hour").onkeyup = (e) => {
+            if (e.target.value) {
+                calc();
+            }
+        }
+        document.getElementById("v").onkeyup = (e) => {
+            if (e.target.value) {
+                const i = document.getElementById("i").value;
+                if (i) {
+                    document.getElementById("p").value = parseFloat(e.target.value) * parseFloat(i);
+                }
+                calc();
+            }
+        }
+        document.getElementById("i").onkeyup = (e) => {
+            if (e.target.value) {
+                const v = document.getElementById("v").value;
+                if (v) {
+                    document.getElementById("p").value = parseFloat(e.target.value) * parseFloat(v);
+                }
+                calc();
+            }
+        }
+        document.getElementById("p").onkeyup = (e) => {
+            if (e.target.value) {
+                calc();
+            }
+        }
+        function calc() {
+            const hours = parseFloat(document.getElementById("hour").value);
+            const current = parseFloat(document.getElementById("i").value);
+            const power = parseFloat(document.getElementById("p").value);
+            if (hours) {
+                if (power) {
+                    let panel = power / (hours / 24);
+                    // 20% (.2) effective
+                    panel /= 0.2;
+                    document.getElementById("panel").value = panel.toFixed(2) + " Watts";
+                }
+                if (current) {
+                    document.getElementById("battery").value = (current * (24 - hours)).toFixed(2) + " Amps";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
