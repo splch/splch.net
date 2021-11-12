@@ -29,6 +29,6 @@ For the future, I want a job that enables me to travel to different countries' o
 <div style="display:flex;align-items:center;overflow-x:auto;">
 	<a href="http://u.fsf.org/16e"><img class="badge" src="https://static.fsf.org/nosvn/images/badges/fsfs_icons_yellow-bg.png" alt="Free Software Foundation" border="0"></a>
 	<a href="https://www.eff.org/join"><img class="badge" src="https://www.eff.org/files/eff-join1.png" alt="Join EFF!" border="0"></a>
-	<a href=""><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Freedom_of_the_Press_Foundation_logo_b%26w.jpg/240px-Freedom_of_the_Press_Foundation_logo_b%26w.jpg" alt="Freedom of the Press" border="0"></a>
+	<a href="https://freedom.press/about/"><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Freedom_of_the_Press_Foundation_logo_b%26w.jpg/240px-Freedom_of_the_Press_Foundation_logo_b%26w.jpg" alt="Freedom of the Press" border="0"></a>
 	<a href="https://www.credly.com/badges/da0f89d5-8e25-4281-9d6a-e6df33892452"><img class="badge" src="https://images.credly.com/images/fb598ca2-1bd2-4674-a49f-3b55445f47f9/IBM_Qiskit_Advocate_-_Advanced_v2.png" alt="Qiskit Advocate" border="0"></a>
 </div>
