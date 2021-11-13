@@ -229,7 +229,12 @@ summary {
     header, footer {
         display: none;
     }
+    img {
+        max-width: 50%;
+    }
     pre > code {
+        border-left: 0.5em solid var(--light) !important;
         max-height: max-content;
+        white-space: break-spaces;
     }
 }
