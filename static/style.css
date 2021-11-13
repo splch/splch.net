@@ -224,3 +224,12 @@ summary {
     aspect-ratio: 1/1;
     width: 100%;
 }
+
+@media print {
+    header, footer {
+        display: none;
+    }
+    pre > code {
+        max-height: max-content;
+    }
+}

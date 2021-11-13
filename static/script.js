@@ -215,6 +215,7 @@ function setPageInfo(title, date) {
         date = date.split("T")[0].split("-");
         date = [date[1], date[2], date[0]].join("/");
     }
+    document.head.querySelector("[name~=date][content]").content = date ? date : "1/22/2021";
     document.getElementById("date").innerText = date;
 }
 
