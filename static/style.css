@@ -2,6 +2,7 @@
     --active: #aa0000;
     --background: #ffffff;
     --code: #dcdcdc;
+    --font: 16pt;
     --hover: #f9f7f7;
     --light: #336699;
     --round: 10px;
@@ -23,7 +24,7 @@ ul,
 table,
 summary,
 noscript {
-    font-size: 16pt;
+    font-size: var(--font);
 }
 
 a {
@@ -142,6 +143,10 @@ summary {
     margin: 1em;
     outline: none;
     user-select: none;
+}
+
+iframe {
+    border-width: 0;
 }
 
 #topleft {

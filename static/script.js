@@ -424,16 +424,14 @@ function startMarkdown() {
                 }
                 return code;
             },
-        })
-        .use({ renderer });
+        }).use({ renderer });
 }
 
 function darkMode() {
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.documentElement.style.setProperty("--background", "#121212");
+        document.documentElement.style.setProperty("--background", "#000000");
         document.documentElement.style.setProperty("--hover", "var(--active)");
         document.getElementById("page").style.color = "#ffffff";
-        document.getElementById("page").style.background = "var(--background)";
     }
     window.matchMedia("(prefers-color-scheme: dark)").addListener(e => {
         if (e.matches) {
@@ -441,7 +439,6 @@ function darkMode() {
         } else {
             document.documentElement.style.removeProperty("--background");
             document.documentElement.style.removeProperty("--hover");
-            document.getElementById("page").style.removeProperty("background");
             document.getElementById("page").style.removeProperty("color");
         }
     });
@@ -464,7 +461,8 @@ function start() {
     window.onpopstate = (e) => {
         loadPage(e.state, true);
     };
-    console.log("%cQuite a sight, isn't it? 😉", "color: " + getComputedStyle(document.body).getPropertyValue("--light") + "; font-size: 12pt;");
+    console.log("%cQuite a sight, isn't it? 😉", "color: " + getComputedStyle(document.body).getPropertyValue("--light") +
+        "; font-size: " + getComputedStyle(document.body).getPropertyValue("--font") + ";");
 }
 
 window.onload = start;
