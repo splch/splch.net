@@ -2,4 +2,4 @@ main
 start
 tls*
 *.save
-
+*.swp
