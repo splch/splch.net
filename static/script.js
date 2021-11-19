@@ -22,6 +22,12 @@ function prepareTextArea(title, value) {
     textArea.title = title;
     value = value.replace("1/22/2021", getDate());
     textArea.value = value;
+    textArea.onkeydown = (_) => {
+        // TODO fix since pages arent reloaded
+        document.body.onbeforeunload = (_) => {
+            return "Make sure you've saved your edits.";
+        }
+    }
     return textArea;
 }
 
