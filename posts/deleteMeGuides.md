@@ -2,7 +2,7 @@
 title: Delete Me Guides
 date: 12/5/2021
 image: deleteme.webp
-draft: true
+draft: false
 ---
 
 I'm going to create a simple program that will delete personal information like deleteme. It'll be open-source and able to run whenever you please. I'll use the guides from [deleteme](https://joindeleteme.com/help/deleteme-help-topics/opt-out-guide/) to help identify services and their links.

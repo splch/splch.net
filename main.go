@@ -1,9 +1,11 @@
 package main
 
 import (
+	"compress/gzip"
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -12,10 +14,9 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
 	"time"
 	"unicode"
-
-	"github.com/NYTimes/gziphandler"
 )
 
 type markdown string
@@ -28,21 +29,42 @@ type Post struct {
 	Body  markdown
 }
 
+var gzPool = sync.Pool{
+	New: func() interface{} {
+		w := gzip.NewWriter(ioutil.Discard)
+		return w
+	},
+}
+
+type gzipResponseWriter struct {
+	io.Writer
+	http.ResponseWriter
+}
+
+func (w *gzipResponseWriter) WriteHeader(status int) {
+	w.Header().Del("Content-Length")
+	w.ResponseWriter.WriteHeader(status)
+}
+
+func (w *gzipResponseWriter) Write(b []byte) (int, error) {
+	return w.Writer.Write(b)
+}
+
 const path = "posts/"
 
 func main() {
 	mux := http.NewServeMux()
 	fs := http.FileServer(http.Dir("static"))
-	gfs := gziphandler.GzipHandler(Headers(fs))
+	gfs := Headers(fs)
 
-	im := http.FileServer(http.Dir("posts/images"))
-	gim := gziphandler.GzipHandler(Headers(im))
+	im := http.FileServer(http.Dir(path + "images"))
+	gim := Headers(im)
 
-	da := http.FileServer(http.Dir("posts/data"))
-	gda := gziphandler.GzipHandler(Headers(da))
+	da := http.FileServer(http.Dir(path + "data"))
+	gda := Headers(da)
 
 	head := func(f func(w http.ResponseWriter, r *http.Request)) http.Handler {
-		return gziphandler.GzipHandler(Headers(http.HandlerFunc(f)))
+		return Headers(http.HandlerFunc(f))
 	}
 
 	fmt.Printf("Enabling HTTP Redirect...\n")
@@ -71,7 +93,7 @@ func main() {
 func Headers(fs http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload")
-		w.Header().Set("Content-Security-Policy", "script-src 'self' unpkg.com; connect-src 'self'; style-src 'self' 'unsafe-inline' unpkg.com maxcdn.bootstrapcdn.com; font-src 'self' unpkg.com maxcdn.bootstrapcdn.com; img-src https: data:; media-src 'self'; object-src 'self'; frame-src 'self' replit.com *.repl.co www.youtube-nocookie.com; frame-ancestors 'self' replit.com; form-action 'self'; base-uri 'self'; default-src 'none'; upgrade-insecure-requests")
+		w.Header().Set("Content-Security-Policy", "script-src 'self' unpkg.com; connect-src 'self'; style-src 'self' 'unsafe-inline' unpkg.com maxcdn.bootstrapcdn.com; font-src 'self' unpkg.com maxcdn.bootstrapcdn.com; img-src https: localhost:* data:; media-src 'self'; object-src 'self'; frame-src 'self' replit.com *.repl.co www.youtube-nocookie.com; frame-ancestors 'self' replit.com; form-action 'self'; base-uri 'self'; default-src 'none'; upgrade-insecure-requests")
 		w.Header().Set("X-XSS-Protection", "1")
 		w.Header().Set("X-Frame-Options", "samedomain, replit.com")
 		w.Header().Set("X-Content-Type-Options", "nosniff")
@@ -83,7 +105,20 @@ func Headers(fs http.Handler) http.HandlerFunc {
 		w.Header().Set("Date", "Mon, 21 May 2021 19:19:19 GMT")
 		w.Header().Set("Referrer-Policy", "no-referrer")
 
-		fs.ServeHTTP(w, r)
+		if !strings.Contains(r.Header.Get("Accept-Encoding"), "gzip") {
+			fs.ServeHTTP(w, r)
+			return
+		}
+
+		w.Header().Set("Content-Encoding", "gzip")
+
+		gz := gzPool.Get().(*gzip.Writer)
+		defer gzPool.Put(gz)
+
+		gz.Reset(w)
+		defer gz.Close()
+
+		fs.ServeHTTP(&gzipResponseWriter{ResponseWriter: w, Writer: gz}, r)
 	}
 }
 
