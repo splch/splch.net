@@ -5,6 +5,6 @@ image: friends.webp, buddies.webp
 draft: true
 ---
 
-I'll post here and the site will grow with me.
+I'm a quantum advocate and the proud author of [Quantum Tales](https://quantumtales.org).
 
-Feel free to share! 🥳
+Have a look around and feel free to share! 🥳

@@ -24,9 +24,9 @@ function prepareTextArea(title, value) {
     textArea.value = value;
     textArea.onkeydown = (_) => {
         // TODO fix since pages arent reloaded
-        document.body.onbeforeunload = (_) => {
-            return "Make sure you've saved your edits.";
-        }
+        // document.body.onbeforeunload = (_) => {
+        //     return "Make sure you've saved your edits.";
+        // }
     }
     return textArea;
 }
