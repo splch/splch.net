@@ -19,10 +19,9 @@ I'm using this server for my own [blog](https://slc.is) and wanted to share the 
 
 # Requirements
 
-All the work is done by the Go server, so there are no other dependencies. The Go server is using the New York Times' gzip library because using the standard library wasn't compressing audio well.
+All the work is done by the Go server, so there are no other dependencies. The minimum version of Go I've used was 1.14 and it worked fine. 1.11 does not work, however.
 
 -   Go `1.14`
-    -   gziphandler `1.1.1`
 
 I use [ZeroSSL](https://app.zerossl.com/) for the certificate. Name the certificate and key `tls.crt` and `tls.key`, respectively.
 
