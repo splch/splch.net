@@ -81,6 +81,7 @@ header h2.link.active {
 
 img {
     border-radius: var(--round);
+    max-width: 100%;
 }
 
 table {
