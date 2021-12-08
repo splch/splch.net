@@ -5,7 +5,7 @@ image: eff.webp
 draft: false
 ---
 
-The brain has been hacked and its security patches come slowly. In order to avoid targeted ads and refining *my* digital consciousness, I'm making steady progress toward respectful technology.
+The brain has been hacked and its security patches come slowly. In order to avoid targeted ads and refining _my_ digital consciousness, I'm making steady progress toward respectful technology.
 
 After learning more about <abbr title="Artificial Intelligence">[AI](/#Neural%20Networks%20From%20Scratch)</abbr>, I began to understand the importance of privacy. Everyone has their own reasons for protecting their data, and mine is to reduce the ability of models to fit me. This ties into preventing <abbr title="Advertisement">ad</abbr> recommendations and other popular motivations broadly, but I doubt we understand the implications of modelling human behavior.
 
@@ -13,7 +13,7 @@ To limit my personal footprint, I began using Signal and Protonmail for private 
 
 My interests and experiences are reflected through what I search. Continuing along reducing my amount of training data, I began de-Googling. I haven't completely removed Google searches from my life but DuckDuckGo has become a strong contender. Using !bangs, I'm able to search quickly when I have an idea of the category I'm looking for. When it comes to _clueless searches_, though, I still rely on Google.
 
-After using DuckDuckGo for around a month, I saw a blog post about their beta email program. I just happened to be looking for a better email (in terms of readability), so I immediately signed up. After 43 days on the waitlist, I was able to register spence@duck.com. My friends might've been hesitant about transitioning messaging <abbr title="Application">app</abbr>s, but the duck email was 
+After using DuckDuckGo for around a month, I saw a blog post about their beta email program. I just happened to be looking for a better email (in terms of readability), so I immediately signed up. After 43 days on the waitlist, I was able to register spence@duck.com. My friends might've been hesitant about transitioning messaging <abbr title="Application">app</abbr>s, but the duck email was
 a hit. Within a week of my fancy duck.com email, three friends were already waiting and hoping to claim their own name.
 
 Using Signal, Protonmail, and DuckDuckGo is great, but I'm still on an iPhone. My recent drive toward privacy has been partially fueled by Apple's personal photo hashing plans. As a way to escape the big _i_, I've been looking into a de-Googled Fairphone. I'm not sure I'll be able to completely sever ties with these companies' surveillance, but finding and testing alternatives seems like enough to me.
@@ -27,10 +27,12 @@ Starting this in university is easier than after graduating and having work cont
 ## Here's my list of free software
 
 Operating Systems:
+
 1. Debian
 2. Pure<abbr title="Operating System">OS</abbr>
 
 Software:
+
 1. LibreOffice
 2. Audacity
 3. Gimp
@@ -38,6 +40,7 @@ Software:
 5. [DuckDuckGo](https://spreadprivacy.com/duckduckgrowing)
 
 <abbr title="Command Line Interface">CLI</abbr>:
+
 1. [Ouch](https://github.com/ouch-org/ouch)
 2. [Python](https://www.python.org)
 3. [Go](https://go.dev)

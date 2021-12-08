@@ -108,7 +108,7 @@ print(form(chain))
 
 </details>
 
-Interestingly, *dolorem ipsum* translates to *pain itself*. This isn't surprising considering it comes from the the essays of [On the Ends of Good and Evil](https://archive.org/details/definibusbonoru02cicegoog), but this means our most used filler text is pain 😂
+Interestingly, _dolorem ipsum_ translates to _pain itself_. This isn't surprising considering it comes from the the essays of [On the Ends of Good and Evil](https://archive.org/details/definibusbonoru02cicegoog), but this means our most used filler text is pain 😂
 
 ## Conclusion
 

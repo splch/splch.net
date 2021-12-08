@@ -25,6 +25,6 @@ So far, I'm not happy with Replit's <abbr title="User Interface">UI</abbr> on mo
 
 It may prove useful for others to have a list of IDEs and their features, but I won't be including any in my website right now.
 
-If I *were* to recommend one, however, I would vouch for [Replit](https://replit.com). I used their platform for the first two years of university and actually paid $5 a month for the Hacker plan. They're constantly innovating and adding unique and useful features. I just hope they can improve its appearance on smaller screens. When that happens, I'll have the difficult task of choosing between my seamless `code tags` and Replit's interactive embeddings.
+If I _were_ to recommend one, however, I would vouch for [Replit](https://replit.com). I used their platform for the first two years of university and actually paid $5 a month for the Hacker plan. They're constantly innovating and adding unique and useful features. I just hope they can improve its appearance on smaller screens. When that happens, I'll have the difficult task of choosing between my seamless `code tags` and Replit's interactive embeddings.
 
 Edit (9/25/2021) — I decided that in some cases running code is helpful, so I'm including Replit embeddings.

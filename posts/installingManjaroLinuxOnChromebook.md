@@ -21,14 +21,14 @@ Once the Chromebook boots, shut it down.
 
 ## 2. Disable Write Protection (WP)
 
-  a. ![Flip the chromebook over](images/manjaro1.webp)
-  b. ![Access the screws](images/manjaro2.webp)
-  c. ![Prepare to remove screws](images/manjaro3.webp)
-  d. ![Remove screws](images/manjaro4.webp)
-  e. ![Begin to pry off case from the hinge](images/manjaro5.webp)
-  f. ![Remove plate completely from small areas](images/manjaro6.webp)
-  g. ![Find where the battery connects](images/manjaro7.webp)
-  h. ![Disconnect the battery](images/manjaro8.webp)
+a. ![Flip the chromebook over](images/manjaro1.webp)
+b. ![Access the screws](images/manjaro2.webp)
+c. ![Prepare to remove screws](images/manjaro3.webp)
+d. ![Remove screws](images/manjaro4.webp)
+e. ![Begin to pry off case from the hinge](images/manjaro5.webp)
+f. ![Remove plate completely from small areas](images/manjaro6.webp)
+g. ![Find where the battery connects](images/manjaro7.webp)
+h. ![Disconnect the battery](images/manjaro8.webp)
 
 ## 3 Boot into ChromeOS and load [crosh](chrome-untrusted://crosh)
 
@@ -37,10 +37,10 @@ You'll need to plug your Chromebook into its charger to power on.
 > If you don't already have a [Manjaro image](https://manjaro.org/download/) flashed to a drive, do that now. You can use [chrome's extension](https://chrome.google.com/webstore/detail/chromebook-recovery-utili/pocpnlppkickgojjlmhdmidojbmbodfm) for creating recovery media.
 
 ![Commands to disable write protection](images/manjaro9.webp)
-  a. `shell`
-  b. `sudo sh`
-  c. `flashrom --wp-disable`
-  and confirm that it succeeded
+a. `shell`
+b. `sudo sh`
+c. `flashrom --wp-disable`
+and confirm that it succeeded
 
 If it succeeded, you can now reattach your battery and screw the plate back in place. If not… I'm sorry.
 
@@ -48,9 +48,9 @@ If it succeeded, you can now reattach your battery and screw the plate back in p
 
 Now that <abbr title="Write Protection">WP</abbr> is off, you can install a custom bootloader. Use mrchromebox's bootloader by following the instructions.
 
-  a. `cd; curl -LO mrchromebox.tech/firmware-util.sh`
-  b. `sudo install -Dt /usr/local/bin -m 755 firmware-util.sh`
-  c. `sudo firmware-util.sh`
+a. `cd; curl -LO mrchromebox.tech/firmware-util.sh`
+b. `sudo install -Dt /usr/local/bin -m 755 firmware-util.sh`
+c. `sudo firmware-util.sh`
 
 You'll need to install the UEFI firmware. After that's done, make sure your computer is powered off.
 

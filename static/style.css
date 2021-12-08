@@ -1,21 +1,21 @@
 :root {
-    --active: #aa0000;
-    --background: #ffffff;
-    --code: #dcdcdc;
-    --font: 16pt;
-    --hover: #f9f7f7;
-    --light: #336699;
-    --round: 10px;
+  --active: #aa0000;
+  --background: #ffffff;
+  --code: #dcdcdc;
+  --font: 16pt;
+  --hover: #f9f7f7;
+  --light: #336699;
+  --round: 10px;
 }
 
 html {
-    background: var(--background);
-    font-family: Verdana, Arial, sans-serif;
-    overflow-wrap: break-word;
+  background: var(--background);
+  font-family: Verdana, Arial, sans-serif;
+  overflow-wrap: break-word;
 }
 
 body {
-    margin: 0.5em;
+  margin: 0.5em;
 }
 
 p,
@@ -24,226 +24,227 @@ ul,
 table,
 summary,
 noscript {
-    font-size: var(--font);
+  font-size: var(--font);
 }
 
 a {
-    color: var(--light);
-    text-decoration-line: none;
+  color: var(--light);
+  text-decoration-line: none;
 }
 
 i {
-    color: #666666;
-    font-size: 15pt;
-    margin-bottom: 1%;
+  color: #666666;
+  font-size: 15pt;
+  margin-bottom: 1%;
 }
 
 header {
-    align-items: center;
-    background-color: var(--light);
-    border-radius: var(--round);
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    max-width: 100ch;
-    min-width: 45ch;
-    position: sticky;
-    top: 0;
-    user-select: none;
-    z-index: 2;
+  align-items: center;
+  background-color: var(--light);
+  border-radius: var(--round);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 100ch;
+  min-width: 45ch;
+  position: sticky;
+  top: 0;
+  user-select: none;
+  z-index: 2;
 }
 
 h2 {
-    border-radius: 1vh;
+  border-radius: 1vh;
 }
 
 header h2 {
-    font-weight: normal;
-    margin: 0 0.5% 0 0.5%;
-    padding: 1% 0 1% 0;
-    text-align: center;
-    width: 19%;
+  font-weight: normal;
+  margin: 0 0.5% 0 0.5%;
+  padding: 1% 0 1% 0;
+  text-align: center;
+  width: 19%;
 }
 
 h2.template,
 h2.link {
-    cursor: pointer;
-    font-size: 15pt;
+  cursor: pointer;
+  font-size: 15pt;
 }
 
 h2.template:hover,
 h2.link:hover,
 header h2.link.active {
-    background-color: var(--active);
-    color: #ffffff;
+  background-color: var(--active);
+  color: #ffffff;
 }
 
 img {
-    border-radius: var(--round);
+  border-radius: var(--round);
 }
 
 p > img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 table {
-    border: solid 1px #3366997f;
-    margin-bottom: 1.25rem;
+  border: solid 1px #3366997f;
+  margin-bottom: 1.25rem;
 }
 
 table thead {
-    background: var(--light);
-    color: #ffffff;
+  background: var(--light);
+  color: #ffffff;
 }
 
 blockquote {
-    border-left: 3px solid #cccccc;
-    color: #888888;
-    padding-left: 1em;
+  border-left: 3px solid #cccccc;
+  color: #888888;
+  padding-left: 1em;
 }
 
 code {
-    background: #1e1e1e;
-    color: var(--code);
-    display: inline-block;
+  background: #1e1e1e;
+  color: var(--code);
+  display: inline-block;
 }
 
 pre > code {
-    border-left: 0.5em solid var(--light);
-    font-family: "Courier New", monospace !important;
-    max-height: 46vh;
-    overflow: auto;
-    padding: 2%;
-    tab-size: 4;
-    width: calc(96% - 0.5em); /* 100% with border */
-    word-wrap: normal;
+  border-left: 0.5em solid var(--light);
+  font-family: "Courier New", monospace !important;
+  max-height: 46vh;
+  overflow: auto;
+  padding: 2%;
+  tab-size: 4;
+  width: calc(96% - 0.5em); /* 100% with border */
+  word-wrap: normal;
 }
 
 pre > code:hover,
 pre > code:focus {
-    border-left: 0.5em solid var(--active);
-    outline: none;
+  border-left: 0.5em solid var(--active);
+  outline: none;
 }
 
 p > code {
-    border-radius: 0.5em;
-    font-size: 85%;
-    margin: 0;
-    padding: 0.2em 0.4em;
+  border-radius: 0.5em;
+  font-size: 85%;
+  margin: 0;
+  padding: 0.2em 0.4em;
 }
 
 abbr {
-    color: var(--active);
+  color: var(--active);
 }
 
 tbody tr:hover {
-    background: var(--hover);
+  background: var(--hover);
 }
 
 summary {
-    color: var(--light);
-    cursor: pointer;
-    margin: 1em;
-    outline: none;
-    user-select: none;
+  color: var(--light);
+  cursor: pointer;
+  margin: 1em;
+  outline: none;
+  user-select: none;
 }
 
 iframe {
-    border-width: 0;
+  border-width: 0;
 }
 
 #topleft {
-    text-align: center;
-    width: 18%;
+  text-align: center;
+  width: 18%;
 }
 
 #topleft p {
-    font-size: 12pt;
-    margin: 0;
+  font-size: 12pt;
+  margin: 0;
 }
 
 #logo {
-    border-radius: var(--round);
-    cursor: pointer;
-    margin-top: 5%;
-    width: 50%;
+  border-radius: var(--round);
+  cursor: pointer;
+  margin-top: 5%;
+  width: 50%;
 }
 
 #cover {
-    max-height: 30vh;
-    max-width: 100%;
-    vertical-align: middle;
+  max-height: 30vh;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 #page {
-    margin: auto;
-    max-width: 80ch;
-    min-width: 45ch;
-    width: 80%;
+  margin: auto;
+  max-width: 80ch;
+  min-width: 45ch;
+  width: 80%;
 }
 
 #title {
-    font-size: 26pt;
-    text-align: center;
+  font-size: 26pt;
+  text-align: center;
 }
 
 #background {
-    margin: 1em 0 1em 0;
-    text-align: center;
-    user-select: none;
+  margin: 1em 0 1em 0;
+  text-align: center;
+  user-select: none;
 }
 
 #search {
-    border-radius: var(--round);
-    font-family: Verdana, Arial, sans-serif;
-    padding: 1%;
-    user-select: none;
-    width: 25%;
+  border-radius: var(--round);
+  font-family: Verdana, Arial, sans-serif;
+  padding: 1%;
+  user-select: none;
+  width: 25%;
 }
 
 #search:focus {
-    outline: none;
+  outline: none;
 }
 
 .blurred {
-    backdrop-filter: blur(100px) saturate(2);
-    -webkit-backdrop-filter: blur(100px) saturate(2);
-    border-radius: inherit;
-    margin-top: 1vh;
-    text-align: center;
+  backdrop-filter: blur(100px) saturate(2);
+  -webkit-backdrop-filter: blur(100px) saturate(2);
+  border-radius: inherit;
+  margin-top: 1vh;
+  text-align: center;
 }
 
 .badge {
-    height: 17vh;
-    margin: 0.5vh;
+  height: 17vh;
+  margin: 0.5vh;
 }
 
 .pdf {
-    aspect-ratio: 8.5/11;
-    width: 65%;
+  aspect-ratio: 8.5/11;
+  width: 65%;
 }
 
 .video {
-    aspect-ratio: 16/9;
-    width: 100%;
+  aspect-ratio: 16/9;
+  width: 100%;
 }
 
 .web {
-    aspect-ratio: 1/1;
-    width: 100%;
+  aspect-ratio: 1/1;
+  width: 100%;
 }
 
 @media print {
-    header, footer {
-        display: none;
-    }
-    img {
-        max-width: 50%;
-    }
-    pre > code {
-        border-left: 0.5em solid var(--light) !important;
-        max-height: max-content;
-        white-space: break-spaces;
-    }
+  header,
+  footer {
+    display: none;
+  }
+  img {
+    max-width: 50%;
+  }
+  pre > code {
+    border-left: 0.5em solid var(--light) !important;
+    max-height: max-content;
+    white-space: break-spaces;
+  }
 }

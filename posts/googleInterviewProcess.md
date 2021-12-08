@@ -5,7 +5,7 @@ image: google.webp
 draft: false
 ---
 
-I'll use this post as a progress report of the Google Internship application process. The only unique thing I did in regards with the initial application was specifying my interest in the ChromeOS team. In addition, I submitted a bug report to the ChromeOS team and mentioned my application. I don't know if this helped move me forward, but it was something different I did compared to previous applications. 
+I'll use this post as a progress report of the Google Internship application process. The only unique thing I did in regards with the initial application was specifying my interest in the ChromeOS team. In addition, I submitted a bug report to the ChromeOS team and mentioned my application. I don't know if this helped move me forward, but it was something different I did compared to previous applications.
 
 <pre>
 ┌────────────────────┐
@@ -34,9 +34,9 @@ I'll use this post as a progress report of the Google Internship application pro
 1. Leave comments on code
 2. Use descriptive variables names
 3. Make test cases
-    - I wrote a message to the Googlers in my tests
+   - I wrote a message to the Googlers in my tests
 4. Leave feedback on the form
-    - They say to not include identifiable information, but the Google account is associated with the form, so it can only help
+   - They say to not include identifiable information, but the Google account is associated with the form, so it can only help
 
 # Candidate Questionnaire
 
@@ -57,6 +57,7 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
 <summary>Study Guide</summary>
 
 ### Skills
+
 1. Code Analysis
 2. Construct and Traverse
 3. Implement system routines
@@ -69,8 +70,8 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
     <summary>Big-O Analysis</summary>
 
 - Runtime + Space complexity
-    1. https://www.geeksforgeeks.org/time-complexity-and-space-complexity/
-    2. https://stackabuse.com/big-o-notation-and-algorithm-analysis-with-python-examples/
+  1. https://www.geeksforgeeks.org/time-complexity-and-space-complexity/
+  2. https://stackabuse.com/big-o-notation-and-algorithm-analysis-with-python-examples/
 
 </details>
 
@@ -93,7 +94,7 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
     <summary>Dynamic Programming</summary>
 
 - Memorization
-    1. https://www.geeksforgeeks.org/dynamic-programming/
+  1. https://www.geeksforgeeks.org/dynamic-programming/
 
 </details>
 
@@ -129,7 +130,7 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
     <summary>Tree + Graph Traversal</summary>
 
 - Inorder, Postorder, Preorder
-    1. https://towardsdatascience.com/4-types-of-tree-traversal-algorithms-d56328450846
+  1. https://towardsdatascience.com/4-types-of-tree-traversal-algorithms-d56328450846
 
 </details>
 
@@ -184,10 +185,10 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
     <summary>Tree</summary>
 
 - Binary, N-ary, Trie-
-    1. https://www.cs.cmu.edu/~clo/www/CMU/DataStructures/Lessons/lesson4_1.htm
+  1. https://www.cs.cmu.edu/~clo/www/CMU/DataStructures/Lessons/lesson4_1.htm
 - Balanced
-    - Red/Black + Splay + AVL
-        1. https://web.stanford.edu/class/archive/cs/cs166/cs166.1146/lectures/02/Small02.pdf
+  - Red/Black + Splay + AVL
+    1. https://web.stanford.edu/class/archive/cs/cs166/cs166.1146/lectures/02/Small02.pdf
 
 </details>
 
@@ -202,11 +203,12 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
     <summary>Graph</summary>
 
 - Objects + Pointers, Matrix, Adjacency List
-    1. https://www.upgrad.com/blog/graphs-in-data-structure/
+  1. https://www.upgrad.com/blog/graphs-in-data-structure/
 
 </details>
 
 ### Operating Systems
+
 <details>
     <summary>Processes</summary>
 
@@ -224,7 +226,7 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
 <details>
     <summary>Concurrency Issues</summary>
 
-1. 
+1.
 
 </details>
 
@@ -278,7 +280,8 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
 </details>
 
 ### Discrete Math
-* https://en.wikipedia.org/wiki/Discrete_mathematics
+
+- https://en.wikipedia.org/wiki/Discrete_mathematics
 
 <details>
     <summary>Counting</summary>
@@ -317,7 +320,7 @@ The hosting round, where you match with Google teams, comes quickly and is on a 
 ## Software Engineering Intern, Bachelors, Winter 2022
 
 | Date                                | Event                                         |
-|-------------------------------------|-----------------------------------------------|
+| ----------------------------------- | --------------------------------------------- |
 | July 31<super>st</super>, 2021      | Applied to Google                             |
 | September 29<super>th</super>, 2021 | Passed Résumé Review                          |
 | October 4<super>th</super>, 2021    | Completed Snapshot Survey and Coding Exercise |

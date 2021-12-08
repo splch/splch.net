@@ -229,7 +229,6 @@ I trained an identical model on a dataset in Python and transferred over the wei
 
 ## Imports and Setup
 
-
 ```python
 import pandas as pd
 from scipy import stats
@@ -247,7 +246,6 @@ import torch.optim as optim
 import seaborn as sns
 import matplotlib.pyplot as plt
 ```
-
 
 ```python
 def plot(t_losses, t_accuracies):
@@ -273,7 +271,6 @@ def plot(t_losses, t_accuracies):
 
 ## Data Preprocessing
 
-
 ```python
 white_wine = pd.read_csv('winequality-white.csv')
 red_wine = pd.read_csv('winequality-red.csv')
@@ -297,13 +294,9 @@ wine[include[:2]] -= np.mean(wine[include[:2]])
 
 ## 1. Data exploration
 
-
 ```python
 wine
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -318,6 +311,7 @@ wine
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -400,35 +394,26 @@ wine
 <p>406 rows × 3 columns</p>
 </div>
 
-
-
-
 ```python
 wine['quality'].value_counts()
 ```
-
-
-
 
     0    213
     1    193
     Name: quality, dtype: int64
 
-
-
 possible for white:
-    chlorides
-    alcohol
+chlorides
+alcohol
 
 possible for red:
-    chlorides
-    sulfates
-    alcohol
-    volatile acidity
+chlorides
+sulfates
+alcohol
+volatile acidity
 
 intersect:
-    chlorides, alcohol
-
+chlorides, alcohol
 
 ```python
 #Composition of citric acid go higher as we go higher in the quality of the wine
@@ -438,18 +423,13 @@ sns.barplot(x = 'quality', y = include[0], data = wine)
 
     <AxesSubplot:xlabel='quality', ylabel='alcohol'>
 
-
 ```python
 #Composition of chloride also go down as we go higher in the quality of the wine
 fig = plt.figure(figsize = (10,6))
 sns.barplot(x = 'quality', y = include[1], data = wine)
 ```
 
-
-
-
     <AxesSubplot:xlabel='quality', ylabel='chlorides'>
-
 
 ```python
 wine.plot.scatter(x = include[0],
@@ -458,14 +438,9 @@ wine.plot.scatter(x = include[0],
                   colormap='viridis')
 ```
 
-
-
-
     <AxesSubplot:xlabel='alcohol', ylabel='chlorides'>
 
-
 ## 2. Data Preparation
-
 
 ```python
 val_cnt = wine[include[2]].value_counts()
@@ -474,14 +449,12 @@ min_sample = val_cnt.min()
 wine = wine.groupby(include[2]).apply(lambda s: s.sample(min_sample))
 ```
 
-
 ```python
 wine = wine.sample(frac=1).reset_index(drop=True)
 
 ratio = 0
 train, validate = np.split(wine, [int((1-ratio)*len(wine))])
 ```
-
 
 ```python
 X_train = np.array(train[include[:2]])
@@ -493,42 +466,40 @@ y_test = np.array(train[[include[2]]])
 
 ### 2.1 PyTorch Loaders
 
-
 ```python
 ## train data
 class trainData(Dataset):
-    
+
     def __init__(self, X_data, y_data):
         self.X_data = X_data
         self.y_data = y_data
-        
+
     def __getitem__(self, index):
         return self.X_data[index], self.y_data[index]
-        
+
     def __len__ (self):
         return len(self.X_data)
 
 
-train_data = trainData(torch.FloatTensor(X_train), 
+train_data = trainData(torch.FloatTensor(X_train),
                        torch.FloatTensor(y_train))
-## test data    
+## test data
 class testData(Dataset):
-    
+
     def __init__(self, X_data):
         self.X_data = X_data
-        
+
     def __getitem__(self, index):
         return self.X_data[index]
-        
+
     def __len__ (self):
         return len(self.X_data)
-    
+
 
 test_data = testData(torch.FloatTensor(X_test))
 ```
 
 ## 3. Fully Connected Neural Network
-
 
 ```python
 BATCH_SIZE = 64
@@ -544,11 +515,11 @@ class binaryClassification(nn.Module):
         self.layer_1 = nn.Linear(2, 2)
         self.layer_out = nn.Linear(2, 1)
         self.tan = nn.Tanh()
-        
+
     def forward(self, inputs):
         x = self.tan(self.layer_1(inputs))
         x = self.layer_out(x)
-        
+
         return x
 
 
@@ -566,7 +537,7 @@ def binary_acc(y_pred, y_test):
     correct_results_sum = (y_pred_tag == y_test).sum().float()
     acc = correct_results_sum/y_test.shape[0]
     acc = torch.round(acc * 100)
-    
+
     return acc
 ```
 
@@ -575,8 +546,6 @@ def binary_acc(y_pred, y_test):
       (layer_out): Linear(in_features=2, out_features=1, bias=True)
       (tan): Tanh()
     )
-
-
 
 ```python
 found = False
@@ -620,19 +589,18 @@ while not found:
         if avg_acc > 80:
             found = True
             break
-        
+
     print(max(accuracies), accuracies.index(max(accuracies)))
-    
+
     if found:
         break
 
 plot(losses, accuracies)
 ```
 
-    80.28571428571429 32    
+    80.28571428571429 32
 
 ## 4. Evaluate
-
 
 ```python
 y_pred_list = []
@@ -648,37 +616,27 @@ with torch.no_grad():
 y_pred_list = [a.squeeze().tolist() for a in y_pred_list]
 ```
 
-
 ```python
 confusion_matrix(y_test, y_pred_list)
 ```
 
-
-
-
     array([[181,  12],
            [ 77, 116]])
-
-
-
 
 ```python
 print(classification_report(y_test, y_pred_list))
 ```
 
                   precision    recall  f1-score   support
-    
+
                0       0.70      0.94      0.80       193
                1       0.91      0.60      0.72       193
-    
+
         accuracy                           0.77       386
        macro avg       0.80      0.77      0.76       386
     weighted avg       0.80      0.77      0.76       386
-    
-
 
 ## 4. Export Parameters
-
 
 ```python
 for name, param in model.named_parameters():
@@ -692,8 +650,6 @@ for name, param in model.named_parameters():
     layer_out.weight tensor([[-0.3158, -0.8081]])
     layer_out.bias tensor([-0.4264])
 
-
-
 ```python
 def function(x):
     # function activation function: f(x) = 1 / (1 + e^(-x))
@@ -705,7 +661,7 @@ def deriv_function(x):
     # Derivative of function: f'(x) = f(x) * (1 - f(x))
     return function(x) * ( 1 - function(x) )
 #     return 1 - np.power(np.tanh(x), 2)
-    
+
 
 
 def mse_loss(y_true, y_pred):
@@ -733,9 +689,9 @@ class NeuralNetwork:
         self.b1 = np.random.normal()
         self.b2 = np.random.normal()
         self.b3 = np.random.normal()
-        
+
         self.learn_rate = .005
-    
+
     def __str__(self):
         return f'weights: {self.w1} {self.w2} {self.w3} {self.w4} {self.w5} {self.w6} biases: {self.b1} {self.b2} {self.b3}'
 
@@ -876,7 +832,7 @@ weights: -0.7985963217884304 8.47287278322075 -5.045041523588488 -1.042118489749
 
 </details>
 
-I used UCI's [Wine dataset](https://kaggle.com/uciml/red-wine-quality-cortez-et-al-2009) since it's popular and easily categorical. I preprocessed the data by dropping every column except *citric acid*, *volatile acidity*, and *quality*, and removing outlier data with a z-index greater than 3. Then I made all wines with a quality below 5 a **0**, and all wines above 7 a **1**. I used the remaining data to fit the nine tunable parameters (I really didn't have to worry about overfitting 😂) of the neural network and finally copied them into assembly. The file below will, with 82% accuracy, determine whether a wine is good or bad given its alcohol and salt contents.
+I used UCI's [Wine dataset](https://kaggle.com/uciml/red-wine-quality-cortez-et-al-2009) since it's popular and easily categorical. I preprocessed the data by dropping every column except _citric acid_, _volatile acidity_, and _quality_, and removing outlier data with a z-index greater than 3. Then I made all wines with a quality below 5 a **0**, and all wines above 7 a **1**. I used the remaining data to fit the nine tunable parameters (I really didn't have to worry about overfitting 😂) of the neural network and finally copied them into assembly. The file below will, with 82% accuracy, determine whether a wine is good or bad given its alcohol and salt contents.
 
 <iframe class="web" width="100%" frameborder="0" src="https://replit.com/@splch/WineNet?lite=1"></iframe>
 

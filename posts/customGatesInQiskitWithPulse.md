@@ -79,7 +79,7 @@ We can treat the gate normally when building circuits, but adding the pulse is d
 
 ![Gate Circuit](images/pulseVisual2.webp)
 
-We're now using a custom gate in a circuit, but let's confirm that this circuit is *actually* applying the pulse we specified.
+We're now using a custom gate in a circuit, but let's confirm that this circuit is _actually_ applying the pulse we specified.
 
 We can use Qiskit Pulse to transpile the circuit to pulses that would be directly run on the quantum computers.
 

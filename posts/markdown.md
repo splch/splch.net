@@ -149,6 +149,7 @@ Fenced code block
 ---
 
 # External
+
 ## HTML
 
 <iframe class="pdf" src="data/lighthouse.pdf#view=FitW"></iframe>
@@ -167,6 +168,7 @@ if __name__ == "__main__":
 ## Math
 
 Block Style:
+
 ```
 $$
 \frac{1}{\sqrt{2}}
