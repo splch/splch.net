@@ -81,6 +81,9 @@ header h2.link.active {
 
 img {
     border-radius: var(--round);
+}
+
+p > img {
     max-width: 100%;
 }
 
