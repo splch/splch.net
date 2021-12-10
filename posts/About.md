@@ -1,5 +1,5 @@
 ---
-title: About, Whoami
+title: About, Who I am
 date:
 image:
 draft: true

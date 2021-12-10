@@ -89,7 +89,7 @@ cdc_acm 1-2.3.2.4.2.4:1.0: ttyACM0: USB ACM device
 ```
 
 <details>
-<summary>Results: 185/188</summary>
+<summary>Results: 186/188</summary>
 
 A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests) were conducted to evaluate the randomness of 76 bitstreams of 1048576 bits from:
 
@@ -99,8 +99,8 @@ A total of 188 tests (some of the 15 tests actually consist of multiple sub-test
 
 The numerous empirical results of these tests were then interpreted with an examination of the proportion of sequences that pass a statistical test (proportion analysis) and the distribution of p-values to check for uniformity (uniformity analysis). The results were the following:
 
-    185/188 tests passed successfully both the analyses.
-    3/188 tests did not pass successfully both the analyses.
+    186/188 tests passed successfully both the analyses.
+    2/188 tests did not pass successfully both the analyses.
 
 ---
 
@@ -121,8 +121,7 @@ Here are the results of the single tests:
 
 - The "Discrete Fourier Transform" test passed both the analyses.
 
-- 147/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
-  1/148 of the "Non-overlapping Template Matching" tests FAILED the proportion analysis.
+- 148/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
 
 - The "Overlapping Template Matching" test passed both the analyses.
 

@@ -1,5 +1,5 @@
 ---
-title: Blog, A history at a glance
+title: Blog, Established 2021
 date:
 image:
 draft: true

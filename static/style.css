@@ -1,10 +1,10 @@
 :root {
-  --active: #aa0000;
-  --background: #ffffff;
-  --code: #dcdcdc;
+  --active: #990033;
+  --background: #fff;
+  --code: #fff;
   --font: 16pt;
-  --hover: #f9f7f7;
-  --light: #336699;
+  --hover: #9cf3;
+  --light: #006699;
   --round: 10px;
 }
 
@@ -42,6 +42,7 @@ header {
   align-items: center;
   background-color: var(--light);
   border-radius: var(--round);
+  box-shadow: 0px 2px 7px 0px black;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
