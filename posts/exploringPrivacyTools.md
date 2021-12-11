@@ -24,23 +24,33 @@ I want to purchase a [Fairphone](https://www.fairphone.com) to support repairabi
 
 Starting this in university is easier than after graduating and having work contacts, however, so I feel relieved about that. Throughout this process, some software has been incredibly useful in general and as alternatives.
 
-## Here's my list of free software
+## Here's my list of <abbr title="Free and Open Source Software">FOSS</abbr> hardware and software
+
+Computers:
+1. Raspberry Pi
+2. Framework Laptop
+
+Phones:
+1. PinePhone Pro
+2. Google Pixel 6 with Calyx <abbr title="Operating System">OS</abbr>
+3. Fairphone
 
 Operating Systems:
 
-1. Debian
-2. Pure<abbr title="Operating System">OS</abbr>
+1. Manjaro
+2. Debian
 
 Software:
 
-1. LibreOffice
-2. Audacity
-3. Gimp
-4. <abbr title="VideoL(ocal)A(rea)N(etwork) Client">VLC</abbr> Media Player
-5. [DuckDuckGo](https://spreadprivacy.com/duckduckgrowing)
+1. VSCodium
+2. LibreOffice
+3. Audacity
+4. Gimp
+5. <abbr title="VideoL(ocal)A(rea)N(etwork) Client">VLC</abbr> Media Player
+6. [DuckDuckGo](https://spreadprivacy.com/duckduckgrowing)
 
 <abbr title="Command Line Interface">CLI</abbr>:
 
-1. [Ouch](https://github.com/ouch-org/ouch)
-2. [Python](https://www.python.org)
-3. [Go](https://go.dev)
+1. Python
+2. Go
+3. Neovim

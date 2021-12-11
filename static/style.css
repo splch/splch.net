@@ -1,7 +1,7 @@
 :root {
   --active: #990033;
   --background: #fff;
-  --code: #fff;
+  --code: #abb2bf;
   --font: 16pt;
   --hover: #9cf3;
   --light: #006699;
@@ -105,7 +105,7 @@ blockquote {
 }
 
 code {
-  background: #1e1e1e;
+  background: #282c34;
   color: var(--code);
   display: inline-block;
 }
