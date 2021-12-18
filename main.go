@@ -87,7 +87,7 @@ func main() {
 	srv := configureServer(mux, cfg)
 
 	fmt.Print("Server Starting...\n")
-	log.Fatal(srv.ListenAndServeTLS("tls.crt", "tls.key"))
+	log.Fatal(srv.ListenAndServe())
 }
 
 func Headers(fs http.Handler) http.HandlerFunc {
