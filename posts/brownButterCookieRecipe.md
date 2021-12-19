@@ -1,5 +1,5 @@
 ---
-title: Brown Butter Cookies
+title: Brown Butter Cookie Recipe
 date: 12/18/2021
 image: brownButterCookies.webp
 draft: false
