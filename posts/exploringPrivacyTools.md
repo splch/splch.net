@@ -32,7 +32,7 @@ Computers:
 
 Phones:
 1. PinePhone Pro
-2. Google Pixel 6 with Calyx <abbr title="Operating System">OS</abbr>
+2. Google Pixel 6 with Calyx<abbr title="Operating System">OS</abbr>
 3. Fairphone
 
 Operating Systems:
