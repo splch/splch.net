@@ -64,3 +64,7 @@ For High-Altitude Baking:
 14. Bake cookies 1 tray at a time until cookies are golden brown and still puffy, and edges have begun to set but centers are still soft (11 minutes), rotating baking sheet halfway through baking (5:30 minutes).
 
 15. Transfer baking sheet to wire rack; cool cookies completely before serving.
+
+## Credits
+
+<iframe class="video" src="https://www.youtube-nocookie.com/embed/oCt3xhKCX1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
