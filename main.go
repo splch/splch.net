@@ -311,8 +311,7 @@ func EditPost(w http.ResponseWriter, r *http.Request) {
 				fileName := searchFiles(post.Title[0], files, path)
 				content := []byte(strings.Join(blog, "\n"))
 				ioutil.WriteFile(fileName, content, 0644)
-				cmd, err := exec.Command("/bin/sh", "change.sh").Output()
-				fmt.Println(cmd, err)
+				exec.Command("/bin/sh", "change.sh").Output()
 			}
 		}
 	} else {
