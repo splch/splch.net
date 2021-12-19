@@ -67,9 +67,6 @@ func main() {
 		return Headers(http.HandlerFunc(f))
 	}
 
-	fmt.Printf("Enabling HTTP Redirect...\n")
-	go httpRedirect()
-
 	mux.Handle("/", gfs)
 	mux.Handle("/images/", http.StripPrefix("/images/", gim))
 	mux.Handle("/data/", http.StripPrefix("/data/", gda))

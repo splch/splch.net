@@ -1,5 +1,6 @@
 main
 start
+change.sh
 tls*
 *.save
 *.swp
