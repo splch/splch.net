@@ -5,8 +5,8 @@ image: brownButterCookies.webp
 draft: false
 ---
 
-- ⏲️ Prep time: 15 <abbr title="minute">min</abbr>
-- 🍳 Cook time: 11 min
+- ⏲️ <abbr title="Preparation">Prep</abbr> time: 15 <abbr title="minute">min</abbr>
+- 🍪 Baking time: 11 min
 - 🍽️ Servings: 11+
 
 ## Ingredients
