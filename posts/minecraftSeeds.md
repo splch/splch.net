@@ -2,7 +2,7 @@
 title: Minecraft Seeds
 date: 11/15/2021
 image: mcTitle.webp, mcPack.webp, mcSkull.webp
-draft: true
+draft: false
 ---
 
 ## Title Screen:
