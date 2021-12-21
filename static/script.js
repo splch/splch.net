@@ -326,13 +326,14 @@ function getServer(url, args) {
   xhr.open("GET", req);
   xhr.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-      if (url.split("/")[1] === "get") {
+			const type = url.split("/")[1];
+      if (type === "get") {
         setFull(this.responseText);
-      } else if (["all", "draft", "latest"].includes(url.split("/")[1])) {
+      } else if (["all", "draft", "latest"].includes(type)) {
         setPreview(this.responseText);
-      } else if (url.split("/")[1] === "markdown") {
+      } else if (type === "markdown") {
         setMarkdown(this.responseText);
-      } else if (url.split("/")[1] === "search") {
+      } else if (type === "search") {
         setSearch(this.responseText, args);
       }
     }

@@ -99,7 +99,7 @@ func Headers(fs http.Handler) http.HandlerFunc {
 		w.Header().Set("Permissions-Policy", "encrypted-media=(self), fullscreen=(self), sync-xhr=(self)")
 		w.Header().Set("Cache-Control", "max-age=86400")
 		w.Header().Set("Set-Cookie", "__Secure-munch=true; Secure; HttpOnly; SameSite=Strict")
-		// w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Date", "Mon, 21 May 2021 19:19:19 GMT")
 		w.Header().Set("Referrer-Policy", "no-referrer")
 
