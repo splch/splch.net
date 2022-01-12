@@ -2,7 +2,7 @@
 title: Pirate's Folly
 date: 12/13/2021
 image: piratesFolly1.webp, piratesFolly2.webp
-draft: true
+draft: false
 ---
 
 The Raspberry Pi Pico inspired the release of the [Picosystem](https://shop.pimoroni.com/products/picosystem). I love working with limited hardware as a challenge to improve my programming. I've had my fair share of [6502 assembly](https://web.archive.org/web/20210903235021/https://www.romhacking.net/forum/index.php?topic=31892.0) for the <abbr title="Nintendo Entertainment System">NES</abbr> but recently enjoyed the new RP2040. The Picosystem uses the RP2040 to run games, so I just had to try it out!
