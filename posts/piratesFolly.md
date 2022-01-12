@@ -11,7 +11,7 @@ I began development of Pirate's Folly, a procedurally generated game. I've laid 
 
 ![Picosystem](images/piratesFolly2.webp)
 
-I'll keep this page updated as I proceed. Currently, I'm wondering if I want to develop the game for <abbr title="Game Boy">GB</abbr> with the upcoming release of the [Analogue Pocket](https://www.analogue.co/pocket) and [GB Studio 3.0](https://www.gbstudio.dev/).
+I'll keep this page updated as I proceed. Currently, I'm wondering if I want to develop the game for Game Boy with the upcoming release of the [Analogue Pocket](https://www.analogue.co/pocket) and [<abbr title="Game Boy">GB</abbr> Studio 3.0](https://www.gbstudio.dev/).
 
 # Transition to Game Boy
 
