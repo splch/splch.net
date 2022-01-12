@@ -150,9 +150,11 @@ Fenced code block
 
 # External
 
+<!--
 ## HTML
 
 <iframe class="pdf" src="data/lighthouse.pdf#view=FitW"></iframe>
+-->
 
 ## Highlight
 
