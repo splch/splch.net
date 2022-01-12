@@ -1,2 +1,0 @@
-language = "go"
-run = "git reset --hard HEAD && git pull && go run main.go"
