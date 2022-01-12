@@ -12,22 +12,19 @@ In this quick tutorial, we will compose a Hadamard pulse and apply it to a qubit
 ## Imports
 
 ```python
-from qiskit import assemble, pulse, QuantumCircuit,\
+from qiskit import Aer, assemble, pulse, QuantumCircuit,\
                    schedule, transpile
 from qiskit.circuit import Gate
 from qiskit.providers.aer import PulseSimulator
 from qiskit.providers.aer.pulse import PulseSystemModel
-from qiskit.pulse.library import Gaussian
 from qiskit.test import mock
+from qiskit.pulse.library import Gaussian
 from qiskit.visualization import plot_histogram
 from qiskit.visualization.pulse_v2 import draw
+import qiskit.tools.jupyter
 
 # fake quantum computer we're using
 backend = mock.FakeArmonk()
-
-# hide pulsesimulator warning
-import warnings
-warnings.filterwarnings('ignore')
 ```
 
 We need to import the necessary Qiskit modules, but one thing to note is the mock backend we're using. From `qiskit.test` we import `mock` and use its fake Armonk backend. This is a fake quantum computer that will simulate our code. Armonk also supports Qiskit Pulse and pulse simulations which we need. Waiting to run pulses on hardware can take a long time, so having a simulator is extremely helpful when prototyping quantum gates.
@@ -104,14 +101,15 @@ Let's run one final test to see how the simulator handles custom pulses.
 
 ```python
 # create a pulse simulator and model
-backend_sim = PulseSimulator()
-backend_model = PulseSystemModel.from_backend(backend)
+backend_sim = PulseSimulator(
+    system_model=PulseSystemModel.from_backend(backend)
+)
 
 # prepare the pulse job
 pulse_qobj = assemble(qc_pulse, backend=backend_sim)
 
 # run the job on the backend
-sim_result = backend_sim.run(pulse_qobj, backend_model).result()
+sim_result = backend_sim.run(pulse_qobj).result()
 ```
 
 This method of simulating circuits is different from most tutorials you'll find. Since we're using a custom pulse, our simulator needs to be able to handle that. We use the `PulseSimulator` to handle this kind of circuit. I believe it's due to the normal simulator using matrices while this needs to handle microwaves, but I'm not sure.
@@ -124,3 +122,13 @@ plot_histogram(sim_result.get_counts())
 ![Measurement Histogram](images/pulseVisual4.webp)
 
 Success! As expected, the qubit is in a superposition between `$\ket{0}$` and `$\ket{1}$`. The near 50-50 distribution supports that… but what happens when you apply two of these pulses in succession? We'll tackle that at a later time, but if you want a head-start, check out the [Rabi experiment](https://qiskit.org/textbook/ch-quantum-hardware/calibrating-qubits-pulse.html). 😵‍💫
+
+### Version Information
+
+| Qiskit Software      | Version |
+|----------------------|--------:|
+| qiskit-terra         |  0.19.1 |
+| qiskit-aer           |   0.9.1 |
+| qiskit-ignis         |   0.7.0 |
+| qiskit-ibmq-provider |  0.18.2 |
+| qiskit               |  0.33.1 |

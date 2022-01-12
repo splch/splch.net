@@ -5,9 +5,9 @@ image: eff.webp
 draft: false
 ---
 
-The brain has been hacked and its security patches come slowly. In order to avoid targeted ads and refining _my_ digital consciousness, I'm making steady progress toward respectful technology.
+The brain has been hacked and its security patches come slowly. In order to avoid targeted <abbr title="Advertisement">ad</abbr>s and refining _my_ digital consciousness, I'm making steady progress toward respectful technology.
 
-After learning more about <abbr title="Artificial Intelligence">[AI](/#Neural%20Networks%20From%20Scratch)</abbr>, I began to understand the importance of privacy. Everyone has their own reasons for protecting their data, and mine is to reduce the ability of models to fit me. This ties into preventing <abbr title="Advertisement">ad</abbr> recommendations and other popular motivations broadly, but I doubt we understand the implications of modelling human behavior.
+After learning more about <abbr title="Artificial Intelligence">[AI](/#Neural%20Networks%20From%20Scratch)</abbr>, I began to understand the importance of privacy. Everyone has their own reasons for protecting their data, and mine is to reduce the ability of models to fit me. This ties into preventing ad recommendations and other popular motivations broadly, but I doubt we understand the implications of modelling human behavior.
 
 To limit my personal footprint, I began using Signal and Protonmail for private communication. My biggest challenge was converting my circles, but those closest to me tend to have similar interests. So after about a year and a half, I'm halfway there! I was initially content with protecting only my messages from peeping eyes; however I also began using private search.
 
@@ -24,7 +24,7 @@ I want to purchase a [Fairphone](https://www.fairphone.com) to support repairabi
 
 Starting this in university is easier than after graduating and having work contacts, however, so I feel relieved about that. Throughout this process, some software has been incredibly useful in general and as alternatives.
 
-## Here's my list of <abbr title="Free and Open Source Software">FOSS</abbr> hardware and software
+## Here's my list of _<abbr title="Free and Open Source Software">FOSS</abbr>_ hardware and software
 
 Computers:
 1. Raspberry Pi
@@ -32,8 +32,8 @@ Computers:
 
 Phones:
 1. PinePhone Pro
-2. Google Pixel 6 with Calyx<abbr title="Operating System">OS</abbr>
-3. Fairphone
+2. Fairphone
+3. Google Pixel 6 with Calyx <abbr title="Operating System">OS</abbr>
 
 Operating Systems:
 

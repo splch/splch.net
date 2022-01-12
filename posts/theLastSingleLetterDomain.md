@@ -9,8 +9,8 @@ draft: false
 
 ```
 a b c d e f g h i j k l m n o p q r s t u v w x y z
-0 1 2 3 4 5 6 7 8 9
-á é ý ú í ó þ æ ö ð
+- 0 1 2 3 4 5 6 7 8 9
+á æ é í ð ó ö ú ý þ
 ```
 
 After a few searches and <abbr title="Completely Automated Public Turing test to tell Computers and Humans Apart">CAPTCHA</abbr>s, I was surprised to that `ý` was available! I didn't wait long before paying that €31.90 fee 😂 It's very interesting that there was a single-letter domain left considering most of the others were registered in the early 2000s. I checked the WhoIs history, too, and nobody has owned it previously. Either way, I'm happy I have the shortest possible domain name now!
