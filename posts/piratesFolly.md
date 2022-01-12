@@ -27,7 +27,7 @@ After loads of trial and error, I found that the following formula works very we
 ```c
 uint8_t noise(uint8_t x, uint8_t y) {
   // return random number [49, 201]
-  // prng comes from a combination of perlin noise and 8-bit xorshift
+  // derived from perlin noise and 8-bit xorshift
   x ^= (y << 7);
   x ^= (x >> 5);
   y ^= (x << 3);
