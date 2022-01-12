@@ -195,12 +195,19 @@ function updateImg(src, title) {
     } else {
       imgSrc = `images/${src}`;
     }
+		document.getElementById("cover").onload = (e) => {
+			e.target.parentElement.style.display = "grid";
+		}
     document.getElementById("cover").src = imgSrc;
   }
 }
 
 function setImages(srcs, title) {
   clearInterval(imageChange.interval);
+	document.getElementById("cover").onload = (e) => {
+		e.target.parentElement.style.height = e.target.height + "px";
+		e.target.onload = null;
+	}
   updateImg(srcs[0], title);
   let image = 1;
   if (srcs.length > 1) {
@@ -210,7 +217,6 @@ function setImages(srcs, title) {
       image++;
     }, 4000);
   }
-  document.getElementById("cover").parentElement.style.display = "block";
 }
 
 function setPageInfo(title, date) {

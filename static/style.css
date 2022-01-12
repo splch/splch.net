@@ -174,7 +174,6 @@ iframe {
 #cover {
   max-height: 30vh;
   max-width: 100%;
-  vertical-align: middle;
 }
 
 #page {
@@ -190,8 +189,9 @@ iframe {
 }
 
 #background {
+  align-items: center;
+  justify-items: center;
   margin: 1em 0 1em 0;
-  text-align: center;
   user-select: none;
 }
 
