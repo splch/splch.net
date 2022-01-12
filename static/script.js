@@ -203,7 +203,7 @@ function updateImg(src, title) {
 function setImages(srcs, title) {
   clearInterval(imageChange.interval);
 	document.getElementById("cover").onload = (e) => {
-		e.target.parentElement.style.height = e.target.height + "px";
+		e.target.parentElement.style.height = (e.target.height + 1).toString() + "px";
 		e.target.onload = null;
 	}
   updateImg(srcs[0], title);
