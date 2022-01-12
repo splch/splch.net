@@ -22,5 +22,3 @@ Near the release of <abbr title="Neural Networks From Scratch">NNFS</abbr>, Harr
 <iframe class="video" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Through editing NNFS, I went from having a typical computer science student's understanding of machine learning to knowing enough to get **first place in three AI hackathons**.
-
-<iframe class="pdf" src="data/nnfs.pdf#view=FitW"></iframe>
