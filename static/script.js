@@ -195,10 +195,8 @@ function updateImg(src, title) {
     } else {
       imgSrc = `images/${src}`;
     }
-		document.getElementById("cover").onload = (e) => {
-			e.target.parentElement.style.display = "grid";
-		}
     document.getElementById("cover").src = imgSrc;
+		document.getElementById("background").style.display = "grid";
   }
 }
 
@@ -250,6 +248,8 @@ function clearTemplates() {
 function clearPage() {
   document.getElementById("title").innerText = "";
   document.getElementById("date").innerText = "";
+	clearInterval(imageChange.interval);
+	document.getElementById("cover").parentElement.style.height = "0";
   document.getElementById("cover").parentElement.style.display = "none";
   document.getElementById("cover").src = "";
   clearTemplates();
