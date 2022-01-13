@@ -1,8 +1,8 @@
 ---
 title: Best Wordle Strategy — Explore or Exploit
 date: 1/13/2022
-image: templateImage.webp
-draft: true
+image: wordle.webp
+draft: false
 ---
 
 This post will derive an optimal Wordle-specific guessing strategy. The approach taken will be reducing the set of possible words a maximum amount for each guess; however, it doesn't make sense to keep reducing the set of words until the final guess, so we're reintroduced to our old friend, the [explore-exploit tradeoff](https://conceptually.org/concepts/explore-or-exploit).
