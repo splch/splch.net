@@ -23,7 +23,7 @@ Here's the list of all [wordle words](data/wordles.txt) as of writing this, thou
 
 <summary>Code? Ew Cringe!</summary>
 
-We'll begin by importing commonly-used packages since it should be highly accessible for anyone. `Matplotlib` isn't necessary since I show the image, so if you don't have it install, don't worry.
+We'll begin by importing commonly-used packages since it should be highly accessible for anyone. `Matplotlib` isn't necessary since I show the image, so if you don't have it installed, don't worry.
 
 ```python
 from matplotlib import pyplot as plt
