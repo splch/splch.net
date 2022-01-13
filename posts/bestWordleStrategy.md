@@ -70,7 +70,7 @@ plt.bar([x[0] for x in dist], [y[1] for y in dist])
 plt.show()
 ```
 
-![Letter Distribution]()
+![Letter Distribution](images/wordLetters.webp)
 
 | Letter | Count |
 |--------|------:|
