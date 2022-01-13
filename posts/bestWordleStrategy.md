@@ -19,7 +19,7 @@ Here's the list of all [wordle words](data/wordles.txt) as of writing this, thou
 
 <details>
 
-<summary>Code? Ew Cringe!<summary>
+<summary>Code? Ew Cringe!</summary>
 
 ```python
 from matplotlib import pyplot as plt
