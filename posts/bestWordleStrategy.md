@@ -191,7 +191,7 @@ From this analysis, here's a table to help make the best starting Wordle guesses
 | 2           | AEROS | UNLIT |       |
 | 3           | AEROS | CLINT | DUMPY |
 
-It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. I'll pull a physics professor and "leave it as an exercise."
+It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. I'll pull a physics professor and "leave it as an exercise… [<abbr title="Just Kidding">JK</abbr>](data/wordleCode.pdf)"
 
 ## Solution Words
 
@@ -201,6 +201,6 @@ It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id
 | 2           | ROATE | PULIS |       |
 | 3           | ROATE | PULIS | CHYND |
 
-I'm sure there are different approaches to determining the best starting word. Some people like the most vowels (in that case use `AUREI`) while others would prioritize positions (then choose `SLATE`). I think knocking out the most potential words would help me the most, so that's why I chose this method.
+I'm sure there are different approaches to determining the best starting word. Some people like the most vowels (in that case use `URAEI`) while others would prioritize positions (then choose `SLATE`). I think knocking out the most potential words would help me the most, so that's why I chose this method.
 
 A benefit of this is that after only two steps of exploitation, you have information about ten unique letters. Another step will now put you at fifteen, over half of the alphabet. I hope this comes in handy and you enjoyed the read!
