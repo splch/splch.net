@@ -179,13 +179,27 @@ for word in permutations(letters):
 
 </details>
 
+# Solution
+
 From this analysis, here's a table to help make the best starting Wordle guesses.
+
+## All Words
 
 | Exploration | Words |       |       |
 |-------------|-------|-------|-------|
 | 1           | AEROS |       |       |
 | 2           | AEROS | UNLIT |       |
 | 3           | AEROS | CLINT | DUMPY |
+
+It was mentioned on a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. I'll pull a physics professor and "leave it as an exercise."
+
+## Solution Words
+
+| Exploration | Words |       |       |
+|-------------|-------|-------|-------|
+| 1           | ROATE |       |       |
+| 2           | ROATE | PULIS |       |
+| 3           | ROATE | PULIS | CHYND |
 
 I'm sure there are different approaches to determining the best starting word. Some people like the most vowels (in that case use `AUREI`) while others would prioritize positions (then choose `CARES`). I think knocking out the most potential words would help me the most, so that's why I chose this method.
 
