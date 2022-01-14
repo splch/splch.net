@@ -112,11 +112,14 @@ plt.show()
 Unsurprisingly, the vowels (`e`, `a`, `o`, …, `i`, `u`, `y`?) are highly ranked. What's interesting is that `s` occurs more than `e`. Regardless, let's maximize the letters possible on the first guess and search for which words can be made with "seaor". While we're at it, let's see what the second and third words are following that same strategy.
 
 ```python
-print(set(word for word in subset_from_letters("seaor", words) if len(set(word)) == 5))
+print(set(word for word in subset_from_letters("seaor", words) \
+					if len(set(word)) == 5))
 
-print(set(word for word in subset_from_letters("iltnu", words) if len(set(word)) == 5))
+print(set(word for word in subset_from_letters("iltnu", words) \
+					if len(set(word)) == 5))
 
-print(set(word for word in subset_from_letters("dycpm", words) if len(set(word)) == 5))
+print(set(word for word in subset_from_letters("dycpm", words) \
+					if len(set(word)) == 5))
 ```
 
 > {'aeros', 'arose', 'soare'}
@@ -159,7 +162,7 @@ For the sake of completion, we'll search for the final word. However, now we'll 
 exploit_count = 3
 letters = ''.join([letter for letter, count in dist[:exploit_count * 5]])
 
-for word in tqdm(permutations(letters)):
+for word in permutations(letters):
     first = set(w for w in subset_from_letters(word[:5], words) \
                 if len(set(w)) == 5)
     second = set(w for w in subset_from_letters(word[5:10], words) \
