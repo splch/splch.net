@@ -181,9 +181,8 @@ for word in permutations(letters):
 
 From this analysis, here's a table to help make the best starting Wordle guesses.
 
-|             | Words |       |       |
+| Exploration | Words |       |       |
 |-------------|-------|-------|-------|
-| Exploration |       |       |       |
 | 1           | AEROS |       |       |
 | 2           | AEROS | UNLIT |       |
 | 3           | AEROS | CLINT | DUMPY |
