@@ -7,11 +7,11 @@ draft: false
 
 This post will derive an optimal Wordle-specific guessing strategy. The approach taken will be reducing the set of possible words a maximum amount for each guess; however, it doesn't make sense to keep reducing the set of words until the final guess, so we're reintroduced to our old friend, the [explore-exploit tradeoff](https://conceptually.org/concepts/explore-or-exploit).
 
-The first question we need to answer is, given 6 guesses, how many should be exploring which consonants and vowels are and aren't present, and how many should exploit that knowledge to guess the word? These two options aren't completely exclusive, but a common problem I see in my own family, is exploring after only the first word and getting stuck in a rut of limited guesses.
+The first question we need to answer is, given six guesses, how many should be exploring which consonants and vowels are and aren't present, and how many should exploit that knowledge to guess the word? These two options aren't completely exclusive, but a common problem I see in my own family, is exploring after only the first word and getting stuck in a rut of limited guesses.
 
 This can be interpreted as an optimization problem: How many guesses maximize the exploration and exploitation value? Meaning, how many guesses should explore the possible letter combinations and how many should use that to guess the word.
 
-Taking inspiration from the [Secretary Problem](https://wikipedia.org/wiki/Secretary_problem), let's "reject" the first `$\frac{N}{e}$` choices and "accept" the next best. Meaning, let's not consider the first `$\frac{6}{e} \approx 2$` guesses toward our exploitation and then try guessing afterwards.
+Taking inspiration from the [Secretary Problem](https://wikipedia.org/wiki/Secretary_problem), let's "reject" the first `$\frac{N}{e}$` choices and "accept" the next best. Simply, let's not consider the first `$\frac{6}{e} \approx 2$` guesses toward our exploitation and then try guessing afterwards.
 
 Another option is to maximize the gradient (<abbr title="Machine Learning">ML</abbr> people get hyped) over word-set size as the exploitation strategy. This would mean that you'd stop exploring letters after each following step stops reducing the set size as much.
 
@@ -191,7 +191,7 @@ From this analysis, here's a table to help make the best starting Wordle guesses
 | 2           | AEROS | UNLIT |       |
 | 3           | AEROS | CLINT | DUMPY |
 
-It was mentioned on a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. I'll pull a physics professor and "leave it as an exercise."
+It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. I'll pull a physics professor and "leave it as an exercise."
 
 ## Solution Words
 
@@ -201,6 +201,6 @@ It was mentioned on a [Hacker News comment](https://news.ycombinator.com/item?id
 | 2           | ROATE | PULIS |       |
 | 3           | ROATE | PULIS | CHYND |
 
-I'm sure there are different approaches to determining the best starting word. Some people like the most vowels (in that case use `AUREI`) while others would prioritize positions (then choose `CARES`). I think knocking out the most potential words would help me the most, so that's why I chose this method.
+I'm sure there are different approaches to determining the best starting word. Some people like the most vowels (in that case use `AUREI`) while others would prioritize positions (then choose `SLATE`). I think knocking out the most potential words would help me the most, so that's why I chose this method.
 
-A benefit of this is that after only two steps of exploitation, you have information about 10 unique letters. Another step will now put you at 15, over half of the alphabet. I hope this comes in handy and you enjoyed the read!
+A benefit of this is that after only two steps of exploitation, you have information about ten unique letters. Another step will now put you at fifteen, over half of the alphabet. I hope this comes in handy and you enjoyed the read!
