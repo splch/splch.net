@@ -189,7 +189,7 @@ From this analysis, here's a table to help make the best starting Wordle guesses
 
 # Solution
 
-It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. I'll pull a physics professor and "leave it as an exercise… [<abbr title="Just Kidding">JK</abbr>](data/wordleCode.pdf)"
+It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. You can also view updated code as a [PDF](data/wordleCode.pdf).
 
 | Exploration | Words |       |       |
 |-------------|-------|-------|-------|
