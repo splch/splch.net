@@ -2,8 +2,8 @@
   --active: #903;
   --background: #fff;
   --code: #abb2bf;
-  --font: 16pt;
   --font-color: #000;
+  --font-size: 16pt;
   --hover: #9cf3;
   --light: #069;
   --round: 10px;
@@ -32,7 +32,7 @@ ul,
 table,
 summary,
 noscript {
-  font-size: var(--font);
+  font-size: var(--font-size);
 }
 
 a {
@@ -42,7 +42,7 @@ a {
 
 i {
   color: #666666;
-  font-size: 15pt;
+  font-size: calc(var(--font-size) * 0.9);
 }
 
 header {
@@ -70,7 +70,7 @@ header h2 {
 h2.template,
 h2.link {
   cursor: pointer;
-  font-size: 15pt;
+  font-size: calc(var(--font-size) * 0.9);
 }
 
 h2.template:hover,
@@ -116,6 +116,7 @@ code {
 pre > code {
   border-left: 0.5em solid var(--light);
   font-family: "Courier New", monospace !important;
+  font-size: calc(var(--font-size) * 0.9);
   max-height: 46vh;
   overflow: auto;
   tab-size: 4;
@@ -129,7 +130,7 @@ pre > code:focus {
 }
 
 p > code {
-  font-size: 85%;
+  font-size: calc(var(--font-size) * 0.85);
   margin: 0;
   padding: 0.2em 0.4em;
 }
@@ -191,7 +192,7 @@ iframe {
 }
 
 #topleft p {
-  font-size: 12pt;
+  font-size: calc(var(--font-size) * 0.8);
   margin: 0;
 }
 
@@ -214,7 +215,7 @@ iframe {
 }
 
 #title {
-  font-size: 26pt;
+  font-size: calc(var(--font-size) * 1.5);
   text-align: center;
 }
 
@@ -259,6 +260,7 @@ iframe {
     --background: #fff;
     --hover: #9cf3;
     --font-color: #000;
+    --font-size: 12pt;
   }
   header,
   footer {
@@ -268,7 +270,6 @@ iframe {
     max-width: 50%;
   }
   pre > code {
-    border-left: 0.5em solid var(--light) !important;
     max-height: max-content;
     white-space: break-spaces;
   }
