@@ -70,7 +70,7 @@ header h2 {
 h2.template,
 h2.link {
   cursor: pointer;
-  font-size: calc(var(--font-size) * 0.9);
+  font-size: var(--font-size);
 }
 
 h2.template:hover,
