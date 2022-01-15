@@ -19,14 +19,11 @@ function prepareTextArea(title, value) {
   const id = "mde";
   let textArea = createTextArea();
   textArea.id = id;
-  textArea.title = title;
+  textArea.title = title; // title is used when deleting posts
   value = value.replace("1/22/2021", getDate());
   textArea.value = value;
   textArea.onkeydown = (_) => {
-    // TODO fix since pages arent reloaded
-    // document.body.onbeforeunload = (_) => {
-    //     return "Make sure you've saved your edits.";
-    // }
+    document.getElementById("bottom").style.pointerEvents = "none";
   };
   return textArea;
 }
@@ -42,12 +39,16 @@ function prepareSubmit() {
   let submit = createButton();
   submit.innerText = "Submit";
   submit.onclick = (_) => {
+    let title = document.getElementById("mde").title;
     let mde = document.getElementById("mde").value;
     let key = document.getElementById("password").value;
     if (mde) {
       editMarkdown("api/edit", key, mde);
+      if (title != mde.split("title: ")[1].split("\n")[0]) {
+        // renaming deletes the old file
+        editMarkdown("api/delete", key, title);
+      }
     } else {
-      let title = document.getElementById("mde").title;
       let r = confirm("You will delete:\n" + title);
       if (r) {
         editMarkdown("api/delete", key, title);
@@ -59,13 +60,11 @@ function prepareSubmit() {
 
 function createInput() {
   const input = document.createElement("input");
-  input.classList.add("template");
   return input;
 }
 
 function createButton() {
   const button = document.createElement("button");
-  button.classList.add("template");
   return button;
 }
 
@@ -144,16 +143,17 @@ function populatePreview(post) {
   const img = createImg(title, post["Image"]);
   const p = createP(parseText(post["Body"]));
   const hr = createHr();
-  document.getElementById("page").appendChild(hr);
-  document.getElementById("page").appendChild(h2);
+  document.getElementById("bottom").appendChild(hr);
+  document.getElementById("bottom").appendChild(h2);
   div.appendChild(img);
   div.appendChild(p);
-  document.getElementById("page").appendChild(div);
+  document.getElementById("bottom").appendChild(div);
 }
 
 function createSearch(query = null) {
   const div = document.createElement("div");
   div.style.textAlign = "right";
+  div.classList.add("template");
   const search = document.createElement("input");
   search.type = "text";
   search.placeholder = "Search…";
@@ -164,10 +164,9 @@ function createSearch(query = null) {
       }
     }
   };
-  search.classList.add("template");
   search.id = "search";
   div.appendChild(search);
-  document.getElementById("page").appendChild(div);
+  document.getElementById("top").appendChild(div);
   if (query) {
     search.value = query;
     search.focus();
@@ -187,7 +186,7 @@ function setBody(markdown, title) {
   }
 }
 
-function updateImg(src, title) {
+function updateImg(src) {
   if (src) {
     let imgSrc;
     if (src.substring(0, 4) === "http") {
@@ -254,6 +253,7 @@ function clearPage() {
   document.getElementById("cover").parentElement.style.display = "none";
   document.getElementById("cover").src = "";
   clearTemplates();
+  document.getElementById("bottom").style.pointerEvents = "auto";
 }
 
 function newActive(element) {
@@ -267,7 +267,7 @@ function getDate() {
   let today = new Date();
   let dd = String(today.getDate());
   let mm = String(today.getMonth() + 1); // January is 0
-  var yyyy = today.getFullYear();
+  let yyyy = today.getFullYear();
   return mm + "/" + dd + "/" + yyyy;
 }
 
@@ -402,7 +402,7 @@ function parseText(markdown) {
 
 function startMarkdown() {
   function makeMath(expr) {
-    var n, displayMode;
+    let n, displayMode;
     if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
       n = 2;
       displayMode = true;
@@ -410,11 +410,16 @@ function startMarkdown() {
       n = 1;
       displayMode = false;
     }
-    return n
-      ? katex.renderToString(expr.substr(n, expr.length - 2 * n), {
-          displayMode,
-        })
-      : null;
+    try {
+      return n
+        ? katex.renderToString(expr.substr(n, expr.length - 2 * n), {
+            displayMode,
+          })
+        : null;
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
   }
 
   const renderer = {

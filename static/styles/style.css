@@ -84,6 +84,10 @@ p > img {
   max-width: 100%;
 }
 
+div.template > img:hover {
+  box-shadow: 0px 2px 7px 0px black;
+}
+
 table {
   border: solid 1px #3366997f;
 }
@@ -136,6 +140,7 @@ abbr {
 
 tbody tr:hover {
   background: var(--active);
+  color: #fff;
 }
 
 /* no select elements */
@@ -170,6 +175,10 @@ summary {
   color: #fff;
   cursor: pointer;
   outline: none;
+}
+
+summary:hover {
+  background: var(--active);
 }
 
 iframe {
