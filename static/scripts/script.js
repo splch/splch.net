@@ -196,16 +196,17 @@ function updateImg(src, title) {
       imgSrc = `images/${src}`;
     }
     document.getElementById("cover").src = imgSrc;
-		document.getElementById("background").style.display = "grid";
+    document.getElementById("background").style.display = "grid";
   }
 }
 
 function setImages(srcs, title) {
   clearInterval(imageChange.interval);
-	document.getElementById("cover").onload = (e) => {
-		e.target.parentElement.style.height = (e.target.height + 1).toString() + "px";
-		e.target.onload = null;
-	}
+  document.getElementById("cover").onload = (e) => {
+    e.target.parentElement.style.height =
+      (e.target.height + 1).toString() + "px";
+    e.target.onload = null;
+  };
   updateImg(srcs[0], title);
   let image = 1;
   if (srcs.length > 1) {
@@ -248,8 +249,8 @@ function clearTemplates() {
 function clearPage() {
   document.getElementById("title").innerText = "";
   document.getElementById("date").innerText = "";
-	clearInterval(imageChange.interval);
-	document.getElementById("cover").parentElement.style.height = "0";
+  clearInterval(imageChange.interval);
+  document.getElementById("cover").parentElement.style.height = "0";
   document.getElementById("cover").parentElement.style.display = "none";
   document.getElementById("cover").src = "";
   clearTemplates();
@@ -332,7 +333,7 @@ function getServer(url, args) {
   xhr.open("GET", req);
   xhr.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-			const type = url.split("/")[1];
+      const type = url.split("/")[1];
       if (type === "get") {
         setFull(this.responseText);
       } else if (["all", "draft", "latest"].includes(type)) {
@@ -456,28 +457,7 @@ function startMarkdown() {
     .use({ renderer });
 }
 
-function darkMode() {
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    document.documentElement.style.setProperty("--background", "#000000");
-    document.documentElement.style.setProperty("--hover", "var(--active)");
-    document.getElementById("page").style.color = "#ffffff";
-  }
-  window.matchMedia("(prefers-color-scheme: dark)").addListener((e) => {
-    if (e.matches) {
-      darkMode();
-    } else {
-      document.documentElement.style.removeProperty("--background");
-      document.documentElement.style.removeProperty("--hover");
-      document.getElementById("page").style.removeProperty("color");
-    }
-  });
-}
-
 function start() {
-  darkMode();
   startMarkdown();
   const title = window.location.hash.substr(1) || "Home";
   loadPage(decodeURI(title), false);

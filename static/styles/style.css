@@ -1,11 +1,20 @@
 :root {
-  --active: #990033;
+  --active: #903;
   --background: #fff;
   --code: #abb2bf;
   --font: 16pt;
+  --font-color: #000;
   --hover: #9cf3;
-  --light: #006699;
+  --light: #069;
   --round: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000;
+    --hover: var(--active);
+    --font-color: white;
+  }
 }
 
 html {
@@ -177,6 +186,7 @@ iframe {
 }
 
 #page {
+  color: var(--font-color);
   margin: auto;
   max-width: 80ch;
   min-width: 45ch;
@@ -237,6 +247,11 @@ iframe {
 }
 
 @media print {
+  :root {
+    --background: #fff;
+    --hover: #9cf3;
+    --font-color: #000;
+  }
   header,
   footer {
     display: none;
