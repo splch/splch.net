@@ -192,7 +192,7 @@ iframe {
   align-items: center;
   justify-items: center;
   margin: 1em 0 1em 0;
-	overflow: auto;
+  overflow: auto;
   user-select: none;
 }
 
