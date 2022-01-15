@@ -150,11 +150,17 @@ Fenced code block
 
 # External
 
-<!--
 ## HTML
 
+<details>
+
+<summary>Details Tag</summary>
+
+```html
 <iframe class="pdf" src="data/lighthouse.pdf#view=FitW"></iframe>
--->
+```
+
+</details>
 
 ## Highlight
 

@@ -13,7 +13,7 @@
   :root {
     --background: #000;
     --hover: var(--active);
-    --font-color: white;
+    --font-color: #fff;
   }
 }
 
@@ -50,7 +50,6 @@ i {
 header {
   align-items: center;
   background-color: var(--light);
-  border-radius: var(--round);
   box-shadow: 0px 2px 7px 0px black;
   color: #ffffff;
   display: flex;
@@ -64,16 +63,15 @@ header {
   z-index: 2;
 }
 
-h2 {
-  border-radius: 1vh;
-}
-
 header h2 {
   font-weight: normal;
   margin: 0 0.5% 0 0.5%;
-  padding: 1% 0 1% 0;
   text-align: center;
   width: 19%;
+}
+
+h2 {
+  padding: 1% 0 1% 0;
 }
 
 h2.template,
@@ -87,10 +85,6 @@ h2.link:hover,
 header h2.link.active {
   background-color: var(--active);
   color: #ffffff;
-}
-
-img {
-  border-radius: var(--round);
 }
 
 p > img {
@@ -137,7 +131,6 @@ pre > code:focus {
 }
 
 p > code {
-  border-radius: 0.5em;
   font-size: 85%;
   margin: 0;
   padding: 0.2em 0.4em;
@@ -151,11 +144,21 @@ tbody tr:hover {
   background: var(--hover);
 }
 
+code,
+h2,
+header,
+img,
+summary,
+#search {
+  border-radius: var(--round);
+}
+
 summary {
-  color: var(--light);
+  background: var(--light);
+  color: #fff;
   cursor: pointer;
-  margin: 1em;
   outline: none;
+  padding: 1em;
   user-select: none;
 }
 
@@ -174,7 +177,6 @@ iframe {
 }
 
 #logo {
-  border-radius: var(--round);
   cursor: pointer;
   margin-top: 5%;
   width: 50%;
@@ -207,7 +209,6 @@ iframe {
 }
 
 #search {
-  border-radius: var(--round);
   font-family: Verdana, Arial, sans-serif;
   padding: 1%;
   user-select: none;
@@ -216,14 +217,6 @@ iframe {
 
 #search:focus {
   outline: none;
-}
-
-.blurred {
-  backdrop-filter: blur(100px) saturate(2);
-  -webkit-backdrop-filter: blur(100px) saturate(2);
-  border-radius: inherit;
-  margin-top: 1vh;
-  text-align: center;
 }
 
 .badge {
