@@ -240,6 +240,11 @@ iframe {
   margin: 0.5vh;
 }
 
+.gameboy {
+  aspect-ratio: 160/144;
+  width: 100%;
+}
+
 .pdf {
   aspect-ratio: 8.5/11;
   width: 65%;

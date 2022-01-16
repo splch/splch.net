@@ -13,6 +13,8 @@ I'll keep this page updated as I proceed. Currently, I'm wondering if I want to 
 
 # Transition to Game Boy
 
+<iframe class="gameboy" src="https://js-emulator.splch.repl.co/"></iframe>
+
 Sadly, the Picosystem <abbr title="Software Development Kit
 ">SDK</abbr> stopped getting [updates](https://github.com/pimoroni/picosystem/commit/266c7d992b52f6b6af1c5c77f350bf010047ce0e) after the system release, so I decided to move the game to a more reliable console. Restraining the requirements further, I began using [GBDK-2020](https://github.com/gbdk-2020/gbdk-2020) to make a GB game!
 
