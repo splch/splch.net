@@ -413,8 +413,8 @@ function startMarkdown() {
     try {
       return n
         ? katex.renderToString(expr.substr(n, expr.length - 2 * n), {
-            displayMode,
-          })
+          displayMode,
+        })
         : null;
     } catch (err) {
       console.error(err);
@@ -481,10 +481,10 @@ function start() {
   console.log(
     "%cQuite a sight, isn't it? 😉",
     "color: " +
-      getComputedStyle(document.body).getPropertyValue("--light") +
-      "; font-size: " +
-      getComputedStyle(document.body).getPropertyValue("--font") +
-      ";"
+    getComputedStyle(document.body).getPropertyValue("--light") +
+    "; font-size: " +
+    getComputedStyle(document.body).getPropertyValue("--font-size") +
+    ";"
   );
 }
 
