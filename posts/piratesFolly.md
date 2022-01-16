@@ -39,3 +39,35 @@ uint8_t noise(uint8_t x, uint8_t y) {
 ```
 
 The formula took inspiration from Hugo Elias' tutorial, but is closer to [Michael Martin's xorshift post](https://bumbershootsoft.wordpress.com/2017/03/11/getting-a-decent-and-fast-prng-out-of-an-8-bit-chip/). The xorshifts I use differ from common xorshift algorithms in that the function doesn't use its previous output as the next input. Here, `noise` is a function of `x`, `y`, and `SEED`.
+
+## Profiling
+
+| Procedure                 | % Self Cycles | Self Cycles | Invocations | Procedure Cycles       |
+|---------------------------|:-------------:|-------------|-------------|------------------------|
+| _set_bkg_tiles.set_xy_btt | 35.7%         | 8583616     | 1093        | 4712/8328/7855.0       |
+| _shift_array_left         | 28.1%         | 6758400     | 1099        | 122880/122880/122880.0 |
+| _shift_array_up           | 15.5%         | 3729880     | 55          | 67816/67816/67816.0    |
+| _generate_side            | 6.3%          | 1517824     | 110         | 27580/64300/36587.0    |
+| _is_removed               | 3.4%          | 808992      | 24          | 33700/33764/33708.0    |
+| _terrain                  | 3.3%          | 802560      | 2090        | 560/600/564.8          |
+| _generate_item            | 1.9%          | 450476      | 2090        | 180/316/247.5          |
+| _display_map              | 1.1%          | 258812      | 1093        | 74028/158632/155520.5  |
+| _LABEL_1C6_               | 1.0%          | 234612      | 343         | 684/684/684.0          |
+| _interpolate_noise        | 0.9%          | 209000      | 2090        | 132/132/132.0          |
+| _set_bkg_tiles            | 0.7%          | 174720      | 1093        | 4872/8488/8014.8       |
+| _noise                    | 0.6%          | 133760      | 4180        | 32/32/32.0             |
+| _LABEL_40_                | 0.5%          | 109500      | 343         | 1100/1112/1100.1       |
+| _closest                  | 0.4%          | 101960      | 2090        | 44/84/48.8             |
+| _update_position          | 0.2%          | 48840       | 63925       |                        |
+| _generate_map_sides       | 0.1%          | 29920       | 1099        | 249008/317216/264414.0 |
+| _LABEL_A4_                | 0.1%          | 20580       | 343         | 744/744/744.0          |
+| _get_terrain              | 0.1%          | 19140       | 165         | 68/140/116.0           |
+| 00106$                    | 0.1%          | 18040       | 62881       |                        |
+| _LABEL_0_.call_hl         | 0.1%          | 12372       | 343         | 780/792/780.1          |
+| _check_interactions       | 0.1%          | 12320       | 55          | 264/264/264.0          |
+| _joypad                   | 0.0%          | 11000       | 55          | 200/200/200.0          |
+| _adjust_position          | 0.0%          | 5940        | 55          |                        |
+| _clock                    | 0.0%          | 2200        | 55          | 40/40/40.0             |
+| _LABEL_48_.int            | 0.0%          | 260         | 1           | 1040/1040/1040.0       |
+| _main                     | 0.0%          | 0           | 2082        |                        |
+| _check_input              | 0.0%          | 0           | 2082        |                        |
