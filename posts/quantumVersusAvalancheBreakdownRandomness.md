@@ -198,7 +198,7 @@ with open(p, 'ab') as f:
 
 <details>
 
-<summary>Results: 188/188</summary>
+<summary>Results: 179/188</summary>
 
 A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests)
 were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
