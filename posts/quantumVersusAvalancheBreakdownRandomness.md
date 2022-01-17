@@ -242,8 +242,6 @@ Here are the results of the single tests:
 
 </details>
 
----
-
 ## Conclusion
 
 Here's a summary of results.
