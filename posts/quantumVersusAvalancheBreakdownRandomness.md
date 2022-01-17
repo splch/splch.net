@@ -1,6 +1,6 @@
 ---
 title: Quantum versus Avalanche Breakdown Randomness
-date: 12/8/2021
+date: 1/16/2022
 image: onerng.webp
 draft: false
 ---
@@ -9,27 +9,44 @@ Avalanche breakdown and quantum are two methods for generating true random numbe
 
 I'm using the Arcetri Team's [implementation](https://github.com/arcetri/sts) of the STS. Building it just required running `make` in the repo.
 
-We'll read around 10 <abbr title="Megabytes">Mb</abbr> of random data to perform the tests on.
+We'll read 1 <abbr title="Megabyte">Mb</abbr> of random data to perform the tests on. STS defaults to measuring bitsreams of length 1 Megabits per iteration, so we'll run 8 iterations (8 bits = 1 byte).
 
-## Default
+A useful way to record the random numbers and the speed of their generation is to use the [`dd`](<https://wikipedia.org/wiki/Dd_(Unix)>) command.
 
 ```shell
-./sts -v 1 -i 76 -I 1 -w ./reports/ -F r /dev/random
+dd if=/path/to/random of=/copy/of/random bs=1048576 count=1 iflag=fullblock
+```
+
+> I'm also saving the data and reports under a `reports` directory — so, create that if you need.
+
+## Baseline
+
+```shell
+~# dd if=/dev/random of=reports/random bs=1048576 count=1 iflag=fullblock
+
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00697793 s, 150 MB/s
+
+~# ./sts -v 1 -i 8 -I 1 -w reports/ -F r reports/random
 ```
 
 <details>
-<summary>Results: 184/188</summary>
 
-A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests) were conducted to evaluate the randomness of 76 bitstreams of 1048576 bits from:
+<summary>Result: 168/188</summary>
 
-    /dev/random
+A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests)
+were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
+
+    reports/random
 
 ---
 
-The numerous empirical results of these tests were then interpreted with an examination of the proportion of sequences that pass a statistical test (proportion analysis) and the distribution of p-values to check for uniformity (uniformity analysis). The results were the following:
+The numerous empirical results of these tests were then interpreted with
+an examination of the proportion of sequences that pass a statistical test
+(proportion analysis) and the distribution of p-values to check for uniformity
+(uniformity analysis). The results were the following:
 
-    184/188 tests passed successfully both the analyses.
-    4/188 tests did not pass successfully both the analyses.
+    168/188 tests passed successfully both the analyses.
+    20/188 tests did not pass successfully both the analyses.
 
 ---
 
@@ -42,16 +59,16 @@ Here are the results of the single tests:
 - The "Cumulative Sums" (forward) test passed both the analyses.
   The "Cumulative Sums" (backward) test passed both the analyses.
 
-- The "Runs" test passed both the analyses.
+- The "Runs" test FAILED the proportion analysis.
 
 - The "Longest Run of Ones" test passed both the analyses.
 
-- The "Binary Matrix Rank" test passed both the analyses.
+- The "Binary Matrix Rank" test FAILED the proportion analysis.
 
 - The "Discrete Fourier Transform" test passed both the analyses.
 
-- 147/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
-  1/148 of the "Non-overlapping Template Matching" tests FAILED the proportion analysis.
+- 131/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
+  17/148 of the "Non-overlapping Template Matching" tests FAILED the proportion analysis.
 
 - The "Overlapping Template Matching" test passed both the analyses.
 
@@ -61,13 +78,17 @@ Here are the results of the single tests:
 
 - 8/8 of the "Random Excursions" tests passed both the analyses.
 
-- 15/18 of the "Random Excursions Variant" tests passed both the analyses.
-  3/18 of the "Random Excursions Variant" tests FAILED the proportion analysis.
+- 18/18 of the "Random Excursions Variant" tests passed both the analyses.
 
 - The "Serial" (first) test passed both the analyses.
   The "Serial" (second) test passed both the analyses.
 
-- The "Linear Complexity" test passed both the analyses.
+- The "Linear Complexity" test FAILED the proportion analysis.
+
+---
+
+The missing tests (if any) were whether disabled manually by the user or disabled
+at run time due to input size requirements not satisfied by this run.
 
 </details>
 
@@ -85,22 +106,31 @@ cdc_acm 1-2.3.2.4.2.4:1.0: ttyACM0: USB ACM device
 ```
 
 ```shell
-./sts -v 1 -i 76 -I 1 -w ./reports/ -F r /dev/ttyACM0
+~# dd if=/dev/ttyACM0 of=reports/avalanche bs=1048576 count=1 iflag=fullblock
+
+1048576 bytes (1.0 MB, 1.0 MiB) copied, 18.25 s, 57.5 kB/s
+
+~# ./sts -v 1 -i 8 -I 1 -w reports/ -F r reports/avalanche
 ```
 
 <details>
-<summary>Results: 186/188</summary>
 
-A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests) were conducted to evaluate the randomness of 76 bitstreams of 1048576 bits from:
+<summary>Result: 175/188</summary>
 
-    /dev/ttyACM0
+A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests)
+were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
+
+    reports/avalanche
 
 ---
 
-The numerous empirical results of these tests were then interpreted with an examination of the proportion of sequences that pass a statistical test (proportion analysis) and the distribution of p-values to check for uniformity (uniformity analysis). The results were the following:
+The numerous empirical results of these tests were then interpreted with
+an examination of the proportion of sequences that pass a statistical test
+(proportion analysis) and the distribution of p-values to check for uniformity
+(uniformity analysis). The results were the following:
 
-    186/188 tests passed successfully both the analyses.
-    2/188 tests did not pass successfully both the analyses.
+    175/188 tests passed successfully both the analyses.
+    13/188 tests did not pass successfully both the analyses.
 
 ---
 
@@ -115,13 +145,14 @@ Here are the results of the single tests:
 
 - The "Runs" test passed both the analyses.
 
-- The "Longest Run of Ones" test passed both the analyses.
+- The "Longest Run of Ones" test FAILED the proportion analysis.
 
 - The "Binary Matrix Rank" test passed both the analyses.
 
 - The "Discrete Fourier Transform" test passed both the analyses.
 
-- 148/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
+- 138/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
+  10/148 of the "Non-overlapping Template Matching" tests FAILED the proportion analysis.
 
 - The "Overlapping Template Matching" test passed both the analyses.
 
@@ -133,10 +164,15 @@ Here are the results of the single tests:
 
 - 18/18 of the "Random Excursions Variant" tests passed both the analyses.
 
-- The "Serial" (first) test FAILED both the analyses.
-  The "Serial" (second) test FAILED both the analyses.
+- The "Serial" (first) test FAILED the proportion analysis.
+  The "Serial" (second) test FAILED the proportion analysis.
 
 - The "Linear Complexity" test passed both the analyses.
+
+---
+
+The missing tests (if any) were whether disabled manually by the user or disabled
+at run time due to input size requirements not satisfied by this run.
 
 </details>
 
@@ -147,32 +183,37 @@ from requests import get
 from tqdm import trange
 from os import path
 
-p = '/tmp/quantum'
+p = 'reports/quantum'
 
 with open(p, 'ab') as f:
-    for i in trange(int(1e7) - path.getsize(p)):
+    for i in trange(int(2e6) - path.getsize(p)):
         bin_str = requests.get('https://qrng.anu.edu.au/wp-content/plugins/colours-plugin/get_one_binary.php').text
         b = int(bin_str, 2)
         f.write((b).to_bytes(1, byteorder='big'))
 ```
 
 ```shell
-./sts -v 1 -i 76 -I 1 -w ./reports/ -F r /tmp/quantum
+./sts -v 1 -i 8 -I 1 -w ./reports/ -F r reports/quantum
 ```
 
 <details>
+
 <summary>Results: 188/188</summary>
 
-A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests) were conducted to evaluate the randomness of 76 bitstreams of 1048576 bits from:
+A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests)
+were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
 
-    /tmp/quantum
+    reports/quantum
 
 ---
 
-The numerous empirical results of these tests were then interpreted with an examination of the proportion of sequences that pass a statistical test (proportion analysis) and the distribution of p-values to check for uniformity (uniformity analysis). The results were the following:
+The numerous empirical results of these tests were then interpreted with
+an examination of the proportion of sequences that pass a statistical test
+(proportion analysis) and the distribution of p-values to check for uniformity
+(uniformity analysis). The results were the following:
 
-    188/188 tests passed successfully both the analyses.
-    0/188 tests did not pass successfully both the analyses.
+    179/188 tests passed successfully both the analyses.
+    9/188 tests did not pass successfully both the analyses.
 
 ---
 
@@ -180,7 +221,7 @@ Here are the results of the single tests:
 
 - The "Frequency" test passed both the analyses.
 
-- The "Block Frequency" test passed both the analyses.
+- The "Block Frequency" test FAILED the proportion analysis.
 
 - The "Cumulative Sums" (forward) test passed both the analyses.
   The "Cumulative Sums" (backward) test passed both the analyses.
@@ -193,7 +234,8 @@ Here are the results of the single tests:
 
 - The "Discrete Fourier Transform" test passed both the analyses.
 
-- 148/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
+- 140/148 of the "Non-overlapping Template Matching" tests passed both the analyses.
+  8/148 of the "Non-overlapping Template Matching" tests FAILED the proportion analysis.
 
 - The "Overlapping Template Matching" test passed both the analyses.
 
@@ -210,14 +252,27 @@ Here are the results of the single tests:
 
 - The "Linear Complexity" test passed both the analyses.
 
+---
+
+The missing tests (if any) were whether disabled manually by the user or disabled
+at run time due to input size requirements not satisfied by this run.
+
 </details>
 
 ---
 
 ## Conclusion
 
+Here's a summary of results.
+
 | Type      | Randomness |   Speed   |
-|-----------|:----------:|:---------:|
-| Default   |   184/188  | 51.3 kB/s |
-| Avalanche |   185/188  | 58.3 kB/s |
-| Quantum   |   188/188  |  1.8 kB/s |
+| --------- | :--------: | :-------: |
+| Random    |  168/188   | 150 MB/s  |
+| Avalanche |  175/188   | 57.5 kB/s |
+| Quantum   |  179/188   | 5.7 Gb/s  |
+
+The built-in _random_ entropy is the most common source of random numbers, yet has the lowest randomness. Avalanche diode breakdown has by far the slowest generation speed but boasts significantly more entropy than the computer's default. Quantum random numbers are blisteringly fast and truly random. Both avalanche and quantum methods should be equally random, but for this experiment, quantum outperformed avalanche in both speed and quality.
+
+For low-security tasks, using the random number generator that's part of your computer is fine; however, for generating private keys or crypto currency wallets, having more randomness is necessary. Getting avalanche breakdown random number generation is easy to do. I spend $40.00 and picked up the [OneRNG V3](https://onerng.info/) pictured above. Quantum computers offer the most security and speed but are way too pricy.
+
+If you'd like to confirm these results, you can [download](data/randomReports.zip) the random data and reports for each respective binary blob.
