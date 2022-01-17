@@ -31,6 +31,22 @@ A useful way to record the random numbers and the speed of their generation is t
 1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00697793 s, 150 MB/s
 
 ~# ./sts -v 1 -i 8 -I 1 -w reports/ -F r reports/random
+
+Testing data from file: reports/random
+Start of init phase
+End of init phase
+
+Start of iterate phase
+End of iterate phase
+
+Start of assess phase
+End of assess phase
+
+Start of destroy phase
+End of destroy phase
+
+Execution completed!
+Check the random.txt file for the results
 ```
 
 <details>
@@ -108,6 +124,22 @@ cdc_acm 1-2.3.2.4.2.4:1.0: ttyACM0: USB ACM device
 1048576 bytes (1.0 MB, 1.0 MiB) copied, 18.25 s, 57.5 kB/s
 
 ~# ./sts -v 1 -i 8 -I 1 -w reports/ -F r reports/avalanche
+
+Testing data from file: reports/avalanche
+Start of init phase
+End of init phase
+
+Start of iterate phase
+End of iterate phase
+
+Start of assess phase
+End of assess phase
+
+Start of destroy phase
+End of destroy phase
+
+Execution completed!
+Check the avalanche.txt file for the results
 ```
 
 <details>
@@ -184,6 +216,22 @@ with open(p, 'ab') as f:
 
 ```shell
 ~# ./sts -v 1 -i 8 -I 1 -w ./reports/ -F r reports/quantum
+
+Testing data from file: reports/quantum
+Start of init phase
+End of init phase
+
+Start of iterate phase
+End of iterate phase
+
+Start of assess phase
+End of assess phase
+
+Start of destroy phase
+End of destroy phase
+
+Execution completed!
+Check the quantum.txt file for the results
 ```
 
 <details>
@@ -246,11 +294,11 @@ Here are the results of the single tests:
 
 Here's a summary of results.
 
-| Type      | Randomness |   Speed   |
-| --------- | :--------: | :-------: |
-| Random    |  168/188   | 150 MB/s  |
-| Avalanche |  175/188   | 57.5 kB/s |
-| Quantum   |  179/188   | [5.7 Gb/s](https://qrng.anu.edu.au/contact/faq/)  |
+| Type      | Randomness |                      Speed                       |
+| --------- | :--------: | :----------------------------------------------: |
+| Random    |  168/188   |                     150 MB/s                     |
+| Avalanche |  175/188   |                    57.5 kB/s                     |
+| Quantum   |  179/188   | [5.7 Gb/s](https://qrng.anu.edu.au/contact/faq/) |
 
 The built-in _random_ entropy is the most common source of random numbers, yet has the lowest randomness. Avalanche diode breakdown has by far the slowest generation speed but boasts significantly more entropy than the computer's default. Quantum random numbers are blisteringly fast and truly random. Both avalanche and quantum methods should be equally random, but for this experiment, quantum outperformed avalanche in both speed and quality.
 
