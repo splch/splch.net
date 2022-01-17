@@ -37,17 +37,13 @@ dd if=/path/to/random \
 
 <summary>Result: 168/188</summary>
 
-A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests)
-were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
+A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests) were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
 
     reports/random
 
 ---
 
-The numerous empirical results of these tests were then interpreted with
-an examination of the proportion of sequences that pass a statistical test
-(proportion analysis) and the distribution of p-values to check for uniformity
-(uniformity analysis). The results were the following:
+The numerous empirical results of these tests were then interpreted with an examination of the proportion of sequences that pass a statistical test (proportion analysis) and the distribution of p-values to check for uniformity (uniformity analysis). The results were the following:
 
     168/188 tests passed successfully both the analyses.
     20/188 tests did not pass successfully both the analyses.
@@ -89,11 +85,6 @@ Here are the results of the single tests:
 
 - The "Linear Complexity" test FAILED the proportion analysis.
 
----
-
-The missing tests (if any) were whether disabled manually by the user or disabled
-at run time due to input size requirements not satisfied by this run.
-
 </details>
 
 To begin, we'll evaluate avalanche breakdown with the OneRNG.
@@ -121,17 +112,13 @@ cdc_acm 1-2.3.2.4.2.4:1.0: ttyACM0: USB ACM device
 
 <summary>Result: 175/188</summary>
 
-A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests)
-were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
+A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests) were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
 
     reports/avalanche
 
 ---
 
-The numerous empirical results of these tests were then interpreted with
-an examination of the proportion of sequences that pass a statistical test
-(proportion analysis) and the distribution of p-values to check for uniformity
-(uniformity analysis). The results were the following:
+The numerous empirical results of these tests were then interpreted with an examination of the proportion of sequences that pass a statistical test (proportion analysis) and the distribution of p-values to check for uniformity (uniformity analysis). The results were the following:
 
     175/188 tests passed successfully both the analyses.
     13/188 tests did not pass successfully both the analyses.
@@ -173,11 +160,6 @@ Here are the results of the single tests:
 
 - The "Linear Complexity" test passed both the analyses.
 
----
-
-The missing tests (if any) were whether disabled manually by the user or disabled
-at run time due to input size requirements not satisfied by this run.
-
 </details>
 
 ## Quantum Computer
@@ -204,17 +186,13 @@ with open(p, 'ab') as f:
 
 <summary>Results: 179/188</summary>
 
-A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests)
-were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
+A total of 188 tests (some of the 15 tests actually consist of multiple sub-tests) were conducted to evaluate the randomness of 8 bitstreams of 1048576 bits from:
 
     reports/quantum
 
 ---
 
-The numerous empirical results of these tests were then interpreted with
-an examination of the proportion of sequences that pass a statistical test
-(proportion analysis) and the distribution of p-values to check for uniformity
-(uniformity analysis). The results were the following:
+The numerous empirical results of these tests were then interpreted with an examination of the proportion of sequences that pass a statistical test (proportion analysis) and the distribution of p-values to check for uniformity (uniformity analysis). The results were the following:
 
     179/188 tests passed successfully both the analyses.
     9/188 tests did not pass successfully both the analyses.
@@ -255,11 +233,6 @@ Here are the results of the single tests:
   The "Serial" (second) test passed both the analyses.
 
 - The "Linear Complexity" test passed both the analyses.
-
----
-
-The missing tests (if any) were whether disabled manually by the user or disabled
-at run time due to input size requirements not satisfied by this run.
 
 </details>
 
