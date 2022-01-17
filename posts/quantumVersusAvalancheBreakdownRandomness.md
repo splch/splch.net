@@ -14,11 +14,11 @@ We'll read 1 <abbr title="Megabyte">Mb</abbr> of random data to perform the test
 A useful way to record the random numbers and the speed of their generation is to use the [`dd`](<https://wikipedia.org/wiki/Dd_(Unix)>) command.
 
 ```shell
-dd if=/path/to/random \
-  of=/copy/of/random \
-  bs=1048576 \
-  count=1 \
-  iflag=fullblock
+~# dd if=/path/to/random \
+      of=/copy/of/random \
+      bs=1048576 \
+      count=1 \
+      iflag=fullblock
 ```
 
 > I'm also saving the data and reports under a `reports` directory — so, create that if you need.
@@ -84,6 +84,8 @@ Here are the results of the single tests:
   The "Serial" (second) test passed both the analyses.
 
 - The "Linear Complexity" test FAILED the proportion analysis.
+
+---
 
 </details>
 
@@ -160,6 +162,8 @@ Here are the results of the single tests:
 
 - The "Linear Complexity" test passed both the analyses.
 
+---
+
 </details>
 
 ## Quantum Computer
@@ -233,6 +237,8 @@ Here are the results of the single tests:
   The "Serial" (second) test passed both the analyses.
 
 - The "Linear Complexity" test passed both the analyses.
+
+---
 
 </details>
 
