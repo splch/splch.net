@@ -9,7 +9,7 @@ Avalanche breakdown and quantum are two methods for generating true random numbe
 
 I'm using the Arcetri Team's [implementation](https://github.com/arcetri/sts) of the STS. Building it just required running `make` in the repo.
 
-We'll read 1 <abbr title="Megabyte">Mb</abbr> of random data to perform the tests on. STS defaults to measuring bitsreams of 1 megabit per iteration, so we'll run 8 iterations (8 bits = 1 byte).
+We'll read 1 <abbr title="Megabyte">MB</abbr> of random data to perform the tests on. STS defaults to measuring bitsreams of 1 megabit per iteration, so we'll run 8 iterations (8 bits = 1 byte).
 
 A useful way to record the random numbers and the speed of their generation is to use the [`dd`](<https://wikipedia.org/wiki/Dd_(Unix)>) command.
 
