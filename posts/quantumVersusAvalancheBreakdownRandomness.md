@@ -250,7 +250,7 @@ Here's a summary of results.
 | --------- | :--------: | :-------: |
 | Random    |  168/188   | 150 MB/s  |
 | Avalanche |  175/188   | 57.5 kB/s |
-| Quantum   |  179/188   | 5.7 Gb/s  |
+| Quantum   |  179/188   | [5.7 Gb/s](https://qrng.anu.edu.au/contact/faq/)  |
 
 The built-in _random_ entropy is the most common source of random numbers, yet has the lowest randomness. Avalanche diode breakdown has by far the slowest generation speed but boasts significantly more entropy than the computer's default. Quantum random numbers are blisteringly fast and truly random. Both avalanche and quantum methods should be equally random, but for this experiment, quantum outperformed avalanche in both speed and quality.
 
