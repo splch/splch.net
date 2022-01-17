@@ -9,12 +9,16 @@ Avalanche breakdown and quantum are two methods for generating true random numbe
 
 I'm using the Arcetri Team's [implementation](https://github.com/arcetri/sts) of the STS. Building it just required running `make` in the repo.
 
-We'll read 1 <abbr title="Megabyte">Mb</abbr> of random data to perform the tests on. STS defaults to measuring bitsreams of length 1 Megabits per iteration, so we'll run 8 iterations (8 bits = 1 byte).
+We'll read 1 <abbr title="Megabyte">Mb</abbr> of random data to perform the tests on. STS defaults to measuring bitsreams of 1 megabit per iteration, so we'll run 8 iterations (8 bits = 1 byte).
 
 A useful way to record the random numbers and the speed of their generation is to use the [`dd`](<https://wikipedia.org/wiki/Dd_(Unix)>) command.
 
 ```shell
-dd if=/path/to/random of=/copy/of/random bs=1048576 count=1 iflag=fullblock
+dd if=/path/to/random \
+  of=/copy/of/random \
+  bs=1048576 \
+  count=1 \
+  iflag=fullblock
 ```
 
 > I'm also saving the data and reports under a `reports` directory — so, create that if you need.
@@ -273,6 +277,8 @@ Here's a summary of results.
 
 The built-in _random_ entropy is the most common source of random numbers, yet has the lowest randomness. Avalanche diode breakdown has by far the slowest generation speed but boasts significantly more entropy than the computer's default. Quantum random numbers are blisteringly fast and truly random. Both avalanche and quantum methods should be equally random, but for this experiment, quantum outperformed avalanche in both speed and quality.
 
-For low-security tasks, using the random number generator that's part of your computer is fine; however, for generating private keys or crypto currency wallets, having more randomness is necessary. Getting avalanche breakdown random number generation is easy to do. I spend $40.00 and picked up the [OneRNG V3](https://onerng.info/) pictured above. Quantum computers offer the most security and speed but are way too pricy.
+For low-security tasks, using the random number generator that's part of your computer is fine; however, for generating private keys or crypto currency wallets, having more randomness is necessary. With the size of wallet keys and private keys in general, the avalanche RNG's speed is more than enough.
+
+Getting avalanche breakdown random number generation is easy to do. I spent $40.00 and picked up the [OneRNG V3](https://onerng.info/) pictured above. Quantum computers offer the most security and speed but are way too pricy.
 
 If you'd like to confirm these results, you can [download](data/randomReports.zip) the random data and reports for each respective binary blob.
