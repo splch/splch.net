@@ -179,7 +179,7 @@ with open(p, 'ab') as f:
 ```
 
 ```shell
-./sts -v 1 -i 8 -I 1 -w ./reports/ -F r reports/quantum
+~# ./sts -v 1 -i 8 -I 1 -w ./reports/ -F r reports/quantum
 ```
 
 <details>
