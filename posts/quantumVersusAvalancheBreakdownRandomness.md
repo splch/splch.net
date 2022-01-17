@@ -26,11 +26,15 @@ A useful way to record the random numbers and the speed of their generation is t
 ## Baseline
 
 ```shell
-~# dd if=/dev/random of=reports/random bs=1048576 count=1 iflag=fullblock
+~# dd if=/dev/random \
+      of=reports/random \
+      bs=1048576 \
+      count=1 \
+      iflag=fullblock
 
 1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.00697793 s, 150 MB/s
 
-~# ./sts -v 1 -i 8 -I 1 -w reports/ -F r reports/random
+~# ./sts -v 1 -i 8 -w reports/ -F r reports/random
 
 Testing data from file: reports/random
 Start of init phase
@@ -119,11 +123,15 @@ cdc_acm 1-2.3.2.4.2.4:1.0: ttyACM0: USB ACM device
 ```
 
 ```shell
-~# dd if=/dev/ttyACM0 of=reports/avalanche bs=1048576 count=1 iflag=fullblock
+~# dd if=/dev/ttyACM0 \
+      of=reports/avalanche \
+      bs=1048576 \
+      count=1 \
+      iflag=fullblock
 
 1048576 bytes (1.0 MB, 1.0 MiB) copied, 18.25 s, 57.5 kB/s
 
-~# ./sts -v 1 -i 8 -I 1 -w reports/ -F r reports/avalanche
+~# ./sts -v 1 -i 8 -w reports/ -F r reports/avalanche
 
 Testing data from file: reports/avalanche
 Start of init phase
@@ -215,7 +223,7 @@ with open(p, 'ab') as f:
 ```
 
 ```shell
-~# ./sts -v 1 -i 8 -I 1 -w ./reports/ -F r reports/quantum
+~# ./sts -v 1 -i 8 -w ./reports/ -F r reports/quantum
 
 Testing data from file: reports/quantum
 Start of init phase
