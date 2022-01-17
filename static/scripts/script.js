@@ -390,6 +390,7 @@ function loadPage(title, pop) {
 function toHTML(markdown) {
   return DOMPurify.sanitize(marked.parse(markdown), {
     ADD_TAGS: ["iframe"],
+		ADD_ATTR: ["allow"],
     ALLOW_UNKNOWN_PROTOCOLS: true,
   });
 }
