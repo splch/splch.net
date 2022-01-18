@@ -230,7 +230,12 @@ tr:nth-child(even) {
 }
 
 .badge {
+  align-content: space-evenly;
+  align-items: center;
+  display: grid;
   height: 17vh;
+  justify-content: center;
+  justify-items: center;
   margin: 0.5vh;
 }
 

@@ -44,8 +44,8 @@ Edit (9/6/2021) — I removed EasyMDE to decrease load times. I also render code
 
 ---
 
-![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade/slc.is?publish&style=for-the-badge)
+![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade/slc.is?publish&logo=mozilla&style=for-the-badge)
 
-![W3C Validation](https://img.shields.io/w3c-validation/default?style=for-the-badge&targetUrl=https%3A%2F%2Fslc.is)
+![W3C Validation](https://img.shields.io/w3c-validation/default?logo=html5&style=for-the-badge&targetUrl=https%3A%2F%2Fslc.is)
 
-![Go.mod Version](https://img.shields.io/github/go-mod/go-version/splch/slc.is?style=for-the-badge)
+![Go.mod Version](https://img.shields.io/github/go-mod/go-version/splch/slc.is?logo=go&style=for-the-badge)
