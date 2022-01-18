@@ -238,7 +238,7 @@ with open(p, 'ab') as f:
 ```
 
 ```shell
-# download 100 MB of quantum data from ANU
+~# # download 100 MB of quantum data from ANU
 ~# curl -o reports/.quantum \
         "https://cloudstor.aarnet.edu.au/plus/s/9Ik6roa7ACFyWL4/download?path=%2FANU_23Oct2017_5000MB&files=ANU_23Oct2017_100MB_1"
 
