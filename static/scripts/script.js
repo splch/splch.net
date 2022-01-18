@@ -319,7 +319,7 @@ function setPreview(rsp) {
   if (
     title === "Blog" ||
     (title === "Home" && posts.length === 1) ||
-    document.getElementsByTagName("textarea").length === 1
+    document.getElementById("mde")
   ) {
     posts.forEach((post) => {
       div = populatePreview(post);
@@ -348,15 +348,19 @@ function getServer(url, args) {
   xhr.send();
 }
 
+function setTitle(title) {
+  document.title = title + " | " + window.location.hostname;
+}
+
 function updatePage(element, isBlog, pop = false) {
   clearPage();
   const title = element.innerText || element.alt;
   if (!isBlog) {
     newActive(element);
-    document.title = title;
+    setTitle(title);
   } else if (!document.getElementsByClassName("active").length) {
     newActive(document.getElementsByClassName("link")[1]);
-    document.title = "Blog";
+    setTitle("Blog");
   }
   getServer("api/get", "query=" + title);
   if (!pop) {
@@ -390,7 +394,7 @@ function loadPage(title, pop) {
 function toHTML(markdown) {
   return DOMPurify.sanitize(marked.parse(markdown), {
     ADD_TAGS: ["iframe"],
-		ADD_ATTR: ["allow"],
+    ADD_ATTR: ["allow"],
     ALLOW_UNKNOWN_PROTOCOLS: true,
   });
 }
