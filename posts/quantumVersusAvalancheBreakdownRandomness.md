@@ -1,6 +1,6 @@
 ---
 title: Quantum versus Avalanche Breakdown Randomness
-date: 1/16/2022
+date: 12/8/2021
 image: onerng.webp
 draft: false
 ---
