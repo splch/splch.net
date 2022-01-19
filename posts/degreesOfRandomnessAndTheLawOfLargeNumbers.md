@@ -35,7 +35,7 @@ This is storing some number of bytes in a buffer array. Now we can iterate throu
 We're iterating through 8 bits at a time, so to find each binary mean, we'll count the number of ones in binary and divide by 8.
 
 ```c
-inline float binaryMean(char byte) {
+static inline float binaryMean(char byte) {
 	// https://stackoverflow.com/a/698183
 	return (byte * 01001001001ULL & 042104210421ULL) 
 		% 017 / 8.0;
@@ -47,7 +47,7 @@ The remainder is just reading multiple files and parsing the data as a <abbr tit
 ```c
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX_READ 10000
+#define MAX_READ 1000
 
 long double array[2][MAX_READ];
 
@@ -79,8 +79,9 @@ int main() {
 
   printf("Theoretical Mean,Quantum Mean,Avalanche Diode Mean\n");
 
-  for (unsigned long line = 0; line < MAX_READ; line++)
+  for (unsigned long line = 0; line < MAX_READ; line++) {
     printf("0.5,%Lf,%Lf\n", array[0][line], array[1][line]);
+  }
 
   return 0;
 }
@@ -89,9 +90,11 @@ int main() {
 The astute among us 🔴 will notice that I'm printing the data to stout; however, I'll actually pull a \*nix and piping the output to gnuplot.
 
 ```shell
-gcc -c -o main.o main.c && gcc ./main.o -o main && ./main | (cat > /tmp/gnuplotdata.csv && trap 'rm /tmp/gnuplotdata.csv' EXIT && gnuplot -p -e "set title 'Quantum vs. Avalanche';set xlabel 'Average Length';set ylabel 'Average';set datafile separator ',';plot for [col=1:3] '/tmp/gnuplotdata.csv' using col with lines title columnheader")
+gcc -c -o main.o main.c && gcc ./main.o -o main && ./main | cat > /tmp/gnuplotdata.csv && gnuplot -p -e "set title 'Quantum vs. Avalanche';set xlabel 'Average Length';set ylabel 'Average';set datafile separator ',';plot for [col=1:3] '/tmp/gnuplotdata.csv' using col with lines title columnheader;pause -1"
 ```
 
 That's *sus* but why have pipes if you never use them? Anyways, we can now begin comparing convergence.
 
 ## Analysis
+
+![Gnuplot Mean Convergence Plot](images/quantumAvalanchePlot.webp)
