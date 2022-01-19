@@ -12,7 +12,8 @@ function startEditor(title, value) {
   div.appendChild(submit);
   document.getElementById("top").appendChild(div);
 
-  new EasyMDE({
+  // easyMDE start
+  const easyMDE = new EasyMDE({
     autofocus: true,
     autoDownloadFontAwesome: true,
     element: document.getElementById("mde"),
@@ -21,6 +22,10 @@ function startEditor(title, value) {
     promptURLs: true,
     tabSize: 4,
   });
+  easyMDE.onkeydown = (_) => {
+    document.getElementById("bottom").style.pointerEvents = "none";
+  }
+  // easyMDE end
 
   getServer("api/draft", "");
 }
