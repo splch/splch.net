@@ -12,7 +12,7 @@ function startEditor(title, value) {
   div.appendChild(submit);
   document.getElementById("top").appendChild(div);
 
-  const easyMDE = new EasyMDE({
+  new EasyMDE({
     autofocus: true,
     autoDownloadFontAwesome: true,
     element: document.getElementById("mde"),
