@@ -48,7 +48,6 @@ if __name__ == '__main__':
     bangs = get_bangs()
     d = create_dict(bangs)
     write_bangs(d)
-
 ```
 
 On the site, I simply looked at the network history and saw a file requested: https://duckduckgo.com/bang.v260.js. The file was larger than any other file in the page which is what initially tipped me off. One look at it indicates that it's a dictionary with all the !bang data.

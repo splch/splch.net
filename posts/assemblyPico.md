@@ -101,7 +101,6 @@ gpio_off:
     bx lr
 
 .end
-
 ```
 
 `build.sh`
@@ -116,7 +115,7 @@ cp assembly.uf2 /path/to/RPI-RP2/
 
 `CMakeLists.txt and pico_sdk_import.cmake`
 
-```txt
+```Makefile
 # CMakeLists.txt
 cmake_minimum_required(VERSION 3.12)
 
@@ -209,7 +208,6 @@ endif ()
 set(PICO_SDK_PATH ${PICO_SDK_PATH} CACHE PATH "Path to the Raspberry Pi Pico SDK" FORCE)
 
 include(${PICO_SDK_INIT_CMAKE_FILE})
-
 ```
 
 </details>
@@ -919,5 +917,4 @@ n0_weight: .word 0xB028 @ neuron 0 weight
 n1_weight: .word 0x373F @ neuron 1 weight
 
 .end
-
 ```
