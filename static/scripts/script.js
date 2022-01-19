@@ -22,7 +22,7 @@ function startEditor(title, value) {
     promptURLs: true,
     tabSize: 4,
   });
-  easyMDE.onkeydown = (_) => {
+  document.getElementsByClassName("EasyMDEContainer")[0].onkeydown = (_) => {
     document.getElementById("bottom").style.pointerEvents = "none";
   }
   // easyMDE end
