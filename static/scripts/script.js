@@ -12,6 +12,16 @@ function startEditor(title, value) {
   div.appendChild(submit);
   document.getElementById("top").appendChild(div);
 
+  const easyMDE = new EasyMDE({
+    autofocus: true,
+    autoDownloadFontAwesome: true,
+    element: document.getElementById("mde"),
+    forceSync: true,
+    previewRender: toHTML,
+    promptURLs: true,
+    tabSize: 4,
+  });
+
   getServer("api/draft", "");
 }
 
@@ -22,7 +32,7 @@ function prepareTextArea(title, value) {
   textArea.title = title; // title is used when deleting posts
   value = value.replace("1/22/2021", getDate());
   textArea.value = value;
-  textArea.onkeydown = (_) => {
+  textArea.onchange = (_) => {
     document.getElementById("bottom").style.pointerEvents = "none";
   };
   return textArea;
@@ -446,7 +456,7 @@ function startMarkdown() {
       head = "<thead>" + head + "</thead>";
       body = body = body && "<tbody>" + body + "</tbody>";
       return (
-        '<div style="overflow-x:auto;"><table>' +
+        "<div style='overflow-x:auto;'><table>" +
         head +
         body +
         "</table></div>\n"
