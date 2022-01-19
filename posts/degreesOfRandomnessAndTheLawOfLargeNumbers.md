@@ -1,7 +1,7 @@
 ---
 title: Degrees of Randomness and the Law of Large Numbers
 date: 1/18/2022
-image: https://upload.wikimedia.org/wikipedia/commons/c/c9/Lawoflargenumbers.svg
+image: randomCoefficients.webp
 draft: true
 ---
 
@@ -184,21 +184,23 @@ What we'll do now is observe the serial correlation coefficients of quantum and 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX_READ 10
+#define MAX_READ 2500
 
 long double array[2][MAX_READ];
 
 void analyzeFile(const char *filename, const char filenum) {
   FILE *f;
+  // I increased the array sizes because a memory
+  // leak and I didn't care to track it down
   char output[1035];
-  char path[100];
+  char path[1000];
   snprintf(path, sizeof(path), "%s%s%s", "dd if=", filename, " bs=");
 
   for (unsigned long bytes = 1; bytes <= MAX_READ; bytes++) {
     char byteString[21];
     snprintf(byteString, 21, "%lu", bytes);
 
-    char command[256];
+    char command[2560];
     snprintf(command, sizeof(command), "%s%s%s", path, byteString,
              " count=8 iflag=fullblock 2>/dev/null | ent -b | tail "
              "-1 | cut -c 35-43 | xargs");
