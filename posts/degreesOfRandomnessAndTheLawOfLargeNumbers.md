@@ -89,7 +89,7 @@ int main() {
 The astute among us 🔴 will notice that I'm printing the data to stout; however, I'll actually pull a \*nix and piping the output to gnuplot.
 
 ```shell
-gcc -c -o main.o main.c && gcc ./main.o -o main && ./main | (cat > /tmp/gnuplotdata.csv && trap 'rm /tmp/gnuplotdata.csv' EXIT && gnuplot -e "set terminal dumb;set title 'Quantum vs. Avalanche';set xlabel 'Average Length';set ylabel 'Average';set datafile separator ',';plot for [col=1:3] '/tmp/gnuplotdata.csv' using col with lines title columnheader")
+gcc -c -o main.o main.c && gcc ./main.o -o main && ./main | (cat > /tmp/gnuplotdata.csv && trap 'rm /tmp/gnuplotdata.csv' EXIT && gnuplot -p -e "set title 'Quantum vs. Avalanche';set xlabel 'Average Length';set ylabel 'Average';set datafile separator ',';plot for [col=1:3] '/tmp/gnuplotdata.csv' using col with lines title columnheader")
 ```
 
 That's *sus* but why have pipes if you never use them? Anyways, we can now begin comparing convergence.
