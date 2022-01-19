@@ -3,7 +3,7 @@
   --background: #fff;
   --code: #abb2bf;
   --font-color: #000;
-  --font-size: 16pt;
+  --font-size: 1.3rem;
   --hover: #9cf3;
   --light: #069;
   --round: 5px;
@@ -239,23 +239,32 @@ tr:nth-child(even) {
   margin: 0.5vh;
 }
 
+.CodeMirror {
+  height: 100% !important;
+}
+
+.EasyMDEContainer {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+}
+
 .gameboy {
-  aspect-ratio: 160/144;
+  aspect-ratio: 160 / 144;
   width: 100%;
 }
 
 .pdf {
-  aspect-ratio: 8.5/11;
+  aspect-ratio: 8.5 / 11;
   width: 65%;
 }
 
 .video {
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   width: 100%;
 }
 
 .web {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   width: 100%;
 }
 

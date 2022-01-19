@@ -87,7 +87,7 @@ function createTextArea() {
   const ta = document.createElement("textarea");
   ta.style.maxWidth = "100%";
   ta.cols = "160";
-  ta.style.aspectRatio = "16/9";
+  ta.style.aspectRatio = "3 / 2";
   ta.style.minHeight = "500px";
   ta.classList.add("template");
   return ta;
