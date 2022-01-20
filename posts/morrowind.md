@@ -2,7 +2,7 @@
 title: Morrowind and Nostalgia
 date: 5/29/2021
 image: morrowind.webp
-draft: false
+draft: true
 ---
 
 In a world of magic, war, and a thousand other things, it's easy to forget the past. (That line was written by GPT-3 😂) However, it is also true that forgetting a past world filled with magic and lore is difficult. This is why I'm so excited for the Skywind mod.
