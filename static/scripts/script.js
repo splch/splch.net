@@ -267,7 +267,7 @@ function clearPage() {
   document.getElementById("date").innerText = "";
   document.getElementById("cover").parentElement.style.display = "none";
   document.getElementById("cover").src = "";
-  document.getElementById("bottom").style.removeProperty("auto");
+  document.getElementById("bottom").style.removeProperty("pointer-events");
 }
 
 function newActive(element) {
