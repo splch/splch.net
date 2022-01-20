@@ -261,14 +261,13 @@ function clearTemplates() {
 }
 
 function clearPage() {
+  clearInterval(imageChange.interval);
+  clearTemplates();
   document.getElementById("title").innerText = "";
   document.getElementById("date").innerText = "";
-  clearInterval(imageChange.interval);
-  document.getElementById("cover").parentElement.style.height = "0";
   document.getElementById("cover").parentElement.style.display = "none";
   document.getElementById("cover").src = "";
-  clearTemplates();
-  document.getElementById("bottom").style.pointerEvents = "auto";
+  document.getElementById("bottom").style.removeProperty("auto");
 }
 
 function newActive(element) {
