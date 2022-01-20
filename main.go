@@ -327,10 +327,10 @@ func DeletePost(w http.ResponseWriter, r *http.Request) {
 
 	password := getPassword()
 	if key == password {
-		if len(title) != 0 {
+		if len(title) != 0 && title != "Template Post" {
 			files := getFiles(path)
 			fileName := searchFiles(title, files, path)
-			if fileName != "" && fileName != "Template Post" {
+			if fileName != "" {
 				os.Remove(fileName)
 			}
 		}
