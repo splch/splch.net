@@ -1,5 +1,5 @@
 ---
-title: Comprehensive Lists of the Best NES, SNES, GB, GBC, and GBA Games
+title: Comprehensive Lists of the Best Retro Nintendo Games
 date: 1/21/2022
 image: bestNintendoGames.webp
 draft: true
