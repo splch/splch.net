@@ -5,7 +5,7 @@ image: gbc.webp
 draft: true
 ---
 
-I've been using my old Game Boy Color a lot more now that I'm programming a GB game, so I wanted to clean up the handheld! This tutorial is the culmination of a few YouTube videos from [The Retro Future](https://youtu.be/fZ__K0QotW8) and [Odd Tinkering](https://youtu.be/2BmGMi0IEx4). I liked a lot of their tips so decided to add them and my own to this post.
+I've been using my old Game Boy Color a lot more now that I'm programming a GB game, so I wanted to clean up the handheld! This tutorial is the culmination of a few YouTube videos from [The Retro Future](https://youtu.be/fZ__K0QotW8) and [Odd Tinkering](https://youtu.be/2BmGMi0IEx4). I liked a lot of their tips so I decided to add them and my own to this post.
 
 ## Tools:
 
@@ -27,7 +27,7 @@ I've been using my old Game Boy Color a lot more now that I'm programming a GB g
 5. Lift the motherboard out of the casing
 6. Slide the <abbr title="Infrared Radiation">IR</abbr> cover and power switch out of the case
 7. Remove the buttons and membranes
-	* D-pad
+	* <abbr title="Directional">D</abbr>-pad
 	* A + B
 	* Start + Select
 8. Lift the screen out of the case
@@ -55,6 +55,7 @@ Case:
 1. Prepare a hot soapy water to submerge the case
 2. Wash and brush the plastic in the water
 3. Clean the speaker holes
+4. Scrub the plastic screen protector
 
 Buttons:
 
