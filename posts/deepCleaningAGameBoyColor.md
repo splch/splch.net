@@ -5,7 +5,7 @@ image: gbc.webp
 draft: true
 ---
 
-I've been using my old Game Boy Color a lot more now that I'm programming a GB game, so I wanted to clean up the handheld!
+I've been using my old Game Boy Color a lot more now that I'm programming a GB game, so I wanted to clean up the handheld! This tutorial is the culmination of a few YouTube videos from [The Retro Future](https://youtu.be/fZ__K0QotW8) and [Odd Tinkering](https://youtu.be/2BmGMi0IEx4). I liked a lot of their tips so decided to add them and my own observations to this post.
 
 ## Tools:
 
@@ -20,12 +20,12 @@ I've been using my old Game Boy Color a lot more now that I'm programming a GB g
 
 1. Unscrew the 4 Tri-Wing screws on the back of the GBC
 	1.5. Unscrew 2 more screws under the batteries
-2. Slide the metal battery holder out of the case
+2. Slide the metal battery contact out of the case
 3. Remove the back plate
 4. Unscrew the 3 Phillips screws holding the motherboard
 5. On the back place, unscrew the 4 Phillips screws holding the cartridge slot
 6. Disconnect the screen's ribbon cable from the top of the motherboard
-7. Slide the <abbr title="Infrared">IR</abbr> cover out of the case
+7. Slide the <abbr title="Infrared">IR</abbr> cover and power switch out of the case
 8. Lift the motherboard out of the casing
 9. Remove the buttons
 	* D-pad
@@ -35,9 +35,9 @@ I've been using my old Game Boy Color a lot more now that I'm programming a GB g
 
 ## Cleaning
 
-Battery Holder:
+Battery Contact:
 
-1.  Let the metal battery connector sit in vinegar until all the cleaning steps are finished
+1.  Let the metal battery contact sit in vinegar until all the cleaning steps are finished
 
 Motherboard:
 
@@ -49,6 +49,7 @@ Motherboard:
 4. Clean the surface of the speaker
 5. Dab alcohol around the volume dial and power switch
 	* Actuate them to spread the alcohol inside
+6. Use alcohol to clean the headphone jack
 
 Case:
 
