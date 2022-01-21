@@ -13,4 +13,8 @@ I replaced the old holders with reflective ones. The visibility of the pickup is
 
 ## Lights
 
-I'm going to start simple: replace the rear and front lights. They're far too dim currently, so the first work I'll do is to replace those. While I'm at it, I'll also put reflective license plate holders on Lil' Mo too.
+I'm starting relatively simple: replacing the rear and front lights. They were far too dim, so the updated lights are LED except for brighter headlights. The power consumption is still a little less from replacing so many incandescents with LED.
+
+## Reflective Tape
+
+It seems like most of the upgrades relate to safety. I guess that's to be expected with a car without traction control, <abbr title="Anti-Lock Braking System">ABS</abbr>, or even airbags.
