@@ -1,11 +1,11 @@
 ---
 title: Comprehensive Lists of the Best Retro Nintendo Games
 date: 1/21/2022
-image: https://docs.google.com/drawings/d/e/2PACX-1vQWpAjcuqeclsJdozVML37Y0yRW_j21YTCatmFa3XRJCyPhF66oqLBysa_z8VxvinN_GAKfrJLVIn_z/pub?w=800&h=500
+image: bestNintendoGames.webp
 draft: false
 ---
 
-I combed the web for *Top 100* lists for the \*NES and GB\* and combined them to record the most beloved 975 games. This master table is helpful when making ROM libraries or finding something tried, true, and new to play.
+I combed the web for _Top 100_ lists for the \*NES and GB\* and combined them to record the most beloved 975 games. This master table is helpful when making ROM libraries or finding something tried, true, and new to play.
 
 Please enjoy the list and let me know if there's something to change! 😊
 

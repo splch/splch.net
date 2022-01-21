@@ -16,6 +16,9 @@ function startEditor(title, value) {
   const easyMDE = new EasyMDE({
     autofocus: true,
     autoDownloadFontAwesome: true,
+    blockStyles: {
+      italic: "_",
+    },
     element: document.getElementById("mde"),
     forceSync: true,
     previewRender: toHTML,
@@ -26,8 +29,6 @@ function startEditor(title, value) {
     document.getElementById("bottom").style.pointerEvents = "none";
   }
   // easyMDE end
-
-  getServer("api/draft", "");
 }
 
 function prepareTextArea(title, value) {
@@ -53,23 +54,7 @@ function preparePassword() {
 function prepareSubmit() {
   let submit = createButton();
   submit.innerText = "Submit";
-  submit.onclick = (_) => {
-    let title = document.getElementById("mde").title;
-    let mde = document.getElementById("mde").value;
-    let key = document.getElementById("password").value;
-    if (mde) {
-      editMarkdown("api/edit", key, mde);
-      if (title != mde.split("title: ")[1].split("\n")[0]) {
-        // renaming deletes the old file
-        editMarkdown("api/delete", key, title);
-      }
-    } else {
-      let r = confirm("You will delete:\n" + title);
-      if (r) {
-        editMarkdown("api/delete", key, title);
-      }
-    }
-  };
+  submit.onclick = submitMarkdown;
   return submit;
 }
 
@@ -305,6 +290,7 @@ function setMarkdown(rsp) {
   const titles = rsp.split("title: ")[1].split("\n")[0].split(", ");
   clearTemplates();
   startEditor(titles[0], rsp.trim() + "\n");
+  getServer("api/draft", "");
 }
 
 function setSearch(rsp, args) {
@@ -338,6 +324,47 @@ function setPreview(rsp) {
     posts.forEach((post) => {
       div = populatePreview(post);
     });
+  }
+}
+
+function submitMarkdown() {
+  const mde = document.getElementById("mde").value;
+  const key = document.getElementById("password").value;
+  const oldTitle = document.getElementById("mde").title;
+  const newTitle = mde?.split("\n")[1]?.split("title: ")[1];
+  const pubDate = mde?.split("\n")[2]?.split("date: ")[1];
+  const imagePath = mde?.split("\n")[3]?.split("image: ")[1];
+  const isDraft = mde.split("\n")[4]?.split("draft: ")[1];
+  if (["Home", "Blog", "Contact", "About"].includes(oldTitle)) {
+    if (newTitle?.split(",")[0] == oldTitle) {
+      if (!pubDate && isDraft == "true") {
+        editMarkdown("api/edit", key, mde);
+      }
+      else {
+        alert("Only change the title, images, and content of " + oldTitle);
+      }
+    } else {
+      alert("Do not rename " + oldTitle);
+    }
+  } else if (mde) {
+    if (!newTitle.includes(",")) {
+      if (newTitle && pubDate && imagePath && isDraft) {
+        editMarkdown("api/edit", key, mde);
+        if (oldTitle != newTitle) {
+          // renaming deletes the old file
+          editMarkdown("api/delete", key, oldTitle);
+        }
+      } else {
+        alert("Metadata is malformed");
+      }
+    } else {
+      alert("Remove commas from " + newTitle);
+    }
+  } else {
+    let r = confirm("You will delete " + oldTitle);
+    if (r) {
+      editMarkdown("api/delete", key, oldTitle);
+    }
   }
 }
 
