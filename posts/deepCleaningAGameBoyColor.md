@@ -25,7 +25,7 @@ I've been using my old Game Boy Color a lot more now that I'm programming a GB g
 3. Unscrew the 3 Phillips screws holding the motherboard
 4. Disconnect the screen's ribbon cable from the top of the motherboard
 5. Lift the motherboard out of the casing
-6. Slide the <abbr title="Infrared Radiation">IR</abbr> cover and power switch out of the case
+6. Slide the <abbr title="Infrared Radiation">IR</abbr> cover and power switch slider out of the case
 7. Remove the buttons and membranes
 	* <abbr title="Directional">D</abbr>-pad
 	* A + B
