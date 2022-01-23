@@ -17,4 +17,8 @@ I'm starting relatively simple: replacing the rear and front lights. They were f
 
 ## Reflective Tape
 
-It seems like most of the upgrades relate to safety. I guess that's to be expected with a car without traction control, <abbr title="Anti-Lock Braking System">ABS</abbr>, or even airbags.
+It seems like most of the upgrades relate to safety. I guess that's to be expected with a car without traction control, <abbr title="Anti-Lock Braking System">ABS</abbr>, or even airbags. I used red tape on the back, so it looks like a third rear light. Then, I put white tape along the sides to blend into the paint. Finally for the doors, I placed the tape so it's hidden when the door is closed but shows when they're open to other cars.
+
+## Stereo
+
+The truck as two speakers, and one wouldn't make any sound. After working through every wire from the passenger-side speaker, I figured the issue was in the stereo itself. I picked up an aftermarket one at Best Buy and am trying to get it wired up. I think there's a ground issue but I'll deal with that tomorrow.
