@@ -24,6 +24,7 @@ function startEditor(title, value) {
     previewRender: toHTML,
     promptURLs: true,
     tabSize: 4,
+    unorderedListStyle: "-",
   });
   document.getElementsByClassName("EasyMDEContainer")[0].onkeydown = (_) => {
     document.getElementById("bottom").style.pointerEvents = "none";
