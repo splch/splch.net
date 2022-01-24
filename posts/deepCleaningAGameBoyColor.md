@@ -1,6 +1,6 @@
 ---
 title: Deep Cleaning a Game Boy Color
-date: 1/20/2022
+date: 1/23/2022
 image: gbc2.webp
 draft: false
 ---
