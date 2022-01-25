@@ -344,7 +344,7 @@ func GetMarkdown(w http.ResponseWriter, r *http.Request) {
 	query, _ = url.QueryUnescape(query)
 	files := getFiles(path)
 
-	if query == "Blog" {
+	if query == "Archive" {
 		query = "Template Post"
 	}
 	post := searchMarkdown(query, files, path)

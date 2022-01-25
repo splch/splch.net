@@ -188,7 +188,7 @@ function setBody(markdown, title) {
     el.classList.add("template");
     document.getElementById("top").appendChild(el);
   }
-  if (title === "Blog") {
+  if (title === "Archive") {
     createSearch();
     getServer("api/all", "");
   }
@@ -304,7 +304,7 @@ function setMarkdown(rsp) {
 
 function setSearch(rsp, args) {
   const posts = JSON.parse(rsp);
-  if (posts && window.location.hash.substr(1) === "Blog") {
+  if (posts && window.location.hash.substr(1) === "Archive") {
     clearTemplates();
     createSearch(args.split("=")[1]);
     posts.forEach((post) => {
@@ -326,7 +326,7 @@ function setPreview(rsp) {
   const posts = JSON.parse(rsp);
   const title = window.location.hash.substr(1);
   if (
-    title === "Blog" ||
+    title === "Archive" ||
     (title === "Home" && posts.length === 1) ||
     document.getElementById("mde")
   ) {
@@ -344,7 +344,7 @@ function submitMarkdown() {
   const pubDate = mde?.split("\n")[2]?.split("date: ")[1];
   const imagePath = mde?.split("\n")[3]?.split("image: ")[1];
   const isDraft = mde.split("\n")[4]?.split("draft: ")[1];
-  if (["Home", "Blog", "Contact", "About"].includes(oldTitle)) {
+  if (["Home", "Archive", "Contact", "About"].includes(oldTitle)) {
     if (newTitle?.split(",")[0] == oldTitle) {
       if (!pubDate && isDraft == "true") {
         editMarkdown("api/edit", key, mde);
@@ -410,7 +410,7 @@ function updatePage(element, isBlog, pop = false) {
     setTitle(title);
   } else if (!document.getElementsByClassName("active").length) {
     newActive(document.getElementsByClassName("link")[1]);
-    setTitle("Blog");
+    setTitle("Archive");
   }
   getServer("api/get", "query=" + title);
   if (!pop) {
@@ -422,7 +422,7 @@ function getElementByTitle(title) {
   let element, isBlog;
   switch (title) {
     case "Home":
-    case "Blog":
+    case "Archive":
     case "Contact":
     case "About":
       element = document.getElementById(title);

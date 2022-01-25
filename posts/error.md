@@ -11,4 +11,4 @@ Please try the following:
 
 1. [Refresh]() the page
 2. Validate the <abbr title="Uniform Resource Locator">URL</abbr>
-3. Return to the [Blog](#Blog) tab
+3. Return to the [Archive](#Archive) tab
