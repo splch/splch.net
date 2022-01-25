@@ -28,6 +28,11 @@ function startEditor(title, value) {
   });
   document.getElementsByClassName("EasyMDEContainer")[0].onkeydown = (_) => {
     document.getElementById("bottom").style.pointerEvents = "none";
+    window.onbeforeunload = (e) => {
+      if (document.getElementById("mde")) {
+        e.returnValue = "Any unsaved post will be lost.";
+      }
+    }
   }
   // easyMDE end
 }
@@ -55,7 +60,9 @@ function preparePassword() {
 function prepareSubmit() {
   let submit = createButton();
   submit.innerText = "Submit";
-  submit.onclick = submitMarkdown;
+  submit.onclick = (_) => {
+    submitMarkdown();
+  }
   return submit;
 }
 
@@ -278,6 +285,7 @@ function editMarkdown(url, ...args) {
   xhr.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
       if (xhr.responseText != "Denied") {
+        window.onbeforeunload = null;
         window.location.reload();
       } else {
         document.getElementById("password").style.background = "red";
