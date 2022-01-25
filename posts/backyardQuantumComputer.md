@@ -31,16 +31,14 @@ Measurement
 
 ## Materials
 
-1. (8) Fiber-Optic Cable
-2. (3) Optical Switch
-3. (2) Laser
-4. (1) Scattering Unit
-5. (1) Atom
+- (8) Fiber-Optic Cable
+- (3) Optical Switch
+- (2) Laser
+- (1) Scattering Unit
+- (1) Atom
 
 ## Construction
 
 
 
 ## Measurement
-
-
