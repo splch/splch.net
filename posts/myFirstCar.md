@@ -35,7 +35,7 @@ After sorting that all out with a circuit diagram, the whole system looks <abbr 
 
 ## Windshield Wipers
 
-
+The current blades are pretty old and the rubber is cracking. I ordered a windshield wiper conversion kit to use more standard of sizes and better blades!
 
 ## Mud Flaps
 
@@ -43,4 +43,4 @@ One of the mud flaps has a chunk of rubber taken out of it, so I'll get a new on
 
 ## Rims and Wheels
 
-
+The rims are corroded and definitely show 30 years of wear. I'm opting for a temporary solution of repainting the rims, but I'd like to get larger rims in the near future. The speedometer is fast by around 5 <abbr title="Miles Per Hour">MPH</abbr>, so larger wheels should bring that error down. Additionally, they'll make it easier to buy performance tires in a more common size. In the meantime, however, I'll just paint the rims to make Lil' Mo look cleaner.
