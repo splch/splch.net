@@ -187,6 +187,7 @@ tr:nth-child(even) {
 }
 
 #cover {
+  height: 30vh;
   margin: 1em 0 1em 0;
   object-fit: contain;
   width: 100%;

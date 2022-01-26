@@ -103,8 +103,6 @@ function createP(text) {
 
 function createImg(alt, src) {
   const img = document.createElement("img");
-  img.loading = "lazy";
-  img.alt = alt;
   if (src[0]) {
     let imgSrc;
     if (src[0].substring(0, 4) === "http") {
@@ -112,12 +110,14 @@ function createImg(alt, src) {
     } else {
       imgSrc = `images/${src[0]}`;
     }
-    img.src = imgSrc;
-    img.style.width = "15vh";
+    img.alt = alt;
+    img.loading = "lazy";
     img.onclick = (e) => {
       updatePage(e.target, true);
     };
+    img.src = imgSrc;
     img.style.cursor = "pointer";
+    img.style.width = "15vh";
   } else {
     img.src = "";
     img.style.width = "0";
@@ -194,7 +194,7 @@ function setBody(markdown, title) {
   }
 }
 
-function updateImg(src) {
+function updateImg(src, title) {
   if (src) {
     let imgSrc;
     if (src.substring(0, 4) === "http") {
@@ -202,8 +202,9 @@ function updateImg(src) {
     } else {
       imgSrc = `images/${src}`;
     }
+    document.getElementById("cover").alt = title;
     document.getElementById("cover").src = imgSrc;
-    document.getElementById("cover").style.height = "30vh";
+    document.getElementById("cover").style.display = "inline";
   }
 }
 
@@ -253,8 +254,9 @@ function clearPage() {
   clearTemplates();
   document.getElementById("title").innerText = "";
   document.getElementById("date").innerText = "";
-  document.getElementById("cover").style.height = "0";
+  document.getElementById("cover").style.display = "none";
   document.getElementById("cover").src = "";
+  document.getElementById("cover").alt = "";
   document.getElementById("bottom").style.removeProperty("pointer-events");
 }
 
