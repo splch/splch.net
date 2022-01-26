@@ -128,6 +128,7 @@ p > code {
 }
 
 p > img {
+  max-height: 60vh;
   max-width: 100%;
 }
 
@@ -185,16 +186,10 @@ tr:nth-child(even) {
   background: var(--hover);
 }
 
-#background {
-  align-items: center;
-  justify-items: center;
-  margin: 1em 0 1em 0;
-  overflow: auto;
-}
-
 #cover {
-  max-height: 30vh;
-  max-width: 100%;
+  margin: 1em 0 1em 0;
+  object-fit: contain;
+  width: 100%;
 }
 
 #logo {
@@ -294,7 +289,7 @@ tr:nth-child(even) {
     display: none;
   }
 
-  img {
+  p > img {
     max-width: 50%;
   }
 

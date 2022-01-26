@@ -203,17 +203,12 @@ function updateImg(src) {
       imgSrc = `images/${src}`;
     }
     document.getElementById("cover").src = imgSrc;
-    document.getElementById("background").style.display = "grid";
+    document.getElementById("cover").style.height = "30vh";
   }
 }
 
 function setImages(srcs, title) {
   clearInterval(imageChange.interval);
-  document.getElementById("cover").onload = (e) => {
-    e.target.parentElement.style.height =
-      (e.target.height + 1).toString() + "px";
-    e.target.onload = null;
-  };
   updateImg(srcs[0], title);
   let image = 1;
   if (srcs.length > 1) {
@@ -258,7 +253,7 @@ function clearPage() {
   clearTemplates();
   document.getElementById("title").innerText = "";
   document.getElementById("date").innerText = "";
-  document.getElementById("cover").parentElement.style.display = "none";
+  document.getElementById("cover").style.height = "0";
   document.getElementById("cover").src = "";
   document.getElementById("bottom").style.removeProperty("pointer-events");
 }
