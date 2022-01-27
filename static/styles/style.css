@@ -34,6 +34,7 @@ code {
   display: inline-block;
 }
 
+button,
 code,
 h1,
 h2,
@@ -51,6 +52,7 @@ div.template > img:hover {
 }
 
 /* space elements */
+button,
 h1,
 h2,
 pre > code,
@@ -64,15 +66,15 @@ summary {
   margin: 1%;
 }
 
-h1.link,
+button.link,
 h2.template {
   cursor: pointer;
   font-size: var(--font-size);
 }
 
-h1.link:hover,
+button.link:hover,
 h2.template:hover,
-header h1.link.active {
+header button.link.active {
   background: var(--active);
   color: #fff;
 }
@@ -91,7 +93,11 @@ header {
   z-index: 2;
 }
 
-header h1 {
+header button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
   font-weight: normal;
   margin: 0 0.5% 0 0.5%;
   text-align: center;

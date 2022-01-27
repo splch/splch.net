@@ -78,11 +78,11 @@ function createButton() {
 
 function createTextArea() {
   const ta = document.createElement("textarea");
-  ta.style.maxWidth = "100%";
+  ta.classList.add("template");
   ta.cols = "160";
   ta.style.aspectRatio = "3 / 2";
+  ta.style.maxWidth = "100%";
   ta.style.minHeight = "500px";
-  ta.classList.add("template");
   return ta;
 }
 
@@ -136,11 +136,12 @@ function createDiv() {
 
 function createH2(text) {
   const h2 = document.createElement("h2");
+  h2.classList.add("template");
   h2.innerText = text;
   h2.onclick = (e) => {
     updatePage(e.target, true);
   };
-  h2.classList.add("template");
+  h2.tabIndex = "0";
   return h2;
 }
 
