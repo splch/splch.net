@@ -72,6 +72,7 @@ h2.template {
   font-size: var(--font-size);
 }
 
+::selection,
 button.link:hover,
 h2.template:hover,
 header button.link.active {
