@@ -39,8 +39,10 @@ The current blades are pretty old and the rubber is cracking. I ordered a windsh
 
 ## Mud Flaps
 
-One of the mud flaps has a chunk of rubber taken out of it, so I'll get a new one <abbr title="As Soon As Possible">ASAP</abbr>.
+One of the mud flaps has a chunk of rubber taken out of it, so I'll get a new one <abbr title="As Soon As Possible">ASAP</abbr>. Actually, the cut-out might've been to prevent the flap from melting on the exhaust pipe. If that's the case, I'll leave it, but I'd like to have new flaps otherwise.
 
 ## Rims and Wheels
 
-The rims are corroded and definitely show 30 years of wear. I'm opting for a temporary solution of repainting the rims, but I'd like to get larger rims in the near future. The speedometer is fast by around 5 <abbr title="Miles Per Hour">MPH</abbr>, so larger wheels should bring that error down. Additionally, they'll make it easier to buy performance tires in a more common size. In the meantime, however, I'll just paint the rims to make Lil' Mo look cleaner.
+The rims are corroded and definitely show 30 years of wear. I'm opting for a temporary solution of repainting the rims, but I'd like to get larger rims in the near future. The speedometer is fast by around 5 <abbr title="Miles Per Hour">MPH</abbr>, so larger wheels should bring that error down. Additionally, they'll make it easier to buy performance tires in a more common size.
+
+It took around six hours to paint all four wheels. The longest part was definitely cleaning the rims, but the coating looks great. I'm getting close to being done with external work!
