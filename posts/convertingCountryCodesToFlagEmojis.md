@@ -2,7 +2,7 @@
 title: Converting Country Codes to Flag Emojis
 date: 1/29/2022
 image: stackAnswer.webp
-draft: true
+draft: false
 ---
 
 In a Flutter <abbr title="application">app</abbr> I started and eventually stopped working on, I was converting country codes to their corresponding flag <abbr title="絵文字">emoji</abbr>s in Dart. This was a fun problem to solve and it's actually my highest rated solution on [StackOverflow](https://stackoverflow.com/a/63961112), so I wanted to save it here!
@@ -40,3 +40,7 @@ print(flag);
 6. `.fromCharCode()` Convert the regional indicator symbols' values to a string (flag emoji)
 
    - 🇺 🇸 → 🇺🇸
+
+---
+
+I like this solution since each step is explained. It could be converted to any language easily, which should be the goal of any algorithm explanation.
