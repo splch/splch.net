@@ -5,7 +5,7 @@ image: stackAnswer.webp
 draft: false
 ---
 
-In a Flutter <abbr title="application">app</abbr> I started and eventually stopped working on, I was converting country codes to their corresponding flag <abbr title="絵文字">emoji</abbr>s in Dart. This was a fun problem to solve and it's actually my highest rated solution on [StackOverflow](https://stackoverflow.com/a/63961112), so I wanted to save it here!
+In a Flutter <abbr title="application">app</abbr> I started — and eventually stopped — working on, I was converting country codes to their corresponding flag <abbr title="絵文字">emoji</abbr>s in Dart. This was a fun problem to solve and it's actually my highest rated solution on [StackOverflow](https://stackoverflow.com/a/63961112), so I wanted to save it here!
 
 ---
 
@@ -44,3 +44,5 @@ print(flag);
 ---
 
 I like this solution since each step is explained. It could be converted to any language easily, which should be the goal of any algorithm explanation.
+
+Also, learning that regional indicators exist to form country flags was surprising. I did some searching and one of the earliest examples of this conversion was from [neroux](https://medium.com/binary-passion/lets-turn-an-iso-country-code-into-a-unicode-emoji-shall-we-870c16e05aad); however, a more interesting discussion and explanation of the code comes from [Ben Dodson's post](https://bendodson.com/weblog/2016/04/26/emoji-flags-from-iso-3166-country-codes-in-swift/).
