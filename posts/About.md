@@ -24,6 +24,18 @@ For the future, I want a job that enables me to travel to different countries' o
 
 <!-- <iframe class="pdf" src="data/resume/resume.pdf#view=FitW"></iframe> -->
 
+```
+ _________________________________________ 
+/ Check out these badges — totally '90s \
+\ themed 🎉                             /
+ ----------------------------------------- 
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
 ---
 
 <div style="display:flex;align-items:center;overflow-x:auto;">
