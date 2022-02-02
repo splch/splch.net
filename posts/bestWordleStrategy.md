@@ -68,7 +68,7 @@ Let's open the `wordles.txt` file and make words a set of all the possible five-
 words = set(map(lambda x: x[:5], open("wordles.txt", "r")))
 ```
 
-To begin determining the best starting word(s), we look at the letter frequency.
+To begin determining the best starting word(s), we look at the letter frequencies.
 
 ```python
 letter_dist = letter_distribution(words)
@@ -199,4 +199,4 @@ It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id
 
 I'm sure there are different approaches to determining the best starting word. Some people like the most vowels (in that case use `URAEI`) while others would prioritize positions (then choose `SLATE`). I think knocking out the most potential words would help me the most, so that's why I chose this method.
 
-A benefit of this is that after only two steps of exploitation, you have information about ten unique letters. Another step will now put you at fifteen, over half of the alphabet. I hope this comes in handy and you enjoyed the read!
+A benefit of this is that after only two steps of exploration, you have information about ten unique letters. Another step will now put you at fifteen, over half of the alphabet. I hope this comes in handy and you enjoyed the read!
