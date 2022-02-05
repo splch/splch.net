@@ -2,7 +2,7 @@
 title: Degrees of Randomness and the Law of Large Numbers
 date: 2/4/2022
 image: randomCoefficients.webp
-draft: true
+draft: false
 ---
 
 In a previous post comparing quantum and avalanche diode methods of true random number generation, an interesting pattern emerged. The quantum random numbers would pass more STS tests than avalanche diode random numbers. Seemingly, the quantum RNG converges to a mean before the diode RNG.
