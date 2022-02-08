@@ -15,7 +15,7 @@ draft: true
 ## Non-Overflowing Average
 
 ```c
-unsigned average4(unsigned a, unsigned b)
+unsigned avg(unsigned a, unsigned b)
 {
     return (a & b) + (a ^ b) / 2;
 }
