@@ -5,14 +5,29 @@ image: templateImage.webp
 draft: true
 ---
 
-## Minimum and Maximum of Two Numbers
+## Minimum and Maximum
 
 - Minimum:
 	- `$min(a, b) = \frac{1}{2}(a+b-|a-b|)$`
 - Maximum:
 	- `$max(a, b) = \frac{1}{2}(a+b+|a-b|)$`
 
-## Average
+## Non-Overflowing Average
+
+```c
+unsigned average4(unsigned a, unsigned b)
+{
+    return (a & b) + (a ^ b) / 2;
+}
+```
+
+<details>
+
+<summary>Comparison</summary>
+
+There are a few common methods of finding an average. This section compares their pros and cons 😊
+
+The organization is first outlining the function in C, then showing the MIPS assembly. The comments on each line of assembly is the cycles required to run that instruction.
 
 ```c
 unsigned average1(unsigned a, unsigned b)
@@ -20,13 +35,15 @@ unsigned average1(unsigned a, unsigned b)
     return (a + b) / 2;
 }
 
-// lw      $3,8($fp) # 
-// lw      $2,12($fp) # 
-// addu    $2,$3,$2 # 
-// srl     $2,$2,1 # 
+// lw      $3,8($fp)  # 5
+// lw      $2,12($fp) # 5
+// addu    $2,$3,$2   # 4
+// srl     $2,$2,1    # 4
 ```
 
 average1 has the shortest assembly but might overflow.
+
+Cycles: 18
 
 ```c
 unsigned average2(unsigned low, unsigned high)
@@ -34,15 +51,17 @@ unsigned average2(unsigned low, unsigned high)
     return low + (high - low) / 2;
 }
 
-// lw      $3,12($fp) # 
-// lw      $2,8($fp) # 
-// subu    $2,$3,$2 # 
-// srl     $3,$2,1 # 
-// lw      $2,8($fp) # 
-// addu    $2,$3,$2 # 
+// lw      $3,12($fp) # 5
+// lw      $2,8($fp)  # 5
+// subu    $2,$3,$2   # 4
+// srl     $3,$2,1    # 4
+// lw      $2,8($fp)  # 5
+// addu    $2,$3,$2   # 4
 ```
 
-average2 takes 6 
+average2 takes only 6 instructions to complete, but requires the correct order of arguments. It might be necessary to use a comparison. That would add 16 cycles which brings the total cycles to 43.
+
+Cycles: 27
 
 ```c
 unsigned average3(unsigned a, unsigned b)
@@ -50,19 +69,21 @@ unsigned average3(unsigned a, unsigned b)
     return (a / 2) + (b / 2) + (a & b & 1);
 }
 
-// lw      $2,8($fp) # 
-// srl     $3,$2,1 # 
-// lw      $2,12($fp) # 
-// srl     $2,$2,1 # 
-// addu    $3,$3,$2 # 
-// lw      $4,8($fp) # 
-// lw      $2,12($fp) # 
-// and     $2,$4,$2 # 
-// andi    $2,$2,0x1 # 
-// addu    $2,$3,$2 # 
+// lw      $2,8($fp)  # 5
+// srl     $3,$2,1    # 4
+// lw      $2,12($fp) # 5
+// srl     $2,$2,1    # 4
+// addu    $3,$3,$2   # 4
+// lw      $4,8($fp)  # 5
+// lw      $2,12($fp) # 5
+// and     $2,$4,$2   # 4
+// andi    $2,$2,0x1  # 3
+// addu    $2,$3,$2   # 4
 ```
 
----
+Interestingly, this solution performs the same as `average2`'s worst case.
+
+Cycles: 43
 
 ```c
 unsigned average4(unsigned a, unsigned b)
@@ -70,15 +91,21 @@ unsigned average4(unsigned a, unsigned b)
     return (a & b) + (a ^ b) / 2;
 }
 
-// lw      $3,8($fp) # 
-// lw      $2,12($fp) # 
-// and     $3,$3,$2 # 
-// lw      $4,8($fp) # 
-// lw      $2,12($fp) # 
-// xor     $2,$4,$2 # 
-// srl     $2,$2,1 # 
-// addu    $2,$3,$2 # 
+// lw      $3,8($fp)  # 5
+// lw      $2,12($fp) # 5
+// and     $3,$3,$2   # 4
+// lw      $4,8($fp)  # 5
+// lw      $2,12($fp) # 5
+// xor     $2,$4,$2   # 4
+// srl     $2,$2,1    # 4
+// addu    $2,$3,$2   # 4
 ```
+
+This is the best solution to avoid overflow. It takes twice as many cycles to complete, but minimizes the risk of pesky overflow bugs.
+
+Cycles: 36
+
+</details>
 
 ## Sources
 
