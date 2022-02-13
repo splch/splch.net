@@ -8,9 +8,9 @@ draft: true
 ## Minimum and Maximum
 
 - Minimum:
-	- `$min(a, b) = \frac{1}{2}(a+b-|a-b|)$`
+	- `$min(a,b)=\frac{1}{2}(a+b-|a-b|)$`
 - Maximum:
-	- `$max(a, b) = \frac{1}{2}(a+b+|a-b|)$`
+	- `$max(a,b)=\frac{1}{2}(a+b+|a-b|)$`
 
 ## Non-Overflowing Average
 
