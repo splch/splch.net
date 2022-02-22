@@ -237,3 +237,16 @@ gcc -c -o main.o main.c && gcc ./main.o -o main && ./main | cat > /tmp/gnuplotda
 ![Gnuplot Coefficient Convergence Plot](images/randomCoefficients.webp)
 
 Well, this is interesting.
+
+## Explanation
+
+I have a couple theories for why these two methods of <abbr title="True Random Number Generation">TRNG</abbr> approach correlation coefficients of 0 at different rates.
+
+1. Partial Measurements
+	- In a more <abbr title="more interactions to achieve the same goal">complex</abbr> system, there are more opportunities to be entangled with the environment which might increase correlation between measurements.
+2. Faulty Hardware
+	- The hardware might have some issue which causes data correlation
+
+Obviously, the first explanation is more flashy, so I'm hoping something along those lines is occurring. With the avalanche diode method, electrons will be entangled with the enclosure which is weakly entangled with everything around it. This additional entanglement could reduce the randomness of the sequence. Quantum methods of generation should, therefore, have varying rates of discorrelation based on their amounts of interaction with the environment.
+
+I'll try to compare these rates with more precise avalanche diode machines and superconducting, photonic, nuclear magnetic resonance, dot, and other quantum methods.
