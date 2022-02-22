@@ -27,8 +27,8 @@ Languages I'm Using:
 - Go
 
 Languages I'm Learning:
-- Haskell
-- 6502 Assembly
+- [Haskell](https://tryhaskell.org/)
+- [6502 Assembly](http://www.6502asm.com/)
 
 ---
 
