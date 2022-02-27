@@ -1,6 +1,7 @@
 main
 start
 change.sh
+.DS_Store
 .replit
 tls*
 *.save

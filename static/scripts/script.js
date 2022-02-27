@@ -63,6 +63,11 @@ function prepareSubmit() {
   submit.onclick = (_) => {
     submitMarkdown();
   }
+  submit.onkeyup = (e) => {
+    if (e.key === "Enter") {
+      submitMarkdown();
+    }
+  }
   return submit;
 }
 
@@ -115,6 +120,11 @@ function createImg(alt, src) {
     img.onclick = (e) => {
       updatePage(e.target, true);
     };
+    img.onkeyup = (e) => {
+      if (e.key === "Enter") {
+        updatePage(e.target, true);
+      }
+    };
     img.src = imgSrc;
     img.style.cursor = "pointer";
     img.style.width = "15vh";
@@ -140,6 +150,11 @@ function createH2(text) {
   h2.innerText = text;
   h2.onclick = (e) => {
     updatePage(e.target, true);
+  };
+  h2.onkeyup = (e) => {
+    if (e.key === "Enter") {
+      updatePage(e.target, true);
+    }
   };
   h2.tabIndex = "0";
   return h2;
@@ -522,6 +537,11 @@ function start() {
   document.querySelectorAll(".link").forEach((link) => {
     link.onclick = (e) => {
       updatePage(e.target, false);
+    };
+    link.onkeyup = (e) => {
+      if (e.key === "Enter") {
+        updatePage(e.target, false);
+      }
     };
   });
   document.getElementById("logo").onclick = (_) => {
