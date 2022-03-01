@@ -5,71 +5,7 @@ image: spooky.webp
 draft: true
 ---
 
-# Deep Learning Video Game Music Generation
-
-Computer Science
-
 > "How feasible are deep neural networks in generating thematically diverse video game music?"
-
-By Spencer Churchill
-
----
-
-Table of Contents
-
-[Introduction](#h.2tl81ga24k8n) 1
-
-[Research](#h.rfenre1atvp2) 1
-
-[Historical Context](#h.vna4brjqgi3t) 2
-
-[Theory](#h.pq8vv2ry3egw) 4
-
-[Music](#h.778khdbnuqzl) 4
-
-[Deep Learning](#h.mt9l54d7169n) 5
-
-[Neural Network](#h.32yihahcqg4x) 10
-
-[Design](#h.r987c8q380x) [1](#h.r987c8q380x)0
-
-[Training Data](#h.vjd88jqd0odi) [1](#h.vjd88jqd0odi)1
-
-[Normalization of Data](#h.wlwk6slypbdq) [1](#h.wlwk6slypbdq)1
-
-[Training](#h.oq5ndkvr45bb) [1](#h.oq5ndkvr45bb)2
-
-[Composition](#h.qpeo8zgigkku) [1](#h.qpeo8zgigkku)3
-
-[Evaluation](#h.13bpi6rjv3jz) [1](#h.13bpi6rjv3jz)6
-
-[Overview](#h.1ox4r07h009p) [1](#h.1ox4r07h009p)6
-
-[Successes](#h.a1soj35yn4kn) [1](#h.a1soj35yn4kn)7
-
-[Limitations](#h.wde0kh1l1pnh) [1](#h.wde0kh1l1pnh)7
-
-[Conclusion](#h.nrfa816gz50) 18
-
-[Background](#h.693onaoia2nx) 18
-
-[Assessment](#h.gztohkoefjzc) 19
-
-[Works Cited](#h.k5owcqe2zuq0) [2](#h.k5owcqe2zuq0)0
-
-[Appendices](#h.ccp9iw2vwyml) [2](#h.ccp9iw2vwyml)3
-
-[Appendix A ─ Video Games](#h.80vlnhaker6h) [2](#h.80vlnhaker6h)3
-
-[Appendix B ─ Data Preparation](#h.eqj553m4o1d8) [2](#h.eqj553m4o1d8)4
-
-[Appendix C ─ Deep Neural Network](#h.d1fffgg561ym) [2](#h.d1fffgg561ym)7
-
-[Appendix D ─ Midi Analysis](#h.pndsnp1xlsux) 29
-
-[Appendix E ─ Outlines](#h.g7c3dj7x9plu) [3](#h.g7c3dj7x9plu)3
-
-[Appendix F ─ Sound Files](#h.sz0mvur1lr9g) [3](#h.sz0mvur1lr9g)4
 
 ---
 
@@ -79,7 +15,7 @@ Table of Contents
 
 The purpose of this paper is to test the ability of deep neural networks (DNNs), using long short-term memory architecture to model video game (VG) music and evaluate its aptitude in expressing thematically diverse emotion. In other words, how feasible are deep neural networks in generating thematic video game music? My goal is to test whether a DNN can compose engaging music capable of accentuating themes presented in video games. Research conducted for this paper uses the open source Tensorflow library − Magenta, along with other necessary libraries.[\[1\]](#ftnt1) The DNN analyzed 2,933 VG songs[\[2\]](#ftnt2) chosen for being timeless classics, was trained from that data, then created a model for generating music. Because neural networks process information similarly to a brain; e.g. receiving input (VG music), sequencing it through neurons (LSTM cells), then learning from it (adjusting weights), they are effective — unreasonably effective[\[3\]](#ftnt3) — especially when generalizing complex datasets. Music is an example of truly complex data.
 
-Video game music adds to the canonical nature of music by not exclusively deriving value from aspects of traditional music such as jazz or classical scales, triplet eighth rhythms, or ![](images/tcgj/image1.png)− time signatures, but from context presented in the game. In video games, music is essential. The storyline constantly presents a variety of scenes which convey emotion primarily through the use of engaging music.[\[4\]](#ftnt4) For example, in scenes of intensity, VG music will tend to Ionian (major)
+Video game music adds to the canonical nature of music by not exclusively deriving value from aspects of traditional music such as jazz or classical scales, triplet eighth rhythms, or `$\frac{3}{4}$` time signatures, but from context presented in the game. In video games, music is essential. The storyline constantly presents a variety of scenes which convey emotion primarily through the use of engaging music.[\[4\]](#ftnt4) For example, in scenes of intensity, VG music will tend to Ionian (major)
 
 modes and quick tempos, while during spooky scenes, suspense is built through slower tempos and lower pitches in minor keys. My model composed a fitting example of a spooky song ― shown in Figure 1.
 
@@ -123,7 +59,7 @@ Figure 3. Visualization of Kernel Functions[\[23\]](#ftnt23)
 
 This process is the model’s way of learning how video game music in MIDI format is commonly composed. This learning, or generalization, occurs when the LSTM cells’ values, called weights and biases, are adjusted according to the data parsed through them. The model analyzes each feature and continually updates its many layers of cells, attempting to generalize rules for accurate predictions until the training is stopped. The model’s ability to generalize data is later tested by measuring the number of accurate predictions divided by the total predictions made — yielding an accuracy metric.
 
-4. Generation: The DNN model is finally used to generate its own data. By using advanced probability distributions and analyzing the high dimensional training map, it predicts the most probable first datapoint, then, depending on the first point, determines what the following point should be. It continues this process until a song of X data points has been generated. As shown in Figure 4, the structure of the LSTM cell enables the accurate modification of the weights of matrices (systems of equations) of terms, ![](images/tcgj/image2.png).
+4. Generation: The DNN model is finally used to generate its own data. By using advanced probability distributions and analyzing the high dimensional training map, it predicts the most probable first datapoint, then, depending on the first point, determines what the following point should be. It continues this process until a song of X data points has been generated. As shown in Figure 4, the structure of the LSTM cell enables the accurate modification of the weights of matrices (systems of equations) of terms, `$Cx^b_a$`.
 
 ![](images/tcgj/image15.png)
 
@@ -153,7 +89,7 @@ The MIDI files were carefully selected from a variety of retro (vintage) video g
 
 ## Normalization of Data
 
-Initially, I began with 4,164 sound files, but many of these files were sound effects or music compilations (often used for credits), so I removed all audio below![](images/tcgj/image3.png) minute and above![](images/tcgj/image4.png) minutes.[\[26\]](#ftnt26) Afterward my training data consisted of 2,933 songs in MIDI format. Then, for the DNN to use the data, I normalized it to a very large array.[\[27\]](#ftnt27) The normalization modulated the songs in two important ways: first, it transposed them from -3 to +3 octaves (totalling 7 octaves including the tonic), then added 5 stretch factors to the data. As a result, my input data size increased by a factor of 35 compared to pre-normalization. Effectively, my dataset included 102,655 MIDI songs. This data was then parsed as a string of input vectors (tensors) and labels, retaining every feature. I separated 90% of the songs (92,389) in the array to the training dataset for training and the remaining 10% to the evaluation dataset[\[28\]](#ftnt28) for finding the real-world accuracy of the model. I used a Magenta provided program to parse the data into these two arrays.[\[29\]](#ftnt29) The data was then able to be understood and trained upon by the DNN.
+Initially, I began with 4,164 sound files, but many of these files were sound effects or music compilations (often used for credits), so I removed all audio below `$\frac{1}{2}$` minute and above `$7\frac{1}{2}$` minutes.[\[26\]](#ftnt26) Afterward my training data consisted of 2,933 songs in MIDI format. Then, for the DNN to use the data, I normalized it to a very large array.[\[27\]](#ftnt27) The normalization modulated the songs in two important ways: first, it transposed them from -3 to +3 octaves (totalling 7 octaves including the tonic), then added 5 stretch factors to the data. As a result, my input data size increased by a factor of 35 compared to pre-normalization. Effectively, my dataset included 102,655 MIDI songs. This data was then parsed as a string of input vectors (tensors) and labels, retaining every feature. I separated 90% of the songs (92,389) in the array to the training dataset for training and the remaining 10% to the evaluation dataset[\[28\]](#ftnt28) for finding the real-world accuracy of the model. I used a Magenta provided program to parse the data into these two arrays.[\[29\]](#ftnt29) The data was then able to be understood and trained upon by the DNN.
 
 ## Training
 
