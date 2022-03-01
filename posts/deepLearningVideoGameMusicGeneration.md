@@ -79,11 +79,11 @@ Table of Contents
 
 The purpose of this paper is to test the ability of deep neural networks (DNNs), using long short-term memory architecture to model video game (VG) music and evaluate its aptitude in expressing thematically diverse emotion. In other words, how feasible are deep neural networks in generating thematic video game music? My goal is to test whether a DNN can compose engaging music capable of accentuating themes presented in video games. Research conducted for this paper uses the open source Tensorflow library − Magenta, along with other necessary libraries.[\[1\]](#ftnt1) The DNN analyzed 2,933 VG songs[\[2\]](#ftnt2) chosen for being timeless classics, was trained from that data, then created a model for generating music. Because neural networks process information similarly to a brain; e.g. receiving input (VG music), sequencing it through neurons (LSTM cells), then learning from it (adjusting weights), they are effective — unreasonably effective[\[3\]](#ftnt3) — especially when generalizing complex datasets. Music is an example of truly complex data.
 
-Video game music adds to the canonical nature of music by not exclusively deriving value from aspects of traditional music such as jazz or classical scales, triplet eighth rhythms, or ![](images/image1.png)− time signatures, but from context presented in the game. In video games, music is essential. The storyline constantly presents a variety of scenes which convey emotion primarily through the use of engaging music.[\[4\]](#ftnt4) For example, in scenes of intensity, VG music will tend to Ionian (major)
+Video game music adds to the canonical nature of music by not exclusively deriving value from aspects of traditional music such as jazz or classical scales, triplet eighth rhythms, or ![](images/tcgj/image1.png)− time signatures, but from context presented in the game. In video games, music is essential. The storyline constantly presents a variety of scenes which convey emotion primarily through the use of engaging music.[\[4\]](#ftnt4) For example, in scenes of intensity, VG music will tend to Ionian (major)
 
 modes and quick tempos, while during spooky scenes, suspense is built through slower tempos and lower pitches in minor keys. My model composed a fitting example of a spooky song ― shown in Figure 1.
 
-![Screenshot 2017-11-05 at 7.12.54 AM.png](images/image5.png)
+![Screenshot 2017-11-05 at 7.12.54 AM.png](images/tcgj/image5.png)
 
 Figure 1. Example of Spooky Music
 
@@ -103,7 +103,7 @@ Both the theory behind VG music and deep learning, as well as their interactions
 
 ## Music
 
-Initially, the answer seems simple: no. Music is one of the humanities; it needs human input. And human input is necessary, especially for this research. The foundation of the model is reliant upon analysis of human creation. The training dataset is human-made songs in MIDI format, but once the model is trained and learns how VG music sounds, it generates its own. Two important features are presented regarding what the model aims to classify: the characterization and the sound of VG music. Often people recognize VG sounds as only "bleeps and bloops,"[\[15\]](#ftnt15) but they pose an important role in the reception of emotion. The tempo, for example, is influential in emotional response; action scenes present faster tempos than romantic scenes which both impact heart rate and stress levels differently. Dr. Rick Turner[\[16\]](#ftnt16) studied the emotional effect a classic game, Space Invaders,[\[17\]](#ftnt17)had on stress levels and concluded that as tempo increases (in response to dire situations) players’ heart and respiratory rates greatly increase relative to their baselines. This study supports the importance of the use of video game music in creating an emotional roadmap for context, and when done well, the effect is synergistic. Video game music is driven by the events taking place in the story and its sound is an attempt to enhance these events. Music influences emotion through three primary methods: tempo, octave, and key. An example of this is when players interpret a new character as a villain or hero by the type of music played; whether it is a quick or slow tempo, in a high or low octave, or in a major or minor key. In order for the DNN to be considered feasible, it must contain these elements representative of classic VG soundtracks — reflecting events and producing a response.![](images/image10.png)
+Initially, the answer seems simple: no. Music is one of the humanities; it needs human input. And human input is necessary, especially for this research. The foundation of the model is reliant upon analysis of human creation. The training dataset is human-made songs in MIDI format, but once the model is trained and learns how VG music sounds, it generates its own. Two important features are presented regarding what the model aims to classify: the characterization and the sound of VG music. Often people recognize VG sounds as only "bleeps and bloops,"[\[15\]](#ftnt15) but they pose an important role in the reception of emotion. The tempo, for example, is influential in emotional response; action scenes present faster tempos than romantic scenes which both impact heart rate and stress levels differently. Dr. Rick Turner[\[16\]](#ftnt16) studied the emotional effect a classic game, Space Invaders,[\[17\]](#ftnt17)had on stress levels and concluded that as tempo increases (in response to dire situations) players’ heart and respiratory rates greatly increase relative to their baselines. This study supports the importance of the use of video game music in creating an emotional roadmap for context, and when done well, the effect is synergistic. Video game music is driven by the events taking place in the story and its sound is an attempt to enhance these events. Music influences emotion through three primary methods: tempo, octave, and key. An example of this is when players interpret a new character as a villain or hero by the type of music played; whether it is a quick or slow tempo, in a high or low octave, or in a major or minor key. In order for the DNN to be considered feasible, it must contain these elements representative of classic VG soundtracks — reflecting events and producing a response.![](images/tcgj/image10.png)
 
 ## Deep Learning
 
@@ -117,15 +117,15 @@ The generation of songs according to what the model has learned is completed by 
 
 3. Training:[\[21\]](#ftnt21) Using the training dataset of MIDI files, the model plots the MIDI files in a high dimensional plane, with each unique feature of the MIDIs representing a coordinate. After plotting the points, the model begins to learn patterns which yield similarities within groups of MIDI songs. The model uses kernel similarity methods, such as the multi-class support vector machine (SVM),[\[22\]](#ftnt22) to calculate a hyperplane which separates the data into their respective classifications.
 
-![](images/image13.png)
+![](images/tcgj/image13.png)
 
 Figure 3. Visualization of Kernel Functions[\[23\]](#ftnt23)
 
 This process is the model’s way of learning how video game music in MIDI format is commonly composed. This learning, or generalization, occurs when the LSTM cells’ values, called weights and biases, are adjusted according to the data parsed through them. The model analyzes each feature and continually updates its many layers of cells, attempting to generalize rules for accurate predictions until the training is stopped. The model’s ability to generalize data is later tested by measuring the number of accurate predictions divided by the total predictions made — yielding an accuracy metric.
 
-4. Generation: The DNN model is finally used to generate its own data. By using advanced probability distributions and analyzing the high dimensional training map, it predicts the most probable first datapoint, then, depending on the first point, determines what the following point should be. It continues this process until a song of X data points has been generated. As shown in Figure 4, the structure of the LSTM cell enables the accurate modification of the weights of matrices (systems of equations) of terms, ![](images/image2.png).
+4. Generation: The DNN model is finally used to generate its own data. By using advanced probability distributions and analyzing the high dimensional training map, it predicts the most probable first datapoint, then, depending on the first point, determines what the following point should be. It continues this process until a song of X data points has been generated. As shown in Figure 4, the structure of the LSTM cell enables the accurate modification of the weights of matrices (systems of equations) of terms, ![](images/tcgj/image2.png).
 
-![](images/image15.png)
+![](images/tcgj/image15.png)
 
 Figure 4. Architecture of an LSTM cell
 
@@ -153,11 +153,11 @@ The MIDI files were carefully selected from a variety of retro (vintage) video g
 
 ## Normalization of Data
 
-Initially, I began with 4,164 sound files, but many of these files were sound effects or music compilations (often used for credits), so I removed all audio below![](images/image3.png) minute and above![](images/image4.png) minutes.[\[26\]](#ftnt26) Afterward my training data consisted of 2,933 songs in MIDI format. Then, for the DNN to use the data, I normalized it to a very large array.[\[27\]](#ftnt27) The normalization modulated the songs in two important ways: first, it transposed them from -3 to +3 octaves (totalling 7 octaves including the tonic), then added 5 stretch factors to the data. As a result, my input data size increased by a factor of 35 compared to pre-normalization. Effectively, my dataset included 102,655 MIDI songs. This data was then parsed as a string of input vectors (tensors) and labels, retaining every feature. I separated 90% of the songs (92,389) in the array to the training dataset for training and the remaining 10% to the evaluation dataset[\[28\]](#ftnt28) for finding the real-world accuracy of the model. I used a Magenta provided program to parse the data into these two arrays.[\[29\]](#ftnt29) The data was then able to be understood and trained upon by the DNN.
+Initially, I began with 4,164 sound files, but many of these files were sound effects or music compilations (often used for credits), so I removed all audio below![](images/tcgj/image3.png) minute and above![](images/tcgj/image4.png) minutes.[\[26\]](#ftnt26) Afterward my training data consisted of 2,933 songs in MIDI format. Then, for the DNN to use the data, I normalized it to a very large array.[\[27\]](#ftnt27) The normalization modulated the songs in two important ways: first, it transposed them from -3 to +3 octaves (totalling 7 octaves including the tonic), then added 5 stretch factors to the data. As a result, my input data size increased by a factor of 35 compared to pre-normalization. Effectively, my dataset included 102,655 MIDI songs. This data was then parsed as a string of input vectors (tensors) and labels, retaining every feature. I separated 90% of the songs (92,389) in the array to the training dataset for training and the remaining 10% to the evaluation dataset[\[28\]](#ftnt28) for finding the real-world accuracy of the model. I used a Magenta provided program to parse the data into these two arrays.[\[29\]](#ftnt29) The data was then able to be understood and trained upon by the DNN.
 
 ## Training
 
-![](images/image23.png)
+![](images/tcgj/image23.png)
 
 Figure 5. Accuracy/ Learning Rate of the Neural Network
 
@@ -171,13 +171,13 @@ Accuracy does not represent the nuances as the DNN further generalizes data, so 
 
 Immediately after the DNN began training, I had it generate a song. It outputted a chaotic mess of notes thrown on a staff (Figure 6); yet, this was to be expected.
 
-![Screenshot 2017-11-05 at 10.45.23 AM.png](images/image8.png)
+![Screenshot 2017-11-05 at 10.45.23 AM.png](images/tcgj/image8.png)
 
 Figure 6. Untrained Music Generation
 
 After 15,000 training iterations, the DNN started to produce music consistent with VG genres as it began to identify characteristic features. The DNN learned the differences between ominous, victorious, and other thematic genres primarily due to the LSTM cells’ effective handling of long-term dependencies with the identity function.
 
-![](images/image14.png)
+![](images/tcgj/image14.png)
 
 Figure 7. Pleasant Generated Song
 
@@ -191,7 +191,7 @@ The song in Figure 6 lacks a discernible key[\[30\]](#ftnt30) and repeated refra
 
 ## Overview
 
-I evaluated this model by analyzing 320 songs generated by the DNN throughout the![](images/image24.png) ( ≈ 16.00k ) training steps. As expected, the quality (specifically of consistent scale patterns, constant rhythm, and note complexity) of the generated songs increased over training time (144 hours). Distinct themes were also learned from the DNN as the t-SNE visualization suggests (Figure 8). The DNN learned enough prevalent information in the huge arrays of parsed MIDIs to separate songs with minor keys and songs with quick tempos. This feature analysis is later confirmed by the ability of the DNN to compose songs with 26% chance of showing distinctly thematic phrases shown in Figure 8. This project confirms that machine learning has progressed immensely as it can produce, with a 26% chance, music viable enough to be implemented into a game. Despite this ability to compose music, the program still lacks consistency in the aesthetics of music. The network is currently not at a level where it can be implemented into a modern game; however, it can be used to create potential game songs, then expanded upon by VG music composers.
+I evaluated this model by analyzing 320 songs generated by the DNN throughout the![](images/tcgj/image24.png) ( ≈ 16.00k ) training steps. As expected, the quality (specifically of consistent scale patterns, constant rhythm, and note complexity) of the generated songs increased over training time (144 hours). Distinct themes were also learned from the DNN as the t-SNE visualization suggests (Figure 8). The DNN learned enough prevalent information in the huge arrays of parsed MIDIs to separate songs with minor keys and songs with quick tempos. This feature analysis is later confirmed by the ability of the DNN to compose songs with 26% chance of showing distinctly thematic phrases shown in Figure 8. This project confirms that machine learning has progressed immensely as it can produce, with a 26% chance, music viable enough to be implemented into a game. Despite this ability to compose music, the program still lacks consistency in the aesthetics of music. The network is currently not at a level where it can be implemented into a modern game; however, it can be used to create potential game songs, then expanded upon by VG music composers.
 
 ---
 
@@ -309,13 +309,13 @@ Wang, Zhe, and Xiangyang Xue. "Multi-Class Support Vector Machine." Support Vect
 
 MIDI Size Sorter:
 
-![](images/image22.png)
+![](images/tcgj/image22.png)
 
 MIDI Sequencer:[\[36\]](#ftnt36)
 
-![Screenshot 2017-11-04 at 6.10.25 PM.png](images/image12.png)
+![Screenshot 2017-11-04 at 6.10.25 PM.png](images/tcgj/image12.png)
 
-Create Datasets (Training and Evaluation):[\[37\]](#ftnt37)![Screenshot 2017-11-04 at 11.22.48 AM.png](images/image11.png)
+Create Datasets (Training and Evaluation):[\[37\]](#ftnt37)![Screenshot 2017-11-04 at 11.22.48 AM.png](images/tcgj/image11.png)
 
 ---
 
@@ -323,47 +323,47 @@ Create Datasets (Training and Evaluation):[\[37\]](#ftnt37)![Screenshot 2017-11-
 
 Model:
 
-![Screenshot 2017-11-04 at 11.02.41 AM.png](images/image17.png)
+![Screenshot 2017-11-04 at 11.02.41 AM.png](images/tcgj/image17.png)
 
-Training:![Screenshot 2017-11-04 at 11.04.08 AM.png](images/image20.png)
+Training:![Screenshot 2017-11-04 at 11.04.08 AM.png](images/tcgj/image20.png)
 
-Generate:[\[38\]](#ftnt38)![Screenshot 2017-11-04 at 4.44.53 PM.png](images/image18.png)
+Generate:[\[38\]](#ftnt38)![Screenshot 2017-11-04 at 4.44.53 PM.png](images/tcgj/image18.png)
 
 ## Appendix D ─ Midi Analysis
 
-Song 1 (Note Breakdown):![Screenshot 2017-10-28 at 4.46.12 PM.png](images/image16.png)
+Song 1 (Note Breakdown):![Screenshot 2017-10-28 at 4.46.12 PM.png](images/tcgj/image16.png)
 
-Song 1 (Sheet Music ~ Pleasant):
+Song 1 (Sheet Music \~ Pleasant):
 
-![Screenshot 2017-11-05 at 7.09.24 AM.png](images/image7.png)
+![Screenshot 2017-11-05 at 7.09.24 AM.png](images/tcgj/image7.png)
 
-Song 2 (Note Breakdown):![Screenshot 2017-10-28 at 4.47.09 PM.png](images/image19.png)
+Song 2 (Note Breakdown):![Screenshot 2017-10-28 at 4.47.09 PM.png](images/tcgj/image19.png)
 
-Song 2 (Sheet Music ~ Spooky):
+Song 2 (Sheet Music \~ Spooky):
 
-![Screenshot 2017-11-05 at 7.12.54 AM.png](images/image5.png)
+![Screenshot 2017-11-05 at 7.12.54 AM.png](images/tcgj/image5.png)
 
 Song 3 (Note Breakdown):
 
-![Screenshot 2017-11-04 at 10.08.32 AM.png](images/image21.png)
+![Screenshot 2017-11-04 at 10.08.32 AM.png](images/tcgj/image21.png)
 
-Song 3 (Sheet Music ~ Funky):
+Song 3 (Sheet Music \~ Funky):
 
-![Screenshot 2017-11-05 at 7.15.29 AM.png](images/image6.png)
+![Screenshot 2017-11-05 at 7.15.29 AM.png](images/tcgj/image6.png)
 
 Song 4 (Note Breakdown):
 
-![Screenshot 2017-11-05 at 10.42.25 AM.png](images/image9.png)
+![Screenshot 2017-11-05 at 10.42.25 AM.png](images/tcgj/image9.png)
 
-Song 4 (Sheet Music ~ Chaotic):
+Song 4 (Sheet Music \~ Chaotic):
 
-![Screenshot 2017-11-05 at 10.45.23 AM.png](images/image8.png)
+![Screenshot 2017-11-05 at 10.45.23 AM.png](images/tcgj/image8.png)
 
 ---
 
 ## Appendix E ─ Outlines
 
-Computer - Google Virtual Machine (Training Model ~ 6 Days):
+Computer - Google Virtual Machine (Training Model \~ 6 Days):
 
 CPU:
 
@@ -389,32 +389,32 @@ Libraries:
 Commands
 
 1. Note Sequence:
-   ./bazel-bin/magenta/scripts/convert_dir_to_note_sequences --input_dir=~/ee/midi/ --output_file=~/ee/res/notesequences.tfrecord --num_threads=64 --log=INFO
+   ./bazel-bin/magenta/scripts/convert_dir_to_note_sequences --input_dir=\~/ee/midi/ --output_file=\~/ee/res/notesequences.tfrecord --num_threads=64 --log=INFO
 
 2. Dataset:
-   ./bazel-bin/magenta/melody_rnn_create_dataset --config=attention_rnn --input=~/ee/res/notesequences.tfrecord --output_dir=~/ee/res/out/ --eval_ratio=0.01
+   ./bazel-bin/magenta/melody_rnn_create_dataset --config=attention_rnn --input=\~/ee/res/notesequences.tfrecord --output_dir=\~/ee/res/out/ --eval_ratio=0.01
 
 3. Train:
-   ./bazel-bin/magenta/train --config=attention_rnn --run_dir=~/ee/res/rundir/ --sequence_example_file=~/ee/res/out/training_melodies.tfrecord --hparams="batch_size=512,rnn_layer_sizes=\[64,64\]"
+   ./bazel-bin/magenta/train --config=attention_rnn --run_dir=\~/ee/res/rundir/ --sequence_example_file=\~/ee/res/out/training_melodies.tfrecord --hparams="batch_size=512,rnn_layer_sizes=\[64,64\]"
 
 4. Generate:
-   ./bazel-bin/magenta/generate --config=attention_rnn --run_dir=~/ee/res/rundir/ --output_dir=~/ee/res/generated/ --num_outputs=10 --num_steps=480 --hparams="batch_size=512,rnn_layer_sizes=\[64,64\]" --primer_melody="\[\]"
+   ./bazel-bin/magenta/generate --config=attention_rnn --run_dir=\~/ee/res/rundir/ --output_dir=\~/ee/res/generated/ --num_outputs=10 --num_steps=480 --hparams="batch_size=512,rnn_layer_sizes=\[64,64\]" --primer_melody="\[\]"
 
 ## Appendix F ─ Sound Files
 
-1. Song 1 (Audio ~ Pleasant)
+1. Song 1 (Audio \~ Pleasant)
 
 [www.soundcloud.com/splch/growing?in=splch/sets/magenta-video-game-music](https://www.google.com/url?q=https://soundcloud.com/splch/growing?in%3Dsplch/sets/magenta-video-game-music&sa=D&source=editors&ust=1646112990627928&usg=AOvVaw0iP8VjFY0SESF7YksSeK5Q)
 
-2. Song 2 (Audio ~ Spooky)
+2. Song 2 (Audio \~ Spooky)
 
 [www.soundcloud.com/splch/spooky?in=splch/sets/magenta-video-game-music](https://www.google.com/url?q=https://soundcloud.com/splch/spooky?in%3Dsplch/sets/magenta-video-game-music&sa=D&source=editors&ust=1646112990628555&usg=AOvVaw2JiPRvIuTXtAuGNMEeZsCn)
 
-3. Song 3 (Audio ~ Funky)
+3. Song 3 (Audio \~ Funky)
 
 [www.soundcloud.com/splch/technocafe?in=splch/sets/magenta-video-game-music](https://www.google.com/url?q=https://soundcloud.com/splch/technocafe?in%3Dsplch/sets/magenta-video-game-music&sa=D&source=editors&ust=1646112990629058&usg=AOvVaw1Ps8MGq0sWXiRFqGcIW4sc)
 
-4. Song 4 (Audio ~ Chaotic)
+4. Song 4 (Audio \~ Chaotic)
 
 [www.soundcloud.com/splch/mash?in=splch/sets/magenta-video-game-music](https://www.google.com/url?q=https://soundcloud.com/splch/mash?in%3Dsplch/sets/magenta-video-game-music&sa=D&source=editors&ust=1646112990629621&usg=AOvVaw38l4nnRDiMlQ8GWYxdXGh0)
 
