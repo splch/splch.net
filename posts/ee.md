@@ -1,8 +1,8 @@
 ---
-title: Deep Learning Video Game Music Generation
-date: 2/28/2022
+title: Archive: IB CS Extended Essay
+date: 3/14/2018
 image: spooky.webp
-draft: true
+draft: false
 ---
 
 > "How feasible are deep neural networks in generating thematically diverse video game music?"
