@@ -1,6 +1,6 @@
 ---
-title: Converting Country Codes to Flag Emojis
-date: 2/25/2021
+title: Archive: Converting Country Codes to Flag Emojis
+date: 9/18/2020
 image: stackAnswer.webp
 draft: false
 ---
