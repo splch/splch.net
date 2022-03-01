@@ -1,7 +1,7 @@
 ---
 title: Deep Learning Video Game Music Generation
 date: 2/28/2022
-image: templateImage.webp
+image: spooky.webp
 draft: true
 ---
 
@@ -83,7 +83,7 @@ Video game music adds to the canonical nature of music by not exclusively derivi
 
 modes and quick tempos, while during spooky scenes, suspense is built through slower tempos and lower pitches in minor keys. My model composed a fitting example of a spooky song ― shown in Figure 1.
 
-![Screenshot 2017-11-05 at 7.12.54 AM.png](images/tcgj/image5.png)
+![Screenshot 2017-11-05 at 7.12.54 AM.png](images/spooky.webp)
 
 Figure 1. Example of Spooky Music
 
@@ -341,7 +341,7 @@ Song 2 (Note Breakdown):![Screenshot 2017-10-28 at 4.47.09 PM.png](images/tcgj/i
 
 Song 2 (Sheet Music \~ Spooky):
 
-![Screenshot 2017-11-05 at 7.12.54 AM.png](images/tcgj/image5.png)
+![Screenshot 2017-11-05 at 7.12.54 AM.png](images/spooky.webp)
 
 Song 3 (Note Breakdown):
 
