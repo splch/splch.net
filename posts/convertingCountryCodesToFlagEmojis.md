@@ -8,7 +8,6 @@ draft: false
 In a Flutter <abbr title="application">app</abbr> I started — and eventually stopped — working on, I was converting country codes to their corresponding flag <abbr title="絵文字">emoji</abbr>s in Dart. This was a fun problem to solve and it's actually my highest rated solution on [StackOverflow](https://stackoverflow.com/a/63961112), so I wanted to save it here!
 
 ---
-
 ```dart
 String countryCode = 'us';
 String flag = countryCode.toUpperCase().replaceAllMapped(RegExp(r'[A-Z]'),
@@ -32,7 +31,9 @@ print(flag);
    - 85
    - 83
 
-5. <abbr title="127397 = 127462 (🇦's HTML code) - 65 (A's rune value).">`+ 127397`</abbr> Convert each rune to a [regional indicator symbol](https://en.wikipedia.org/wiki/Regional_indicator_symbol)
+5. `+ 127397` Convert each rune to a [regional indicator symbol](https://en.wikipedia.org/wiki/Regional_indicator_symbol)
+
+   > 127397 = 127462 (🇦's HTML code) - 65 (A's rune value).
 
    - 85 + 127397 = 127482
    - 83 + 127397 = 127480
