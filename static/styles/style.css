@@ -35,7 +35,9 @@ blockquote:hover {
 }
 
 body {
+  font-family: Verdana, Arial, sans-serif;
   margin: 0.5em;
+	overflow-wrap: break-word;
 }
 
 code {
@@ -126,7 +128,6 @@ summary,
 
 html {
   background: var(--background);
-  font-family: Verdana, Arial, sans-serif;
 }
 
 i {
