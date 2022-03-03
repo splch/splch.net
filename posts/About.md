@@ -12,7 +12,7 @@ Spencer Churchill
 
 # [Résumé](data/resume/resume.pdf)
 
-I'm a student at the University of California, Irvine and majoring in computer science. I enjoy studying at the edge of the field, so I've found quantum computing and [artificial intelligence](https://wikipedia.org/wiki/Artificial_general_intelligence#%22Strong_AI%22_as_defined_in_philosophy) to be exciting areas! 
+I'm a student at the University of California, Irvine and majoring in computer science. I enjoy studying at the edge of the field, so I've found quantum computing and [artificial intelligence](https://wikipedia.org/wiki/Artificial_general_intelligence#%22Strong_AI%22_as_defined_in_philosophy) to be exciting areas!
 
 I'm always listening to or making music. But when I'm up for a challenge, I like to code all sorts of things. I make [chrome extensions](https://chrome.google.com/webstore/search/splch?_category=extensions) when I need tools and work on quantum and <abbr title="Artificial Intelligence">AI</abbr> projects when I want to push myself.
 
@@ -21,12 +21,14 @@ My current research interest is why different methods of <abbr title="True Rando
 ---
 
 Languages I'm Using:
+
 - Python
 - C
 - <abbr title="HyperText Markup Language">HTML</abbr> / <abbr title="Cascading Style Sheets">CSS</abbr> / <abbr title="JavaScript">JS</abbr>
 - Go
 
 Languages I'm Learning:
+
 - [Haskell](https://tryhaskell.org/)
 - [6502 Assembly](http://www.6502asm.com/)
 
@@ -42,5 +44,4 @@ Languages I'm Learning:
 	<a href="https://www.eff.org/join"><img class="badge" src="https://www.eff.org/files/eff-join1.png" alt="Join EFF!"></a>
 	<a href="https://freedom.press/about/"><img class="badge" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Freedom_of_the_Press_Foundation_logo_b%26w.jpg/240px-Freedom_of_the_Press_Foundation_logo_b%26w.jpg" alt="Freedom of the Press"></a>
 	<a href="https://www.credly.com/badges/da0f89d5-8e25-4281-9d6a-e6df33892452"><img class="badge" src="https://images.credly.com/images/fb598ca2-1bd2-4674-a49f-3b55445f47f9/IBM_Qiskit_Advocate_-_Advanced_v2.png" alt="Qiskit Advocate"></a>
-	<a href="https://www.romhacking.net/"><img class="badge" src="https://www.romhacking.net/images/rhdnfacebook.jpg" alt="ROMhacking.net"></a>
 </div>

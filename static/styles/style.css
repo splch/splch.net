@@ -1,48 +1,40 @@
 :root {
-  animation-name: pantoneColors;
-  animation-duration: 766s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-
-  --active: #903;
-  --background: #fff;
-  --code: #abb2bf;
-  --font-color: #000;
+  --background: 255, 255, 255;
+  --code: 171, 178, 191;
+  --font-color: 0, 0, 0;
   --font-size: 1.3rem;
-  --hover: #9cf3;
-  --light: #069;
+  --light: 102, 103, 171; /* Pantone color of the year */
   --round: 5px;
 }
 
 a {
-  color: var(--light);
+  color: rgb(var(--light));
   text-decoration-line: none;
 }
 
 abbr {
-  color: var(--light);
+  color: rgb(var(--light));
 }
 
 blockquote {
-  border-left: 3px solid var(--light);
+  border-left: 3px solid rgb(var(--light));
   color: #808080;
   padding-left: 1em;
 }
 
 blockquote:hover {
-  border-left: 3px solid var(--hover);
   filter: invert();
 }
 
 body {
   font-family: Verdana, Arial, sans-serif;
   margin: 0.5em;
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 code {
   background: #282c34;
-  color: var(--code);
+  color: rgb(var(--code));
   display: inline-block;
 }
 
@@ -88,13 +80,13 @@ h2.template {
 button.link:hover,
 h2.template:hover,
 header button.link.active {
-  background: var(--light);
+  background: rgb(var(--light));
   filter: invert();
 }
 
 header {
   align-items: center;
-  background: var(--light);
+  background: rgb(var(--light));
   box-shadow: 0px 2px 7px 0px black;
   color: #fff;
   display: flex;
@@ -127,7 +119,7 @@ summary,
 }
 
 html {
-  background: var(--background);
+  background: rgb(var(--background));
 }
 
 i {
@@ -160,7 +152,7 @@ ul {
 }
 
 pre > code {
-  border-left: 0.5em solid var(--light);
+  border-left: 0.5em solid rgb(var(--light));
   font-family: "Courier New", monospace !important;
   font-size: calc(var(--font-size) * 0.9);
   max-height: 46vh;
@@ -171,20 +163,20 @@ pre > code {
 
 pre > code:focus,
 pre > code:hover {
-  border-left: 0.5em solid var(--light);
+  border-left: 0.5em solid rgb(var(--light));
   filter: invert();
   outline: none;
 }
 
 summary {
-  background: var(--light);
+  background: rgb(var(--light));
   color: #fff;
   cursor: pointer;
   outline: none;
 }
 
 summary:hover {
-  background: var(--light);
+  background: rgb(var(--light));
   filter: invert();
 }
 
@@ -193,18 +185,19 @@ table {
 }
 
 table thead {
-  background: var(--light);
+  background: rgb(var(--light));
   color: #fff;
 }
 
 tbody tr:hover {
-  background: var(--light);
+  background: rgb(var(--light));
   color: #fff;
   filter: invert();
 }
 
 tr:nth-child(even) {
-  background: var(--hover);
+  background: rgba(var(--light), 0.5);
+  filter: invert();
 }
 
 #cover {
@@ -221,7 +214,7 @@ tr:nth-child(even) {
 }
 
 #page {
-  color: var(--font-color);
+  color: rgb(var(--font-color));
   margin: auto;
   max-width: 80ch;
   width: 80%;
@@ -292,19 +285,17 @@ tr:nth-child(even) {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000;
-    --font-color: #fff;
-    --hover: var(--active);
+    --background: 0, 0, 0;
+    --font-color: 255, 255, 255;
   }
 }
 
 @media print {
   :root {
-    --background: #fff;
-    --font-color: #000;
-    --font-size: 12pt;
-    --hover: #9cf3;
-    --light: #069 !important;
+    --background: 255, 255, 255;
+    --font-color: 0, 0, 0;
+    --font-size: 10pt;
+    --light: 0, 102, 153;
   }
 
   footer,
@@ -320,99 +311,21 @@ tr:nth-child(even) {
     max-height: max-content;
     white-space: break-spaces;
   }
-}
 
-@keyframes pantoneColors {
-  /* 2000 */
-  0% {
-    --light: #9bb7d4;
+  tr:nth-child(even) {
+    background: rgba(var(--light), 0.1) !important;
   }
-  /* 2001 */
-  4.17% {
-    --light: #c74375;
+
+  #page {
+    width: 100%;
   }
-  /* 2002 */
-  8.33% {
-    --light: #bf1932;
+
+  * {
+    filter: initial !important;
+    outline: none !important;
   }
-  /* 2003 */
-  12.5% {
-    --light: #7bc4c4;
-  }
-  /* 2004 */
-  16.67% {
-    --light: #e2583e;
-  }
-  /* 2005 */
-  20.83% {
-    --light: #53b0ae;
-  }
-  /* 2006 */
-  25% {
-    --light: #decdbe;
-  }
-  /* 2007 */
-  29.17% {
-    --light: #9b1b30;
-  }
-  /* 2008 */
-  33.33% {
-    --light: #5a5b9f;
-  }
-  /* 2009 */
-  37.5% {
-    --light: #f0c05a;
-  }
-  /* 2010 */
-  41.67% {
-    --light: #45b5aa;
-  }
-  /* 2011 */
-  45.83% {
-    --light: #d94f70;
-  }
-  /* 2012 */
-  50% {
-    --light: #dd4124;
-  }
-  /* 2013 */
-  54.17% {
-    --light: #009473;
-  }
-  /* 2014 */
-  58.33% {
-    --light: #b163a3;
-  }
-  /* 2015 */
-  62.5% {
-    --light: #955251;
-  }
-  /* 2016 */
-  66.67% {
-    --light: linear-gradient(to right, #f7cac9, #92a8d1);
-  }
-  /* 2017 */
-  75% {
-    --light: #88b04b;
-  }
-  /* 2018 */
-  79.17% {
-    --light: #5f4b8b;
-  }
-  /* 2019 */
-  83.33% {
-    --light: #ff6f61;
-  }
-  /* 2020 */
-  87.5% {
-    --light: #0f4c81;
-  }
-  /* 2021 */
-  91.67% {
-    --light: linear-gradient(to right, #939597, #f5df4d);
-  }
-  /* 2022 */
-  100% {
-    --light: #6667ab;
+
+  *.active {
+    background: initial !important;
   }
 }
