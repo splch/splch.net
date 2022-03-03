@@ -196,8 +196,7 @@ tbody tr:hover {
 }
 
 tr:nth-child(even) {
-  background: rgba(var(--light), 0.5);
-  filter: invert();
+  background: rgba(var(--light), 0.1);
 }
 
 #cover {
@@ -310,10 +309,6 @@ tr:nth-child(even) {
   pre > code {
     max-height: max-content;
     white-space: break-spaces;
-  }
-
-  tr:nth-child(even) {
-    background: rgba(var(--light), 0.1) !important;
   }
 
   #page {
