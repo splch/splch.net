@@ -12,6 +12,7 @@ echo "Updating styles"
 curl -s -S -Lo styles/easymde.min.css https://unpkg.com/easymde/dist/easymde.min.css
 curl -s -S -Lo styles/katex.min.css https://unpkg.com/katex/dist/katex.min.css
 curl -s -S -Lo styles/atom-one-dark.min.css https://unpkg.com/@highlightjs/cdn-assets/styles/atom-one-dark.min.css
+curl -s -S -Lo styles/font-awesome.min.css https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css
 
 echo "Updating EasyMDE spell check"
 
@@ -41,6 +42,13 @@ curl -s -S -Lo styles/fonts/KaTeX_Size3-Regular.woff2 https://cdn.jsdelivr.net/n
 curl -s -S -Lo styles/fonts/KaTeX_Size4-Regular.woff2 https://cdn.jsdelivr.net/npm/katex/dist/fonts/KaTeX_Size4-Regular.woff2
 curl -s -S -Lo styles/fonts/KaTeX_Typewriter-Regular.woff2 https://cdn.jsdelivr.net/npm/katex/dist/fonts/KaTeX_Typewriter-Regular.woff2
 
+echo "Updating FA font"
+
+curl -s -S -Lo styles/fonts/fontawesome-webfont.woff2 https://maxcdn.bootstrapcdn.com/font-awesome/latest/fonts/fontawesome-webfont.woff2
+
 echo "Fixing paths"
 
 sed -i 's,"https://cdn.jsdelivr.net/codemirror.spell-checker/latest/,"scripts/easymde/,g' scripts/easymde/easymde.min.js
+sed -i 's,"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/,"styles/,g' scripts/easymde/easymde.min.js
+sed -i 's,maxcdn.bootstrapcdn.com/font-awesome/,,g' scripts/easymde/easymde.min.js
+sed -i 's,../fonts/,fonts/,g' styles/font-awesome.min.css

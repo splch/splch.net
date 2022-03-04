@@ -1,7 +1,7 @@
 ---
 title: Major League Hacking Fellowship
 date: 1/31/2022
-image: https://raw.githubusercontent.com/bentoml/BentoML/0.13-LTS/docs/source/_static/img/bentoml-overview.png
+image: bentoml.webp
 draft: true
 ---
 
