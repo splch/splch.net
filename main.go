@@ -157,6 +157,21 @@ func min(a, b int) int {
 	return b
 }
 
+func clean(str string) string {
+	s := []byte(str)
+	j := 0
+	for _, b := range s {
+		if ('a' <= b && b <= 'z') ||
+			('A' <= b && b <= 'Z') ||
+			('0' <= b && b <= '9') ||
+			b == ' ' {
+			s[j] = b
+			j++
+		}
+	}
+	return string(s[:j])
+}
+
 func getMeta(pair string) []string {
 	pair = strings.Replace(pair, " ", "", 1)
 	pair = strings.ReplaceAll(pair, ", ", ",")
@@ -308,7 +323,7 @@ func EditPost(w http.ResponseWriter, r *http.Request) {
 			post := setPost(blog)
 			if len(post.Title) != 0 {
 				files := getFiles(path)
-				fileName := searchFiles(post.Title[0], files, path)
+				fileName := clean(searchFiles(post.Title[0], files, path))
 				content := []byte(strings.Join(blog, "\n"))
 				ioutil.WriteFile(fileName, content, 0644)
 				exec.Command("/bin/sh", "change.sh").Output()

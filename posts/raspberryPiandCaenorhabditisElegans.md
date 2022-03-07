@@ -1,5 +1,5 @@
 ---
-title: Archive: Raspberry Pi + Caenorhabditis Elegans
+title: Archive: Raspberry Pi and Caenorhabditis Elegans
 date: 8/20/2016
 image: openWorm.webp
 draft: false
