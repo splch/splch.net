@@ -158,7 +158,7 @@ Fenced code block
 <summary>Details Tag</summary>
 
 ```html
-<iframe class="pdf" src="data/lighthouse.pdf#view=FitW"></iframe>
+<iframe class="pdf" src="/data/lighthouse.pdf#view=FitW"></iframe>
 ```
 
 </details>

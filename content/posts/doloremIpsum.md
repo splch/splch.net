@@ -8,7 +8,7 @@ draft: false
 
 How would Cicero feel if he learned most knew him through Lorem Ipsum? I'm sure he'd lose his head… again. To further Herennius' delight, Cicero didn't even write those lines! To do justice to his legacy, I present Cicerkov: The Cicero Markov Chain.
 
-To follow along, download <a href="data/lorem.txt">his work</a> here. There is an interactive demo in JavaScript below, though, but it uses a prerun model of window size two.
+To follow along, download <a href="/data/lorem.txt">his work</a> here. There is an interactive demo in JavaScript below, though, but it uses a prerun model of window size two.
 
 <details>
 <summary>Python Code</summary>

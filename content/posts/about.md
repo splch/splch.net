@@ -43,4 +43,4 @@ Languages I'm Learning:
 	<a href="https://www.credly.com/badges/da0f89d5-8e25-4281-9d6a-e6df33892452"><img class="badge" src="/photos/badges/qiskit.png" alt="Qiskit Advocate"></a>
 </div>
 
-# [Résumé](data/resume/resume.pdf)
+# [Résumé](/data/resume/resume.pdf)

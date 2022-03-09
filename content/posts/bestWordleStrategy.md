@@ -18,7 +18,7 @@ Another option is to maximize the gradient (<abbr title="Machine Learning">ML</a
 
 This is hand-wavy because I mostly want to dive into the <abbr title="Computer Science">CS</abbr>, but even this can be calculated… I'll maybe do that as well. Instead, I'll see when the letter frequencies plateau and conclude that guessing letters past that point just offer diminishing returns.
 
-Here's the list of all [wordle words](data/wordles.txt) as of writing this, though I doubt it'll change much. It might be helpful to have in case you want to run your own tests or follow along.
+Here's the list of all [wordle words](/data/wordles.txt) as of writing this, though I doubt it'll change much. It might be helpful to have in case you want to run your own tests or follow along.
 
 <details>
 
@@ -191,7 +191,7 @@ From this analysis, here's a table to help make the best starting Wordle guesses
 
 # Solution
 
-It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. You can also view updated code as a [PDF](data/wordleCode.pdf).
+It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. You can also view updated code as a [PDF](/data/wordleCode.pdf).
 
 | Exploration | Words |       |       |
 | ----------- | ----- | ----- | ----- |

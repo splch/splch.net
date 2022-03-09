@@ -30,7 +30,7 @@ Having a professional touch to your work makes you proud, but it also encourages
 
 > It became very difficult to continue working at times; however, the illustrations reinspired me again and again.
 
-I hope you found these tips helpful! I've linked my favorite resources below, and, in case the extension is unavailable, click <a href="data/writest.zip">here</a> to download it.
+I hope you found these tips helpful! I've linked my favorite resources below, and, in case the extension is unavailable, click <a href="/data/writest.zip">here</a> to download it.
 
 - Fiverr: https://www.fiverr.com/
 

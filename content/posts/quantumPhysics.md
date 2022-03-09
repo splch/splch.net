@@ -16,4 +16,4 @@ In the second lecture, this idea of superposition is again reiterated by the fam
 
 ![OCW](/photos/ocw2.webp)
 
-I'm tempted to take a [course](https://online.stanford.edu/courses/soe-yeeqmse01-quantum-mechanics-scientists-and-engineers) now, because doing problem sets for a course designed to be taken in-person is tedious. I also want a certificate😮‍💨. If the OpenCourseWare site is down, click <a href="data/quantumPhysics.zip">here</a> to download the lecture materials.
+I'm tempted to take a [course](https://online.stanford.edu/courses/soe-yeeqmse01-quantum-mechanics-scientists-and-engineers) now, because doing problem sets for a course designed to be taken in-person is tedious. I also want a certificate😮‍💨. If the OpenCourseWare site is down, click <a href="/data/quantumPhysics.zip">here</a> to download the lecture materials.

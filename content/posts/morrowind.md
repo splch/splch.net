@@ -13,6 +13,6 @@ I applied as a writer for the team and am hoping to contribute in some way; but 
 Skywind, despite being built on a 2011 engine, brings the world of Morrowind to a more modern age. The world is more open, with more choices, and the player can interact in natural ways.
 
 <audio controls>
-    <source src="data/nerevarRising.mp3" type="audio/mpeg">
+    <source src="/data/nerevarRising.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
