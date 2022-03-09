@@ -1,10 +1,6 @@
 # slc.is
 
-A [markdown](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown) blog on [Go](https://github.com/splch/slc.is/blob/main/main.go)
-
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/splch/slc.is)
-
-[![Run on Repl.it](https://replit.com/badge/github/splch/slc.is)](https://replit.com/github/splch/slc.is)
 
 ---
 
