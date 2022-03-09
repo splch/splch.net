@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2021-01-22T00:00:00-08:00
-draft: true
+draft: false
 ---
 
 ```bash
@@ -14,8 +14,6 @@ I'm a student at the University of California, Irvine and majoring in computer s
 I'm always listening to or making music. But when I'm up for a challenge, I like to code all sorts of things. I make [chrome extensions](https://chrome.google.com/webstore/search/splch?_category=extensions) when I need tools and work on quantum and <abbr title="Artificial Intelligence">AI</abbr> projects when I want to push myself.
 
 My current research interest is why different methods of <abbr title="True Random Number Generation">TRNG</abbr> approach correlation coefficients of 0 at different rates. A future goal of mine is to study how quantum will change optimizations like gradient decent. I'm actively involved in [Qiskit](https://qiskit.org/) but still need to study different methods of minimum finding.
-
-# [Résumé](data/resume/resume.pdf)
 
 ---
 
@@ -44,3 +42,5 @@ Languages I'm Learning:
 	<a href="https://freedom.press/about/"><img class="badge" src="/photos/badges/fpf.jpg" alt="Freedom of the Press"></a>
 	<a href="https://www.credly.com/badges/da0f89d5-8e25-4281-9d6a-e6df33892452"><img class="badge" src="/photos/badges/qiskit.png" alt="Qiskit Advocate"></a>
 </div>
+
+# [Résumé](data/resume/resume.pdf)
