@@ -1,10 +1,16 @@
 {{ define "main" }}
 
-<h1>About</h1>
+<h1>Welcome to my site!</h1>
 
-<p>
-I'm a student at the University of California, Irvine and majoring in computer science. <a href="about/">(more)</a>
-</p>
+<br/>
+<pre>
+I'm a quantum advocate and the proud author of <a href="https://quantumtales.org/">Quantum Tales</a>. Have a look around and feel free to share! 🥳
+
+Contact me at spence at duck.com
+- Download my <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/6533CE12BD6691F26D7B4059BFEF7CCA86EE0F0B">PGP Key</a>
+
+I'm also on most platforms as `splch`, so check out my <a href="https://github.com/splch">GitHub</a> and <a href="https://instagram.com/splch/">Instagram</a>! <a href="about/">(more)</a>
+</pre>
 <br/>
 
 <h1>Latest posts</h1>
@@ -19,22 +25,6 @@ I'm a student at the University of California, Irvine and majoring in computer s
                 {{ .Summary }}
             </p>
         </div>    
-    {{ end }}
-{{ end }}
-</div>
-
-<h1>Latest photos</h1>
-
-<div class="image-grid">
-{{ with .Site.GetPage "/photos" }}
-    {{ range first 3 (sort .Data.Pages "Date" "desc")}}
-        <a href="{{ .Permalink }}" title="{{ .Title }}">
-        {{ $image := .Page.Resources.GetMatch .Params.image }}
-        {{ with $image }}
-            {{ $thumb := .Resize "400x" }}
-            <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
-        {{end}}
-        </a>
     {{ end }}
 {{ end }}
 </div>

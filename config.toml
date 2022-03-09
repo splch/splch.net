@@ -12,13 +12,13 @@ languageCode = "en-us"
   animateStyle = "animated zoomIn fast" 
 
   [[params.navlinks]]
-  name = "about/"
-  url = "about/"
-
-  [[params.navlinks]]
   name = "posts/"
   url = "posts/"
   
   [[params.navlinks]]
   name = "music/"
   url = "music/"
+
+  [[params.navlinks]]
+  name = "about/"
+  url = "about/"
