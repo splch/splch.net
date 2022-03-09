@@ -4,7 +4,7 @@ date: 2021-08-22T00:00:00-08:00
 draft: false
 ---
 
-![Go Certification](images/gocert.webp)
+![Go Certification](/photos/gocert.webp)
 
 Despite an [earlier post](/#Future%20of%20Blockchain%20Domains) being so optimistic about the <abbr title="InterPlanetary File System">IPFS</abbr>, I decided to self-host this site. I'm only leaving IPFS because this site will never be popular enough to be on any node besides my own. In this way, I was already hosting from the start. It all began as a fun endeavor to apply Go, but has since led to a [certificate](https://github.com/splch/google-go-coursera) and obsessive refinement of the [server](https://observatory.mozilla.org/analyze/slc.is).
 

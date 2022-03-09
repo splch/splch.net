@@ -4,7 +4,7 @@ date: 2021-09-02T00:00:00-08:00
 draft: false
 ---
 
-![Electronic Frontier Foundation](images/eff.webp)
+![Electronic Frontier Foundation](/photos/eff.webp)
 
 The brain has been hacked and its security patches come slowly. In order to avoid targeted <abbr title="Advertisement">ad</abbr>s and refining _my_ digital consciousness, I'm making steady progress toward respectful technology.
 

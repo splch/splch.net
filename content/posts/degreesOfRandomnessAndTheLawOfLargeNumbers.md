@@ -97,7 +97,7 @@ That's _sus_ but why have pipes if you never use them? Anyways, we can now begin
 
 ## Analysis
 
-![Gnuplot Mean Convergence Plot](images/quantumAvalanchePlot.webp)
+![Gnuplot Mean Convergence Plot](/photos/quantumAvalanchePlot.webp)
 
 This is the plot outputted by gnuplot and it looks like both RNGs converge to 0.5 at equal rates.
 
@@ -233,7 +233,7 @@ Now, much like before, we'll pipe this output into gnuplot.
 gcc -c -o main.o main.c && gcc ./main.o -o main && ./main | cat > /tmp/gnuplotdata.csv && gnuplot -p -e "set title 'Quantum vs. Avalanche';set xlabel 'Size (Bytes)';set ylabel 'Serial Correlation Coefficient';set datafile separator ',';plot for [col=1:3] '/tmp/gnuplotdata.csv' using col with lines title columnheader;pause -1"
 ```
 
-![Gnuplot Coefficient Convergence Plot](images/randomCoefficients.webp)
+![Gnuplot Coefficient Convergence Plot](/photos/randomCoefficients.webp)
 
 Well, this is interesting.
 

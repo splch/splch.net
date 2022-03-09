@@ -4,7 +4,7 @@ date: 2021-12-08T00:00:00-08:00
 draft: false
 ---
 
-![One RNG](images/onerng.webp)
+![One RNG](/photos/onerng.webp)
 
 Avalanche breakdown and quantum are two methods for generating true random numbers. Here, we'll compare them for feasibility and quality. The feasibility of a <abbr title="True Random Number Generator">TRNG</abbr> is how many bits per second it can produce while remaining random. And that leads us into quality which will be determined according to the NIST's [<abbr title="Statistical Test Suite">STS</abbr>](https://www.nist.gov/publications/statistical-test-suite-random-and-pseudorandom-number-generators-cryptographic). We'll also compare these methods against the computer's default RNG as a baseline.
 

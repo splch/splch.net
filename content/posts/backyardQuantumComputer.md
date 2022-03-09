@@ -4,7 +4,7 @@ date: 2022-01-25T00:00:00-08:00
 draft: true
 ---
 
-![Photonic Quantum Computer](images/quantumComputer.webp)
+![Photonic Quantum Computer](/photos/quantumComputer.webp)
 
 Quantum computers are still seen as science fiction, partially because their descriptions are shrouded by advanced physical phenomena in foreign environments. I'm involved in IBM's quantum group, Qiskit, and they use transmon qubits which need to be at nearly absolute zero to function as quantum bits. The physics that go into these systems are colder than the universe and uninviting to casually-curious learners. My goal in quantum is to lower that barrier of entry with my book [Quantum Tales](https://quantumtales.org) and hopefully this post.
 

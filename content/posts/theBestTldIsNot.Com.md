@@ -4,7 +4,7 @@ date: 2021-08-29T00:00:00-08:00
 draft: false
 ---
 
-![Bad Countries](images/eyes.webp)
+![Bad Countries](/photos/eyes.webp)
 
 The TLD is controlled by its parent company or country. When choosing a TLD, consider the site to be strictly under the laws of the country that ultimate controls it. For example, if you use a <abbr title="Saudi Arabia">`.ae`</abbr> domain, with a single query from the monarchy, your site could be completely removed. On the otherhand, if you use a domain from… well let's get into it 😉
 

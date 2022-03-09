@@ -4,7 +4,7 @@ date: 2021-09-18T00:00:00-08:00
 draft: false
 ---
 
-![Cookies](images/brownButterCookies.webp)
+![Cookies](/photos/brownButterCookies.webp)
 
 - ⏲️ <abbr title="Preparation">Prep</abbr> time: 15 <abbr title="minute">min</abbr>
 - 🍪 Baking time: 11 min

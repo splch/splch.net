@@ -4,7 +4,7 @@ date: 2022-01-21T00:00:00-08:00
 draft: false
 ---
 
-![Game Collage](images/bestNintendoGames.webp)
+![Game Collage](/photos/bestNintendoGames.webp)
 
 I combed the web for _Top 100_ lists for the \*NES and GB\* and combined them to record the most beloved 975 games. This master table is helpful when making ROM libraries or finding something tried, true, and new to play.
 

@@ -4,7 +4,7 @@ date: 2021-09-10T00:00:00-08:00
 draft: false
 ---
 
-![Raspberry Pi Pico](images/pico.webp)
+![Raspberry Pi Pico](/photos/pico.webp)
 
 I've been using the Raspberry Pi Foundation's products for almost a decade now, but they only recently released their [first microcontroller](https://www.raspberrypi.org/documentation/microcontrollers/raspberry-pi-pico.html). Their custom <abbr title="Raspberry Pi 2040">RP2040</abbr> has an ARM Cortex-M0+ chip that, obviously, uses ARM assembly. I've been wanting to learn assembly and this is definitely a great opportunity to do so.
 

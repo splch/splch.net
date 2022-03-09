@@ -4,7 +4,7 @@ date: 2022-01-13T00:00:00-08:00
 draft: false
 ---
 
-![Wordle](images/wordle.webp)
+![Wordle](/photos/wordle.webp)
 
 This post will derive an optimal Wordle-specific guessing strategy. The approach taken will be reducing the set of possible words a maximum amount for each guess; however, it doesn't make sense to keep reducing the set of words until the final guess, so we're reintroduced to our old friend, the [explore-exploit tradeoff](https://conceptually.org/concepts/explore-or-exploit).
 
@@ -80,7 +80,7 @@ plt.bar([x[0] for x in dist], [y[1] for y in dist])
 plt.show()
 ```
 
-![Letter Distribution](images/wordLetters.webp)
+![Letter Distribution](/photos/wordLetters.webp)
 
 | Letter | Count |
 | ------ | ----: |

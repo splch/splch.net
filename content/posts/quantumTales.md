@@ -4,7 +4,7 @@ date: 2021-05-18T00:00:00-08:00
 draft: false
 ---
 
-![Quantum Tales](images/quantumTales.webp)
+![Quantum Tales](/photos/quantumTales.webp)
 
 Shortly after becoming an IBM Qiskit Advocate, I was introduced to the Unitary Fund. After writing a [story](https://link.medium.com/y1zFy6ThYhb) where the reader uses Shor's algorithm to decrypt a stock listing, I wanted to create more stories teaching quantum algorithms.
 

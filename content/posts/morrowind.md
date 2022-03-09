@@ -4,7 +4,7 @@ date: 2021-05-29T00:00:00-08:00
 draft: true
 ---
 
-![Morrowind](images/morrowind.webp)
+![Morrowind](/photos/morrowind.webp)
 
 In a world of magic, war, and a thousand other things, it's easy to forget the past. (That line was written by GPT-3 😂) However, it is also true that forgetting a past world filled with magic and lore is difficult. This is why I'm so excited for the Skywind mod.
 

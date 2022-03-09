@@ -4,7 +4,7 @@ date: 2016-08-20T00:00:00-08:00
 draft: false
 ---
 
-![OpenWorm](images/openWorm.webp)
+![OpenWorm](/photos/openWorm.webp)
 
 One of my first projects was AI projects was taking the [OpenWorm](https://openworm.org/) <abbr title="Caenorhabditis">C</abbr>. Elegans brain map and connecting it to a Raspberry Pi. The Pi was integrated with Lego Mindstorms, so the Lego motors would move in the direction the worm wanted to go.
 

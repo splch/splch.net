@@ -4,7 +4,7 @@ date: 2021-12-19T00:00:00-08:00
 draft: false
 ---
 
-![Lil' Mo](images/truck.webp)
+![Lil' Mo](/photos/truck.webp)
 
 I've always been curious about how to repair cars since debugging tends to follow similar thought processes. Today, I finally got my first car, a 1988 Toyota Pickup affectionately known as Lil' Mo. I'm excited to learn how to work on its famous <abbr title="Toyota 22 R Family - Electronic Fuel Injection">22R-E</abbr> engine and handle wiring for the electronics.
 

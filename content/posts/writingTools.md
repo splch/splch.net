@@ -4,7 +4,7 @@ date: 2021-05-15T00:00:00-08:00
 draft: false
 ---
 
-![Blog](images/blog.webp)
+![Blog](/photos/blog.webp)
 
 Half a year ago, I began the process of writing my first book. This book is special to me because it attempts to teach middle schoolers and those without experience, quantum. By using fairy tales everyone is familiar with, it is easier to teach new topics. **I found that younger audiences were able to learn new material better when that knowledge was introduced in the context of popular stories**. In this way, I will use stories from around the world to help teach many people the basics of quantum and inspire them to learn more.
 

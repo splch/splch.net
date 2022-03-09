@@ -4,7 +4,7 @@ date: 2021-07-15T00:00:00-08:00
 draft: false
 ---
 
-![Quantum Programs](images/quantumSummer.webp)
+![Quantum Programs](/photos/quantumSummer.webp)
 
 This summer will be affectionately known as the Quantum Summer.
 

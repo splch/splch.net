@@ -4,13 +4,13 @@ date: 2021-12-06T00:00:00-08:00
 draft: false
 ---
 
-![Manjaro Linux](images/manjaro.webp)
+![Manjaro Linux](/photos/manjaro.webp)
 
 ## 1. Enable Developer Mode
 
 You'll need to hold the **escape** (esc) and **refresh** (⟳) keys together. While holding them, press the **power** button to turn on the Chromebook.
 
-![Boo-Hoo ChromeOS](images/chromeosDev.webp)
+![Boo-Hoo ChromeOS](/photos/chromeosDev.webp)
 
 Chrome will get nervous and show this screen.
 
@@ -24,14 +24,14 @@ Once the Chromebook boots, shut it down.
 
 You can do this by removing the battery. Modern chromebooks make this a little difficult, so here are the steps I took, if you need.
 
-a. ![Flip the chromebook over](images/manjaro1.webp)
-b. ![Access the screws](images/manjaro2.webp)
-c. ![Prepare to remove screws](images/manjaro3.webp)
-d. ![Remove screws](images/manjaro4.webp)
-e. ![Begin to pry off case from the hinge](images/manjaro5.webp)
-f. ![Remove plate completely from small areas](images/manjaro6.webp)
-g. ![Find where the battery connects](images/manjaro7.webp)
-h. ![Disconnect the battery](images/manjaro8.webp)
+a. ![Flip the chromebook over](/photos/manjaro1.webp)
+b. ![Access the screws](/photos/manjaro2.webp)
+c. ![Prepare to remove screws](/photos/manjaro3.webp)
+d. ![Remove screws](/photos/manjaro4.webp)
+e. ![Begin to pry off case from the hinge](/photos/manjaro5.webp)
+f. ![Remove plate completely from small areas](/photos/manjaro6.webp)
+g. ![Find where the battery connects](/photos/manjaro7.webp)
+h. ![Disconnect the battery](/photos/manjaro8.webp)
 
 ## 3. Disable Write Protection
 
@@ -41,7 +41,7 @@ You'll need to plug your Chromebook into its charger to power on.
 
 Boot into ChromeOS and load [crosh](chrome-untrusted://crosh) and type the following commands:
 
-![Commands to disable write protection](images/manjaro9.webp)
+![Commands to disable write protection](/photos/manjaro9.webp)
 a. `shell`
 b. `sudo sh`
 c. `flashrom --wp-disable`

@@ -6,7 +6,7 @@ draft: false
 
 I've been using my old Game Boy Color a lot more now that I'm programming a GB game, so I wanted to clean up the handheld! This tutorial is the culmination of a few YouTube videos from [The Retro Future](https://youtu.be/fZ__K0QotW8) and [Odd Tinkering](https://youtu.be/2BmGMi0IEx4). I liked a lot of their tips, so I decided to add them and my own to this post.
 
-![GBC Before Cleaning](images/gbc1.webp)
+![GBC Before Cleaning](/photos/gbc1.webp)
 
 ## Tools:
 
@@ -36,7 +36,7 @@ I've been using my old Game Boy Color a lot more now that I'm programming a GB g
 9. On the back plate, unscrew the 4 Phillips screws holding the cartridge slot
 10. Slide the metal battery contact out of the case
 
-![Disassembled GBC](images/gbc2.webp)
+![Disassembled GBC](/photos/gbc2.webp)
 
 ## Cleaning
 
@@ -77,6 +77,6 @@ Battery Contact:
 
 ## Enjoy
 
-![GBC After Cleaning](images/gbc3.webp)
+![GBC After Cleaning](/photos/gbc3.webp)
 
 Now that the GBC is all cleaned up, it should last a few more decades!

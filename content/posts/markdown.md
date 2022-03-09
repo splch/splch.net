@@ -4,7 +4,7 @@ date: 2020-05-30T00:00:00-08:00
 draft: true
 ---
 
-![Notable](images/notable.webp)
+![Notable](/photos/notable.webp)
 
 # Headings
 

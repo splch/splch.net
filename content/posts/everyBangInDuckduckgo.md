@@ -4,7 +4,7 @@ date: 2021-08-31T00:00:00-08:00
 draft: false
 ---
 
-![DuckDuckGo](images/ddg.webp)
+![DuckDuckGo](/photos/ddg.webp)
 
 In response to a [question](https://www.reddit.com/r/duckduckgo/comments/pf6t4q/is_there_any_option_to_export_all_the_ddg_bangs/) about a list of all DuckDuckGo !bangs, I wrote this script:
 

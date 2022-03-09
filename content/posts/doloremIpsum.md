@@ -4,7 +4,7 @@ date: 2021-11-11T00:00:00-08:00
 draft: false
 ---
 
-![Book](images/dolorem.webp)
+![Book](/photos/dolorem.webp)
 
 How would Cicero feel if he learned most knew him through Lorem Ipsum? I'm sure he'd lose his head… again. To further Herennius' delight, Cicero didn't even write those lines! To do justice to his legacy, I present Cicerkov: The Cicero Markov Chain.
 

@@ -4,7 +4,7 @@ date: 2021-08-27T00:00:00-08:00
 draft: false
 ---
 
-![Site](images/site.webp)
+![Site](/photos/site.webp)
 
 I bought my first domain through [Google Domains](https://domains.google.com) and actually hosted my site through Google's website builder. It really is a great free builder with solid <abbr title="Search Engine Optimization">SEO</abbr>, but I'm a programmer, so I wanted to program.
 

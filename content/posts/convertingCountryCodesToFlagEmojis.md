@@ -4,7 +4,7 @@ date: 2020-09-18T00:00:00-08:00
 draft: false
 ---
 
-![Answer](images/answer.png)
+![Answer](/photos/answer.png)
 
 In a Flutter <abbr title="application">app</abbr> I started — and eventually stopped — working on, I was converting country codes to their corresponding flag <abbr title="絵文字">emoji</abbr>s in Dart. This was a fun problem to solve and it's actually my highest rated solution on [StackOverflow](https://stackoverflow.com/a/63961112), so I wanted to save it here!
 

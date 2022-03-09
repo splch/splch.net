@@ -4,7 +4,7 @@ date: 2021-09-03T00:00:00-08:00
 draft: false
 ---
 
-![Replit](images/replit.webp)
+![Replit](/photos/replit.webp)
 
 I want readers to execute code I use anywhere in my blog. Recently, I added code that scrapes [DuckDuckGo's !bangs](/#Every%20Bang%20in%20DuckDuckGo); however, the reader would need to run the code on their own machine. It'd be helpful if they could have executable code embedded in the post.
 

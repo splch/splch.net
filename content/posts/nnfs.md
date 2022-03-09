@@ -4,7 +4,7 @@ date: 2021-05-18T00:00:00-08:00
 draft: false
 ---
 
-![NNFS](images/nnfs1.webp)
+![NNFS](/photos/nnfs1.webp)
 
 The best way to learn how something works is to **build it from scratch**. Unsurprisingly, the Neural Networks from Scratch book does exactly that.
 
@@ -18,7 +18,7 @@ It was so exciting to be contacted by a YouTuber I respected so much, and we beg
 
 The majority of my edits through September were only grammar suggestions, but around October, I understood enough about neural networks to begin making some small changes there as well. Though many of my edits didn't cut it, I did make a few helpful suggestions and, to me, that was amazing. I went from only knowing how to throw Tensorflow or PyTorch at machine learning problems, to understanding the backend enough to improve it.
 
-![NNFS](images/nnfs2.webp)
+![NNFS](/photos/nnfs2.webp)
 
 Near the release of <abbr title="Neural Networks From Scratch">NNFS</abbr>, Harrison began to upload the NNFS YouTube series. Covering the same topics as the book, this tutorial series proved incredibly popular and well-made.
 

@@ -4,7 +4,7 @@ date: 2021-05-14T00:00:00-08:00
 draft: false
 ---
 
-![Blockchain](images/blockchain.webp)
+![Blockchain](/photos/blockchain.webp)
 
 I bought this domain (splch.zil) today! I have a .dev/net domain, but I don't like the idea of renting a space. When I discovered blockchain domain names and <abbr title="InterPlanetary File System">IPFS</abbr> hosting, I knew it suited me.
 

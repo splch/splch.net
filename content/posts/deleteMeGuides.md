@@ -4,7 +4,7 @@ date: 2021-12-05T00:00:00-08:00
 draft: false
 ---
 
-![Delete Me](images/deleteme.webp)
+![Delete Me](/photos/deleteme.webp)
 
 I'm going to create a simple program that will delete personal information like deleteme. It'll be open-source and able to run whenever you please. I'll use the guides from [deleteme](https://joindeleteme.com/help/deleteme-help-topics/opt-out-guide/) to help identify services and their links.
 

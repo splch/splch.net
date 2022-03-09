@@ -4,7 +4,7 @@ date: 2021-09-29T00:00:00-08:00
 draft: false
 ---
 
-![Google](images/google.webp)
+![Google](/photos/google.webp)
 
 I'll use this post as a progress report of the Google Internship application process. The only unique thing I did in regards with the initial application was specifying my interest in the ChromeOS team. In addition, I submitted a bug report to the ChromeOS team and mentioned my application. I don't know if this helped move me forward, but it was something different I did compared to previous applications.
 

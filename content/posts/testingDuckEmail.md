@@ -4,7 +4,7 @@ date: 2021-09-01T00:00:00-08:00
 draft: false
 ---
 
-![Duck Email](images/duckEmail.webp)
+![Duck Email](/photos/duckEmail.webp)
 
 DuckDuckGo began releasing `@duck.com` emails. These emails are currently in beta and only act as an email-forwarding account. The purpose of this post is to stess-test the service and see where it earns the `beta` tag.
 
