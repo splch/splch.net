@@ -1,8 +1,7 @@
----
-title: "About"
-date: 2021-01-22T00:00:00-08:00
-draft: false
----
++++
+date = "2021-01-22T00:00:00-08:00"
+title = "About"
++++
 
 ```bash
 ~$ whoami
