@@ -1,0 +1,4 @@
+baseURL = 'https://splch.github.io/blog/'
+languageCode = 'en-us'
+title = 'Blog'
+theme = "hugo-theme-console"

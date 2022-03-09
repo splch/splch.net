@@ -1,2 +1,0 @@
-language = "go"
-run = "git reset --hard && git pull && cd static/ && ./update_libs.sh && cd .. && go run main.go"

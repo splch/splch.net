@@ -1,9 +1,0 @@
-User-agent: *
-
-Crawl-Delay: 10
-
-Disallow: /images/
-Disallow: /data/
-Disallow: /api/
-
-Allow: /#*
