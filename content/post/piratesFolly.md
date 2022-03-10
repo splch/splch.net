@@ -1,7 +1,7 @@
 ---
 title: Pirate's Folly
 date: 2022-01-11
-image: /photos/piratesFolly1.webp
+image: /images/piratesFolly1.webp
 categories:
   - Raspberry Pi
   - Retro
@@ -14,7 +14,7 @@ The Raspberry Pi Pico inspired the release of the [Picosystem](https://shop.pimo
 
 I began development of Pirate's Folly, a procedurally generated game. I've laid the groundwork for terrain and item generation; however, enemy placement is still needed. _In the [GitHub repo](https://github.com/splch/pirates-folly), I have a list of completed and planned features._ The idea is a blend between One Piece, Minecraft, and No Man's Sky. Pirates competing for treasure is such an entertaining concept since pirates are the most unpredictable and greedy people! To lean on my CS (and not artistic) background, I used [Hugo Elias'](http://freespace.virgin.net/hugo.elias/models/m_perlin.htm) procedural generation webpage for algorithm details. His site is down, so you can view a [locally-served PDF](/data/perlinNoise.pdf). That enabled me to generate over a thousand square kilometers of terrain to explore. So, like Minecraft there is a vast world to explore, but I have a global seed (57) that will show the same world to everyone. In that way, players can share good locations for items or pirates.
 
-![PicoSystem](/photos/piratesFolly2.webp)
+![PicoSystem](/images/piratesFolly2.webp)
 
 I'll keep this page updated as I proceed. Currently, I'm wondering if I want to develop the game for Game Boy with the upcoming release of the [Analogue Pocket](https://www.analogue.co/pocket) and [<abbr title="Game Boy">GB</abbr> Studio 3.0](https://www.gbstudio.dev/).
 
@@ -29,7 +29,7 @@ I chose to use GBDK-2020 instead of GB Studio because I know how to program C an
 
 A lot of the code from the Picosystem could be reused for Game Boy; however, every 16-bit variable needed to be converted to 8-bit. In addition, float arithmetic isn't supported in GBDK (or on the GB's Z80 processor for that matter). These restrictions ultimately reduced the quality of map generation, but it should still be good enough for exploration.
 
-![Game Boy](/photos/piratesFolly1.webp)
+![Game Boy](/images/piratesFolly1.webp)
 
 ## Procedural Generation
 

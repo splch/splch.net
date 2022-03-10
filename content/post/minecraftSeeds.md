@@ -1,7 +1,7 @@
 ---
 title: Minecraft Seeds
 date: 2021-11-15
-image: /photos/mcTitle.webp
+image: /images/mcTitle.webp
 categories:
   - Thoughts
 tags:
@@ -21,7 +21,7 @@ draft: false
 
 ## Pack.png:
 
-![pack.png](/photos/mcPack.webp)
+![pack.png](/images/mcPack.webp)
 
 - Version: Alpha 1.2.2 [Java]
 - Seed: 3257840388504953787
@@ -32,7 +32,7 @@ draft: false
 
 ## Skull on Fire:
 
-![Skull Painting](/photos/mcSkull.webp)
+![Skull Painting](/images/mcSkull.webp)
 
 - Version: Alpha 1.1.2_01 [Java]
 - Seed: -1044887956651363087 or -6984854390176336655

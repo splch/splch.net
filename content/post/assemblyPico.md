@@ -2,7 +2,7 @@
 title: Assembly Neural Network on Pico
 date: 2021-09-10
 draft: false
-image: /photos/pico.webp
+image: /images/pico.webp
 categories:
   - Raspberry Pi
   - Artificial Intelligence

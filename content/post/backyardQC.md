@@ -2,7 +2,7 @@
 title: Backyard Quantum Computer
 date: 2022-01-25
 draft: true
-image: /photos/quantumComputer.webp
+image: /images/quantumComputer.webp
 categories:
   - Quantum
 tags:

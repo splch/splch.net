@@ -1,7 +1,7 @@
 ---
 title: Tools For Writing
 date: 2021-05-15
-image: /photos/blog.webp
+image: /images/blog.webp
 categories:
   - Thoughts
 tags:

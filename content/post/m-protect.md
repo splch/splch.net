@@ -1,7 +1,7 @@
 ---
 title: M-Protect
 date: 2024-03-18
-image: /photos/mprotect1.webp
+image: /images/mprotect1.webp
 categories:
   - Projects
   - Thoughts
@@ -18,7 +18,7 @@ This all started when I learned that I could very easily make <abbr title="Graph
 
 The first version was very simple: no popup windows, only some interactive elements, and no ghastly red and blue color scheme. This needed to change. It's clear that version 2 was more advanced, but that wasn't good enough for me. I wanted something intelligent, beautiful, and enough to catch the eyes of my peers. For [version 3](https://www.youtube.com/watch?v=MnhljtJE99k), I wanted something _bold_, so I promised a redesign and a heuristic scanner. The only problem was I didn't know how to code. To continue development, I downloaded a fancy looking program's source code, but none of its libraries 😂 The end of M-Protect had come when I discovered [dependency Hell](https://www.youtube.com/watch?v=U-S6dUIqQ28).
 
-![M-Protect v2](/photos/mprotect2.webp)
+![M-Protect v2](/images/mprotect2.webp)
 
 I wouldn't seriously start learning to code for another three years, but this experience definitely influenced my curiosity for computer science. In addition to the programming experience, I gained a surprising amount of advertising experience too.
 

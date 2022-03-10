@@ -11,22 +11,22 @@ comments: false
 
 ## Recordings
 
-- [Nuvole Bianche](</music/nuvole bianche.mp3>)
-- [La Vie En Rose](</music/la vie en rose.mp3>)
-- [Someone You Loved](</music/someone you loved.mp3>)
-- [River Flows In You](/music/river.mp3)
-- [Kiss the Rain](</music/kiss the rain.mp3>)
-- [Princess Mononoke](/music/mononoke.mp3)
-- [Howl's Moving Castle](/music/howl.mp3)
+- [Nuvole Bianche](</data/music/nuvole bianche.mp3>)
+- [La Vie En Rose](</data/music/la vie en rose.mp3>)
+- [Someone You Loved](</data/music/someone you loved.mp3>)
+- [River Flows In You](/data/music/river.mp3)
+- [Kiss the Rain](</data/music/kiss the rain.mp3>)
+- [Princess Mononoke](/data/music/mononoke.mp3)
+- [Howl's Moving Castle](/data/music/howl.mp3)
 
 ## MIDI
 
-- [Variations on Rondo Alla Turca](/music/rondo.mp3)
-- [Steam City](</music/Steam City.mp3>)
+- [Variations on Rondo Alla Turca](/data/music/rondo.mp3)
+- [Steam City](</data/music/Steam City.mp3>)
 
 ## Partials
 
-- [Path of the Wind](</music/path of the wind.mp3>)
-- [Bubbly](/music/bubbly.mp3)
-- [Canción del Mariachi](/music/cancion.mp3)
-- [Such a Fool](</music/such a fool.mp3>)
+- [Path of the Wind](</data/music/path of the wind.mp3>)
+- [Bubbly](/data/music/bubbly.mp3)
+- [Canción del Mariachi](/data/music/cancion.mp3)
+- [Such a Fool](</data/music/such a fool.mp3>)

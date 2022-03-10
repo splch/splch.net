@@ -1,7 +1,7 @@
 ---
 title: Searching for Interactive Code
 date: 2021-09-03
-image: /photos/replit.webp
+image: /images/replit.webp
 categories:
   - Thoughts
 tags:

@@ -1,7 +1,7 @@
 ---
 title: Creating My Site
 date: 2021-08-27
-image: /photos/site.webp
+image: /images/site.webp
 categories:
   - Projects
 tags:

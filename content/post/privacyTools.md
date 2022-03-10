@@ -1,7 +1,7 @@
 ---
 title: Exploring Privacy Tools
 date: 2021-09-02
-image: /photos/eff.webp
+image: /images/eff.webp
 categories:
   - Thoughts
 tags:

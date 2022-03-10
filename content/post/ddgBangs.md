@@ -1,7 +1,7 @@
 ---
 title: Every Bang in DuckDuckGo
 date: 2021-08-31
-image: /photos/ddg.webp
+image: /images/ddg.webp
 categories:
   - Projects
 tags:

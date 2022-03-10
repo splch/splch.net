@@ -1,7 +1,7 @@
 ---
 title: My First Car
 date: 2021-12-19
-image: /photos/truck.webp
+image: /images/truck.webp
 categories:
   - Thoughts
 tags:

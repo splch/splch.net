@@ -1,7 +1,7 @@
 ---
 title: Raspberry Pi and Caenorhabditis Elegans
 date: 2016-08-20
-image: /photos/openWorm.webp
+image: /images/openWorm.webp
 categories:
   - Raspberry Pi
   - Artificial Intelligence

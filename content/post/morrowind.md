@@ -1,7 +1,7 @@
 ---
 title: Morrowind and Nostalgia
 date: 2021-05-29
-image: /photos/morrowind.webp
+image: /images/morrowind.webp
 categories:
   - Thoughts
   - Retro

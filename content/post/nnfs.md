@@ -1,7 +1,7 @@
 ---
 title: Neural Networks From Scratch
 date: 2021-05-18
-image: /photos/nnfs1.webp
+image: /images/nnfs1.webp
 categories:
   - Artificial Intelligence
   - Projects
@@ -21,7 +21,7 @@ It was so exciting to be contacted by a YouTuber I respected so much, and we beg
 
 The majority of my edits through September were only grammar suggestions, but around October, I understood enough about neural networks to begin making some small changes there as well. Though many of my edits didn't cut it, I did make a few helpful suggestions and, to me, that was amazing. I went from only knowing how to throw Tensorflow or PyTorch at machine learning problems, to understanding the backend enough to improve it.
 
-![NNFS](/photos/nnfs2.webp)
+![NNFS](/images/nnfs2.webp)
 
 Near the release of <abbr title="Neural Networks From Scratch">NNFS</abbr>, Harrison began to upload the NNFS YouTube series. Covering the same topics as the book, this tutorial series proved incredibly popular and well-made.
 

@@ -1,7 +1,7 @@
 ---
 title: Quantum versus Avalanche Breakdown Randomness
 date: 2021-12-08
-image: /photos/onerng.webp
+image: /images/onerng.webp
 categories:
   - Quantum
   - Projects

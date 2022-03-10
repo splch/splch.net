@@ -1,7 +1,7 @@
 ---
 title: Grokking Go
 date: 2021-08-22
-image: /photos/gocert.webp
+image: /images/gocert.webp
 categories:
   - Thoughts
 tags:

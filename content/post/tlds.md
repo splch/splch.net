@@ -1,7 +1,7 @@
 ---
 title: The Best TLD is Not .com
 date: 2021-08-29
-image: /photos/eyes.webp
+image: /images/eyes.webp
 categories:
   - Thoughts
 tags:

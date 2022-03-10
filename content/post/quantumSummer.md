@@ -1,7 +1,7 @@
 ---
 title: Summer of Quantum
 date: 2021-07-15
-image: /photos/quantumSummer.webp
+image: /images/quantumSummer.webp
 categories:
   - Quantum
   - Thoughts

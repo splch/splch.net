@@ -1,7 +1,7 @@
 ---
 title: Short and Sweet Google Interview Process
 date: 2021-09-29
-image: /photos/google.webp
+image: /images/google.webp
 categories:
   - Thoughts
 tags:

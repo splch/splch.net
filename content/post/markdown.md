@@ -3,7 +3,7 @@ title: Markdown Cheatsheet
 description: A collection of useful snippets for using Markdown
 slug: markdown
 date: 2020-05-30
-image: /photos/notable.webp
+image: /images/notable.webp
 categories:
 tags:
 draft: true

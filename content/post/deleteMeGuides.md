@@ -1,7 +1,7 @@
 ---
 title: Delete Me Guides
 date: 2021-12-05
-image: /photos/deleteme.webp
+image: /images/deleteme.webp
 categories:
   - Projects
 tags:

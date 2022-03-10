@@ -2,7 +2,7 @@
 title: Best Wordle Strategy — Explore or Exploit
 date: 2022-01-13
 draft: false
-image: /photos/wordle.webp
+image: /images/wordle.webp
 categories:
   - Projects
 tags:
@@ -83,7 +83,7 @@ plt.bar([x[0] for x in dist], [y[1] for y in dist])
 plt.show()
 ```
 
-![Letter Distribution](/photos/wordLetters.webp)
+![Letter Distribution](/images/wordLetters.webp)
 
 | Letter | Count |
 | ------ | ----: |

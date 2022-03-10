@@ -1,7 +1,7 @@
 ---
 title: Brown Butter Cookie Recipe
 date: 2021-09-18
-image: /photos/brownButterCookies.webp
+image: /images/brownButterCookies.webp
 categories:
   - Recipes
 tags:

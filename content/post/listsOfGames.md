@@ -1,7 +1,7 @@
 ---
 title: Comprehensive Lists of the Best Retro Nintendo Games
 date: 2022-01-21
-image: /photos/bestNintendoGames.webp
+image: /images/bestNintendoGames.webp
 categories:
   - Nintendo
   - Retro

@@ -1,7 +1,7 @@
 ---
 title: Quantum Tales
 date: 2021-05-18
-image: /photos/quantumTales.webp
+image: /images/quantumTales.webp
 categories:
   - Quantum
   - Projects

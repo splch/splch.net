@@ -1,7 +1,7 @@
 ---
 title: Efficient Solar-Powered Website
 date: 2021-11-07
-image: /photos/notable.webp
+image: /images/notable.webp
 categories:
   - Raspberry Pi
   - Projects
@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-![Raspberry Pi Zero 2W](/photos/zero2w.webp)
+![Raspberry Pi Zero 2W](/images/zero2w.webp)
 
 After seeing [Kris' solar-powered website](https://solar.lowtechmagazine.com/), I decided I wanted my own to be the same. This conveniently followed the release of the Raspberry Pi Zero 2 <abbr title="Wireless">W</abbr>, a [low-power](https://hackaday.com/2021/11/01/the-pi-zero-2-w-is-the-most-efficient-pi/) <abbr title="System on a Chip">SoC</abbr>. I purchased this board since I doubt my website will warrant anything stronger than a Raspberry Pi and it enables solar-power with its small energy footprint.
 

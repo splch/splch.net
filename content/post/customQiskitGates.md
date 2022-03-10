@@ -1,7 +1,7 @@
 ---
 title: Custom Gates in Qiskit with Pulse
 date: 2021-12-07
-image: /photos/pulseVisual3.webp
+image: /images/pulseVisual3.webp
 categories:
   - Quantum
   - Projects
@@ -56,7 +56,7 @@ with pulse.build(backend, name='hadamard') as gate_pulse:
 gate_pulse.draw()
 ```
 
-![Hadamard Gaussian](/photos/pulseVisual1.webp)
+![Hadamard Gaussian](/images/pulseVisual1.webp)
 
 Most waves can be parameterized by a gaussian shape in quantum computing. In Qiskit Pulse, we simply define the shape of the curve and set that microwave to a variable `gate_pulse`. This pulse can be changed in both shape and parameters. Qiskit also offers non-gaussian curves that can be used, though gaussian is most commonly seen.
 
@@ -79,7 +79,7 @@ qc.draw('mpl')
 
 We can treat the gate normally when building circuits, but adding the pulse is different. Qiskit uses `add_calibration` to apply a custom pulse to a specific gate.
 
-![Gate Circuit](/photos/pulseVisual2.webp)
+![Gate Circuit](/images/pulseVisual2.webp)
 
 We're now using a custom gate in a circuit, but let's confirm that this circuit is _actually_ applying the pulse we specified.
 
@@ -96,7 +96,7 @@ qc_pulse = schedule(qc_t, backend)
 draw(qc_pulse, backend=backend)
 ```
 
-![Circuit Pulses](/photos/pulseVisual3.webp)
+![Circuit Pulses](/images/pulseVisual3.webp)
 
 If you compare the microwave we defined above to this, you can see that it is indeed the same. Our circuit is now using a custom Hadamard gate! But let's not be too quick to celebrate.
 
@@ -124,7 +124,7 @@ This method of simulating circuits is different from most tutorials you'll find.
 plot_histogram(sim_result.get_counts())
 ```
 
-![Measurement Histogram](/photos/pulseVisual4.webp)
+![Measurement Histogram](/images/pulseVisual4.webp)
 
 Success! As expected, the qubit is in a superposition between `$\ket{0}$` and `$\ket{1}$`. The near 50-50 distribution supports that… but what happens when you apply two of these pulses in succession? We'll tackle that at a later time, but if you want a head-start, check out the [Rabi experiment](https://qiskit.org/textbook/ch-quantum-hardware/calibrating-qubits-pulse.html). 😵‍💫
 
