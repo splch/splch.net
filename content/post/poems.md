@@ -2,7 +2,7 @@
 title: Poems
 description: A collection of AI poetry
 slug: poems
-date: 2022-03-10
+date: 2019-09-15
 image: /images/alexandre.jpg
 categories:
   - Thoughts
