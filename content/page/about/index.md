@@ -18,7 +18,7 @@ menu:
 comments: false
 ---
 
-```bash
+```shell
 ~$ whoami
 Spencer Churchill
 ```
