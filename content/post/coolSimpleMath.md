@@ -1,7 +1,7 @@
 ---
 title: Cool Simple Math
 date: 2022-02-07
-image:
+image: /images/multiply.webp
 categories:
   - Thoughts
   - Math
