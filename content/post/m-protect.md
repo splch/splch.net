@@ -3,7 +3,6 @@ title: M-Protect
 date: 2024-03-18
 image: /images/mprotect1.webp
 categories:
-  - Projects
   - Thoughts
 tags:
   - Archive

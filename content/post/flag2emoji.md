@@ -3,7 +3,6 @@ title: Converting Country Codes to Flag Emojis
 date: 2020-09-18
 image: /images/stackAnswer.webp
 categories:
-  - Projects
   - Thoughts
 tags:
   - Archive

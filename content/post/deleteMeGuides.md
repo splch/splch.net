@@ -3,8 +3,9 @@ title: Delete Me Guides
 date: 2021-12-05
 image: /images/deleteme.webp
 categories:
-  - Projects
+  - Thoughts
 tags:
+  - Privacy
 draft: false
 ---
 

@@ -3,7 +3,6 @@ title: Creating My Site
 date: 2021-08-27
 image: /images/site.webp
 categories:
-  - Projects
 tags:
   - Web Development
   - Linux

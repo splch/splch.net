@@ -4,7 +4,6 @@ date: 2021-12-07
 image: /images/pulseVisual3.webp
 categories:
   - Quantum
-  - Projects
 tags:
   - Qiskit
 draft: false

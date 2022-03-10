@@ -4,7 +4,6 @@ date: 2021-09-25
 image: /images/qrQuine.webp
 categories:
   - Thoughts
-  - Projects
 tags:
   - Archive
 draft: false

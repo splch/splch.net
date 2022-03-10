@@ -3,7 +3,7 @@ title: Major League Hacking Fellowship
 date: 2022-01-31
 image: /images/bentoml.webp
 categories:
-  - Projects
+  - Thoughts
 tags:
 draft: true
 ---

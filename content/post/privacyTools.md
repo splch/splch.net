@@ -5,7 +5,7 @@ image: /images/eff.webp
 categories:
   - Thoughts
 tags:
-  - DuckDuckGo
+  - Privacy
   - Tools
 draft: false
 ---

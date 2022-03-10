@@ -3,7 +3,6 @@ title: IB CS Extended Essay
 date: 2018-03-14
 image: /images/tcgj/image24.png
 categories:
-  - Projects
   - Artificial Intelligence
 tags:
   - Archive

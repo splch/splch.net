@@ -4,7 +4,6 @@ date: 2021-05-18
 image: /images/nnfs1.webp
 categories:
   - Artificial Intelligence
-  - Projects
 tags:
 draft: false
 ---

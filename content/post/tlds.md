@@ -5,7 +5,7 @@ image: /images/eyes.webp
 categories:
   - Thoughts
 tags:
-  - DuckDuckGo
+  - Privacy
 draft: false
 ---
 

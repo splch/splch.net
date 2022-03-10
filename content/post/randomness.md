@@ -5,7 +5,6 @@ image: /images/randomCoefficients.webp
 categories:
   - Quantum
   - Math
-  - Projects
 tags:
   - Randomness
   - Linux

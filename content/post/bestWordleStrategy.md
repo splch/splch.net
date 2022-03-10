@@ -4,7 +4,6 @@ date: 2022-01-13
 draft: false
 image: /images/wordle.webp
 categories:
-  - Projects
 tags:
   - Wordle
 ---

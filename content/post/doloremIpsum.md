@@ -3,8 +3,8 @@ title: Dolorem Ipsum
 date: 2021-11-11
 image: /images/dolorem.webp
 categories:
-  - Projects
 tags:
+  - Archive
 draft: false
 ---
 

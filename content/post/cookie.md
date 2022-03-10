@@ -5,7 +5,6 @@ image: /images/brownButterCookies.webp
 categories:
   - Recipes
 tags:
-  - Cookies
 draft: false
 ---
 

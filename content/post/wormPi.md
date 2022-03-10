@@ -5,7 +5,6 @@ image: /images/openWorm.webp
 categories:
   - Raspberry Pi
   - Artificial Intelligence
-  - Projects
 tags:
   - Archive
   - Linux

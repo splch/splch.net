@@ -4,7 +4,6 @@ date: 2021-12-08
 image: /images/onerng.webp
 categories:
   - Quantum
-  - Projects
 tags:
   - Randomness
   - Qiskit

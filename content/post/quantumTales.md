@@ -4,7 +4,6 @@ date: 2021-05-18
 image: /images/quantumTales.webp
 categories:
   - Quantum
-  - Projects
 tags:
   - Qiskit
 draft: false
