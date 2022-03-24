@@ -10,6 +10,24 @@ tags:
 draft: true
 ---
 
+## Swapping
+
+$$
+a = a + b \\
+b = a - b \\
+a = a - b \\
+$$
+
+```c
+void swap(int *a, int *b) {
+  if (a != b) {
+    *a ^= *b;
+    *b ^= *a;
+    *a ^= *b;
+  }
+}
+```
+
 ## Minimum and Maximum
 
 - Minimum:
@@ -116,3 +134,4 @@ Cycles: 36
 
 1. https://www.maa.org/sites/default/files/0746834259921.di020713.02p0009e.pdf
 2. https://devblogs.microsoft.com/oldnewthing/20220207-00/?p=106223
+3. https://stackoverflow.com/q/1826159
