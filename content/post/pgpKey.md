@@ -1,6 +1,6 @@
 ---
 title: Generating a PGP Key
-description: A modern guide to generating a PGP key, considering the growth of quantum computing.
+description: A modern guide for generating a PGP key
 slug: pgp
 date: 2022-03-24
 image: /images/pgp.webp
@@ -19,7 +19,7 @@ This is an extreme guide to generating a PGP key. A simple tutorial will suffice
 
 The NIST compared the [security of RSA and ECC keys](https://csrc.nist.gov/CSRC/media/Presentations/NIST-Status-Update-on-Elliptic-Curves-and-Post-Qua/images-media/moody-dustin-threshold-crypto-workshop-March-2019.pdf) and concluded that, with sufficient lengths in key complexity, either standard will suffice.
 
-Shor's algorithm factors coprime numbers, thus is able to recreate the private key to any RSA-generated public key. This NIST paper, however, asserts that Grover's algorithm can be used to recreate the private key to any ECC-generated public key. While true, this is the same as a brute-force solution since Grover's search would still need $\sqrt{N}$ qubits to find the private key. Shor's algorithm has a complexity of around $O(N^3)$ while Grover's has a complexity of $O(\sqrt{N})$.
+Shor's algorithm factors coprime numbers, thus is able to recreate the private key to any RSA-generated public key. This NIST paper, however, asserts that Grover's algorithm can be used to recreate the private key to any ECC-generated public key. While true, this is the same as a brute-force solution since Grover's search would still need $\sqrt{N}$ qubits to find the private key. Shor's algorithm has a complexity of around $O(\log{N^3})$ while Grover's has a complexity of $O(\sqrt{N})$.
 
 Considering the difference in algorithmic complexity between Shor's and Grover's algorithms, Shor's poses a more significant threat to RSA encryption than Grover's does to Ed25519. Because of this, I recommend using Ed25519 for a PGP key pair. There are some unsupported theories that elliptic curve cryptography is not secure, but no evidence has been provided for this whatsoever.
 
@@ -29,13 +29,13 @@ Since this post is already looking ahead many decades, the next recommendation w
 
 ![https://www.desmos.com/calculator/hhqdcaiv7p](images/ecc.webp)
 
-In theory, unless your computer is using a truly random source of entropy, the slope of the line could be derived and the private key could be recreated. This is absurdly unlikely, but the solution is easily implemented, and the time it takes to generate the private key is negligible considering the duration you'll use the key.
+In theory, unless your computer is using a truly random source of entropy, the slope of the line could be rederived and the private key could be recreated. This is absurdly unlikely, but the solution is easily implemented, and the time it takes to generate the private key is negligible considering the duration you'll use the key.
 
 Using a true random source of entropy could be counting the number of times a geiger counter clicks in a given time frame, or using a hardware random source of entropy like the [OneRNG V3](https://onerng.info/). I already have a OneRNG USB, so I'll seed my random numbers with that.
 
 # Generating a PGP Key Pair
 
-First, install [GnuPG](https://gnupg.org/). This is a free software that can be used to generate PGP keys. It's best to use an offline tool to generate keys since websites could use a variety of methods to store or recreate your private key.
+First, install [GnuPG](https://gnupg.org/). This is a free software that can be used to generate PGP keys. It's best to use an open source and offline tool to generate keys since websites and servers could use a variety of methods to store or recreate your private key. Additionally, using a device you know is secure and private is a necessity. A simple way to handle trust is to use a live USB, then assume that there's no hardware-level surveillance on your device.
 
 On the download page, it supports common operating systems like Windows, MacOS, and Linux, as well as other platforms.
 
@@ -206,4 +206,4 @@ Again, you can pipe this into a file or copy it into a notebook.
 
 # Conclusion
 
-PGP key generation can be as simple (from generating and managing keys from within Mailvelope) to as complex as you'd like. The benefit with more engaged generation is you only need to do it once. After the first time, you can use the same key for all your emails.
+PGP key generation can be as simple (from generating and managing keys from within Mailvelope) to as complex as you'd like. The benefit with more engaged generation is you only need to do it once. After the first time, you can use the same key for any communication. I hope this tutorial is helpful in getting started with or improving your PGP keys.
