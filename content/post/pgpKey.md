@@ -2,7 +2,7 @@
 title: Generating a PGP Key
 description: A modern guide for generating a PGP key
 slug: pgp
-date: 2022-03-24
+date: 2022-03-23
 image: /images/pgp.webp
 categories:
   - Quantum
