@@ -19,7 +19,7 @@ This is an extreme guide to generating a PGP key. A simple tutorial will suffice
 
 The NIST compared the [security of RSA and ECC keys](https://csrc.nist.gov/CSRC/media/Presentations/NIST-Status-Update-on-Elliptic-Curves-and-Post-Qua/images-media/moody-dustin-threshold-crypto-workshop-March-2019.pdf) and concluded that, with sufficient lengths in key complexity, either standard will suffice.
 
-Shor's algorithm factors coprime numbers, thus is able to recreate the private key to any RSA-generated public key. This NIST paper, however, asserts that Grover's algorithm can be used to recreate the private key to any ECC-generated public key. While true, this is the same as a brute-force solution since Grover's search would still need $\sqrt{N}$ qubits to find the private key. Shor's algorithm has a complexity of around $O(\log{N^3})$ while Grover's has a complexity of $O(\sqrt{N})$.
+Shor's algorithm factors coprime numbers, thus is able to recreate the private key to any RSA-generated public key. This NIST paper, however, asserts that Grover's algorithm can be used to recreate the private key to any ECC-generated public key. While true, this is the same as a brute-force solution since Grover's search would still need $\sqrt{N}$ qubits to find the private key. Shor's algorithm has a complexity of around $O(\log{(N)}^3)$ while Grover's has a complexity of $O(\sqrt{N})$.
 
 Considering the difference in algorithmic complexity between Shor's and Grover's algorithms, Shor's poses a more significant threat to RSA encryption than Grover's does to Ed25519. Because of this, I recommend using Ed25519 for a PGP key pair. There are some unsupported theories that elliptic curve cryptography is not secure, but no evidence has been provided for this whatsoever.
 
