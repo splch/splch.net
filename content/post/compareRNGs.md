@@ -62,7 +62,7 @@ Execution completed!
 Check the random.txt file for the results
 ```
 
-The collapsed details above summarize how many STS random tests the data passed. Running these tests on different data will change the results; however, we're testing 800 iterations of `$2^{20}=1,048,576$` bits, so the results are statistically significant.
+The collapsed details above summarize how many STS random tests the data passed. Running these tests on different data will change the results; however, we're testing 800 iterations of $$2^{20}=1,048,576$$ bits, so the results are statistically significant.
 
 This report is included in the zip linked in the conclusion along with the data used to derive the score.
 

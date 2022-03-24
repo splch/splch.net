@@ -125,7 +125,7 @@ plot_histogram(sim_result.get_counts())
 
 ![Measurement Histogram](/images/pulseVisual4.webp)
 
-Success! As expected, the qubit is in a superposition between `$\ket{0}$` and `$\ket{1}$`. The near 50-50 distribution supports that… but what happens when you apply two of these pulses in succession? We'll tackle that at a later time, but if you want a head-start, check out the [Rabi experiment](https://qiskit.org/textbook/ch-quantum-hardware/calibrating-qubits-pulse.html). 😵‍💫
+Success! As expected, the qubit is in a superposition between $$\ket{0}$$ and $$\ket{1}$$. The near 50-50 distribution supports that… but what happens when you apply two of these pulses in succession? We'll tackle that at a later time, but if you want a head-start, check out the [Rabi experiment](https://qiskit.org/textbook/ch-quantum-hardware/calibrating-qubits-pulse.html). 😵‍💫
 
 ### Version Information
 

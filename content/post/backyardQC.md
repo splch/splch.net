@@ -26,11 +26,11 @@ Qubits
 
 Atom
 
-> "Energy structure of the atom: `$\Omega_1$` is resonant with the cavity mode and photon carrier frequency, while `$\Omega_0$` is far-detuned."
+> "Energy structure of the atom: $$\Omega_1$$ is resonant with the cavity mode and photon carrier frequency, while $$\Omega_0$$ is far-detuned."
 
 Measurement
 
-> "Bloch sphere depiction of the state of a photonic qubit in the `$\left\{\ket{↻}, \ket{↺}\right\}$` basis and an operation applied by one pass through the scattering unit. The rotations about `$\hat{z}$` by fixed angles (gray) are applied by the phase shifter and beam splitter, while the rotation about `$\hat{y}$` by a controllable angle `$\theta$` (solid red) is applied to the atom using the cavity laser. Projectively measuring the atom teleports this rotation onto the photon, but may overshoot the target angle `$θ$` by `$\pi$` (dotted red) depending on the measurement outcome `$m$`."
+> "Bloch sphere depiction of the state of a photonic qubit in the $$\left\{\ket{↻}, \ket{↺}\right\}$$ basis and an operation applied by one pass through the scattering unit. The rotations about $$\hat{z}$$ by fixed angles (gray) are applied by the phase shifter and beam splitter, while the rotation about $$\hat{y}$$ by a controllable angle $$\theta$$ (solid red) is applied to the atom using the cavity laser. Projectively measuring the atom teleports this rotation onto the photon, but may overshoot the target angle $$θ$$ by $$\pi$$ (dotted red) depending on the measurement outcome $$m$$."
 
 ## Materials
 

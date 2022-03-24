@@ -181,7 +181,6 @@ if __name__ == "__main__":
 
 Block Style:
 
-```
 $$
 \frac{1}{\sqrt{2}}
 \begin{bmatrix}
@@ -189,6 +188,5 @@ $$
  1 & -1
 \end{bmatrix}
 $$
-```
 
-Inline: `$i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)$`
+Inline: $$i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)$$

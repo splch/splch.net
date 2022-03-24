@@ -20,13 +20,13 @@ This isn't too big of a deal, though, because the Pi uses barely any energy. In 
 <details>
 <summary>Solar Calculations</summary>
 
-My house gets around 1,918 hours of [sunlight](https://sunroof.withgoogle.com/), so that's a ratio of `$\frac{1918 \; hours}{365.25 \; days \times 24 \; hours} \approx 0.22$` usable hours of sunlight.
+My house gets around 1,918 hours of [sunlight](https://sunroof.withgoogle.com/), so that's a ratio of $$\frac{1918 \; hours}{365.25 \; days \times 24 \; hours} \approx 0.22$$ usable hours of sunlight.
 
-This means at a potential draw of 200 mA, the server would consume `$200 \; mA \times 24 \; hours = 4800 \; mAh$` a day. In addition, with 22% or `$24 \; hours \times 0.22 \approx 5 \; hours$` of usable daylight, the solar panels must capture `$\frac{4800 \; mAh}{5 \; hours} \approx 1000 \; \frac{mA}{hour}$`. This assumes 100% conversion rates. Good panels convert around 20% of the sunlight. This effectively means I need `$\frac{1 \; A}{0.2}=5 \; \frac{Amps}{hour}$` from the panel.
+This means at a potential draw of 200 mA, the server would consume $$200 \; mA \times 24 \; hours = 4800 \; mAh$$ a day. In addition, with 22% or $$24 \; hours \times 0.22 \approx 5 \; hours$$ of usable daylight, the solar panels must capture $$\frac{4800 \; mAh}{5 \; hours} \approx 1000 \; \frac{mA}{hour}$$. This assumes 100% conversion rates. Good panels convert around 20% of the sunlight. This effectively means I need $$\frac{1 \; A}{0.2}=5 \; \frac{Amps}{hour}$$ from the panel.
 
-The Raspberry Pi Foundation recommends a [5 Volt](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-zero-2-w) <abbr title="Power Supply Unit">PSU</abbr>, so, the watt hours is `$5 \; A \times 5 \; V = 25 \; W$`. With this requirement, the [BigBlue](https://www.amazon.com/dp/B01EXWCPLC/) panel seems like a good choice. It includes a USB port, so I won't need a separate regulator.
+The Raspberry Pi Foundation recommends a [5 Volt](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-zero-2-w) <abbr title="Power Supply Unit">PSU</abbr>, so, the watt hours is $$5 \; A \times 5 \; V = 25 \; W$$. With this requirement, the [BigBlue](https://www.amazon.com/dp/B01EXWCPLC/) panel seems like a good choice. It includes a USB port, so I won't need a separate regulator.
 
-For the battery, I should get one that can handle the other 78% of unusable hours of light. This means more than `$200 \; mA \times 24 \; hours \times 0.78 = 3750 \; mAh$` would suffice for a single day. Adding some wiggle room, I think [10,000 mAh](https://www.amazon.com/dp/B07FDXDB3W/) will be fine for a couple days of bad weather. I'll update this page later with uptime statistics, but entering winter makes for a rough time! 😅
+For the battery, I should get one that can handle the other 78% of unusable hours of light. This means more than $$200 \; mA \times 24 \; hours \times 0.78 = 3750 \; mAh$$ would suffice for a single day. Adding some wiggle room, I think [10,000 mAh](https://www.amazon.com/dp/B07FDXDB3W/) will be fine for a couple days of bad weather. I'll update this page later with uptime statistics, but entering winter makes for a rough time! 😅
 
 > There were some great sales which is why I chose those two items specifically; and the whole setup only cost around $100 (not including internet fees).
 
