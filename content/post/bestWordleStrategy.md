@@ -14,7 +14,7 @@ The first question we need to answer is, given six guesses, how many should be e
 
 This can be interpreted as an optimization problem: How many guesses maximize the exploration and exploitation value? Meaning, how many guesses should explore the possible letter combinations and how many should use that to guess the word.
 
-Taking inspiration from the [Secretary Problem](https://wikipedia.org/wiki/Secretary_problem), let's "reject" the first $$\frac{N}{e}$$ choices and "accept" the next best. Simply, let's not consider the first $$\frac{6}{e} \approx 2$$ guesses toward our exploitation and then try guessing afterwards.
+Taking inspiration from the [Secretary Problem](https://wikipedia.org/wiki/Secretary_problem), let's "reject" the first $\frac{N}{e}$ choices and "accept" the next best. Simply, let's not consider the first $\frac{6}{e} \approx 2$ guesses toward our exploitation and then try guessing afterwards.
 
 Another option is to maximize the gradient (<abbr title="Machine Learning">ML</abbr> people get hyped) over word-set size as the exploitation strategy. This would mean that you'd stop exploring letters after each following step stops reducing the set size as much.
 

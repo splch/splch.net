@@ -156,15 +156,17 @@ Fenced code block
 
 ## HTML
 
+{{< rawhtml >}}
+
 <details>
 
 <summary>Details Tag</summary>
 
-```html
 <iframe class="pdf" src="/data/lighthouse.pdf#view=FitW"></iframe>
-```
 
 </details>
+
+{{< /rawhtml >}}
 
 ## Highlight
 
@@ -189,4 +191,4 @@ $$
 \end{bmatrix}
 $$
 
-Inline: $$i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)$$
+Inline: $i \hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)$
