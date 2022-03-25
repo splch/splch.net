@@ -106,30 +106,30 @@ for color in sorted(avg_colors, key=avg_colors.get, reverse=True):
     print(color, '\t\t', avg_colors[color])
 ```
 
-    purple 		 0.92791396
-    pink 		 0.9113098
-    blue 		 0.9093884
-    yellow 		 0.88690674
-    red 		 0.872676
-    green 		 0.8654766
-    orange 		 0.84672266
-    black 		 0.83403736
-    white 		 0.8287787
-    lavender 		 0.81729794
-    maroon 		 0.7757962
-    fuchsia 		 0.7409902
-    brown 		 0.7358376
-    olive 		 0.73582804
-    magenta 		 0.68170786
-    violet 		 0.6786235
-    silver 		 0.6677471
-    beige 		 0.66110957
-    lime 		 0.6299113
-    indigo 		 0.5789356
-    gold 		 0.56747013
-    tan 		 0.5436225
-    teal 		 0.517831
-    cyan 		 0.5167587
+    purple		0.92791396
+    pink		0.9113098
+    blue		0.9093884
+    yellow		0.88690674
+    red			0.872676
+    green		0.8654766
+    orange		0.84672266
+    black		0.83403736
+    white		0.8287787
+    lavender	0.81729794
+    maroon		0.7757962
+    fuchsia		0.7409902
+    brown		0.7358376
+    olive		0.73582804
+    magenta		0.68170786
+    violet		0.6786235
+    silver		0.6677471
+    beige		0.66110957
+    lime		0.6299113
+    indigo		0.5789356
+    gold		0.56747013
+    tan			0.5436225
+    teal		0.517831
+    cyan		0.5167587
 
 # Conclusion
 

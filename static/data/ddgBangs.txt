@@ -2887,7 +2887,7 @@ Entertainment
 	Food Network: foodnetwork
 	Food2Fork: food2fork
 	FootballGuys: fbg
-	Force Of Will  English Card Database: fow
+	Force Of Will English Card Database: fow
 	Force of Will German Database: fowg
 	FordSix Performance Forum: fordsix
 	Foreword Reviews: forewordreviews
@@ -7625,7 +7625,7 @@ Research
 	Bibliothèque et Archives Nationales du Québec: banq
 	Bibliothèques de l'Université Libre de Bruxelles: ulb
 	Bibliothèques de prêt de la Ville de Paris: bpp
-	Big Huge  Thesaurus: sy
+	Big Huge Thesaurus: sy
 	Big Huge Thesaurus: bighuge
 	Big Huge Words Thesaurus: wsyn
 	BigFuture: bigfuture
