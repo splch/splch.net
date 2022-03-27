@@ -110,7 +110,7 @@ for color in sorted(avg_colors, key=avg_colors.get, reverse=True):
     pink		0.9113098
     blue		0.9093884
     yellow		0.88690674
-    red			0.872676
+    red		0.872676
     green		0.8654766
     orange		0.84672266
     black		0.83403736
@@ -127,7 +127,7 @@ for color in sorted(avg_colors, key=avg_colors.get, reverse=True):
     lime		0.6299113
     indigo		0.5789356
     gold		0.56747013
-    tan			0.5436225
+    tan		0.5436225
     teal		0.517831
     cyan		0.5167587
 
