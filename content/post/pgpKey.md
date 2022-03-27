@@ -119,7 +119,7 @@ uid           [ultimate] name (hello, world) <name@example.org>
 sub   cv25519 2022-03-24 [E]
 ```
 
-The `USER-ID` is the 40 character long fingerprint for the key pair. That ID will be used to specify the key when using it.
+The `KEY-ID` is the 40 character long fingerprint for the key pair. That ID will be used to specify the key when using it.
 
 # Distributing your **public** key
 
@@ -150,17 +150,22 @@ To easily copy your public key, you can use `gpg --export --armor`. The `--armor
 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
-xjMEYSwmwhYJKwYBBAHaRw8BAQdA+aPuG0lBlMRKcBMh/bG+EjEPLwgiGoBrvRTd
-U1vKGIHNOFNwZW5jZXIgQ2h1cmNoaWxsIChQcm90b25NYWlsIFBHUCBLZXkpIDxz
-cGVuY2VAZHVjay5jb20+wpAEExYIADgWIQRlM84SvWaR8m17QFm/73zKhu4PCwUC
-Yal0bQIbIwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRC/73zKhu4PC/AwAP0a
-CKjiYwLozfDJTlmVx8hZszbt8jpPTAbvaP3te0gUVwEAwOb3KX4eDlXAJxuCJIzY
-Foi/7X5rBy+4PiP1jcU7xwDOOARhLCbCEgorBgEEAZdVAQUBAQdAeODbaKbRZLTF
-Npdf1pj13tBmqsxQef8iVKkH4SHYbzcDAQgHwngEGBYIAAkFAmEsJsICGwwAIQkQ
-v+98yobuDwsWIQRlM84SvWaR8m17QFm/73zKhu4PC0eXAPsGSOxYsYw9WwN+QK7P
-HRbmIqeSlaHU4DoWyjBJ+UfsjAEAz3HfcW7GtYBr/V4iULvK5vu4aw5idkceXWHf
-Pa0wSgw=
-=RS7i
+xjMEYkAMlhYJKwYBBAHaRw8BAQdAija76hmp8YHmr0zHw+Qv1nMNsrqcsRQW
+cqSlqOEoHCrNHVNwZW5jZXIgQ2h1cmNoaWxsIDxtZUBzbGMuaXM+wqoEExYK
+ADsWIQQQICP7jXDvYysbVVUKmHynkTkZlQUCYkAMlgIbAwULCQgHAgMiAgEG
+FQoJCAsCAxYCAQIeBwIXgAAhCRAKmHynkTkZlRYhBBAgI/uNcO9jKxtVVQqY
+fKeRORmVyFAA/3tWetkYc5XKA8yDYyAeZk8cI0Cy7+1Afm/p2mQQnzXvAQCq
+QzdsI4owKGbHudz/DKsVKkWDCZ1yfg0FRq52qMnGAM0jU3BlbmNlciBDaHVy
+Y2hpbGwgPHNwZW5jZUBkdWNrLmNvbT7CqgQTFgoAOxYhBBAgI/uNcO9jKxtV
+VQqYfKeRORmVBQJiQBKFAhsDBQsJCAcCAyICAQYVCgkICwIDFgIBAh4HAheA
+ACEJEAqYfKeRORmVFiEEECAj+41w72MrG1VVCph8p5E5GZX5vwEAlCwXoyAp
+3bjz6x+rH1N7lqB/oIW4uPwc2bEKu43+POQA/1iqNPNTHjNsewlF19pGLljA
+xn946DQzWw02ulFqz5sKzjgEYkAMlhIKKwYBBAGXVQEFAQEHQNfziQppiMhw
+ieGfPpIMopxsvTe/scnI6G7WhoMUPbNEAwEIB8KPBBgWCgAgFiEEECAj+41w
+72MrG1VVCph8p5E5GZUFAmJADJYCGwwAIQkQCph8p5E5GZUWIQQQICP7jXDv
+YysbVVUKmHynkTkZlf+MAQCQByuimb5r1gEPoPQ0+dg0GQP16WYE/EF4WhC3
+kJ8QuQD+OW350m6xUU9djl7gmlnBeoNZB7EyoPuGs301bL1v6A8=
+=QfAK
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
