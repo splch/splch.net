@@ -16,9 +16,11 @@ If you'd like to view the entire list, download this [Python pickle](data/中文
 
 ```json
 {
-    'part of speech': {
-        'word': frequency,
-    }
+    "part of speech": {
+        "word": frequency,
+        ...
+    },
+    ...
 }
 ```
 
@@ -26,7 +28,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 
 # Word Lists
 
-## Mg
+## Heavenly Stems
 
 1. 甲 0.0%
 2. 丙 0.0%
@@ -51,7 +53,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 9. 甚 0.0%
 10. 予 0.0%
 
-## a
+## Adjectives
 
 1. 好 0.99%
 2. 真 0.14%
@@ -1058,7 +1060,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 99. 一臂之力 0.0%
 100. 无影无踪 0.0%
 
-## m
+## Numbers
 
 1.  一 0.59%
 2.  两 0.11%
@@ -1196,7 +1198,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 31. 万年 0.0%
 32. 万代 0.0%
 
-## n
+## Nouns
 
 1. 人 0.58%
 2. 事 0.29%
@@ -1299,7 +1301,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 99. 父母 0.02%
 100. 事实 0.01%
 
-## nr
+## People
 
 1. 杰克 0.02%
 2. 周 0.01%
@@ -1402,7 +1404,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 99. 艾米 0.0%
 100. 琳达 0.0%
 
-## ns
+## Locations
 
 1. 美国 0.04%
 2. 纽约 0.01%
@@ -1505,7 +1507,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 99. 麦迪逊 0.0%
 100. 秘鲁 0.0%
 
-## nt
+## Organizations
 
 1. 联合国 0.0%
 2. 安全部 0.0%
@@ -2252,7 +2254,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 99. 岸边 0.0%
 100. 心头 0.0%
 
-## t
+## Times
 
 1. 现在 0.26%
 2. 今天 0.07%
@@ -2451,7 +2453,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 44. 云云 0.0%
 45. 而 0.0%
 
-## v
+## Verbs
 
 1. 是 2.83%
 2. 有 0.86%
