@@ -1,4 +1,4 @@
-baseurl: "https://splch.github.io/blog/"
+baseurl: "/"
 languageCode: "en-us"
 title: "SLC is"
 theme: "hugo-theme-xmin"
