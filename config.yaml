@@ -1,0 +1,37 @@
+baseurl: "https://splch.github.io/blog/"
+languageCode: "en-us"
+title: "SLC is"
+theme: "hugo-theme-xmin"
+googleAnalytics: ""
+disqusShortname: ""
+ignoreFiles:
+  ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+  post: "/posts/:slug/"
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
+    - name: Posts
+      url: "posts/"
+      weight: 2
+    - name: Music
+      url: "music/"
+      weight: 3
+    - name: About
+      url: "about/"
+      weight: 4
+
+params:
+  description: "Sharpest corner of the IPFS."
+
+markup:
+  highlight:
+    codeFences: true
+  goldmark:
+    renderer:
+      unsafe: true
