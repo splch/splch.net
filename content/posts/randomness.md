@@ -20,7 +20,7 @@ This should not be the case since both methods produce true random numbers, so t
 
 We'll be using `C` to do this analysis since it's fast enough for the scale I need.
 
-The first task will be opening a file of random data by variable amounts. The [`fread`](https://pubs.opengroup.org/onlinepubs/9699919799/functions/fread.html#tag_16_164) command takes a filename and number of bytes to read as arguments, so that'll work well.
+The first task will be opening a file of random data by variable amounts. The [fread](https://pubs.opengroup.org/onlinepubs/9699919799/functions/fread.html#tag_16_164) command takes a filename and number of bytes to read as arguments, so that'll work well.
 
 Specifically, the file (let's call it `random`) needs to be read in incrementing amounts, so the code will look like this:
 
