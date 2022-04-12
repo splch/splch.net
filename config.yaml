@@ -15,12 +15,16 @@ menu:
   main:
     - name: Home
       url: ""
+      weight: 1
     - name: Posts
       url: "posts/"
+      weight: 2
     - name: Music
       url: "music/"
+      weight: 3
     - name: About
       url: "about/"
+      weight: 4
 
 params:
   description: "Sharpest corner of the IPFS."
