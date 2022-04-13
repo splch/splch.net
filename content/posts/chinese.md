@@ -13,15 +13,15 @@ draft: false
 
 I used the [SUBTLEX-CH frequency list](https://doi.org/10.1371/journal.pone.0010729) to list the top 100 Chinese words per part of speech.
 
-If you'd like to view the entire list, download this [Python pickle](/data/中文.json) file. The structure is:
+If you'd like to view the entire list, download the [JSON](/data/中文.json) file. Its structure is:
 
 ```json
 {
-    "part of speech": {
-        "word": frequency,
-        ...
-    },
+  "part of speech": {
+    "word": frequency,
     ...
+  },
+  ...
 }
 ```
 
