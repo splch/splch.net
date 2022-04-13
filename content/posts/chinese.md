@@ -13,6 +13,8 @@ draft: false
 
 I used the [SUBTLEX-CH frequency list](https://doi.org/10.1371/journal.pone.0010729) to list the top 100 Chinese words per part of speech.
 
+There are 2,683 words on this page. From rough estimates, this should cover <abbr title="26303467 / 33546516">78</abbr>% of spoken Mandarin. The lists are sorted first by total counts of each part of speech, then by the word itself. For example, verbs are the most common words in Mandarin, and the most common verb is "是". So, the list begins with Verbs and its first entry is "是". The second piece of information is the frequency of the word. This frequency is in scientific notation, so `950,000` is `9.5e5`.
+
 If you'd like to view the entire list, download the [JSON](/data/中文.json) file. Its structure is:
 
 ```json
@@ -24,8 +26,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
   ...
 }
 ```
-
-There are 2683 words on this page, so it should be enough to survive in a Chinese-speaking region with. Additionally, I'm not sure what each of the POS tags mean, but I'll figure it out soon.
 
 # Word Lists
 
@@ -1568,7 +1568,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 99. 诉讼 4.4e2
 100. 谈判 4.3e2
 
-## Cc
+## ? Conjunction Conjunction
 
 1. 和 1.4e5
 2. 而 3.9e4
@@ -1583,7 +1583,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 11. 换言之 1.2e1
 12. 暨 1.1e1
 
-## Mq
+## ? Numeric Classifier
 
 1. 一个 1.2e5
 2. 一下 2.7e4
@@ -1758,7 +1758,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 33. 噫 2.0e0
 34. 布拉沃 2.0e0
 
-## Qt
+## ? Time Word Classifier
 
 1. 点 4.3e4
 2. 天 3.9e4
@@ -1988,7 +1988,7 @@ There are 2683 words on this page, so it should be enough to survive in a Chines
 99. 岸边 1.1e2
 100. 心头 1.1e2
 
-## Qv
+## ? Verb Classifier
 
 1. 次 4.4e4
 2. 场 1.1e4
