@@ -1,8 +1,6 @@
 ---
-title: Home
+title: Welcome to my site
 ---
-
-# Welcome to my site!
 
 I'm a student and software engineer. When I'm not busy engineering away at my computer, I'll be researching quantum with <abbr title="International Business Machines">IBM</abbr> Quantum or playing guitar.
 

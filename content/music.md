@@ -1,5 +1,5 @@
 ---
-title: Music
+title: Fingerstyle guitar & piano
 ---
 
 ## Recordings
