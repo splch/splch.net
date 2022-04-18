@@ -1,15 +1,12 @@
 languageCode: "en-us"
 title: "SLC is"
 theme: "hugo-simplecss"
-relativeURLS: true
-googleAnalytics: ""
-disqusShortname: ""
-ignoreFiles:
-  ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
-footnotereturnlinkcontents: "↩"
 
 permalinks:
   post: "/posts/:slug/"
+
+params:
+  description: "Sharpest corner of the IPFS."
 
 menu:
   main:
@@ -25,9 +22,6 @@ menu:
     - name: About
       url: "about/"
       weight: 4
-
-params:
-  description: "Sharpest corner of the IPFS."
 
 markup:
   highlight:
