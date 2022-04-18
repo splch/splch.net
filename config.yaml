@@ -1,4 +1,4 @@
-baseurl: "https://slc.is/"
+baseurl: ""
 languageCode: "en-us"
 title: "SLC is"
 theme: "hugo-simplecss"
