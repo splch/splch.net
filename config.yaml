@@ -2,9 +2,6 @@ languageCode: "en-us"
 title: "SLC is"
 theme: "hugo-simplecss"
 
-permalinks:
-  post: "/posts/:slug/"
-
 params:
   description: "Sharpest corner of the IPFS."
 
@@ -22,6 +19,11 @@ menu:
     - name: About
       url: "about/"
       weight: 4
+
+permalinks:
+  post: "/posts/:slug/"
+
+relativeURLS: true
 
 markup:
   highlight:
