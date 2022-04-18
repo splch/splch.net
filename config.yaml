@@ -1,7 +1,7 @@
-baseurl: ""
 languageCode: "en-us"
 title: "SLC is"
 theme: "hugo-simplecss"
+relativeURLS: true
 googleAnalytics: ""
 disqusShortname: ""
 ignoreFiles:
