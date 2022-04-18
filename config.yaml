@@ -1,7 +1,7 @@
 baseurl: "https://slc.is/"
 languageCode: "en-us"
 title: "SLC is"
-theme: "hugo-theme-xmin"
+theme: "hugo-simplecss"
 googleAnalytics: ""
 disqusShortname: ""
 ignoreFiles:
