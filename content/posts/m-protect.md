@@ -1,6 +1,6 @@
 ---
 title: M-Protect
-date: 2024-03-18
+date: 2014-03-17
 categories:
   - Thoughts
 tags:
@@ -27,4 +27,4 @@ I wouldn't seriously start learning to code for another three years, but this ex
 
 Part of me wants to hide M-Protect away forever but another part admires getting an entire class excited about a piece of software, let alone one that didn't work. Actually I take that back... I think the second version scanned for the [string](<https://wikipedia.org/wiki/String_(computer_science)>) "virus" in files, but either way, it was very suspect 😂
 
-Check out <a href="/data/mprotect.zip">the <abbr title="Executables">exes</abbr></a> if you'd like, but they're mostly here for preservation.
+Check out <a href="https://archive.org/details/m-protect">the <abbr title="Executables">exes</abbr></a> if you'd like, but they're mostly here for preservation.
