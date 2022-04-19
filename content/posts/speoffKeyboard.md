@@ -1,6 +1,6 @@
 ---
 title: The Data-Driven Keyboard
-description: An optimized keyboard derived from typing delays.
+description: An optimized keyboard derived from typing delays
 slug: speoff
 date: 2022-04-17
 author: Spencer and Geoffrey Churchill
@@ -8,7 +8,7 @@ categories:
   - Math
 tags:
   - Tools
-draft: true
+draft: false
 ---
 
 Using the [keyboard delay](https://www.kaggle.com/datasets/splcher/keyboard-delay) and [blog authorship](https://www.kaggle.com/datasets/rtatman/blog-authorship-corpus) datasets, we can derive a keyboard that is optimized for the shortest delays between the most common key presses. For example, if `x` to `q` has the shortest delay of 33ms, but `t` to `h` is the most frequently occurring key presses, then we can replace `x` with `t` and `q` with `h`. This approach maps keys with regard to finger agility. The proposed algorithm greedily replaces the keys with the shortest delay with the most frequently used keys, so it won't be an optimal solution.

@@ -1,6 +1,6 @@
 ---
 title: RGB for Average Contrast
-description: The red, green, and blue values for average contrast on white and black backgrounds.
+description: The red, green, and blue values for average contrast on white and black backgrounds
 slug: averageRGB
 date: 2022-03-17
 categories:
