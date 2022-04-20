@@ -28,6 +28,7 @@ relativeURLS: true
 markup:
   highlight:
     codeFences: true
+    style: tango
   goldmark:
     renderer:
       unsafe: true

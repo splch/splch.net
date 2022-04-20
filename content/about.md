@@ -7,7 +7,7 @@ title: Who I am
 Spencer Churchill
 ```
 
-## Feel free to contact me at spence@duck.com
+**Feel free to contact me at spence@duck.com**
 
 - Download my [PGP Key](https://keys.mailvelope.com/pks/lookup?op=get&search=spence@duck.com)
 
@@ -35,7 +35,7 @@ Languages I'm Learning:
 
 ---
 
-# [Résumé](/data/resume/resume.pdf)
+## [Résumé](/data/resume/resume.pdf)
 
 <div style="display:flex;align-items:center;overflow-x:auto;">
 	<div class="badge">
