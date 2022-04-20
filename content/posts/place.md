@@ -7,7 +7,7 @@ categories:
   - Thoughts
 tags:
   - Archive
-draft: false
+draft: true
 ---
 
 ![r/place Final Image](/images/place.png)

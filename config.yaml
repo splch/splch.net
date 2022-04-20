@@ -3,6 +3,8 @@ title: "SLC is"
 theme: "hugo-simplecss"
 
 params:
+  AuthorName: Spencer Churchill
+  GitHubUser: splch
   description: "Sharpest corner of the IPFS."
 
 menu:
@@ -32,3 +34,18 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+related:
+  includeNewer: true
+  indices:
+    - name: tags
+      weight: 90
+    - name: categories
+      weight: 60
+    - name: date
+      weight: 30
+  threshold: 100
+  toLower: true
+
+summaryLength: 40
+hasCJKLanguage: true

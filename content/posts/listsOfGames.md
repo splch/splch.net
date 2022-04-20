@@ -10,7 +10,7 @@ draft: false
 
 ![Nintendo Game Collage](/images/bestNintendoGames.webp)
 
-I combed the web for _Top 100_ lists for the \*NES and GB\* and combined them to record the most beloved 975 games. This master table is helpful when making ROM libraries or finding something tried, true, and new to play.
+I combed the web for _Top 100_ lists for the **NES and GB** and combined them to record the most beloved 975 games. This master table is helpful when making ROM libraries or finding something tried, true, and new to play.
 
 Here is the [unfiltered data](https://docs.google.com/spreadsheets/d/15zN6SwtHXe21jqngBEEBQZXoPVO_q0n-7LcpzdqkGxs/view) on Google Sheets. The `raw` tab has most lists in order, but some lists went from 100-91, 90-81, …, 10-1, so it's either in order or very out of order!
 
