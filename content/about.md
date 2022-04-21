@@ -10,6 +10,7 @@ Spencer Churchill
 **Feel free to contact me at spence@duck.com**
 
 - Download my [PGP Key](https://keys.mailvelope.com/pks/lookup?op=get&search=spence@duck.com)
+- Check out my [résumé](/data/resume/resume.pdf)
 
 ---
 
@@ -34,8 +35,6 @@ Languages I'm Learning:
 - [6502 Assembly](http://www.6502asm.com/)
 
 ---
-
-## [Résumé](/data/resume/resume.pdf)
 
 <div style="display:flex;align-items:center;overflow-x:auto;">
 	<div class="badge">

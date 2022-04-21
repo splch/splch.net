@@ -47,5 +47,10 @@ related:
   threshold: 100
   toLower: true
 
+tableOfContents:
+  endLevel: 3
+  ordered: false
+  startLevel: 1
+
 summaryLength: 40
 hasCJKLanguage: true
