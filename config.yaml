@@ -13,13 +13,13 @@ menu:
       url: ""
       weight: 1
     - name: Posts
-      url: "posts/"
+      url: "posts.html"
       weight: 2
     - name: Music
-      url: "music/"
+      url: "music.html"
       weight: 3
     - name: About
-      url: "about/"
+      url: "about.html"
       weight: 4
 
 permalinks:
@@ -54,3 +54,4 @@ tableOfContents:
 
 summaryLength: 40
 hasCJKLanguage: true
+uglyURLS: true
