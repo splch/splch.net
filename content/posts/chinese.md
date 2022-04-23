@@ -15,7 +15,7 @@ draft: false
 
 I used the [SUBTLEX-CH frequency list](https://doi.org/10.1371/journal.pone.0010729) to list the top 100 Chinese words per part of speech.
 
-There are 2,683 words on this page. From rough estimates, this should cover <abbr title="26303467 / 33546516">78</abbr>% of spoken Mandarin. The lists are sorted first by total counts of each part of speech, then by the word itself. For example, verbs are the most common words in Mandarin, and the most common verb is "是". So, the list begins with Verbs and its first entry is "是". The second piece of information is the frequency of the word. This frequency is in scientific notation, so `950,000` is `9.5e5`.
+There are 2,683 words on this page. From rough estimates, this should cover <abbr title="26303467 / 33546516">78</abbr>% of spoken Mandarin. The lists are sorted first by total counts of each part of speech, then by the word itself. For example, verbs are the most common words in Mandarin, and the most common verb is "是". So, the list begins with Verbs and its first entry is "是". The second piece of information is the pronunciation in English, called pinyin. After that is the English translation and finally the frequency of the word. This frequency is in scientific notation, so `950,000` is `9.5e5`.
 
 If you'd like to view the entire list, download the [JSON](/data/中文.json) file. Its structure is:
 
@@ -32,6 +32,18 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 ## Pronunciation
 
 ![Modified from 10.1006/jpho.1996.0034](/images/tones.webp)
+
+For english speakers, the romanized pronunciations of Mandarin Chinese are represented with pinyin. There are 5 tones in Mandarin Chinese, and the tones are represented with the following symbols:
+
+1. ¯
+2. ´
+3. ˇ
+4. `
+5. &nbsp;
+
+The fifth tone is slightly unique as it is just a shorter version of the first tone. This song is helpful in demonstrating the tones.
+
+{{< youtube ORpsNpxmfOc >}}
 
 ---
 
@@ -1190,108 +1202,108 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 
 ## Personal Name
 
-| Character  | Pinyin | Translation                | Count |
-| :--------: | :----: | -------------------------- | :---: |
-|    杰克    |        |                            | 5.2e3 |
-|     周     |  zhōu  | week                       | 2.5e3 |
-|    约翰    |        |                            | 2.0e3 |
-|     帅     | shuài  | Handsome                   | 1.9e3 |
-|    耶稣    |        |                            | 1.5e3 |
-|    汤姆    |        |                            | 1.4e3 |
-|     毛     |        |                            | 1.3e3 |
-|    查理    |        |                            | 1.3e3 |
-|    乔治    |        |                            | 1.3e3 |
-|    麦克    |        |                            | 1.3e3 |
-|   弗兰克   |        |                            | 1.2e3 |
-|    比尔    |        |                            | 1.2e3 |
-|    大卫    |        |                            | 1.2e3 |
-|     迪     |        |                            | 1.1e3 |
-|    乔伊    |        |                            | 1.0e3 |
-|     张     | zhāng  | Zhang                      | 1.0e3 |
-|    彼得    |        |                            | 1.0e3 |
-|    玛丽    |        |                            | 9.8e2 |
-|  福尔摩斯  |        |                            | 9.3e2 |
-|     艾     |        |                            | 9.3e2 |
-|    卡尔    |        |                            | 9.0e2 |
-|     王     |  wáng  | king; monarch; head; chief | 8.9e2 |
-|    威尔    |        |                            | 8.6e2 |
-|    丹尼    |        |                            | 8.6e2 |
-|    尼克    |        |                            | 8.1e2 |
-|   克莱尔   |        |                            | 8.1e2 |
-|    皮特    |        |                            | 8.0e2 |
-|    鲍勃    |        |                            | 8.0e2 |
-|    安娜    |        |                            | 7.9e2 |
-|     李     |        |                            | 7.7e2 |
-|    亨利    |        |                            | 7.7e2 |
-|    汤米    |        |                            | 7.3e2 |
-|    保罗    |        |                            | 7.2e2 |
-|    山姆    |        |                            | 7.1e2 |
-|     马     |   mǎ   | Horse                      | 7.0e2 |
-|   迈克尔   |        |                            | 6.9e2 |
-|   詹姆斯   |        |                            | 6.9e2 |
-|    迈克    |        |                            | 6.9e2 |
-|    凯文    |        |                            | 6.8e2 |
-|    比利    |        |                            | 6.7e2 |
-|    哈里    |        |                            | 6.7e2 |
-|    莎拉    |        |                            | 6.4e2 |
-|    阿门    |        |                            | 6.4e2 |
-|   克里斯   |        |                            | 6.3e2 |
-|    西蒙    |        |                            | 6.2e2 |
-|   维加斯   |        |                            | 6.2e2 |
-|    凯特    |        |                            | 6.0e2 |
-|    吉姆    |        |                            | 6.0e2 |
-|    哈利    |        |                            | 5.8e2 |
-| 拉斯维加斯 |        |                            | 5.8e2 |
-|     黄     | huáng  | yellow                     | 5.8e2 |
-|     後     |        |                            | 5.7e2 |
-|    马丁    |        |                            | 5.7e2 |
-|    亚瑟    |        |                            | 5.6e2 |
-|    威廉    |        |                            | 5.6e2 |
-|    凯蒂    |        |                            | 5.4e2 |
-|     陈     |        |                            | 5.4e2 |
-|    华生    |        |                            | 5.4e2 |
-|     崔     |        |                            | 5.3e2 |
-|    托尼    |        |                            | 5.3e2 |
-|    安迪    |        |                            | 5.2e2 |
-|   查尔斯   |        |                            | 5.2e2 |
-|   希特勒   |        |                            | 5.2e2 |
-|    肖恩    |        |                            | 5.2e2 |
-|    鲍尔    |        |                            | 5.0e2 |
-|   麦克斯   |        |                            | 5.0e2 |
-|    珍妮    |        |                            | 4.9e2 |
-|     白     |        |                            | 4.9e2 |
-|     胡     |        |                            | 4.9e2 |
-|    杰夫    |        |                            | 4.8e2 |
-|    琼斯    |        |                            | 4.8e2 |
-|    凯尔    |        |                            | 4.8e2 |
-|    安妮    |        |                            | 4.8e2 |
-|    泰勒    |        |                            | 4.7e2 |
-|    戴夫    |        |                            | 4.5e2 |
-|   霍华德   |        |                            | 4.5e2 |
-|    鲍比    |        |                            | 4.5e2 |
-|    罗杰    |        |                            | 4.5e2 |
-|   丹尼斯   |        |                            | 4.5e2 |
-|     萨     |        |                            | 4.4e2 |
-|    莉莉    |        |                            | 4.4e2 |
-|    斯坦    |        |                            | 4.3e2 |
-|   凯瑟琳   |        |                            | 4.3e2 |
-|   全美超   |        |                            | 4.3e2 |
-|    卡拉    |        |                            | 4.2e2 |
-|   罗伯特   |        |                            | 4.2e2 |
-|    迪克    |        |                            | 4.2e2 |
-|     玛     |        |                            | 4.2e2 |
-|  亚历克斯  |        |                            | 4.1e2 |
-|   丹尼尔   |        |                            | 4.0e2 |
-|    杰瑞    |        |                            | 4.0e2 |
-|   史蒂夫   |        |                            | 4.0e2 |
-|    杰西    |        |                            | 4.0e2 |
-|  伊丽莎白  |        |                            | 3.9e2 |
-|   克罗伊   |        |                            | 3.9e2 |
-|    海伦    |        |                            | 3.9e2 |
-|    威利    |        |                            | 3.8e2 |
-|    泰德    |        |                            | 3.8e2 |
-|    艾米    |        |                            | 3.8e2 |
-|    琳达    |        |                            | 3.7e2 |
+| Character  |      Pinyin      | Translation           | Count |
+| :--------: | :--------------: | --------------------- | :---: |
+|    杰克    |      jiékè       | Jack                  | 5.2e3 |
+|     周     |       zhōu       | Zhou (week)           | 2.5e3 |
+|    约翰    |      yuēhàn      | John                  | 2.0e3 |
+|     帅     |      shuài       | Handsome              | 1.9e3 |
+|    耶稣    |       yēsū       | Jesus                 | 1.5e3 |
+|    汤姆    |      tāngmǔ      | Tom                   | 1.4e3 |
+|     毛     |       máo        | Mao (hair)            | 1.3e3 |
+|    查理    |      chálǐ       | Charlie               | 1.3e3 |
+|    乔治    |     qiáozhì      | George                | 1.3e3 |
+|    麦克    |      màikè       | Mike                  | 1.3e3 |
+|   弗兰克   |     fúlánkè      | Frank                 | 1.2e3 |
+|    比尔    |      bǐ'ěr       | Bill                  | 1.2e3 |
+|    大卫    |      dà wèi      | David                 | 1.2e3 |
+|     迪     |        dí        | Di (to enlighten)     | 1.1e3 |
+|    乔伊    |     qiáo yī      | Joey                  | 1.0e3 |
+|     张     |      zhāng       | Zhang                 | 1.0e3 |
+|    彼得    |       bǐdé       | Peter                 | 1.0e3 |
+|    玛丽    |       mǎlì       | Mary                  | 9.8e2 |
+|  福尔摩斯  |    fú'ěrmósī     | Sherlock Holmes       | 9.3e2 |
+|     艾     |        ài        | Ai (mugwort)          | 9.3e2 |
+|    卡尔    |      kǎ'ěr       | Karl                  | 9.0e2 |
+|     王     |       wáng       | King                  | 8.9e2 |
+|    威尔    |      wēi ěr      | Will                  | 8.6e2 |
+|    丹尼    |      dān ní      | Danny                 | 8.6e2 |
+|    尼克    |       níkè       | Nick                  | 8.1e2 |
+|   克莱尔   |     kèlái'ěr     | Claire                | 8.1e2 |
+|    皮特    |       pítè       | Peter                 | 8.0e2 |
+|    鲍勃    |      bào bó      | Bob                   | 8.0e2 |
+|    安娜    |       ānnà       | Anna                  | 7.9e2 |
+|     李     |        lǐ        | Li (plum)             | 7.7e2 |
+|    亨利    |      hēnglì      | Henry                 | 7.7e2 |
+|    汤米    |     tāng mǐ      | Tommy                 | 7.3e2 |
+|    保罗    |      bǎoluó      | Paul                  | 7.2e2 |
+|    山姆    |      shānmǔ      | Sam                   | 7.1e2 |
+|     马     |        mǎ        | Ma (horse)            | 7.0e2 |
+|   迈克尔   |     màikè'ěr     | Michael               | 6.9e2 |
+|   詹姆斯   |     zhānmǔsī     | James                 | 6.9e2 |
+|    迈克    |      màikè       | Mike                  | 6.9e2 |
+|    凯文    |     kǎi wén      | Kevin                 | 6.8e2 |
+|    比利    |      bǐ lì       | Billy                 | 6.7e2 |
+|    哈里    |       hālǐ       | Harry                 | 6.7e2 |
+|    莎拉    |      shā lā      | Sarah                 | 6.4e2 |
+|    阿门    |       āmén       | Amen                  | 6.4e2 |
+|   克里斯   |     kè lǐsī      | Chris                 | 6.3e2 |
+|    西蒙    |      xīméng      | Simon                 | 6.2e2 |
+|   维加斯   |    wéi jiā sī    | Vegas                 | 6.2e2 |
+|    凯特    |      kǎitè       | Kate                  | 6.0e2 |
+|    吉姆    |       jímǔ       | Jim                   | 6.0e2 |
+|    哈利    |      hā lì       | Harry                 | 5.8e2 |
+| 拉斯维加斯 | lā sī wéi jiā sī | Las Vegas             | 5.8e2 |
+|     黄     |      huáng       | Huang (yellow)        | 5.8e2 |
+|     後     |       hòu        | Hou (back)            | 5.7e2 |
+|    马丁    |      mǎdīng      | Martin                | 5.7e2 |
+|    亚瑟    |      yà sè       | Arthur                | 5.6e2 |
+|    威廉    |     wēilián      | William               | 5.6e2 |
+|    凯蒂    |      kǎi dì      | Katie                 | 5.4e2 |
+|     陈     |       chén       | Chen (list)           | 5.4e2 |
+|    华生    |    huá shēng     | Watson                | 5.4e2 |
+|     崔     |       cuī        | Choi (precipitous)    | 5.3e2 |
+|    托尼    |      tuōní       | Tony                  | 5.3e2 |
+|    安迪    |      ān dí       | Andy                  | 5.2e2 |
+|   查尔斯   |     chá'ěrsī     | Charles               | 5.2e2 |
+|   希特勒   |     xītèlēi      | Hitler                | 5.2e2 |
+|    肖恩    |     xiào ēn      | Sean                  | 5.2e2 |
+|    鲍尔    |      bào ěr      | Ball                  | 5.0e2 |
+|   麦克斯   |     màikè sī     | Max                   | 5.0e2 |
+|    珍妮    |      zhēnnī      | Jenny                 | 4.9e2 |
+|     白     |       bái        | Bai (white)           | 4.9e2 |
+|     胡     |        hú        | Hu                    | 4.9e2 |
+|    杰夫    |      jié fū      | Jeff                  | 4.8e2 |
+|    琼斯    |     qióngsī      | Jones                 | 4.8e2 |
+|    凯尔    |      kǎi ěr      | Kyle                  | 4.8e2 |
+|    安妮    |       ānnī       | Annie                 | 4.8e2 |
+|    泰勒    |      tàilēi      | Taylor                | 4.7e2 |
+|    戴夫    |      dài fū      | Dave                  | 4.5e2 |
+|   霍华德   |     huòhuádé     | Howard                | 4.5e2 |
+|    鲍比    |      bào bǐ      | Bobby                 | 4.5e2 |
+|    罗杰    |     luō jié      | Roger                 | 4.5e2 |
+|   丹尼斯   |     dānnísī      | Dennis                | 4.5e2 |
+|     萨     |        sà        | Sa (Buddha)           | 4.4e2 |
+|    莉莉    |       lìlì       | Lily                  | 4.4e2 |
+|    斯坦    |      sītǎn       | Stan                  | 4.3e2 |
+|   凯瑟琳   |     kǎisèlín     | Katherine             | 4.3e2 |
+|   全美超   |   quánměi chāo   | American Super League | 4.3e2 |
+|    卡拉    |       kǎlā       | Kara                  | 4.2e2 |
+|   罗伯特   |     luōbótè      | Robert                | 4.2e2 |
+|    迪克    |       díkè       | Dick                  | 4.2e2 |
+|     玛     |        mǎ        | Ma                    | 4.2e2 |
+|  亚历克斯  |   yà lì kè sī    | Alex                  | 4.1e2 |
+|   丹尼尔   |     dānní'ěr     | Daniel                | 4.0e2 |
+|    杰瑞    |     jié ruì      | Jerry                 | 4.0e2 |
+|   史蒂夫   |    shǐ dì fū     | Steve                 | 4.0e2 |
+|    杰西    |      jié xī      | Jesse                 | 4.0e2 |
+|  伊丽莎白  |    yīlìshābái    | Elizabeth             | 3.9e2 |
+|   克罗伊   |    kè luó yī     | Croy                  | 3.9e2 |
+|    海伦    |      hǎilún      | Helen                 | 3.9e2 |
+|    威利    |      wēi lì      | Willie                | 3.8e2 |
+|    泰德    |      tài dé      | Ted                   | 3.8e2 |
+|    艾米    |      ài mǐ       | Amy                   | 3.8e2 |
+|    琳达    |      lín dá      | Linda                 | 3.7e2 |
 
 ## Morpheme
 
@@ -2420,108 +2432,108 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 
 ## Fixed Expressions
 
-| Character |    Pinyin     | Translation                           | Count |
-| :-------: | :-----------: | ------------------------------------- | :---: |
-|  事实上   | shì shí shàng | in fact; actually                     | 5.5e3 |
-|  差不多   |   chàbuduō    | Almost                                | 3.3e3 |
-|  有意思   |   yǒu yì si   | interesting; significant              | 3.0e3 |
-| 不可思议  |               |                                       | 1.6e3 |
-| 不管怎样  |               |                                       | 1.3e3 |
-|   可不    |               |                                       | 1.2e3 |
-| 无论如何  |               |                                       | 1.2e3 |
-|  受不了   |  shòubuliǎo   | Cannot bear sth                       | 1.2e3 |
-| 毫无疑问  |               |                                       | 8.9e2 |
-| 所作所为  |               |                                       | 5.9e2 |
-|  用不着   | yòng bù zháo  | no need; have no use for              | 5.6e2 |
-| 一模一样  | yì mú yí yàng | exactly the same; as like as two peas | 5.3e2 |
-| 有史以来  |               |                                       | 4.4e2 |
-| 乱七八糟  |               |                                       | 3.8e2 |
-| 迫不及待  |               |                                       | 3.7e2 |
-| 独一无二  |               |                                       | 3.5e2 |
-|  性骚扰   |               |                                       | 3.3e2 |
-|  面对面   | miàn duì miàn | face to face; surface-to-surface      | 2.9e2 |
-|   您好    |               |                                       | 2.7e2 |
-| 除此之外  |               |                                       | 2.5e2 |
-| 显而易见  |               |                                       | 2.4e2 |
-| 此时此刻  |               |                                       | 2.3e2 |
-| 一塌糊涂  |               |                                       | 2.3e2 |
-| 各种各样  |               |                                       | 2.2e2 |
-|  不得了   |   búdéliǎo    | Very                                  | 2.2e2 |
-| 大惊小怪  |               |                                       | 2.2e2 |
-| 至关重要  |               |                                       | 2.2e2 |
-| 莫名其妙  |               |                                       | 2.0e2 |
-| 好不容易  |               |                                       | 2.0e2 |
-| 偷偷摸摸  |               |                                       | 1.8e2 |
-| 理所当然  |               |                                       | 1.8e2 |
-| 无处不在  |               |                                       | 1.8e2 |
-| 梦寐以求  |               |                                       | 1.7e2 |
-| 尽管如此  |               |                                       | 1.7e2 |
-| 诸如此类  |               |                                       | 1.7e2 |
-| 无缘无故  |               |                                       | 1.6e2 |
-| 激动人心  |               |                                       | 1.6e2 |
-| 轻而易举  |               |                                       | 1.6e2 |
-| 不择手段  |               |                                       | 1.6e2 |
-| 百分之百  |               |                                       | 1.6e2 |
-| 梦想成真  |               |                                       | 1.6e2 |
-| 从头到尾  |               |                                       | 1.5e2 |
-| 迄今为止  |               |                                       | 1.4e2 |
-| 彻头彻尾  |               |                                       | 1.4e2 |
-| 一清二楚  |               |                                       | 1.4e2 |
-| 情不自禁  |               |                                       | 1.4e2 |
-| 鬼鬼祟祟  |               |                                       | 1.4e2 |
-| 一举一动  |               |                                       | 1.3e2 |
-| 想方设法  |               |                                       | 1.3e2 |
-| 指手画脚  |               |                                       | 1.3e2 |
-| 每时每刻  |               |                                       | 1.3e2 |
-| 世界大战  |               |                                       | 1.2e2 |
-| 自言自语  | zì yán zì yǔ  | soliloquize; talk to oneself          | 1.2e2 |
-| 鸡皮疙瘩  |               |                                       | 1.2e2 |
-| 不顾一切  |               |                                       | 1.2e2 |
-| 全心全意  |               |                                       | 1.2e2 |
-|  团团转   |               |                                       | 1.2e2 |
-| 一天到晚  |               |                                       | 1.1e2 |
-| 无时无刻  |               |                                       | 1.1e2 |
-|  强有力   |               |                                       | 1.1e2 |
-| 愤世嫉俗  |               |                                       | 1.1e2 |
-| 完美无缺  |               |                                       | 1.1e2 |
-| 毫不犹豫  |               |                                       | 1.1e2 |
-| 一席之地  |               |                                       | 1.1e2 |
-| 筋疲力尽  |               |                                       | 1.1e2 |
-| 自然而然  |               |                                       | 1.1e2 |
-|  一连串   |               |                                       | 1.1e2 |
-| 不省人事  |               |                                       | 1.0e2 |
-|  说到底   |               |                                       | 9.9e1 |
-| 小心翼翼  |               |                                       | 9.8e1 |
-| 走投无路  |               |                                       | 9.7e1 |
-| 种族歧视  |               |                                       | 9.4e1 |
-| 不仅如此  |               |                                       | 9.3e1 |
-| 十字路口  |               |                                       | 9.3e1 |
-| 精彩绝伦  |               |                                       | 9.1e1 |
-| 正当防卫  |               |                                       | 9.0e1 |
-| 感情用事  |               |                                       | 8.8e1 |
-| 不知不觉  |               |                                       | 8.5e1 |
-| 光天化日  |               |                                       | 8.5e1 |
-| 恰到好处  |               |                                       | 8.5e1 |
-| 无稽之谈  |               |                                       | 8.5e1 |
-| 光明正大  |               |                                       | 8.4e1 |
-| 甜言蜜语  |               |                                       | 8.3e1 |
-| 从此以后  |               |                                       | 8.2e1 |
-| 蛛丝马迹  |               |                                       | 8.2e1 |
-| 中产阶级  |               |                                       | 8.1e1 |
-| 无名小卒  |               |                                       | 8.1e1 |
-| 天衣无缝  |               |                                       | 8.0e1 |
-| 军事基地  |               |                                       | 7.9e1 |
-| 无懈可击  |               |                                       | 7.9e1 |
-| 深思熟虑  |               |                                       | 7.9e1 |
-| 罪魁祸首  |               |                                       | 7.7e1 |
-| 不可收拾  |               |                                       | 7.6e1 |
-|  依我看   |               |                                       | 7.6e1 |
-| 死路一条  |               |                                       | 7.6e1 |
-| 光彩照人  |               |                                       | 7.5e1 |
-| 合情合理  |               |                                       | 7.5e1 |
-| 随时随地  |               |                                       | 7.5e1 |
-| 一臂之力  |               |                                       | 7.4e1 |
-| 无影无踪  |               |                                       | 7.4e1 |
+| Character |     Pinyin     | Translation                      | Count |
+| :-------: | :------------: | -------------------------------- | :---: |
+|  事实上   |  shìshí shàng  | in fact; actually                | 5.5e3 |
+|  差不多   |    chàbuduō    | almost; nearly                   | 3.3e3 |
+|  有意思   |    yǒuyìsi     | interesting                      | 3.0e3 |
+| 不可思议  |    bùkěsīyì    | incredible                       | 1.6e3 |
+| 不管怎样  | bùguǎn zěnyàng | one way or another               | 1.3e3 |
+|   可不    |      kěbù      | may not                          | 1.2e3 |
+| 无论如何  |   wúlùn rúhé   | anyway                           | 1.2e3 |
+|  受不了   |  shòu bùliǎo   | can't stand it                   | 1.2e3 |
+| 毫无疑问  |  háo wú yíwèn  | no doubt                         | 8.9e2 |
+| 所作所为  | suǒzuò suǒ wéi | do                               | 5.9e2 |
+|  用不着   |  yòng bù zháo  | no need; have no use for         | 5.6e2 |
+| 一模一样  |   yīmúyīyàng   | exactly the same                 | 5.3e2 |
+| 有史以来  |                |                                  | 4.4e2 |
+| 乱七八糟  |                |                                  | 3.8e2 |
+| 迫不及待  |                |                                  | 3.7e2 |
+| 独一无二  |                |                                  | 3.5e2 |
+|  性骚扰   |                |                                  | 3.3e2 |
+|  面对面   | miàn duì miàn  | face to face; surface-to-surface | 2.9e2 |
+|   您好    |                |                                  | 2.7e2 |
+| 除此之外  |                |                                  | 2.5e2 |
+| 显而易见  |                |                                  | 2.4e2 |
+| 此时此刻  |                |                                  | 2.3e2 |
+| 一塌糊涂  |                |                                  | 2.3e2 |
+| 各种各样  |                |                                  | 2.2e2 |
+|  不得了   |    búdéliǎo    | Very                             | 2.2e2 |
+| 大惊小怪  |                |                                  | 2.2e2 |
+| 至关重要  |                |                                  | 2.2e2 |
+| 莫名其妙  |                |                                  | 2.0e2 |
+| 好不容易  |                |                                  | 2.0e2 |
+| 偷偷摸摸  |                |                                  | 1.8e2 |
+| 理所当然  |                |                                  | 1.8e2 |
+| 无处不在  |                |                                  | 1.8e2 |
+| 梦寐以求  |                |                                  | 1.7e2 |
+| 尽管如此  |                |                                  | 1.7e2 |
+| 诸如此类  |                |                                  | 1.7e2 |
+| 无缘无故  |                |                                  | 1.6e2 |
+| 激动人心  |                |                                  | 1.6e2 |
+| 轻而易举  |                |                                  | 1.6e2 |
+| 不择手段  |                |                                  | 1.6e2 |
+| 百分之百  |                |                                  | 1.6e2 |
+| 梦想成真  |                |                                  | 1.6e2 |
+| 从头到尾  |                |                                  | 1.5e2 |
+| 迄今为止  |                |                                  | 1.4e2 |
+| 彻头彻尾  |                |                                  | 1.4e2 |
+| 一清二楚  |                |                                  | 1.4e2 |
+| 情不自禁  |                |                                  | 1.4e2 |
+| 鬼鬼祟祟  |                |                                  | 1.4e2 |
+| 一举一动  |                |                                  | 1.3e2 |
+| 想方设法  |                |                                  | 1.3e2 |
+| 指手画脚  |                |                                  | 1.3e2 |
+| 每时每刻  |                |                                  | 1.3e2 |
+| 世界大战  |                |                                  | 1.2e2 |
+| 自言自语  |  zì yán zì yǔ  | soliloquize; talk to oneself     | 1.2e2 |
+| 鸡皮疙瘩  |                |                                  | 1.2e2 |
+| 不顾一切  |                |                                  | 1.2e2 |
+| 全心全意  |                |                                  | 1.2e2 |
+|  团团转   |                |                                  | 1.2e2 |
+| 一天到晚  |                |                                  | 1.1e2 |
+| 无时无刻  |                |                                  | 1.1e2 |
+|  强有力   |                |                                  | 1.1e2 |
+| 愤世嫉俗  |                |                                  | 1.1e2 |
+| 完美无缺  |                |                                  | 1.1e2 |
+| 毫不犹豫  |                |                                  | 1.1e2 |
+| 一席之地  |                |                                  | 1.1e2 |
+| 筋疲力尽  |                |                                  | 1.1e2 |
+| 自然而然  |                |                                  | 1.1e2 |
+|  一连串   |                |                                  | 1.1e2 |
+| 不省人事  |                |                                  | 1.0e2 |
+|  说到底   |                |                                  | 9.9e1 |
+| 小心翼翼  |                |                                  | 9.8e1 |
+| 走投无路  |                |                                  | 9.7e1 |
+| 种族歧视  |                |                                  | 9.4e1 |
+| 不仅如此  |                |                                  | 9.3e1 |
+| 十字路口  |                |                                  | 9.3e1 |
+| 精彩绝伦  |                |                                  | 9.1e1 |
+| 正当防卫  |                |                                  | 9.0e1 |
+| 感情用事  |                |                                  | 8.8e1 |
+| 不知不觉  |                |                                  | 8.5e1 |
+| 光天化日  |                |                                  | 8.5e1 |
+| 恰到好处  |                |                                  | 8.5e1 |
+| 无稽之谈  |                |                                  | 8.5e1 |
+| 光明正大  |                |                                  | 8.4e1 |
+| 甜言蜜语  |                |                                  | 8.3e1 |
+| 从此以后  |                |                                  | 8.2e1 |
+| 蛛丝马迹  |                |                                  | 8.2e1 |
+| 中产阶级  |                |                                  | 8.1e1 |
+| 无名小卒  |                |                                  | 8.1e1 |
+| 天衣无缝  |                |                                  | 8.0e1 |
+| 军事基地  |                |                                  | 7.9e1 |
+| 无懈可击  |                |                                  | 7.9e1 |
+| 深思熟虑  |                |                                  | 7.9e1 |
+| 罪魁祸首  |                |                                  | 7.7e1 |
+| 不可收拾  |                |                                  | 7.6e1 |
+|  依我看   |                |                                  | 7.6e1 |
+| 死路一条  |                |                                  | 7.6e1 |
+| 光彩照人  |                |                                  | 7.5e1 |
+| 合情合理  |                |                                  | 7.5e1 |
+| 随时随地  |                |                                  | 7.5e1 |
+| 一臂之力  |                |                                  | 7.4e1 |
+| 无影无踪  |                |                                  | 7.4e1 |
 
 ## Other Proper Noun
 
@@ -2785,18 +2797,18 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 
 ## Pronoun Morpheme
 
-| Character | Pinyin | Translation | Count |
-| :-------: | :----: | ----------- | :---: |
-|    尔     |   ěr   | you         | 2.4e3 |
-|    斯     |   sī   | such; this  | 1.7e3 |
-|    兹     |   zī   |             | 7.2e2 |
-|    夫     |   fū   |             | 1.7e2 |
-|    伊     |   yī   |             | 9.1e1 |
-|    汝     |   rǔ   |             | 3.3e1 |
-|    胡     |   hú   |             | 1.6e1 |
-|    余     |   yú   | I           | 6.0e0 |
-|    甚     |  shén  |             | 3.0e0 |
-|    予     |   yǔ   |             | 1.0e0 |
+| Character | Pinyin | Translation     | Count |
+| :-------: | :----: | --------------- | :---: |
+|    尔     |   ěr   | you             | 2.4e3 |
+|    斯     |   sī   | such; this      | 1.7e3 |
+|    兹     |   zī   | herewith        | 7.2e2 |
+|    夫     |   fū   | man; husband    | 1.7e2 |
+|    伊     |   yī   | he; she         | 9.1e1 |
+|    汝     |   rǔ   | thou; you       | 3.3e1 |
+|    胡     |   hú   | why             | 1.6e1 |
+|    余     |   yú   | I; me           | 6.0e0 |
+|    甚     |  shén  | very; extremely | 3.0e0 |
+|    予     |   yǔ   | beforehand      | 1.0e0 |
 
 ## Organization Name
 
@@ -2911,11 +2923,11 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 乙 乚 乛    | yǐ     | sickle                |
 | 亅          | jué    | hook                  |
 | 二          | èr     | two                   |
-| 亠          | tóu    | shelter, head         |
+| 亠          | tóu    | shelter; head         |
 | 人 亻       | rén    | man                   |
 | 儿          | er     | child                 |
 | 入          | rù     | to enter              |
-| 八 丷       | bā     | eight, separate       |
+| 八 丷       | bā     | eight; separate       |
 | 冂          | jiōng  | scope                 |
 | 冖          | mì     | to cover              |
 | 冫          | bīng   | ice                   |
@@ -2924,7 +2936,7 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 刂 刁 刀 ク | dāo    | knife                 |
 | 力          | lì     | force                 |
 | 勹          | bāo    | to wrap               |
-| 匕          | bǐ     | spoon, man overthrown |
+| 匕          | bǐ     | spoon; man overthrown |
 | 匚          | fāng   | open box              |
 | 匸          | xì     | to hide               |
 | 十          | shí    | ten                   |
@@ -2932,7 +2944,7 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 卩          | jié    | seal                  |
 | 厂          | chǎng  | production facility   |
 | 厶          | sī     | secret                |
-| 又 ヌ       | yòu    | still, hand           |
+| 又 ヌ       | yòu    | still; hand           |
 | 口          | kǒu    | mouth                 |
 | 囗          | wéi    | enclosure             |
 | 土          | tǔ     | earth                 |
@@ -2957,23 +2969,23 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 干          | gàn    | dry                   |
 | 幺          | yāo    | tiny                  |
 | 广          | guǎng  | shelter               |
-| 廴          | yǐn    | great, stride         |
+| 廴          | yǐn    | great; stride         |
 | 廾          | gǒng   | two, hands            |
 | 弋          | yì     | arrow-grapin          |
 | 弓          | gōng   | bow                   |
 | 彐 彑       | jì     | snout                 |
-| 彡          | shān   | beard, brush          |
+| 彡          | shān   | beard; brush          |
 | 彳          | chì    | walk around           |
 | 心 忄       | xīn    | heart                 |
 | 戈          | gē     | halberd               |
 | 戶 户       | hù     | gate                  |
 | 手 扌 才    | shǒu   | hand                  |
 | 支          | zhī    | branch                |
-| 攴 攵       | pū     | to bump, hand         |
+| 攴 攵       | pū     | to bump; hand         |
 | 文          | wén    | writing               |
 | 斗          | dòu    | measurer              |
-| 斤          | jīn    | ax, 500 grams         |
-| 方          | fāng   | square, direction     |
+| 斤          | jīn    | ax; 500 grams         |
+| 方          | fāng   | square; direction     |
 | 无          | wú     | without               |
 | 日          | rì     | sun                   |
 | 曰          | yuē    | to say                |
@@ -2993,9 +3005,9 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 爪 爫       | zhǎo   | claw                  |
 | 父          | fù     | father                |
 | 爻          | yáo    | double                |
-| 爿          | pán    | splitted, wood        |
+| 爿          | pán    | splitted; wood        |
 | 片          | piàn   | slice                 |
-| 牙          | yá     | tooth, ivory          |
+| 牙          | yá     | tooth; ivory          |
 | 牛 牜 ⺧    | niú    | beef                  |
 | 犬 犭       | quǎn   | dog                   |
 | 玄          | xuán   | deep                  |
@@ -3006,7 +3018,7 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 生          | shēng  | be born               |
 | 用          | yòng   | to use                |
 | 田          | tián   | field                 |
-| 疋 ⺪       | pǐ     | roll, piece of cloth  |
+| 疋 ⺪       | pǐ     | roll; piece of cloth  |
 | 疒          | nè     | disease               |
 | 癶          | bō     | to go up              |
 | 白          | bái    | white                 |
@@ -3016,10 +3028,10 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 矛          | máo    | spear                 |
 | 矢          | shǐ    | arrow                 |
 | 石          | shí    | stone                 |
-| 示 礻       | shì    | to venerate, to show  |
+| 示 礻       | shì    | to venerate; to show  |
 | 禸          | róu    | get away              |
 | 禾          | hé     | grain                 |
-| 穴          | xué    | cave, swing door      |
+| 穴          | xué    | cave; swing door      |
 | 立          | lì     | standing up           |
 | 竹 ⺮ ケ    | shì    | bamboo                |
 | 米          | mǐ     | rice                  |
@@ -3056,8 +3068,8 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 谷          | gǔ     | valley                |
 | 豆          | dòu    | pea                   |
 | 豕          | chù    | pig                   |
-| 豸          | zhì    | feline, cat family    |
-| 贝          | bèi    | shell, money          |
+| 豸          | zhì    | feline; cat family    |
+| 贝          | bèi    | shell; money          |
 | 赤          | chì    | red                   |
 | 走          | zǒu    | to walk               |
 | 足          | zú     | foot                  |
@@ -3070,7 +3082,7 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 酉          | yǒu    | alcohol               |
 | 釆          | biàn   | to distinguish        |
 | 里          | lǐ     | neighborhood          |
-| 金 钅       | jīn    | gold, metal           |
+| 金 钅       | jīn    | gold; metal           |
 | 长          | zhǎng  | long                  |
 | 门          | mén    | gate                  |
 | 阝(阜)      | fù     | mound                 |
@@ -3084,7 +3096,7 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 韦          | wéi    | tanned leather        |
 | 韭          | jiǔ    | leek                  |
 | 音          | yīn    | sound                 |
-| 页 頁       | yè     | head, leaf            |
+| 页 頁       | yè     | head; leaf            |
 | 风          | fēng   | wind                  |
 | 飞          | fēi    | to fly                |
 | 食 饣       | shí    | to eat                |
