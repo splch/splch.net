@@ -11,6 +11,8 @@ draft: false
 
 ![中文 Flag](/images/chinese.webp)
 
+## Dataset
+
 I used the [SUBTLEX-CH frequency list](https://doi.org/10.1371/journal.pone.0010729) to list the top 100 Chinese words per part of speech.
 
 There are 2,683 words on this page. From rough estimates, this should cover <abbr title="26303467 / 33546516">78</abbr>% of spoken Mandarin. The lists are sorted first by total counts of each part of speech, then by the word itself. For example, verbs are the most common words in Mandarin, and the most common verb is "是". So, the list begins with Verbs and its first entry is "是". The second piece of information is the frequency of the word. This frequency is in scientific notation, so `950,000` is `9.5e5`.
@@ -27,35 +29,41 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 }
 ```
 
-# Word Lists
+## Pronunciation
+
+![Modified from 10.1006/jpho.1996.0034](/images/tones.webp)
+
+---
+
+## Word Lists
 
 ## Verb
 
 | Character |  Pinyin  | Translation                                          | Count |
 | :-------: | :------: | ---------------------------------------------------- | :---: |
-|    是     |   shì    | yes                                                  | 9.5e5 |
+|    是     |   shì    | am                                                   | 9.5e5 |
 |    有     |   yǒu    | have                                                 | 2.9e5 |
-|    会     |          |                                                      | 2.7e5 |
-|    要     |          |                                                      | 2.4e5 |
+|    会     |   huì    | will                                                 | 2.7e5 |
+|    要     |   yào    | want                                                 | 2.4e5 |
 |    说     |   shuō   | speak                                                | 2.3e5 |
 |    想     |  xiǎng   | think                                                | 2.1e5 |
 |   知道    |  zhīdào  | know                                                 | 2.0e5 |
 |    来     |   lái    | come                                                 | 1.7e5 |
 |    能     |   néng   | can                                                  | 1.7e5 |
 |    去     |    qù    | go                                                   | 1.6e5 |
-|    到     |   dào    | reach                                                | 1.3e5 |
-|    让     |   ràng   | Give Way                                             | 1.2e5 |
+|    到     |   dào    | arrive                                               | 1.3e5 |
+|    让     |   ràng   | allow                                                | 1.2e5 |
 |    做     |   zuò    | do                                                   | 1.2e5 |
-|    看     |   kàn    | see; see                                             | 1.0e5 |
-|   可以    |   kěyǐ   | Sure                                                 | 7.9e4 |
+|    看     |   kàn    | see                                                  | 1.0e5 |
+|   可以    |   kěyǐ   | can                                                  | 7.9e4 |
 |   没有    | méi yǒu  | have not; no                                         | 7.5e4 |
-|    没     |   méi    | no                                                   | 6.9e4 |
+|    没     |   méi    | don't                                                | 6.9e4 |
 |    走     |   zǒu    | go; walk                                             | 6.5e4 |
 |   告诉    |  gàosu   | tell                                                 | 6.1e4 |
 |    听     |   tīng   | hear                                                 | 5.5e4 |
-|   谢谢    |  xièxie  | Thank you                                            | 5.1e4 |
-|   觉得    |  juéde   | Think                                                | 5.1e4 |
-|    找     |   zhǎo   | look for                                             | 4.7e4 |
+|   谢谢    |  xièxie  | thank you                                            | 5.1e4 |
+|   觉得    |  juéde   | think                                                | 5.1e4 |
+|    找     |   zhǎo   | look for; find                                       | 4.7e4 |
 |   喜欢    |  xǐhuan  | like                                                 | 4.6e4 |
 |   是的    |          |                                                      | 4.4e4 |
 |    出     |   chū    | out                                                  | 4.3e4 |
@@ -133,8 +141,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    成     |          |                                                      | 1.2e4 |
 |    够     |   gòu    | enough                                               | 1.2e4 |
 |    跟     |   gēn    | with                                                 | 1.2e4 |
-
----
 
 ## Pronoun
 
@@ -241,8 +247,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   人家    |    rénjiā    | family                                              | 7.3e2 |
 |   本人    |    běnrén    | oneself                                             | 7.0e2 |
 
----
-
 ## Common Noun
 
 | Character |   Pinyin   | Translation                  | Count |
@@ -347,8 +351,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   夫人    |   fūrén    | Madam                        | 5.1e3 |
 |   父母    |   fù mǔ    | father and mother; parents   | 5.1e3 |
 |   事实    |   shìshí   | Fact                         | 5.0e3 |
-
----
 
 ## Adverb
 
@@ -455,8 +457,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   不必    |    bú bì     | need not; not have to                      | 2.5e3 |
 |  有时候   |              |                                            | 2.4e3 |
 
----
-
 ## Auxiliary
 
 | Character | Pinyin  | Translation                                           | Count |
@@ -506,8 +506,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    者     |         |                                                       | 2.0e0 |
 |   云云    |         |                                                       | 1.0e0 |
 |    而     |   ér    | and                                                   | 1.0e0 |
-
----
 
 ## Modal Particle
 
@@ -567,8 +565,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   得了    |  dé le   | stop it; hold it; got                     | 1.0e0 |
 |    煞     |          |                                           | 1.0e0 |
 |   着哪    |          |                                           | 1.0e0 |
-
----
 
 ## Adjective
 
@@ -675,8 +671,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    烂     |    làn     | rotten                              | 2.1e3 |
 |   激动    |   jīdòng   | Excited                             | 2.1e3 |
 
----
-
 ## Preposition
 
 | Character |  Pinyin   | Translation                                               | Count |
@@ -773,8 +767,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   较之    |           |                                                           | 2.0e0 |
 |   及至    |           |                                                           | 1.0e0 |
 |   因着    |           |                                                           | 1.0e0 |
-
----
 
 ## Conjunction
 
@@ -881,8 +873,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   要说    |                   |                                             | 5.8e1 |
 |    然     |                   |                                             | 5.6e1 |
 
----
-
 ## Classifier
 
 | Character |  Pinyin  | Translation                                                 | Count |
@@ -987,8 +977,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    刀     |   dāo    | knife                                                       | 4.7e2 |
 |   周年    | zhōunián | anniversary                                                 | 4.7e2 |
 |    班     |   bān    | class                                                       | 4.7e2 |
-
----
 
 ## Numeral
 
@@ -1095,8 +1083,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   十六    |            |                               | 1.5e2 |
 |   两万    |            |                               | 1.4e2 |
 
----
-
 ## Directional Locality
 
 | Character |   Pinyin   | Translation                                              | Count |
@@ -1201,8 +1187,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   后头    |  hòu tou   | back                                                     | 1.0e2 |
 |   顶层    |            |                                                          | 9.3e1 |
 |   南面    |            |                                                          | 9.2e1 |
-
----
 
 ## Personal Name
 
@@ -1309,8 +1293,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    艾米    |        |                            | 3.8e2 |
 |    琳达    |        |                            | 3.7e2 |
 
----
-
 ## Morpheme
 
 | Character | Pinyin | Translation                                                   | Count |
@@ -1415,8 +1397,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    录     |   lù   | record; write down; copy                                      | 6.5e2 |
 |    异     |        |                                                               | 6.4e2 |
 |    族     |   zú   | clan; race; nationality                                       | 6.3e2 |
-
----
 
 ## Time Word
 
@@ -1523,8 +1503,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   黎明    |               |                                             | 2.5e2 |
 |   今夜    |               |                                             | 2.4e2 |
 
----
-
 ## Verb With Nominal Function
 
 | Character |  Pinyin   | Translation                          | Count |
@@ -1630,8 +1608,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   诉讼    |           |                                      | 4.4e2 |
 |   谈判    |  tánpàn   | negotiation                          | 4.3e2 |
 
----
-
 ## ? Conjunction Conjunction
 
 | Character | Pinyin | Translation | Count |
@@ -1648,8 +1624,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   加之    |        |             | 1.5e1 |
 |  换言之   |        |             | 1.2e1 |
 |    暨     |        |             | 1.1e1 |
-
----
 
 ## ? Numeric Classifier
 
@@ -1687,8 +1661,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   两手    | liǎng shǒu | two hands; dual tactics                   | 5.0e0 |
 |   万年    |            |                                           | 3.0e0 |
 |   万代    |            |                                           | 1.0e0 |
-
----
 
 ## Non-Predicate Adjective
 
@@ -1795,8 +1767,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   日常    |  rìcháng  | daily                                                             | 3.0e2 |
 |   特定    |  tèdìng   | given                                                             | 3.0e2 |
 
----
-
 ## Interjection
 
 | Character | Pinyin | Translation        | Count |
@@ -1836,8 +1806,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    噫     |        |                    | 2.0e0 |
 |  布拉沃   |        |                    | 2.0e0 |
 
----
-
 ## ? Time Word Classifier
 
 | Character |  Pinyin  | Translation | Count |
@@ -1863,8 +1831,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    刻     |          |             | 4.5e1 |
 |   秒钟    |          |             | 1.2e1 |
 |    阵     |   zhèn   | front       | 9.0e0 |
-
----
 
 ## Place Name
 
@@ -1971,8 +1937,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   麦迪逊   |          |             | 1.8e2 |
 |    秘鲁    |          |             | 1.8e2 |
 
----
-
 ## Space Word
 
 | Character |   Pinyin   | Translation                           | Count |
@@ -2078,8 +2042,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   岸边    |            |                                       | 1.1e2 |
 |   心头    |            |                                       | 1.1e2 |
 
----
-
 ## ? Verb Classifier
 
 | Character | Pinyin | Translation                              | Count |
@@ -2116,8 +2078,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   场次    |        |                                          | 3.0e0 |
 |    巡     |        |                                          | 3.0e0 |
 |   架次    |        |                                          | 2.0e0 |
-
----
 
 ## Adjective As Adverbial
 
@@ -2224,8 +2184,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   诚实    |  chéngshí  | honest                                                        | 9.6e1 |
 |   大胆    |   dà dǎn   | bold; daring; audacious; audacity                             | 9.5e1 |
 
----
-
 ## Onomatopoeia
 
 | Character | Pinyin | Translation            | Count |
@@ -2331,8 +2289,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   潺潺    |        |                        | 1.0e1 |
 |   吧哒    |        |                        | 9.0e0 |
 
----
-
 ## Suffix
 
 | Character | Pinyin | Translation                                    | Count |
@@ -2356,8 +2312,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    论     |        |                                                | 3.9e1 |
 |    乎     |        |                                                | 9.0e0 |
 |    头     |        |                                                | 4.0e0 |
-
----
 
 ## Adjective With Nominal Function
 
@@ -2464,8 +2418,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |   贫穷    |           |                                | 6.3e1 |
 |   残忍    |           |                                | 6.2e1 |
 
----
-
 ## Fixed Expressions
 
 | Character |    Pinyin     | Translation                           | Count |
@@ -2570,8 +2522,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 | 随时随地  |               |                                       | 7.5e1 |
 | 一臂之力  |               |                                       | 7.4e1 |
 | 无影无踪  |               |                                       | 7.4e1 |
-
----
 
 ## Other Proper Noun
 
@@ -2678,8 +2628,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    夏利    |              |                                                 | 4.8e1 |
 |    红牛    |              |                                                 | 4.8e1 |
 
----
-
 ## Descriptive
 
 | Character |  Pinyin   | Translation                | Count |
@@ -2785,8 +2733,6 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |  冷冰冰   |           |                            | 3.2e1 |
 | 漂漂亮亮  |           |                            | 3.2e1 |
 
----
-
 ## Time Word Morpheme
 
 | Character | Pinyin | Translation                                                    | Count |
@@ -2837,127 +2783,338 @@ If you'd like to view the entire list, download the [JSON](/data/中文.json) fi
 |    金     |  jīn   | gold                                                           | 1.0e0 |
 |    隋     |        |                                                                | 1.0e0 |
 
----
-
 ## Pronoun Morpheme
 
 | Character | Pinyin | Translation | Count |
 | :-------: | :----: | ----------- | :---: |
-|    尔     |        |             | 2.4e3 |
-|    斯     |        |             | 1.7e3 |
-|    兹     |        |             | 7.2e2 |
-|    夫     |        |             | 1.7e2 |
-|    伊     |        |             | 9.1e1 |
-|    汝     |        |             | 3.3e1 |
-|    胡     |        |             | 1.6e1 |
-|    余     |        |             | 6.0e0 |
-|    甚     |        |             | 3.0e0 |
-|    予     |        |             | 1.0e0 |
-
----
+|    尔     |   ěr   | you         | 2.4e3 |
+|    斯     |   sī   | such; this  | 1.7e3 |
+|    兹     |   zī   |             | 7.2e2 |
+|    夫     |   fū   |             | 1.7e2 |
+|    伊     |   yī   |             | 9.1e1 |
+|    汝     |   rǔ   |             | 3.3e1 |
+|    胡     |   hú   |             | 1.6e1 |
+|    余     |   yú   | I           | 6.0e0 |
+|    甚     |  shén  |             | 3.0e0 |
+|    予     |   yǔ   |             | 1.0e0 |
 
 ## Organization Name
 
-|    Character     |   Pinyin    | Translation           | Count |
-| :--------------: | :---------: | --------------------- | :---: |
-|      联合国      | lián hé guó | United Nations        | 2.8e2 |
-|      安全部      |             |                       | 1.7e2 |
-|      安全局      |             |                       | 1.5e2 |
-|      国防部      |             |                       | 1.5e2 |
-|      国务院      |             |                       | 1.0e2 |
-|      内务部      |             |                       | 1.0e2 |
-|      司法部      |             |                       | 1.0e2 |
-|      美国队      |             |                       | 9.2e1 |
-|       北约       |             |                       | 6.5e1 |
-|      财政部      |             |                       | 6.2e1 |
-|      卫生部      |             |                       | 5.0e1 |
-|      人事部      |             |                       | 3.3e1 |
-|      外交部      |             |                       | 3.2e1 |
-|        陶        |             |                       | 3.1e1 |
-|     中国政府     |             |                       | 2.6e1 |
-|      农业部      |             |                       | 2.3e1 |
-|      摩萨德      |             |                       | 2.3e1 |
-|      教育部      | jiào yù bù  | Ministry of Education | 2.0e1 |
-|      交通部      |             |                       | 1.9e1 |
-|    国家安全部    |             |                       | 1.4e1 |
-|      气象局      |             |                       | 1.4e1 |
-|      美联储      |             |                       | 1.3e1 |
-|      德国队      |             |                       | 1.2e1 |
-|       强生       |             |                       | 1.1e1 |
-|      能源部      |             |                       | 1.1e1 |
-|      美联社      |             |                       | 1.0e1 |
-|      非国大      |             |                       | 1.0e1 |
-|     世界银行     |             |                       | 9.0e0 |
-|       工大       |             |                       | 8.0e0 |
-|      瑞典队      |             |                       | 8.0e0 |
-|    环境保护局    |             |                       | 6.0e0 |
-|       科大       |             |                       | 6.0e0 |
-|    全国委员会    |             |                       | 5.0e0 |
-|      公安部      |             |                       | 5.0e0 |
-| 国际货币基金组织 |             |                       | 5.0e0 |
-|  城市规划委员会  |             |                       | 5.0e0 |
-|     巴解组织     |             |                       | 5.0e0 |
-|      文学院      |             |                       | 5.0e0 |
-|     那不勒斯     |             |                       | 5.0e0 |
-|      中国队      |             |                       | 4.0e0 |
-|      审计局      |             |                       | 4.0e0 |
-|      富士通      |             |                       | 4.0e0 |
-|     最高法院     |             |                       | 4.0e0 |
-|      法国队      |             |                       | 4.0e0 |
-|      路透社      |             |                       | 4.0e0 |
-|     东方航空     |             |                       | 3.0e0 |
-|    商业委员会    |             |                       | 3.0e0 |
-|     国家电网     |             |                       | 3.0e0 |
-|      档案局      |             |                       | 3.0e0 |
-|       非行       |             |                       | 3.0e0 |
-|      韩国队      |             |                       | 3.0e0 |
-|     世贸组织     |             |                       | 2.0e0 |
-|      同盟会      |             |                       | 2.0e0 |
-|        唐        |             |                       | 2.0e0 |
-|      文化部      |             |                       | 2.0e0 |
-|      新华社      |             |                       | 2.0e0 |
-|      欧佩克      |             |                       | 2.0e0 |
-|      监察部      |             |                       | 2.0e0 |
-|        邹        |             |                       | 2.0e0 |
-|   世界贸易组织   |             |                       | 1.0e0 |
-|     东方集团     |             |                       | 1.0e0 |
-|  中国人民解放军  |             |                       | 1.0e0 |
-|    中央委员会    |             |                       | 1.0e0 |
-|      党中央      |             |                       | 1.0e0 |
-|      商业部      |             |                       | 1.0e0 |
-|      啤酒花      |             |                       | 1.0e0 |
-|      园林局      |             |                       | 1.0e0 |
-|    教育委员会    |             |                       | 1.0e0 |
-|      旅游局      |             |                       | 1.0e0 |
-|      林业部      |             |                       | 1.0e0 |
-|      水利部      |             |                       | 1.0e0 |
-|     海关总署     |             |                       | 1.0e0 |
-|   联合国安理会   |             |                       | 1.0e0 |
-|    计划委员会    |             |                       | 1.0e0 |
-|  计划生育委员会  |             |                       | 1.0e0 |
-
----
+|    Character     |           Pinyin           | Translation                                              | Count |
+| :--------------: | :------------------------: | -------------------------------------------------------- | :---: |
+|      联合国      |        lián hé guó         | United Nations                                           | 2.8e2 |
+|      安全部      |         ānquán bù          | Ministry of Security                                     | 1.7e2 |
+|      安全局      |         ānquán jú          | Security Bureau                                          | 1.5e2 |
+|      国防部      |         guófáng bù         | Ministry of Defense                                      | 1.5e2 |
+|      国务院      |         guówùyuàn          | State Department                                         | 1.0e2 |
+|      内务部      |          nèiwù bù          | Ministry of the Interior                                 | 1.0e2 |
+|      司法部      |          sīfǎ bù           | Ministry of Justice                                      | 1.0e2 |
+|      美国队      |         měiguó duì         | Team USA                                                 | 9.2e1 |
+|       北约       |           běiyuē           | NATO (North Atlantic Treaty Organization)                | 6.5e1 |
+|      财政部      |        cáizhèng bù         | Ministry of Finance                                      | 6.2e1 |
+|      卫生部      |        wèishēng bù         | Ministry of Health                                       | 5.0e1 |
+|      人事部      |         rénshì bù          | Personnel Department                                     | 3.3e1 |
+|      外交部      |         wàijiāo bù         | Ministry of Foreign Affairs                              | 3.2e1 |
+|        陶        |            táo             |                                                          | 3.1e1 |
+|     中国政府     |      zhōngguó zhèngfǔ      | Government of China                                      | 2.6e1 |
+|      农业部      |         nóngyè bù          | Ministry of Agriculture                                  | 2.3e1 |
+|      摩萨德      |          mó sà dé          | Mossad                                                   | 2.3e1 |
+|      教育部      |         jiào yù bù         | Ministry of Education                                    | 2.0e1 |
+|      交通部      |        jiāotōng bù         | Ministry of Communications                               | 1.9e1 |
+|    国家安全部    |      guójiā ānquán bù      | Ministry of National Security                            | 1.4e1 |
+|      气象局      |         qìxiàng jú         | Bureau of Meteorology                                    | 1.4e1 |
+|      美联储      |         měiliánchǔ         | Fed                                                      | 1.3e1 |
+|      德国队      |         déguó duì          | Team Germany                                             | 1.2e1 |
+|       强生       |         qiángshēng         | Johnson & Johnson                                        | 1.1e1 |
+|      能源部      |        néngyuán bù         | Department of Energy                                     | 1.1e1 |
+|      美联社      |        měi lián shè        | Associated Press                                         | 1.0e1 |
+|      非国大      |         fēi guó dà         | ANC (African National Congress)                          | 1.0e1 |
+|     世界银行     |       shìjiè yínháng       | World Bank                                               | 9.0e0 |
+|       工大       |           gōngdà           | University of Technology                                 | 8.0e0 |
+|      瑞典队      |        ruìdiǎn duì         | Team Sweden                                              | 8.0e0 |
+|    环境保护局    |     huánjìng bǎohù jú      | Environmental Protection Agency                          | 6.0e0 |
+|       科大       |            kēdà            | (HKUST) Hong Kong University of Science and Technology   | 6.0e0 |
+|    全国委员会    |     quánguó wěiyuánhuì     | National Committee                                       | 5.0e0 |
+|      公安部      |         gōng'ān bù         | Ministry of Public Security                              | 5.0e0 |
+| 国际货币基金组织 |  guójì huòbì jījīn zǔzhī   | International Monetary Fund                              | 5.0e0 |
+|  城市规划委员会  | chéngshì guīhuà wěiyuánhuì | Town Planning Commission                                 | 5.0e0 |
+|     巴解组织     |        bā jiě zǔzhī        | PLO (Palestine Liberation Organization)                  | 5.0e0 |
+|      文学院      |        wén xuéyuàn         | art college                                              | 5.0e0 |
+|     那不勒斯     |          nàbùlèsī          | Naples                                                   | 5.0e0 |
+|      中国队      |        zhōngguó duì        | Team China                                               | 4.0e0 |
+|      审计局      |         shěnjì jú          | Audit Bureau                                             | 4.0e0 |
+|      富士通      |         fùshìtōng          | Fujitsu                                                  | 4.0e0 |
+|     最高法院     |       zuìgāo fǎyuàn        | Supreme Court                                            | 4.0e0 |
+|      法国队      |         fàguó duì          | Team France                                              | 4.0e0 |
+|      路透社      |         lùtòu shè          | Reuters                                                  | 4.0e0 |
+|     东方航空     |     dōngfāng hángkōng      | Eastern Airlines                                         | 3.0e0 |
+|    商业委员会    |     shāngyè wěiyuánhuì     | business council                                         | 3.0e0 |
+|     国家电网     |      guójiā diànwǎng       | State Grid                                               | 3.0e0 |
+|      档案局      |         dǎng'àn jú         | Archives Bureau                                          | 3.0e0 |
+|       非行       |          fēixíng           | non-line                                                 | 3.0e0 |
+|      韩国队      |         hánguó duì         | Team South Korea                                         | 3.0e0 |
+|     世贸组织     |        shìmào zǔzhī        | WTO (World Trade Organization)                           | 2.0e0 |
+|      同盟会      |        tóngménghuì         | Alliance                                                 | 2.0e0 |
+|        唐        |            táng            | Tang Dynasty                                             | 2.0e0 |
+|      文化部      |         wénhuà bù          | Ministry of Culture                                      | 2.0e0 |
+|      新华社      |         xīnhuá shè         | Xinhua                                                   | 2.0e0 |
+|      欧佩克      |          ōupèikè           | OPEC (Organization of the Petroleum Exporting Countries) | 2.0e0 |
+|      监察部      |         jiānchá bù         | Supervision Department                                   | 2.0e0 |
+|        邹        |            zōu             | Zou                                                      | 2.0e0 |
+|   世界贸易组织   |     shìjiè màoyì zǔzhī     | WTO (World Trade Organization)                           | 1.0e0 |
+|     东方集团     |      dōngfāng jítuán       | Oriental Group                                           | 1.0e0 |
+|  中国人民解放军  | zhōngguó rénmín jiěfàngjūn | Chinese People's Liberation Army                         | 1.0e0 |
+|    中央委员会    |    zhōngyāng wěiyuánhuì    | Central Committee                                        | 1.0e0 |
+|      党中央      |       dǎng zhōngyāng       | Party Central Committee                                  | 1.0e0 |
+|      商业部      |         shāngyè bù         | Ministry of Commerce                                     | 1.0e0 |
+|      啤酒花      |          píjiǔhuā          | hops                                                     | 1.0e0 |
+|      园林局      |         yuánlín jú         | Bureau of Landscape Architecture                         | 1.0e0 |
+|    教育委员会    |     jiàoyù wěiyuánhuì      | Board of Education                                       | 1.0e0 |
+|      旅游局      |          lǚyóu jú          | Tourism                                                  | 1.0e0 |
+|      林业部      |          línyè bù          | Ministry of Forestry                                     | 1.0e0 |
+|      水利部      |         shuǐlì bù          | Ministry of Water Resources                              | 1.0e0 |
+|     海关总署     |      hǎiguān zǒng shǔ      | General Administration of Customs                        | 1.0e0 |
+|   联合国安理会   |     liánhéguó ānlǐhuì      | United Nations Security Council                          | 1.0e0 |
+|    计划委员会    |      jìhuà wěiyuánhuì      | planning committee                                       | 1.0e0 |
+|  计划生育委员会  |  jìhuà shēngyù wěiyuánhuì  | Family Planning Commission                               | 1.0e0 |
 
 ## Prefix
 
-| Character | Pinyin | Translation                          | Count |
-| :-------: | :----: | ------------------------------------ | :---: |
-|    超     |  chāo  | exceed; surpass; overtake; go beyond | 1.3e3 |
-|    准     |  zhǔn  | follow; permit; allow; standard      | 9.1e1 |
-|    泛     |        |                                      | 2.4e1 |
+| Character | Pinyin | Translation    | Count |
+| :-------: | :----: | -------------- | :---: |
+|    超     |  chāo  | super-         | 1.3e3 |
+|    准     |  zhǔn  | quasi-; para-; | 9.1e1 |
+|    泛     |  fàn   | pan-           | 2.4e1 |
 
----
-
-## Numeric Morpheme
+## [Numeric Morpheme](https://www.hko.gov.hk/en/gts/time/stemsandbranches.htm)
 
 | Character | Pinyin | Translation                  | Count |
 | :-------: | :----: | ---------------------------- | :---: |
-|    甲     |  jiǎ   | nail                         | 1.1e2 |
-|    丙     |        |                              | 8.9e1 |
+|    甲     |  jiǎ   | first; first heavenly stem   | 1.1e2 |
+|    丙     |  bǐng  | third; third heavenly stem   | 8.9e1 |
 |    乙     |   yǐ   | second; second heavenly stem | 4.1e1 |
-|    丁     |        |                              | 2.6e1 |
-|    戊     |        |                              | 2.2e1 |
-|    巳     |        |                              | 1.3e1 |
-|    寅     |        |                              | 2.0e0 |
-|    癸     |        |                              | 1.0e0 |
-|    辰     |        |                              | 1.0e0 |
+|    丁     |  dīng  | fourth; fourth heavenly stem | 2.6e1 |
+|    戊     |   wù   | fifth; fifth heavenly stem   | 2.2e1 |
+|    巳     |   sì   | sixth; sixth earthly branch  | 1.3e1 |
+|    寅     |  yín   | third; third earthly branch  | 2.0e0 |
+|    癸     |  guǐ   | tenth; tenth heavenly stem   | 1.0e0 |
+|    辰     |  chén  | fifth; fifth earthly branch  | 1.0e0 |
+
+## Radicals
+
+| Character   | Pinyin | Translation           |
+| ----------- | ------ | --------------------- |
+| 一          | yī     | one                   |
+| 丨          | gǔn    | line                  |
+| 丶          | zhǔ    | stroke                |
+| 丿 乀 乁    | fú     | oblique               |
+| 乙 乚 乛    | yǐ     | sickle                |
+| 亅          | jué    | hook                  |
+| 二          | èr     | two                   |
+| 亠          | tóu    | shelter, head         |
+| 人 亻       | rén    | man                   |
+| 儿          | er     | child                 |
+| 入          | rù     | to enter              |
+| 八 丷       | bā     | eight, separate       |
+| 冂          | jiōng  | scope                 |
+| 冖          | mì     | to cover              |
+| 冫          | bīng   | ice                   |
+| 几          | jǐ     | table                 |
+| 凵          | qiǎn   | container             |
+| 刂 刁 刀 ク | dāo    | knife                 |
+| 力          | lì     | force                 |
+| 勹          | bāo    | to wrap               |
+| 匕          | bǐ     | spoon, man overthrown |
+| 匚          | fāng   | open box              |
+| 匸          | xì     | to hide               |
+| 十          | shí    | ten                   |
+| 卜          | bo     | divination            |
+| 卩          | jié    | seal                  |
+| 厂          | chǎng  | production facility   |
+| 厶          | sī     | secret                |
+| 又 ヌ       | yòu    | still, hand           |
+| 口          | kǒu    | mouth                 |
+| 囗          | wéi    | enclosure             |
+| 土          | tǔ     | earth                 |
+| 士          | shì    | scholar               |
+| 夂          | zhǐ    | to go                 |
+| 夊          | suī    | go slowly             |
+| 夕          | xī     | evening               |
+| 大          | dà     | big                   |
+| 女          | nǚ     | woman                 |
+| 子          | zi     | child                 |
+| 宀          | mián   | roof                  |
+| 寸          | cùn    | thumb                 |
+| 小 ⺌ ⺍    | xiǎo   | small                 |
+| 尢          | yóu    | weak                  |
+| 尸          | shī    | dead body             |
+| 屮          | chè    | germ                  |
+| 山          | shān   | mountain              |
+| 川 巛       | chuān  | river                 |
+| 工          | gōng   | work                  |
+| 己          | jǐ     | personal              |
+| 巾          | jīn    | turban                |
+| 干          | gàn    | dry                   |
+| 幺          | yāo    | tiny                  |
+| 广          | guǎng  | shelter               |
+| 廴          | yǐn    | great, stride         |
+| 廾          | gǒng   | two, hands            |
+| 弋          | yì     | arrow-grapin          |
+| 弓          | gōng   | bow                   |
+| 彐 彑       | jì     | snout                 |
+| 彡          | shān   | beard, brush          |
+| 彳          | chì    | walk around           |
+| 心 忄       | xīn    | heart                 |
+| 戈          | gē     | halberd               |
+| 戶 户       | hù     | gate                  |
+| 手 扌 才    | shǒu   | hand                  |
+| 支          | zhī    | branch                |
+| 攴 攵       | pū     | to bump, hand         |
+| 文          | wén    | writing               |
+| 斗          | dòu    | measurer              |
+| 斤          | jīn    | ax, 500 grams         |
+| 方          | fāng   | square, direction     |
+| 无          | wú     | without               |
+| 日          | rì     | sun                   |
+| 曰          | yuē    | to say                |
+| 月          | yuè    | moon                  |
+| 木 朩       | mù     | tree                  |
+| 欠          | qiàn   | tired                 |
+| 止          | zhǐ    | to stop               |
+| 歹          | dǎi    | death                 |
+| 殳          | shū    | weapon                |
+| 母 毋 毌    | mǔ     | mother                |
+| 比          | bǐ     | to confront           |
+| 毛          | máo    | fur                   |
+| 氏          | shì    | clan                  |
+| 气          | qì     | air                   |
+| 水 氵 氺    | shuǐ   | water                 |
+| 火 灬       | huǒ    | fire                  |
+| 爪 爫       | zhǎo   | claw                  |
+| 父          | fù     | father                |
+| 爻          | yáo    | double                |
+| 爿          | pán    | splitted, wood        |
+| 片          | piàn   | slice                 |
+| 牙          | yá     | tooth, ivory          |
+| 牛 牜 ⺧    | niú    | beef                  |
+| 犬 犭       | quǎn   | dog                   |
+| 玄          | xuán   | deep                  |
+| 王 玉       | yù     | jade                  |
+| 瓜          | guā    | melon                 |
+| 瓦          | wǎ     | tile                  |
+| 甘          | gān    | sweet                 |
+| 生          | shēng  | be born               |
+| 用          | yòng   | to use                |
+| 田          | tián   | field                 |
+| 疋 ⺪       | pǐ     | roll, piece of cloth  |
+| 疒          | nè     | disease               |
+| 癶          | bō     | to go up              |
+| 白          | bái    | white                 |
+| 皮          | pí     | skin                  |
+| 皿          | mǐn    | container             |
+| 目          | mù     | eye                   |
+| 矛          | máo    | spear                 |
+| 矢          | shǐ    | arrow                 |
+| 石          | shí    | stone                 |
+| 示 礻       | shì    | to venerate, to show  |
+| 禸          | róu    | get away              |
+| 禾          | hé     | grain                 |
+| 穴          | xué    | cave, swing door      |
+| 立          | lì     | standing up           |
+| 竹 ⺮ ケ    | shì    | bamboo                |
+| 米          | mǐ     | rice                  |
+| 糸 纟       | mì     | silk                  |
+| 缶          | fǒu    | jar                   |
+| 网 罒 罓 罓 | wǎng   | net                   |
+| 羊 ⺶ ⺷    | yáng   | sheep                 |
+| 羽          | yǔ     | feather               |
+| 老 耂       | lǎo    | old                   |
+| 而          | ér     | and                   |
+| 耒          | lěi    | plow                  |
+| 耳          | ěr     | ear                   |
+| 聿          | yù     | brush                 |
+| 肉 月       | ròu    | meat                  |
+| 臣          | chén   | minister              |
+| 自          | zì     | personal              |
+| 至          | zhì    | to reach              |
+| 臼          | jiù    | mortar                |
+| 舌          | shé    | tongue                |
+| 舛          | chuǎn  | to oppose             |
+| 舟          | zhōu   | boat                  |
+| 艮          | gěn    | decided               |
+| 色          | sè     | color                 |
+| 艹          | cao    | vegetable             |
+| 虍          | hū     | tiger                 |
+| 虫          | chóng  | insect                |
+| 血          | xuè    | blood                 |
+| 行          | xíng   | circulate             |
+| 衣 衤       | yī     | cloth                 |
+| 西 覀       | xi     | lid                   |
+| 见          | jiàn   | to see                |
+| 角          | jiǎo   | horn                  |
+| 言 讠       | yán    | speech (trad)         |
+| 谷          | gǔ     | valley                |
+| 豆          | dòu    | pea                   |
+| 豕          | chù    | pig                   |
+| 豸          | zhì    | feline, cat family    |
+| 贝          | bèi    | shell, money          |
+| 赤          | chì    | red                   |
+| 走          | zǒu    | to walk               |
+| 足          | zú     | foot                  |
+| 身          | shēn   | body                  |
+| 车          | chē    | car                   |
+| 辛          | xīn    | bitter                |
+| 辰          | chén   | morning               |
+| 辶          | chuò   | brisk walking         |
+| 阝 (邑)     | fù     | city                  |
+| 酉          | yǒu    | alcohol               |
+| 釆          | biàn   | to distinguish        |
+| 里          | lǐ     | neighborhood          |
+| 金 钅       | jīn    | gold, metal           |
+| 长          | zhǎng  | long                  |
+| 门          | mén    | gate                  |
+| 阝(阜)      | fù     | mound                 |
+| 隶          | lì     | servant               |
+| 隹          | zhuī   | short-tailed bird     |
+| 雨          | yǔ     | rain                  |
+| 青          | qīng   | blue/green            |
+| 非          | fēi    | false                 |
+| 面          | miàn   | face                  |
+| 革          | gé     | leather               |
+| 韦          | wéi    | tanned leather        |
+| 韭          | jiǔ    | leek                  |
+| 音          | yīn    | sound                 |
+| 页 頁       | yè     | head, leaf            |
+| 风          | fēng   | wind                  |
+| 飞          | fēi    | to fly                |
+| 食 饣       | shí    | to eat                |
+| 首          | shǒu   | head                  |
+| 香          | xiāng  | perfume               |
+| 马          | mǎ     | horse                 |
+| 骨          | gǔ     | bone                  |
+| 高          | gāo    | high                  |
+| 髟          | biāo   | hair                  |
+| 鬥          | dòu    | fight                 |
+| 鬯          | chàng  | sacrificial wine      |
+| 鬲          | gé     | cauldron              |
+| 鬼          | guǐ    | ghost                 |
+| 鱼          | yú     | fish                  |
+| 鸟          | niǎo   | bird                  |
+| 鹵          | lǔ     | salt                  |
+| 鹿          | lù     | deer                  |
+| 麦          | mài    | corn                  |
+| 麻          | má     | hemp                  |
+| 黃          | huáng  | yellow                |
+| 黍          | shǔ    | millet                |
+| 黑          | hēi    | black                 |
+| 黹          | zhǐ    | embroidery            |
+| 黾          | miǎn   | frog                  |
+| 鼎          | dǐng   | tripod                |
+| 鼓          | gǔ     | drum                  |
+| 鼠          | shǔ    | rat                   |
+| 鼻          | bí     | nose                  |
+| 齐          | qí     | regular               |
+| 齿          | chǐ    | tooth                 |
+| 龙          | lóng   | dragon                |
+| 龟          | guī    | tortoise              |
+| 龠          | yuè    | flute                 |

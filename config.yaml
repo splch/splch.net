@@ -22,11 +22,6 @@ menu:
       url: "about.html"
       weight: 4
 
-permalinks:
-  post: "/posts/:slug/"
-
-relativeURLS: true
-
 markup:
   highlight:
     codeFences: true
@@ -52,6 +47,7 @@ tableOfContents:
   ordered: true
   startLevel: 1
 
+relativeURLS: true
 summaryLength: 40
 hasCJKLanguage: true
 uglyURLS: true
