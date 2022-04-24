@@ -43,7 +43,7 @@ For english speakers, the romanized pronunciations of Mandarin Chinese are repre
 
 The fifth tone is slightly unique as it is just a shorter version of the first tone. This song is helpful in demonstrating the tones.
 
-{{< youtube ORpsNpxmfOc >}}
+<video controls loop muted preload="metadata" src="/data/tones.mp4" width="100%"></video>
 
 ---
 
@@ -473,14 +473,14 @@ The fifth tone is slightly unique as it is just a shorter version of the first t
 
 | Character | Pinyin  | Translation                                           | Count |
 | :-------: | :-----: | ----------------------------------------------------- | :---: |
-|    的     |   de    | (aux.)                                                | 1.7e6 |
-|    了     |   le    | past tense marker; past tense marker                  | 2.9e5 |
-|    着     |   zhe   | in process of; in process of                          | 9.9e4 |
+|    的     |   de    | ablative cause suffix                                 | 1.7e6 |
+|    了     |   le    | past tense marker                                     | 2.9e5 |
+|    着     |   zhe   | in process of                                         | 9.9e4 |
 |    过     |   guò   | pass; cross; pass; spend; live                        | 8.6e4 |
 |    得     |   dé    | get; auxiliary verb; need; must; have to; be sure to  | 6.5e4 |
 |   一样    | yíyàng  | equally                                               | 2.1e4 |
-|    所     |         |                                                       | 1.8e4 |
-|    之     |         |                                                       | 1.5e4 |
+|    所     |   suǒ   | place; office; spot                                   | 1.8e4 |
+|    之     |   zhī   | subordinate particle                                  | 1.5e4 |
 |    地     |   de    | auxiliary word; ground                                | 1.5e4 |
 |    等     |         |                                                       | 7.7e3 |
 |    连     |  lián   | even                                                  | 6.2e3 |
