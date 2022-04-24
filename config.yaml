@@ -24,7 +24,6 @@ menu:
 
 markup:
   highlight:
-    codeFences: true
     style: tango
   goldmark:
     renderer:

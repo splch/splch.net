@@ -43,7 +43,7 @@ For english speakers, the romanized pronunciations of Mandarin Chinese are repre
 
 The fifth tone is slightly unique as it is just a shorter version of the first tone. This song is helpful in demonstrating the tones.
 
-<video controls loop muted preload="metadata" src="/data/tones.mp4" width="100%"></video>
+<video controls src="/data/tones.mp4"></video>
 
 ---
 
