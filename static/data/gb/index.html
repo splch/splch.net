@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Pirate's Folly</title>
+    <meta name="author" content="Spencer Churchill" />
+    <script src="js/other/mobile.js" defer></script>
+    <script src="js/other/base64.js" defer></script>
+    <script src="js/other/swfobject.js" defer></script>
+    <script src="js/other/resampler.js" defer></script>
+    <script src="js/other/XAudioServer.js" defer></script>
+    <script src="js/other/controls.js" defer></script>
+    <script src="js/other/resize.js" defer></script>
+    <script src="js/GameBoyIO.js" defer></script>
+    <script src="js/GameBoyCore.js" defer></script>
+  </head>
+  <body>
+    <div id="gameboy_shell">
+      <div id="game">
+        <canvas id="mainCanvas" width="160" height="144"
+          >No Canvas Support</canvas
+        >
+        <noscript>Enable Javascript to emulate Game Boy games</noscript>
+      </div>
+      <div id="controller">
+        <div id="controller_dpad">
+          <div id="controller_left"></div>
+          <div id="controller_right"></div>
+          <div id="controller_up"></div>
+          <div id="controller_down"></div>
+        </div>
+        <div id="controller_select" class="capsuleBtn">Select</div>
+        <div id="controller_start" class="capsuleBtn">Start</div>
+        <div id="controller_b" class="roundBtn">B</div>
+        <div id="controller_a" class="roundBtn">A</div>
+      </div>
+    </div>
+  </body>
+</html>
