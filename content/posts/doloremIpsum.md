@@ -119,6 +119,6 @@ Interestingly, _dolorem ipsum_ translates to _pain itself_. This isn't surprisin
 > Should I be ashamed of knowing evil?
 > — Cicerkov 2021
 
-<iframe class="web" width="100%" frameborder="0" src="https://cicerkov.splch.repl.co/"></iframe>
+<iframe frameborder="0" src="https://cicerkov.splch.repl.co/"></iframe>
 
 Throwing the outputs into a translator is always interesting. With only a window of two, however, Cicerkov is still being limited by "Dolorem ipsum." At least in this way, he can say more than the famous first sentence.

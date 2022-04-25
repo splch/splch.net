@@ -301,24 +301,9 @@ wine[include[:2]] -= np.mean(wine[include[:2]])
 wine
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-
-</style>
-<table border="1" class="dataframe">
+<table>
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>alcohol</th>
       <th>chlorides</th>
@@ -394,8 +379,8 @@ wine
     </tr>
   </tbody>
 </table>
-<p>406 rows × 3 columns</p>
-</div>
+
+406 rows × 3 columns
 
 ```python
 wine['quality'].value_counts()
@@ -837,7 +822,7 @@ weights: -0.7985963217884304 8.47287278322075 -5.045041523588488 -1.042118489749
 
 I used UCI's [Wine dataset](https://kaggle.com/uciml/red-wine-quality-cortez-et-al-2009) since it's popular and easily categorical. I preprocessed the data by dropping every column except _citric acid_, _volatile acidity_, and _quality_, and removing outlier data with a z-index greater than 3. Then I made all wines with a quality below 5 a **0**, and all wines above 7 a **1**. I used the remaining data to fit the nine tunable parameters (I really didn't have to worry about overfitting 😂) of the neural network and finally copied them into assembly. The file below will, with 82% accuracy, determine whether a wine is good or bad given its alcohol and salt contents.
 
-<iframe class="web" width="100%" frameborder="0" src="https://replit.com/@splch/WineNet?lite=1"></iframe>
+<iframe frameborder="0" src="https://replit.com/@splch/WineNet?lite=1"></iframe>
 
 `assembly.s`
 

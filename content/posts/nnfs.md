@@ -25,6 +25,6 @@ The majority of my edits through September were only grammar suggestions, but ar
 
 Near the release of <abbr title="Neural Networks From Scratch">NNFS</abbr>, Harrison began to upload the NNFS YouTube series. Covering the same topics as the book, this tutorial series proved incredibly popular and well-made.
 
-<iframe class="video" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Through editing NNFS, I went from having a typical computer science student's understanding of machine learning to knowing enough to get **first place in three AI hackathons**.

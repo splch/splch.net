@@ -72,4 +72,4 @@ For High-Altitude Baking:
 
 ## Source
 
-<iframe class="video" src="https://www.youtube-nocookie.com/embed/oCt3xhKCX1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/oCt3xhKCX1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

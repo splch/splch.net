@@ -14,8 +14,7 @@ draft: false
 
 One of my first projects was AI projects was taking the [OpenWorm](https://openworm.org/) <abbr title="Caenorhabditis">C</abbr>. Elegans brain map and connecting it to a Raspberry Pi. The Pi was integrated with Lego Mindstorms, so the Lego motors would move in the direction the worm wanted to go.
 
-<video controls loop muted preload="metadata" src="/data/wormPi.mp4" width="100%">
-</video>
+<video controls loop muted preload="metadata" src="/data/wormPi.mp4"></video>
 
 ```python
 # BrickPi3 Worm Brain

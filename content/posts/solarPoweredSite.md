@@ -35,7 +35,7 @@ For the battery, I should get one that can handle the other 78% of unusable hour
 
 The math above is a little disorganized since I used this write-up to figure it out; however, the calculator below will quickly determine your own solar needs from either your latitude or hours of the day, and voltage and current or wattage.
 
-<iframe class="web" width="100%" frameborder="0" src="https://solarbattery.splch.repl.co"></iframe>
+<iframe frameborder="0" src="https://solarbattery.splch.repl.co"></iframe>
 
 I definitely recommend giving the Raspberry Pi Zero 2 W a look. It's extremely energy-friendly and packs quite a punch. The power per watt is nothing to laugh at — with the new unified memory design, there's definitely an air of M1 about. Of course, at 512 Mb of <abbr title="Random-Access Memory">RAM</abbr> this won't be viable for some people, but it's a step in the right direction. If you're thinking about some hobby projects, keep sustainable tech in mind.
 

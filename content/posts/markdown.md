@@ -161,7 +161,7 @@ Fenced code block
 
 <summary>Details Tag</summary>
 
-<iframe class="pdf" src="/data/lighthouse.pdf#view=FitW"></iframe>
+<iframe src="/data/lighthouse.pdf#view=FitW"></iframe>
 
 </details>
 

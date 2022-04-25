@@ -18,7 +18,7 @@ draft: false
 - Player Y: 75
 - Player Z: -68.73
 
-<iframe class="video" src="https://www.youtube-nocookie.com/embed/GaRurhiK-Lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/GaRurhiK-Lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Pack.png:
 
@@ -29,7 +29,7 @@ draft: false
 - Player X: 116
 - Player Y: -31
 
-<iframe class="video" src="https://www.youtube-nocookie.com/embed/ea6py9q46QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/ea6py9q46QU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Skull on Fire:
 
@@ -41,7 +41,7 @@ draft: false
 - Player Y: 91
 - Player Z: -29.04
 
-<iframe class="video" src="https://www.youtube-nocookie.com/embed/WCEu4DmB174" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/WCEu4DmB174" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Speedrunning:
 
@@ -50,7 +50,7 @@ draft: false
 - Player X: 0
 - Player Y: 0
 
-<iframe class="video" src="https://www.youtube-nocookie.com/embed/XFsliU4YL_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/XFsliU4YL_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Interesting Seeds:
 
@@ -60,4 +60,4 @@ draft: false
 - Player X: 0
 - Player Y: 0
 
-<iframe class="video" src="https://www.youtube-nocookie.com/embed/rEVPTso-hq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube-nocookie.com/embed/rEVPTso-hq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
