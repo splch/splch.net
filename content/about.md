@@ -34,7 +34,7 @@ Languages I'm Learning:
 - [Haskell](https://tryhaskell.org/)
 - [6502 Assembly](http://www.6502asm.com/)
 
----
+<!-- ---
 
 <div style="display:flex;align-items:center;overflow-x:auto;">
 	<div class="badge">
@@ -46,4 +46,4 @@ Languages I'm Learning:
 	<a href="https://www.eff.org/join"><img class="badge" src="/images/badges/eff.png" alt="Join EFF!"></a>
 	<a href="https://freedom.press/about/"><img class="badge" src="/images/badges/fpf.jpg" alt="Freedom of the Press"></a>
 	<a href="https://www.credly.com/badges/da0f89d5-8e25-4281-9d6a-e6df33892452"><img class="badge" src="/images/badges/qiskit.png" alt="Qiskit Advocate"></a>
-</div>
+</div> -->
