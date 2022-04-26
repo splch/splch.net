@@ -72,7 +72,7 @@ body {
     /* center body in page */
     margin: auto;
     /* space inside body */
-    padding: 0 1em;
+    /* padding: 0 1em; */
     /* browser focuses on readability */
     text-rendering: optimizeLegibility;
     /* line length of 60 characters
