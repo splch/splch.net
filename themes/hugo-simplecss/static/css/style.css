@@ -17,7 +17,7 @@
     }
 }
 
-*:not(body, li, progress) {
+*:not(body, li, progress, span) {
     border-radius: 5px;
     /* no overflowing body */
     max-width: 100%;
@@ -72,12 +72,13 @@ body {
     /* center body in page */
     margin: auto;
     /* space inside body */
-    /* padding: 0 1em; */
+    padding: 0 1em;
     /* browser focuses on readability */
     text-rendering: optimizeLegibility;
     /* line length of 60 characters
-    (between recommended 45-80) */
-    width: min(60ch, 100%);
+    (between recommended 45-80)
+    & subtract the padding */
+    width: min(60ch, calc(100% - 2em));
 }
 
 button,
