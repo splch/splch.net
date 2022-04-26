@@ -17,7 +17,7 @@
     }
 }
 
-*:not(body, li, progress, span) {
+*:not(li, progress, span) {
     border-radius: 5px;
     /* no overflowing body */
     max-width: 100%;
