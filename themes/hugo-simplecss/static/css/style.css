@@ -28,18 +28,18 @@
     cursor: not-allowed !important;
 }
 
+[href],
+dfn {
+    /* no visited color */
+    color: var(--blue);
+}
+
 [href]:hover {
     text-decoration: none;
 }
 
 [href^="mailto:"]::before {
     content: "📧 ";
-}
-
-a,
-dfn {
-    /* no visited color */
-    color: var(--blue);
 }
 
 abbr {
@@ -58,12 +58,15 @@ blockquote {
 }
 
 body {
+    /* high contrast */
     background: var(--bg-color);
     color: var(--font-color);
     /* most readable wed-safe font */
     font-family: Helvetica;
     /* 12pt is minimum */
     font-size: 14pt;
+    /* required with justified text */
+    hyphens: auto;
     /* experimental:
     highest quality images */
     image-rendering: high-quality;
@@ -73,6 +76,8 @@ body {
     margin: auto;
     /* space inside body */
     padding: 0 1em;
+    /* each line is similar length */
+    text-align: justify;
     /* browser focuses on readability */
     text-rendering: optimizeLegibility;
     /* line length of 60 characters
@@ -108,8 +113,8 @@ figure {
     text-align: center;
 }
 
-header,
-footer {
+footer,
+header {
     margin-top: 1em;
     text-align: center;
 }
@@ -146,12 +151,6 @@ summary {
     /* indicate interaction */
     cursor: pointer;
     font-weight: bold;
-}
-
-p {
-    /* each line is similar length */
-    text-align: justify;
-    hyphens: auto;
 }
 
 table {
