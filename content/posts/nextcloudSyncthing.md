@@ -254,6 +254,14 @@ And finally append the webdav authentication to secrets.
 http://raspberrypi.local/nextcloud/remote.php/dav/files/USERNAME/ USERNAME PASSWORD
 ```
 
+Now, you can mount on boot and auto authenticate.
+
+In `/opt/retropie/configs/all/autostart.sh`:
+
+```
+mount /home/pi/RetroPie
+``` 
+
 In the mounted RetroPie folder, there should be a `roms/` and `saves/` directory. RetroArch will automatically use the `roms/` path, but we need to specify the folder in which to store save files and states. To do that, we edit the `/opt/retropie/configs/all/retroarch.cfg` file.
 
 ```
