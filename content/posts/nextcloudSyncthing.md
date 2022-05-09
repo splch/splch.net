@@ -1,5 +1,5 @@
 ---
-title: Nextcloud + Syncthing: Better Together
+title: Nextcloud + Syncthing = Better Together
 description: A guide to uniting Nextcloud and Syncthing.
 slug: nexthing
 date: 2022-05-09
@@ -211,7 +211,6 @@ Then give the `pi` user permissions to mount webdav.
 
 ```
 sudo usermod -aG davfs2 pi
-sudo usermod -a -G pi davfs2
 ```
 
 Now make a RetroPie folder to mount Nextcloud to.
