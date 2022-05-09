@@ -259,7 +259,7 @@ In `/opt/retropie/configs/all/autostart.sh`:
 
 ```
 mount /home/pi/RetroPie
-``` 
+```
 
 In the mounted RetroPie folder, there should be a `roms/` and `saves/` directory. RetroArch will automatically use the `roms/` path, but we need to specify the folder in which to store save files and states. To do that, we edit the `/opt/retropie/configs/all/retroarch.cfg` file.
 
@@ -271,8 +271,7 @@ And change the values of `savefile_directory` and `savestate_directory` from "de
 
 ## Sources
 
-* <https://raspberrytips.com/install-nextcloud-raspberry-pi/>
-* <https://itcamefromtheinternet.com/blog/nextcloud-syncthing-integration/>
-* <https://retropie.org.uk/forum/topic/10109/changing-saved-state-directory-location-retropie-4-2>
-* <https://retropie.org.uk/docs/Running-ROMs-from-a-Network-Share/>
-
+- <https://raspberrytips.com/install-nextcloud-raspberry-pi>
+- <https://itcamefromtheinternet.com/blog/nextcloud-syncthing-integration>
+- <https://retropie.org.uk/forum/topic/10109/changing-saved-state-directory-location-retropie-4-2>
+- <https://retropie.org.uk/docs/Running-ROMs-from-a-Network-Share>
