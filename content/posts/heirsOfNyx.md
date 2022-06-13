@@ -1,5 +1,6 @@
 ---
-title: Skullduggery
+title: Heirs of Nyx
+slug: heirs-of-nyx
 date: 2022-01-11
 categories:
   - Raspberry Pi
