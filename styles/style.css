@@ -1,0 +1,322 @@
+:root {
+  --background: 255, 255, 255;
+  --code: 171, 178, 191;
+  --font-color: 0, 0, 0;
+  --font-size: 1.3rem;
+  --light: 102, 103, 171;
+  /* Pantone color of the year */
+  --round: 5px;
+}
+
+a {
+  color: rgb(var(--light));
+  text-decoration-line: none;
+}
+
+abbr {
+  color: rgb(var(--light));
+}
+
+blockquote {
+  border-left: 3px solid rgb(var(--light));
+  color: #808080;
+  padding-left: 1em;
+}
+
+blockquote:hover {
+  filter: invert();
+}
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  margin: 0.5em;
+  overflow-wrap: break-word;
+}
+
+code {
+  background: #282c34;
+  color: rgb(var(--code));
+  display: inline-block;
+}
+
+button,
+code,
+h1,
+h2,
+header,
+iframe,
+img,
+summary,
+table,
+#search {
+  border-radius: var(--round);
+}
+
+div.template>img:hover {
+  box-shadow: 0px 2px 7px 0px black;
+}
+
+/* space elements */
+button,
+h1,
+h2,
+pre>code,
+summary,
+#search {
+  padding: 1%;
+}
+
+details>*,
+summary {
+  margin: 1%;
+}
+
+button.link,
+h2.template {
+  cursor: pointer;
+  font-size: var(--font-size);
+}
+
+::selection,
+button.link:hover,
+h2.template:hover,
+header button.link.active {
+  background: rgb(var(--light));
+  filter: invert();
+}
+
+header {
+  align-items: center;
+  background: rgb(var(--light));
+  box-shadow: 0px 2px 7px 0px black;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 100ch;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+header button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: normal;
+  margin: 0 0.5% 0 0.5%;
+  text-align: center;
+  /* 5 items in header separated by 2% */
+  width: calc(100% / 5 - 1%);
+}
+
+/* no select elements */
+header,
+summary,
+#background,
+#search {
+  user-select: none;
+}
+
+html {
+  background: rgb(var(--background));
+}
+
+i {
+  color: #666666;
+  font-size: calc(var(--font-size) * 0.9);
+}
+
+iframe {
+  border-width: 0;
+}
+
+p>code {
+  font-size: calc(var(--font-size) * 0.85);
+  margin: 0;
+  padding: 0.2em 0.4em;
+}
+
+p>img {
+  max-height: 60vh;
+  max-width: 100%;
+}
+
+noscript,
+ol,
+p,
+summary,
+table,
+ul {
+  font-size: var(--font-size);
+}
+
+pre>code {
+  border-left: 0.5em solid rgb(var(--light));
+  font-family: "Courier New", monospace !important;
+  font-size: calc(var(--font-size) * 0.9);
+  max-height: 46vh;
+  overflow: auto;
+  tab-size: 4;
+  width: calc(96% - 0.5em);
+  /* 100% with border */
+}
+
+pre>code:focus,
+pre>code:hover {
+  border-left: 0.5em solid rgb(var(--light));
+  filter: invert();
+  outline: none;
+}
+
+summary {
+  background: rgb(var(--light));
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+summary:hover {
+  background: rgb(var(--light));
+  filter: invert();
+}
+
+table {
+  border: solid 1px #3366997f;
+}
+
+table thead {
+  background: rgb(var(--light));
+  color: #fff;
+}
+
+tbody tr:hover {
+  background: rgb(var(--light));
+  color: #fff;
+  filter: invert();
+}
+
+tr:nth-child(even) {
+  background: rgba(var(--light), 0.1);
+}
+
+#cover {
+  height: 30vh;
+  margin: 1em 0 1em 0;
+  object-fit: contain;
+  width: 100%;
+}
+
+#logo {
+  margin-top: 5%;
+  width: 50%;
+}
+
+#page {
+  color: rgb(var(--font-color));
+  margin: auto;
+  max-width: 80ch;
+  width: 80%;
+}
+
+#search {
+  font-family: Verdana, Arial, sans-serif;
+  width: 25%;
+}
+
+#search:focus {
+  outline: none;
+}
+
+#title {
+  font-size: calc(var(--font-size) * 1.5);
+  text-align: center;
+}
+
+#topleft {
+  text-align: center;
+  width: 18%;
+}
+
+#topleft p {
+  font-size: calc(var(--font-size) * 0.8);
+  margin: 0;
+}
+
+.badge {
+  align-content: space-evenly;
+  align-items: center;
+  display: grid;
+  height: 17vh;
+  justify-content: center;
+  justify-items: center;
+  margin: 0.5vh;
+}
+
+.CodeMirror {
+  height: 100% !important;
+}
+
+.gameboy {
+  aspect-ratio: 160 / 144;
+  width: 100%;
+}
+
+.pdf {
+  aspect-ratio: 8.5 / 11;
+  width: 65%;
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.web {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 0, 0, 0;
+    --font-color: 255, 255, 255;
+  }
+}
+
+@media print {
+  :root {
+    --background: 255, 255, 255;
+    --font-color: 0, 0, 0;
+    --font-size: 10pt;
+    --light: 0, 102, 153;
+  }
+
+  footer,
+  header {
+    display: none;
+  }
+
+  p>img {
+    max-width: 50%;
+  }
+
+  pre>code {
+    max-height: max-content;
+    white-space: break-spaces;
+  }
+
+  #page {
+    width: 100%;
+  }
+
+  * {
+    filter: initial !important;
+    outline: none !important;
+  }
+
+  *.active {
+    background: initial !important;
+  }
+}
