@@ -1,6 +1,0 @@
-User-agent: *
-
-Disallow: /images/
-Disallow: /data/
-
-Sitemap: https://slc.is/sitemap.xml

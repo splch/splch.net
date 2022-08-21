@@ -1,5 +1,0 @@
----
-title: ""
-date: ""
-draft: true
----
