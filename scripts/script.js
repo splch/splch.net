@@ -1,72 +1,5 @@
 let imageChange = { interval: null, image: 1 };
 
-function startEditor(title, value) {
-  let textArea = prepareTextArea(title, value);
-  let password = preparePassword();
-  let submit = prepareSubmit();
-  let div = document.createElement("div");
-  div.classList.add("template");
-
-  div.appendChild(textArea);
-  div.appendChild(password);
-  div.appendChild(submit);
-  document.getElementById("top").appendChild(div);
-}
-
-function prepareTextArea(title, value) {
-  const id = "mde";
-  let textArea = createTextArea();
-  textArea.id = id;
-  textArea.title = title; // title is used when deleting posts
-  value = value.replace("1/22/2021", getDate());
-  textArea.value = value;
-  textArea.onchange = (_) => {
-    document.getElementById("bottom").style.pointerEvents = "none";
-  };
-  return textArea;
-}
-
-function preparePassword() {
-  let password = createInput();
-  password.type = "password";
-  password.id = "password";
-  return password;
-}
-
-function prepareSubmit() {
-  let submit = createButton();
-  submit.innerText = "Submit";
-  submit.onclick = (_) => {
-    submitMarkdown();
-  }
-  submit.onkeyup = (e) => {
-    if (e.key === "Enter") {
-      submitMarkdown();
-    }
-  }
-  return submit;
-}
-
-function createInput() {
-  const input = document.createElement("input");
-  return input;
-}
-
-function createButton() {
-  const button = document.createElement("button");
-  return button;
-}
-
-function createTextArea() {
-  const ta = document.createElement("textarea");
-  ta.classList.add("template");
-  ta.cols = "160";
-  ta.style.aspectRatio = "3 / 2";
-  ta.style.maxWidth = "100%";
-  ta.style.minHeight = "500px";
-  return ta;
-}
-
 function createHr() {
   const hr = document.createElement("hr");
   hr.classList.add("template");
@@ -93,10 +26,10 @@ function createImg(alt, src) {
     }
     img.alt = alt;
     img.loading = "lazy";
-    img.onclick = (e) => {
+    img.onclick = e => {
       updatePage(e.target, true);
     };
-    img.onkeyup = (e) => {
+    img.onkeyup = e => {
       if (e.key === "Enter") {
         updatePage(e.target, true);
       }
@@ -124,10 +57,10 @@ function createH2(text) {
   const h2 = document.createElement("h2");
   h2.classList.add("template");
   h2.innerText = text;
-  h2.onclick = (e) => {
+  h2.onclick = e => {
     updatePage(e.target, true);
   };
-  h2.onkeyup = (e) => {
+  h2.onkeyup = e => {
     if (e.key === "Enter") {
       updatePage(e.target, true);
     }
@@ -157,10 +90,10 @@ function createSearch(query = null) {
   const search = document.createElement("input");
   search.type = "text";
   search.placeholder = "Search…";
-  search.onkeyup = (e) => {
+  search.onkeyup = e => {
     if (e.key === "Enter") {
       if (e.target.value) {
-        getServer("api/search", "query=" + e.target.value);
+        getServer("get", "posts/" + e.target.value + ".md");
       }
     }
   };
@@ -182,7 +115,7 @@ function setBody(markdown, title) {
   }
   if (title === "Archive") {
     createSearch();
-    getServer("api/all", "");
+    getServer("all", "posts/_all.md");
   }
 }
 
@@ -192,7 +125,7 @@ function updateImg(src, title) {
     if (src.substring(0, 4) === "http") {
       imgSrc = src;
     } else {
-      imgSrc = `images/${src}`;
+      imgSrc = `posts/images/${src}`;
     }
     document.getElementById("cover").alt = title;
     document.getElementById("cover").src = imgSrc;
@@ -202,10 +135,10 @@ function updateImg(src, title) {
 
 function setImages(srcs, title) {
   clearInterval(imageChange.interval);
-  updateImg(srcs[0], title);
+  updateImg(srcs?.at(0), title);
   let image = 1;
-  if (srcs.length > 1) {
-    imageChange.interval = setInterval((_) => {
+  if (srcs?.length > 1) {
+    imageChange.interval = setInterval(_ => {
       const src = srcs[image % srcs.length];
       updateImg(src, title);
       image++;
@@ -215,28 +148,33 @@ function setImages(srcs, title) {
 
 function setPageInfo(title, date) {
   document.getElementById("title").innerText = title;
-  if (date === "0001-01-01T00:00:00Z") {
-    date = "";
-  } else {
+  if (date) {
     date = date.split("T")[0].split("-");
     date = [date[1], date[2], date[0]].join("/");
+    document.head.querySelector("[name~=date][content]").content = date;
+    document.getElementById("date").innerText = date;
   }
-  document.head.querySelector("[name~=date][content]").content = date
-    ? date
-    : "1/22/2021";
-  document.getElementById("date").innerText = date;
 }
 
 function setPage(post) {
-  const title = post["Title"][post["Title"].length - 1];
+  const title = post["Title"];
   setPageInfo(title, post["Date"]);
   setImages(post["Image"], title);
   setBody(post["Body"], post["Title"][0]);
   window.scrollTo(0, 0);
 }
 
+function parseMarkdown(markdown) {
+  let post = {};
+  post["Title"] = markdown?.split("title: ")[1]?.split("\n")[0];
+  post["Date"] = markdown?.split("date: ")[1]?.split("\n")[0];
+  post["Image"] = markdown?.split("image: ")[1]?.split("\n")[0].split(", ");
+  post["Body"] = markdown?.split("---\n")[2];
+  return post;
+}
+
 function clearTemplates() {
-  document.querySelectorAll(".template").forEach((e) => {
+  document.querySelectorAll(".template").forEach(e => {
     e.parentElement.removeChild(e);
   });
 }
@@ -253,7 +191,7 @@ function clearPage() {
 }
 
 function newActive(element) {
-  document.querySelectorAll(".link").forEach((link) => {
+  document.querySelectorAll(".link").forEach(link => {
     link.classList.remove("active");
   });
   element.classList.add("active");
@@ -267,118 +205,48 @@ function getDate() {
   return mm + "/" + dd + "/" + yyyy;
 }
 
-function editMarkdown(url, ...args) {
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", url);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200) {
-      if (xhr.responseText != "Denied") {
-        window.onbeforeunload = null;
-        window.location.reload();
-      } else {
-        document.getElementById("password").style.background = "red";
-      }
-    }
-  };
-  xhr.send(args);
-}
-
-function setMarkdown(rsp) {
-  const titles = rsp.split("title: ")[1].split("\n")[0].split(", ");
-  clearTemplates();
-  startEditor(titles[0], rsp.trim() + "\n");
-  getServer("api/draft", "");
-}
-
-function setSearch(rsp, args) {
-  const posts = JSON.parse(rsp);
+function setSearch(rsp) {
+  const posts = parseMarkdown(rsp);
   if (posts && window.location.hash.substr(1) === "Archive") {
     clearTemplates();
-    createSearch(args.split("=")[1]);
-    posts.forEach((post) => {
+    posts.forEach(post => {
       populatePreview(post);
     });
   }
 }
 
 function setFull(rsp) {
-  const post = JSON.parse(rsp);
+  const post = parseMarkdown(rsp);
   clearPage();
   setPage(post);
   if (window.location.hash.substr(1) === "Home") {
-    getServer("api/latest", "");
+    getServer("latest", "posts/_all.md");
   }
 }
 
 function setPreview(rsp) {
-  const posts = JSON.parse(rsp);
+  const posts = parseMarkdown(rsp);
   const title = window.location.hash.substr(1);
   if (
     title === "Archive" ||
     (title === "Home" && posts.length === 1) ||
     document.getElementById("mde")
   ) {
-    posts.forEach((post) => {
+    posts.forEach(post => {
       div = populatePreview(post);
     });
   }
 }
 
-function submitMarkdown() {
-  const mde = document.getElementById("mde").value;
-  const key = document.getElementById("password").value;
-  const oldTitle = document.getElementById("mde").title;
-  const newTitle = mde?.split("\n")[1]?.split("title: ")[1];
-  const pubDate = mde?.split("\n")[2]?.split("date: ")[1];
-  const imagePath = mde?.split("\n")[3]?.split("image: ")[1];
-  const isDraft = mde.split("\n")[4]?.split("draft: ")[1];
-  if (["Home", "Archive", "Contact", "About"].includes(oldTitle)) {
-    if (newTitle?.split(",")[0] == oldTitle) {
-      if (!pubDate && isDraft == "true") {
-        editMarkdown("api/edit", key, mde);
-      }
-      else {
-        alert("Only change the title, images, and content of " + oldTitle);
-      }
-    } else {
-      alert("Do not rename " + oldTitle);
-    }
-  } else if (mde) {
-    if (!newTitle.includes(",")) {
-      if (newTitle && pubDate && imagePath && isDraft) {
-        editMarkdown("api/edit", key, mde);
-        if (oldTitle != newTitle) {
-          // renaming deletes the old file
-          editMarkdown("api/delete", key, oldTitle);
-        }
-      } else {
-        alert("Metadata is malformed");
-      }
-    } else {
-      alert("Remove commas from " + newTitle);
-    }
-  } else {
-    let r = confirm("You will delete " + oldTitle);
-    if (r) {
-      editMarkdown("api/delete", key, oldTitle);
-    }
-  }
-}
-
-function getServer(url, args) {
+function getServer(type, url) {
   const xhr = new XMLHttpRequest();
-  const req = args ? url + "?" + args : url;
-  xhr.open("GET", req);
+  xhr.open("GET", url);
   xhr.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-      const type = url.split("/")[1];
       if (type === "get") {
         setFull(this.responseText);
       } else if (["all", "draft", "latest"].includes(type)) {
         setPreview(this.responseText);
-      } else if (type === "markdown") {
-        setMarkdown(this.responseText);
       } else if (type === "search") {
         setSearch(this.responseText, args);
       }
@@ -401,7 +269,7 @@ function updatePage(element, isBlog, pop = false) {
     newActive(document.getElementsByClassName("link")[1]);
     setTitle("Archive");
   }
-  getServer("api/get", "query=" + title);
+  getServer("get", "posts/" + title + ".md");
   if (!pop) {
     window.history.pushState(title, title, "#" + encodeURI(title));
   }
@@ -510,17 +378,17 @@ function start() {
   startMarkdown();
   const title = window.location.hash.substr(1) || "Home";
   loadPage(decodeURI(title), false);
-  document.querySelectorAll(".link").forEach((link) => {
-    link.onclick = (e) => {
+  document.querySelectorAll(".link").forEach(link => {
+    link.onclick = e => {
       updatePage(e.target, false);
     };
-    link.onkeyup = (e) => {
+    link.onkeyup = e => {
       if (e.key === "Enter") {
         updatePage(e.target, false);
       }
     };
   });
-  window.onpopstate = (e) => {
+  window.onpopstate = e => {
     loadPage(e.state, true);
   };
   console.log(

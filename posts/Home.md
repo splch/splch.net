@@ -1,5 +1,5 @@
 ---
-title: Home, Welcome to my site
+title: Welcome to my site
 date:
 image: friends.webp, buddies.webp
 draft: true

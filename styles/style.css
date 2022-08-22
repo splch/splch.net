@@ -3,8 +3,7 @@
   --code: 171, 178, 191;
   --font-color: 0, 0, 0;
   --font-size: 1.3rem;
-  --light: 102, 103, 171;
-  /* Pantone color of the year */
+  --light: 95, 95, 255;
   --round: 5px;
 }
 
@@ -290,7 +289,7 @@ tr:nth-child(even) {
     --background: 255, 255, 255;
     --font-color: 0, 0, 0;
     --font-size: 10pt;
-    --light: 0, 102, 153;
+    --light: 102, 103, 171;
   }
 
   footer,

@@ -1,5 +1,5 @@
 ---
-title: Contact, Email me
+title: Email me
 date:
 image:
 draft: true
