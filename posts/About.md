@@ -38,10 +38,9 @@ Languages I'm Learning:
 	<div class="badge">
 		<img src="https://img.shields.io/mozilla-observatory/grade/slc.is?publish&logo=mozilla&style=for-the-badge">
 		<img src="https://img.shields.io/w3c-validation/default?logo=html5&style=for-the-badge&targetUrl=https%3A%2F%2Fslc.is">
-		<img src="https://img.shields.io/github/go-mod/go-version/splch/slc.is?logo=go&style=for-the-badge">
 	</div>
-	<a href="http://u.fsf.org/16e"><img class="badge" src="images/badges/fsf.png" alt="Free Software Foundation"></a>
-	<a href="https://www.eff.org/join"><img class="badge" src="images/badges/eff.png" alt="Join EFF!"></a>
-	<a href="https://freedom.press/about/"><img class="badge" src="images/badges/fpf.jpg" alt="Freedom of the Press"></a>
-	<a href="https://www.credly.com/badges/da0f89d5-8e25-4281-9d6a-e6df33892452"><img class="badge" src="images/badges/qiskit.png" alt="Qiskit Advocate"></a>
+	<a href="http://u.fsf.org/16e"><img class="badge" src="posts/images/badges/fsf.png" alt="Free Software Foundation"></a>
+	<a href="https://www.eff.org/join"><img class="badge" src="posts/images/badges/eff.png" alt="Join EFF!"></a>
+	<a href="https://freedom.press/about/"><img class="badge" src="posts/images/badges/fpf.jpg" alt="Freedom of the Press"></a>
+	<a href="https://www.credly.com/badges/da0f89d5-8e25-4281-9d6a-e6df33892452"><img class="badge" src="posts/images/badges/qiskit.png" alt="Qiskit Advocate"></a>
 </div>

@@ -71,11 +71,11 @@ function createH2(text) {
 }
 
 function populatePreview(post) {
-  const title = post["Title"][post["Title"].length - 1];
+  const title = post["Title"]?.at(post["Title"]?.length - 1);
   const h2 = createH2(title);
   const div = createDiv();
   const img = createImg(title, post["Image"]);
-  const p = createP(parseText(post["Body"].split(" ").slice(0, 20).join(" ")));
+  const p = createP(parseText(post["Body"].split(/\s/).slice(0, 25).join(" ")));
   const hr = createHr();
   document.getElementById("bottom").appendChild(hr);
   document.getElementById("bottom").appendChild(h2);
@@ -100,7 +100,7 @@ function createSearch(query = null) {
             queryPosts.push(post);
           }
         }
-        setSearch(queryPosts);
+        setSearch(queryPosts, e.target.value);
       }
     }
   };
@@ -165,7 +165,7 @@ function setPageInfo(title, date) {
 }
 
 function setPage(post) {
-  const title = post["Title"][post["Title"].length - 1];
+  const title = post["Title"]?.at(post["Title"]?.length - 1);
   setPageInfo(title, post["Date"]);
   setImages(post["Image"], title);
   setBody(post["Body"], post["Title"][0]);
@@ -214,10 +214,10 @@ function getDate() {
   return mm + "/" + dd + "/" + yyyy;
 }
 
-function setSearch(posts) {
-  if (posts && window.location.hash.substr(1) === "Archive") {
+function setSearch(posts, query) {
+  if (posts && decodeURI(window.location.hash.substr(1)) === "Archive") {
     clearTemplates();
-    createSearch();
+    createSearch(query);
     posts.forEach(post => {
       populatePreview(post);
     });
@@ -227,7 +227,7 @@ function setSearch(posts) {
 function setFull(post) {
   clearPage();
   setPage(post);
-  if (window.location.hash.substr(1) === "Home") {
+  if (decodeURI(window.location.hash.substr(1)) === "Home") {
     setPreview(latestPost(allPosts));
   }
 }
@@ -243,13 +243,14 @@ function latestPost(posts) {
 }
 
 function setPreview(posts) {
-  const title = window.location.hash.substr(1);
+  const title = decodeURI(window.location.hash.substr(1));
   if (
     title === "Archive" ||
     (title === "Home" && posts.length === 1)
   ) {
     posts.forEach(post => {
-      div = populatePreview(post);
+      if (post)
+        populatePreview(post);
     });
   }
 }
@@ -262,8 +263,8 @@ function download(path) {
       const post = parseMarkdown(this.responseText);
       post["Body"] = post["Body"].replaceAll("](images/", "](posts/images/");
       allPosts[post["Title"][0]] = post;
-      if (window.location.hash.substr(1) === post["Title"][0]) {
-        updatePage(post["Title"][0], true);
+      if (decodeURI(window.location.hash.substr(1)) === post["Title"][0]) {
+        loadPage(post["Title"][0]);
       }
     }
   };
@@ -291,7 +292,7 @@ function setTitle(title) {
 
 function updatePage(element, isBlog, pop = false) {
   clearPage();
-  const title = element.innerText || element.alt || window.location.hash.substr(1);
+  const title = element.innerText || element.alt || decodeURI(window.location.hash.substr(1));
   if (!isBlog) {
     newActive(element);
     setTitle(title);
@@ -302,7 +303,10 @@ function updatePage(element, isBlog, pop = false) {
   if (!pop) {
     window.history.pushState(title, title, "#" + encodeURI(title));
   }
-  setFull(allPosts[title]);
+  if (allPosts[title])
+    setFull(allPosts[title]);
+  else
+    setFull(allPosts["Error Page Not Found"]);
 }
 
 function getElementByTitle(title) {
@@ -405,10 +409,10 @@ function startMarkdown() {
 }
 
 function start() {
-  downloadAll("posts/_all.md");
+  downloadAll("posts/_all.md"); // Download all posts
   startMarkdown();
-  const title = window.location.hash.substr(1) || "Home";
-  window.location = "#" + encodeURI(title);
+  const title = decodeURI(window.location.hash.substr(1)) || "Home";
+  window.location.hash = encodeURI(title);
   document.querySelectorAll(".link").forEach(link => {
     link.onclick = e => {
       updatePage(e.target, false);
