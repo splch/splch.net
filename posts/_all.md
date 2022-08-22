@@ -1,3 +1,7 @@
+About.md
+Archive.md
+Contact.md
+Home.md
 assemblyPico.md
 backyardQuantumComputer.md
 bestWordleStrategy.md

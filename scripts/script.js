@@ -1,3 +1,4 @@
+let allPosts = {};
 let imageChange = { interval: null, image: 1 };
 
 function createHr() {
@@ -22,7 +23,7 @@ function createImg(alt, src) {
     if (src[0].substring(0, 4) === "http") {
       imgSrc = src[0];
     } else {
-      imgSrc = `images/${src[0]}`;
+      imgSrc = `posts/images/${src[0]}`;
     }
     img.alt = alt;
     img.loading = "lazy";
@@ -74,7 +75,7 @@ function populatePreview(post) {
   const h2 = createH2(title);
   const div = createDiv();
   const img = createImg(title, post["Image"]);
-  const p = createP(parseText(post["Body"]));
+  const p = createP(parseText(post["Body"].split(" ").slice(0, 20).join(" ")));
   const hr = createHr();
   document.getElementById("bottom").appendChild(hr);
   document.getElementById("bottom").appendChild(h2);
@@ -93,7 +94,7 @@ function createSearch(query = null) {
   search.onkeyup = e => {
     if (e.key === "Enter") {
       if (e.target.value) {
-        getServer("get", "posts/" + e.target.value + ".md");
+        console.log(e.target.value);
       }
     }
   };
@@ -115,7 +116,10 @@ function setBody(markdown, title) {
   }
   if (title === "Archive") {
     createSearch();
-    getServer("all", "posts/_all.md");
+    for (const [_, post] of Object.entries(allPosts)) {
+      if (!post["Draft"])
+        populatePreview(post);
+    }
   }
 }
 
@@ -149,15 +153,13 @@ function setImages(srcs, title) {
 function setPageInfo(title, date) {
   document.getElementById("title").innerText = title;
   if (date) {
-    date = date.split("T")[0].split("-");
-    date = [date[1], date[2], date[0]].join("/");
     document.head.querySelector("[name~=date][content]").content = date;
     document.getElementById("date").innerText = date;
   }
 }
 
 function setPage(post) {
-  const title = post["Title"];
+  const title = post["Title"][post["Title"].length - 1];
   setPageInfo(title, post["Date"]);
   setImages(post["Image"], title);
   setBody(post["Body"], post["Title"][0]);
@@ -166,9 +168,10 @@ function setPage(post) {
 
 function parseMarkdown(markdown) {
   let post = {};
-  post["Title"] = markdown?.split("title: ")[1]?.split("\n")[0];
+  post["Title"] = markdown?.split("title: ")[1]?.split("\n")[0]?.split(", ");
   post["Date"] = markdown?.split("date: ")[1]?.split("\n")[0];
   post["Image"] = markdown?.split("image: ")[1]?.split("\n")[0].split(", ");
+  post["Draft"] = markdown?.split("draft: ")[1]?.split("\n")[0] === "true";
   post["Body"] = markdown?.split("---\n")[2];
   return post;
 }
@@ -215,22 +218,29 @@ function setSearch(rsp) {
   }
 }
 
-function setFull(rsp) {
-  const post = parseMarkdown(rsp);
+function setFull(post) {
   clearPage();
   setPage(post);
   if (window.location.hash.substr(1) === "Home") {
-    getServer("latest", "posts/_all.md");
+    setPreview(latestPost(allPosts));
   }
 }
 
-function setPreview(rsp) {
-  const posts = parseMarkdown(rsp);
+function latestPost(posts) {
+  let latest;
+  for (const [_, post] of Object.entries(posts)) {
+    if (!post["Draft"] && (!latest || post["Date"] > latest["Date"])) {
+      latest = post;
+    }
+  }
+  return [latest];
+}
+
+function setPreview(posts) {
   const title = window.location.hash.substr(1);
   if (
     title === "Archive" ||
-    (title === "Home" && posts.length === 1) ||
-    document.getElementById("mde")
+    (title === "Home" && posts.length === 1)
   ) {
     posts.forEach(post => {
       div = populatePreview(post);
@@ -238,18 +248,32 @@ function setPreview(rsp) {
   }
 }
 
-function getServer(type, url) {
+function download(path) {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", url);
+  xhr.open("GET", path);
   xhr.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
-      if (type === "get") {
-        setFull(this.responseText);
-      } else if (["all", "draft", "latest"].includes(type)) {
-        setPreview(this.responseText);
-      } else if (type === "search") {
-        setSearch(this.responseText, args);
+      const post = parseMarkdown(this.responseText);
+      post["Body"] = post["Body"].replaceAll("](images/", "](posts/images/");
+      allPosts[post["Title"][0]] = post;
+      if (window.location.hash.substr(1) === post["Title"][0]) {
+        updatePage(post["Title"][0], true);
       }
+    }
+  };
+  xhr.send();
+}
+
+function downloadAll(path) {
+  const parentDirectory = path.split("/")?.at(0);
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", path);
+  xhr.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      this.responseText.split("\n").forEach(path => {
+        if (path.length)
+          download(`${parentDirectory}/${path}`);
+      });
     }
   };
   xhr.send();
@@ -262,6 +286,7 @@ function setTitle(title) {
 function updatePage(element, isBlog, pop = false) {
   clearPage();
   const title = element.innerText || element.alt;
+  console.log(title);
   if (!isBlog) {
     newActive(element);
     setTitle(title);
@@ -269,10 +294,10 @@ function updatePage(element, isBlog, pop = false) {
     newActive(document.getElementsByClassName("link")[1]);
     setTitle("Archive");
   }
-  getServer("get", "posts/" + title + ".md");
   if (!pop) {
     window.history.pushState(title, title, "#" + encodeURI(title));
   }
+  setFull(allPosts[title]);
 }
 
 function getElementByTitle(title) {
@@ -375,9 +400,10 @@ function startMarkdown() {
 }
 
 function start() {
+  downloadAll("posts/_all.md");
   startMarkdown();
   const title = window.location.hash.substr(1) || "Home";
-  loadPage(decodeURI(title), false);
+  window.location = "#" + encodeURI(title);
   document.querySelectorAll(".link").forEach(link => {
     link.onclick = e => {
       updatePage(e.target, false);
