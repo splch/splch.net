@@ -94,7 +94,13 @@ function createSearch(query = null) {
   search.onkeyup = e => {
     if (e.key === "Enter") {
       if (e.target.value) {
-        console.log(e.target.value);
+        queryPosts = [];
+        for (const [_, post] of Object.entries(allPosts)) {
+          if ((post["Title"].includes(e.target.value) || post["Body"].includes(e.target.value)) && !post["Draft"]) {
+            queryPosts.push(post);
+          }
+        }
+        setSearch(queryPosts);
       }
     }
   };
@@ -172,7 +178,7 @@ function parseMarkdown(markdown) {
   post["Date"] = markdown?.split("date: ")[1]?.split("\n")[0];
   post["Image"] = markdown?.split("image: ")[1]?.split("\n")[0].split(", ");
   post["Draft"] = markdown?.split("draft: ")[1]?.split("\n")[0] === "true";
-  post["Body"] = markdown?.split("---\n")[2];
+  post["Body"] = markdown?.split("---\n").slice(2).join("---\n");
   return post;
 }
 
@@ -208,10 +214,10 @@ function getDate() {
   return mm + "/" + dd + "/" + yyyy;
 }
 
-function setSearch(rsp) {
-  const posts = parseMarkdown(rsp);
+function setSearch(posts) {
   if (posts && window.location.hash.substr(1) === "Archive") {
     clearTemplates();
+    createSearch();
     posts.forEach(post => {
       populatePreview(post);
     });
@@ -285,8 +291,7 @@ function setTitle(title) {
 
 function updatePage(element, isBlog, pop = false) {
   clearPage();
-  const title = element.innerText || element.alt;
-  console.log(title);
+  const title = element.innerText || element.alt || window.location.hash.substr(1);
   if (!isBlog) {
     newActive(element);
     setTitle(title);

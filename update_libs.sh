@@ -10,7 +10,6 @@ echo "Updating styles"
 
 curl -s -S -Lo styles/katex.min.css https://unpkg.com/katex/dist/katex.min.css
 curl -s -S -Lo styles/atom-one-dark.min.css https://unpkg.com/@highlightjs/cdn-assets/styles/atom-one-dark.min.css
-curl -s -S -Lo styles/font-awesome.min.css https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css
 
 echo "Updating KaTex fonts"
 
