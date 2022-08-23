@@ -96,7 +96,8 @@ function createSearch(query = null) {
           (a, b) => b[1]["Date"] - a[1]["Date"]
         )) {
           if (!post["Draft"])
-            if (post["Title"].includes(e.target.value) || post["Body"].includes(e.target.value))
+            if (post["Title"].toLowerCase().includes(e.target.value.toLowerCase())
+              || post["Body"].toLowerCase().includes(e.target.value.toLowerCase()))
               queryPosts.push(post);
         }
         setSearch(queryPosts, e.target.value);
