@@ -18,12 +18,12 @@ function createP(text) {
 
 function createImg(alt, src) {
   const img = document.createElement("img");
-  if (src[0]) {
+  if (src?.at(0)) {
     let imgSrc;
-    if (src[0].substring(0, 4) === "http") {
-      imgSrc = src[0];
+    if (src?.at(0).substring(0, 4) === "http") {
+      imgSrc = src?.at(0);
     } else {
-      imgSrc = `posts/images/${src[0]}`;
+      imgSrc = `posts/images/${src?.at(0)}`;
     }
     img.alt = alt;
     img.loading = "lazy";
@@ -96,7 +96,7 @@ function createSearch(query = null) {
       if (e.target.value) {
         queryPosts = [];
         for (const [_, post] of Object.entries(allPosts).sort(
-          ([, a], [, b]) => a["Date"] > b["Date"]
+          (a, b) => b[1]["Date"] - a[1]["Date"]
         )) {
           if (!post["Draft"])
             if (post["Title"].includes(e.target.value) || post["Body"].includes(e.target.value))
@@ -125,7 +125,7 @@ function setBody(markdown, title) {
   if (title === "Archive") {
     createSearch();
     for (const [_, post] of Object.entries(allPosts).sort(
-      ([, a], [, b]) => a["Date"] > b["Date"]
+      (a, b) => b[1]["Date"] - a[1]["Date"]
     )) {
       if (!post["Draft"])
         populatePreview(post);
@@ -162,9 +162,9 @@ function setImages(srcs, title) {
 
 function setPageInfo(title, date) {
   document.getElementById("title").innerText = title;
-  if (date) {
+  if (!isNaN(date)) {
     document.head.querySelector("[name~=date][content]").content = date;
-    document.getElementById("date").innerText = date;
+    document.getElementById("date").innerText = date.toLocaleDateString('en-US');
   }
 }
 
@@ -172,16 +172,16 @@ function setPage(post) {
   const title = post["Title"]?.at(post["Title"]?.length - 1);
   setPageInfo(title, post["Date"]);
   setImages(post["Image"], title);
-  setBody(post["Body"], post["Title"][0]);
+  setBody(post["Body"], post["Title"]?.at(0));
   window.scrollTo(0, 0);
 }
 
 function parseMarkdown(markdown) {
   let post = {};
-  post["Title"] = markdown?.split("title: ")[1]?.split("\n")[0]?.split(", ");
-  post["Date"] = markdown?.split("date: ")[1]?.split("\n")[0];
-  post["Image"] = markdown?.split("image: ")[1]?.split("\n")[0].split(", ");
-  post["Draft"] = markdown?.split("draft: ")[1]?.split("\n")[0] === "true";
+  post["Title"] = markdown?.split("title: ")?.at(1)?.split("\n")?.at(0)?.split(", ");
+  post["Date"] = new Date(markdown?.split("date: ")?.at(1)?.split("\n")?.at(0));
+  post["Image"] = markdown?.split("image: ")?.at(1)?.split("\n")?.at(0).split(", ");
+  post["Draft"] = markdown?.split("draft: ")?.at(1)?.split("\n")?.at(0) !== "false";
   post["Body"] = markdown?.split("---\n").slice(2).join("---\n");
   return post;
 }
@@ -210,14 +210,6 @@ function newActive(element) {
   element.classList.add("active");
 }
 
-function getDate() {
-  let today = new Date();
-  let dd = String(today.getDate());
-  let mm = String(today.getMonth() + 1); // January is 0
-  let yyyy = today.getFullYear();
-  return mm + "/" + dd + "/" + yyyy;
-}
-
 function setSearch(posts, query) {
   if (posts && decodeURI(window.location.hash.substr(1)) === "Archive") {
     clearTemplates();
@@ -238,7 +230,7 @@ function setFull(post) {
 
 function latestPost() {
   for (const [_, post] of Object.entries(allPosts).sort(
-    ([, a], [, b]) => a["Date"] < b["Date"]
+    (a, b) => b[1]["Date"] - a[1]["Date"]
   ))
     if (!post["Draft"])
       return [post];
@@ -248,7 +240,7 @@ function setPreview(posts) {
   const title = decodeURI(window.location.hash.substr(1));
   if (
     title === "Archive" ||
-    (title === "Home" && posts.length === 1)
+    (title === "Home" && posts?.length === 1)
   ) {
     posts.forEach(post => {
       if (post)
@@ -264,9 +256,9 @@ function download(path) {
     if (this.readyState === 4 && this.status === 200) {
       const post = parseMarkdown(this.responseText);
       post["Body"] = post["Body"].replaceAll("](images/", "](posts/images/");
-      allPosts[post["Title"][0]] = post;
-      if (decodeURI(window.location.hash.substr(1)) === post["Title"][0]) {
-        loadPage(post["Title"][0]);
+      allPosts[post["Title"]?.at(0)] = post;
+      if (decodeURI(window.location.hash.substr(1)) === post["Title"]?.at(0)) {
+        loadPage(post["Title"]?.at(0));
       }
     }
   };
@@ -294,7 +286,9 @@ function setTitle(title) {
 
 function updatePage(element, isBlog, pop = false) {
   clearPage();
-  const title = element.innerText || element.alt || decodeURI(window.location.hash.substr(1));
+  const title = element.innerText
+    || element.alt
+    || decodeURI(window.location.hash.substr(1));
   if (!isBlog) {
     newActive(element);
     setTitle(title);
