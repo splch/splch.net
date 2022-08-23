@@ -1,6 +1,6 @@
 ---
 title: Installing Manjaro Linux on Chromebook
-date: 12/6/2021
+date: 2021-12-06
 image: manjaro.webp
 draft: false
 ---

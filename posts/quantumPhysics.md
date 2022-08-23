@@ -1,6 +1,6 @@
 ---
 title: Quantum Physics I
-date: 8/23/2021
+date: 2021-08-23
 image: ocw1.webp, ocw2.webp
 draft: false
 ---

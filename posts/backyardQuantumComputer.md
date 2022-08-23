@@ -1,6 +1,6 @@
 ---
 title: Backyard Quantum Computer
-date: 1/25/2022
+date: 2022-01-25
 image: quantumComputer.webp
 draft: true
 ---

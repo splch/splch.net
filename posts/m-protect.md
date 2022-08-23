@@ -1,6 +1,6 @@
 ---
 title: Archive: M-Protect
-date: 3/18/2014
+date: 2014-03-18
 image: mprotect1.webp, mprotect2.webp
 draft: false
 ---

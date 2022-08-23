@@ -1,6 +1,6 @@
 ---
 title: Dolorem Ipsum
-date: 11/11/2021
+date: 2021-11-11
 image: dolorem.webp
 draft: false
 ---

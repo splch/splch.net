@@ -1,6 +1,6 @@
 ---
 title: The Last Single-Letter Domain
-date: 9/22/2021
+date: 2021-09-22
 image: https://www.isnic.is/en/tolur/image?name=stafafjoldi
 draft: false
 ---

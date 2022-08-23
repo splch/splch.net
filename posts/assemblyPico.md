@@ -1,6 +1,6 @@
 ---
 title: Assembly Neural Network on Pico
-date: 9/10/2021
+date: 2021-09-10
 image: pico.webp
 draft: false
 ---
@@ -17,7 +17,7 @@ This is going to be a bit of a challenge, but I'm looking forward to learning AR
 
 ## Starter Code
 
-<video controls loop muted preload="metadata" src="data/blink.mp4#t=0.25" width="100%">
+<video controls loop muted preload="metadata" src="posts/data/blink.mp4#t=0.25" width="100%">
 </video>
 
 In the collapsed files, I recreated the starter [_blink_](https://datasheets.raspberrypi.org/soft/blink.uf2) code in assembly.

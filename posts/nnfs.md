@@ -1,6 +1,6 @@
 ---
 title: Neural Networks From Scratch
-date: 5/18/2021
+date: 2021-05-18
 image: nnfs1.webp, nnfs2.webp
 draft: false
 ---

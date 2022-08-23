@@ -1,6 +1,6 @@
 ---
 title: Major League Hacking Fellowship
-date: 1/31/2022
+date: 2022-01-31
 image: bentoml.webp
 draft: true
 ---

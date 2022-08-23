@@ -1,6 +1,6 @@
 ---
 title: Creating My Site
-date: 8/27/2021
+date: 2021-08-27
 image: site.webp
 draft: false
 ---

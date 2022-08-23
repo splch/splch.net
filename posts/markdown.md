@@ -1,6 +1,6 @@
 ---
 title: Markdown Cheatsheet
-date: 5/30/2020
+date: 2020-05-30
 image: notable.webp
 draft: true
 ---
@@ -157,7 +157,7 @@ Fenced code block
 <summary>Details Tag</summary>
 
 ```html
-<iframe class="pdf" src="data/lighthouse.pdf#view=FitW"></iframe>
+<iframe class="pdf" src="posts/data/lighthouse.pdf#view=FitW"></iframe>
 ```
 
 </details>

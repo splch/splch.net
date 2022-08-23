@@ -1,6 +1,6 @@
 ---
 title: Quantum Tales
-date: 5/18/2021
+date: 2021-05-18
 image: quantumTales.webp
 draft: false
 ---

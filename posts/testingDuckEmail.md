@@ -1,6 +1,6 @@
 ---
 title: Testing DuckDuckGo's Email
-date: 9/1/2021
+date: 2021-09-01
 image: duckEmail.webp
 draft: false
 ---

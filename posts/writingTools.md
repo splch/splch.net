@@ -1,6 +1,6 @@
 ---
 title: Tools For Writing
-date: 5/15/2021
+date: 2021-05-15
 image: blog.webp
 draft: false
 ---

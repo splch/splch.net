@@ -1,6 +1,6 @@
 ---
 title: Grokking Go
-date: 8/22/2021
+date: 2021-08-22
 image: gocert.webp
 draft: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: Best Wordle Strategy — Explore or Exploit
-date: 1/13/2022
+date: 2022-01-13
 image: wordle.webp
 draft: false
 ---

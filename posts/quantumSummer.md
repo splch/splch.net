@@ -1,6 +1,6 @@
 ---
 title: Summer of Quantum
-date: 7/15/2021
+date: 2021-07-15
 image: quantumSummer.webp
 draft: false
 ---

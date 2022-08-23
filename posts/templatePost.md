@@ -1,6 +1,6 @@
 ---
 title: Template Post
-date: 1/22/2021
+date: 2021-01-22
 image: templateImage.webp
 draft: true
 ---

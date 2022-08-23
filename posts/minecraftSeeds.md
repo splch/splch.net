@@ -1,6 +1,6 @@
 ---
 title: Minecraft Seeds
-date: 11/15/2021
+date: 2021-11-15
 image: mcTitle.webp, mcPack.webp, mcSkull.webp
 draft: false
 ---

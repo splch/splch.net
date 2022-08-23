@@ -95,10 +95,12 @@ function createSearch(query = null) {
     if (e.key === "Enter") {
       if (e.target.value) {
         queryPosts = [];
-        for (const [_, post] of Object.entries(allPosts)) {
-          if ((post["Title"].includes(e.target.value) || post["Body"].includes(e.target.value)) && !post["Draft"]) {
-            queryPosts.push(post);
-          }
+        for (const [_, post] of Object.entries(allPosts).sort(
+          ([, a], [, b]) => a["Date"] > b["Date"]
+        )) {
+          if (!post["Draft"])
+            if (post["Title"].includes(e.target.value) || post["Body"].includes(e.target.value))
+              queryPosts.push(post);
         }
         setSearch(queryPosts, e.target.value);
       }
@@ -122,7 +124,9 @@ function setBody(markdown, title) {
   }
   if (title === "Archive") {
     createSearch();
-    for (const [_, post] of Object.entries(allPosts)) {
+    for (const [_, post] of Object.entries(allPosts).sort(
+      ([, a], [, b]) => a["Date"] > b["Date"]
+    )) {
       if (!post["Draft"])
         populatePreview(post);
     }
@@ -232,14 +236,12 @@ function setFull(post) {
   }
 }
 
-function latestPost(posts) {
-  let latest;
-  for (const [_, post] of Object.entries(posts)) {
-    if (!post["Draft"] && (!latest || post["Date"] > latest["Date"])) {
-      latest = post;
-    }
-  }
-  return [latest];
+function latestPost() {
+  for (const [_, post] of Object.entries(allPosts).sort(
+    ([, a], [, b]) => a["Date"] < b["Date"]
+  ))
+    if (!post["Draft"])
+      return [post];
 }
 
 function setPreview(posts) {

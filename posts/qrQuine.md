@@ -1,6 +1,6 @@
 ---
 title: QR Quine
-date: 9/25/2021
+date: 2021-09-25
 image: qrQuine.webp
 draft: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: Delete Me Guides
-date: 12/5/2021
+date: 2021-12-05
 image: deleteme.webp
 draft: true
 ---

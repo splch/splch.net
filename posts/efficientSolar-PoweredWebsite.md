@@ -1,6 +1,6 @@
 ---
 title: Efficient Solar-Powered Website
-date: 11/7/2021
+date: 2021-11-07
 image: zero2w.webp
 draft: false
 ---

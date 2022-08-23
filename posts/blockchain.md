@@ -1,6 +1,6 @@
 ---
 title: Future of Blockchain Domains
-date: 5/14/2021
+date: 2021-05-14
 image: blockchain.webp
 draft: false
 ---

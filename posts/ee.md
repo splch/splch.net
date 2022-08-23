@@ -1,6 +1,6 @@
 ---
 title: Archive: IB CS Extended Essay
-date: 3/14/2018
+date: 2018-03-14
 image: spooky.webp
 draft: false
 ---

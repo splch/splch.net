@@ -1,16 +1,47 @@
 ---
 title: Cool Simple Math
-date: 2/7/2022
-image: templateImage.webp
-draft: true
+date: 2022-02-07
+image: multiply.webp
+draft: false
 ---
+
+![New Multiplication Method](images/multiply.webp)
+
+## Running Average
+
+If I have the average of 1 and 2, I can add 3 to that average:
+
+```python
+avg = (1 + 2) / 2
+avg += (3 - avg) / 3
+```
+
+## Swapping
+
+```
+$$
+a = a + b \\
+b = a - b \\
+a = a - b \\
+$$
+```
+
+```c
+void swap(int *a, int *b) {
+  if (a != b) {
+    *a ^= *b;
+    *b ^= *a;
+    *a ^= *b;
+  }
+}
+```
 
 ## Minimum and Maximum
 
 - Minimum:
-	- `$min(a,b)=\frac{1}{2}(a+b-|a-b|)$`
+  - `$min(a,b)=\frac{1}{2}(a+b-|a-b|)$`
 - Maximum:
-	- `$max(a,b)=\frac{1}{2}(a+b+|a-b|)$`
+  - `$max(a,b)=\frac{1}{2}(a+b+|a-b|)$`
 
 ## Non-Overflowing Average
 
@@ -111,3 +142,4 @@ Cycles: 36
 
 1. https://www.maa.org/sites/default/files/0746834259921.di020713.02p0009e.pdf
 2. https://devblogs.microsoft.com/oldnewthing/20220207-00/?p=106223
+3. https://stackoverflow.com/q/1826159

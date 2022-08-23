@@ -1,6 +1,6 @@
 ---
 title: Degrees of Randomness and the Law of Large Numbers
-date: 2/4/2022
+date: 2022-02-04
 image: randomCoefficients.webp
 draft: false
 ---
