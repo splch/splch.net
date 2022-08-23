@@ -394,7 +394,7 @@ function startMarkdown() {
 }
 
 function start() {
-  downloadAll("posts/All.md"); // Download all posts
+  downloadAll("posts/_all.md"); // Download all posts
   startMarkdown();
   const title = decodeURI(window.location.hash.substring(1)) || "Home";
   window.location.hash = encodeURI(title);
