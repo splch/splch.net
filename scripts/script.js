@@ -20,20 +20,18 @@ function createImg(alt, src) {
   const img = document.createElement("img");
   if (src?.at(0)) {
     let imgSrc;
-    if (src?.at(0).substring(0, 4) === "http") {
+    if (src?.at(0).substring(0, 4) === "http")
       imgSrc = src?.at(0);
-    } else {
+    else
       imgSrc = `posts/images/${src?.at(0)}`;
-    }
     img.alt = alt;
     img.loading = "lazy";
     img.onclick = e => {
       updatePage(e.target, true);
     };
     img.onkeyup = e => {
-      if (e.key === "Enter") {
+      if (e.key === "Enter")
         updatePage(e.target, true);
-      }
     };
     img.src = imgSrc;
     img.style.cursor = "pointer";
@@ -62,9 +60,8 @@ function createH2(text) {
     updatePage(e.target, true);
   };
   h2.onkeyup = e => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter")
       updatePage(e.target, true);
-    }
   };
   h2.tabIndex = "0";
   return h2;
@@ -136,11 +133,10 @@ function setBody(markdown, title) {
 function updateImg(src, title) {
   if (src) {
     let imgSrc;
-    if (src.substring(0, 4) === "http") {
+    if (src.substring(0, 4) === "http")
       imgSrc = src;
-    } else {
+    else
       imgSrc = `posts/images/${src}`;
-    }
     document.getElementById("cover").alt = title;
     document.getElementById("cover").src = imgSrc;
     document.getElementById("cover").style.display = "inline";
@@ -164,7 +160,7 @@ function setPageInfo(title, date) {
   document.getElementById("title").innerText = title;
   if (!isNaN(date)) {
     document.head.querySelector("[name~=date][content]").content = date;
-    document.getElementById("date").innerText = date.toLocaleDateString('en-US');
+    document.getElementById("date").innerText = date.toLocaleDateString("en-US");
   }
 }
 
@@ -178,9 +174,9 @@ function setPage(post) {
 
 function parseMarkdown(markdown) {
   let post = {};
-  post["Title"] = markdown?.split("title: ")?.at(1)?.split("\n")?.at(0)?.split(", ");
+  post["Title"] = markdown?.split("title: ")?.at(1)?.split("\n")?.at(0)?.split(/,\s*/);
   post["Date"] = new Date(markdown?.split("date: ")?.at(1)?.split("\n")?.at(0));
-  post["Image"] = markdown?.split("image: ")?.at(1)?.split("\n")?.at(0).split(", ");
+  post["Image"] = markdown?.split("image: ")?.at(1)?.split("\n")?.at(0).split(/,\s*/);
   post["Draft"] = markdown?.split("draft: ")?.at(1)?.split("\n")?.at(0) !== "false";
   post["Body"] = markdown?.split("---\n").slice(2).join("---\n");
   return post;
@@ -211,7 +207,7 @@ function newActive(element) {
 }
 
 function setSearch(posts, query) {
-  if (posts && decodeURI(window.location.hash.substr(1)) === "Archive") {
+  if (posts && decodeURI(window.location.hash.substring(1)) === "Archive") {
     clearTemplates();
     createSearch(query);
     posts.forEach(post => {
@@ -223,9 +219,8 @@ function setSearch(posts, query) {
 function setFull(post) {
   clearPage();
   setPage(post);
-  if (decodeURI(window.location.hash.substr(1)) === "Home") {
+  if (decodeURI(window.location.hash.substring(1)) === "Home")
     setPreview(latestPost(allPosts));
-  }
 }
 
 function latestPost() {
@@ -237,16 +232,15 @@ function latestPost() {
 }
 
 function setPreview(posts) {
-  const title = decodeURI(window.location.hash.substr(1));
+  const title = decodeURI(window.location.hash.substring(1));
   if (
     title === "Archive" ||
     (title === "Home" && posts?.length === 1)
-  ) {
+  )
     posts.forEach(post => {
       if (post)
         populatePreview(post);
     });
-  }
 }
 
 function download(path) {
@@ -257,9 +251,8 @@ function download(path) {
       const post = parseMarkdown(this.responseText);
       post["Body"] = post["Body"].replaceAll("](images/", "](posts/images/");
       allPosts[post["Title"]?.at(0)] = post;
-      if (decodeURI(window.location.hash.substr(1)) === post["Title"]?.at(0)) {
+      if (decodeURI(window.location.hash.substring(1)) === post["Title"]?.at(0))
         loadPage(post["Title"]?.at(0));
-      }
     }
   };
   xhr.send();
@@ -288,7 +281,7 @@ function updatePage(element, isBlog, pop = false) {
   clearPage();
   const title = element.innerText
     || element.alt
-    || decodeURI(window.location.hash.substr(1));
+    || decodeURI(window.location.hash.substring(1));
   if (!isBlog) {
     newActive(element);
     setTitle(title);
@@ -296,9 +289,8 @@ function updatePage(element, isBlog, pop = false) {
     newActive(document.getElementsByClassName("link")[1]);
     setTitle("Archive");
   }
-  if (!pop) {
+  if (!pop)
     window.history.pushState(title, title, "#" + encodeURI(title));
-  }
   if (allPosts[title])
     setFull(allPosts[title]);
   else
@@ -367,16 +359,14 @@ function startMarkdown() {
   const renderer = {
     code(code, language, escaped) {
       const math = makeMath(code);
-      if (math && !language) {
+      if (math && !language)
         return math;
-      }
       return false;
     },
     codespan(code) {
       const math = makeMath(code);
-      if (math) {
+      if (math)
         return math;
-      }
       return false;
     },
     table(head, body) {
@@ -395,9 +385,8 @@ function startMarkdown() {
       breaks: true,
       headerIds: false,
       highlight: (code, language) => {
-        if (hljs.listLanguages().includes(language)) {
+        if (hljs.listLanguages().includes(language))
           return hljs.highlight(code, { language }).value;
-        }
         return code;
       },
     })
@@ -407,16 +396,15 @@ function startMarkdown() {
 function start() {
   downloadAll("posts/_all.md"); // Download all posts
   startMarkdown();
-  const title = decodeURI(window.location.hash.substr(1)) || "Home";
+  const title = decodeURI(window.location.hash.substring(1)) || "Home";
   window.location.hash = encodeURI(title);
   document.querySelectorAll(".link").forEach(link => {
     link.onclick = e => {
       updatePage(e.target, false);
     };
     link.onkeyup = e => {
-      if (e.key === "Enter") {
+      if (e.key === "Enter")
         updatePage(e.target, false);
-      }
     };
   });
   window.onpopstate = e => {
