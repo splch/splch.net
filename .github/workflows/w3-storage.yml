@@ -1,0 +1,24 @@
+name: Pin to IPFS
+
+on:
+  push:
+    branches:
+      - main # Set a branch to deploy
+  pull_request:
+    branches:
+      - main # Set a branch to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+        WEB3_STORAGE_TOKEN: ${{ secrets.WEB3_STORAGE }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: web3-storage/add-to-web3@v2
+        id: web3
+        with:
+            web3_token: ${{ secrets.WEB3_STORAGE }}
+            path_to_add: ""
+      - run: echo ${{ steps.web3.outputs.cid }}
+      - run: echo ${{ steps.web3.outputs.url }}
