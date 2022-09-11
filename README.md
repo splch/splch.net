@@ -11,5 +11,4 @@ blogging with hugo and github pages + actions
 ## developing
 
 1. clone this repo
-2. run `git submodule update --init --recursive` to download the theme
-3. run `hugo serve` to build and serve the site
+2. run `hugo serve` to build and serve the site

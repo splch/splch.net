@@ -3,10 +3,10 @@ name: Pin to IPFS
 on:
   push:
     branches:
-      - main # Set a branch to deploy
+      - gh-pages # Set a branch to deploy
   pull_request:
     branches:
-      - main # Set a branch to deploy
+      - gh-pages # Set a branch to deploy
 
 jobs:
   deploy:
