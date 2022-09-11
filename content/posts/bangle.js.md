@@ -16,3 +16,7 @@ The first project I began was ambitious as I attempted a Pokemon Battle watchfac
 I realized that this widget should only run when I'm wearing the watch, so I then began work on a library to detect if someone is wearing the watch.
 
 The development environment around Bangle.js is fantastic and has enabled me to have fun while adding features that are useful to me and the watch's battery!
+
+- https://github.com/espruino/BangleApps/pull/2121
+- http://forum.espruino.com/conversations/379538/
+- https://github.com/espruino/BangleApps/tree/master/apps/widtwenties
