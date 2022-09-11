@@ -1,10 +1,7 @@
 name: Pin to IPFS
 
 on:
-  push:
-    branches:
-      - gh-pages # Set a branch to deploy
-  pull_request:
+  dynamic:
     branches:
       - gh-pages # Set a branch to deploy
 
