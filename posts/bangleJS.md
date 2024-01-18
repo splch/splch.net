@@ -1,7 +1,7 @@
 ---
 title: Bangle.js Watch
 date: 2022-09-10
-image: bangle.jpg
+image: bangle.webp
 draft: false
 ---
 
