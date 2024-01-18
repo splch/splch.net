@@ -65,10 +65,10 @@ viz = dtreeviz(
 viz
 ```
 
-![Optimal Decision Tree](/images/bangleTree.webp)
+![Optimal Decision Tree](images/bangleTree.webp)
 
 The development environment around Bangle.js is fantastic and has enabled me to have fun while adding features that are healthy to me and the watch's battery!
 
 - https://github.com/espruino/BangleApps/pull/2121
 - http://forum.espruino.com/conversations/379538/
-- https://github.com/espruino/BangleApps/tree/master/apps/widtwenties
+- https://github.com/espruino/BangleApps/tree/master/apps/twenties
