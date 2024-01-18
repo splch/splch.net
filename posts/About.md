@@ -36,8 +36,8 @@ Languages I'm Learning:
 
 <div style="display:flex;align-items:center;overflow-x:auto;">
 	<div class="badge">
-		<img src="https://img.shields.io/mozilla-observatory/grade/slc.is?publish&logo=mozilla&style=for-the-badge">
-		<img src="https://img.shields.io/w3c-validation/default?logo=html5&style=for-the-badge&targetUrl=https%3A%2F%2Fslc.is">
+		<img src="https://img.shields.io/mozilla-observatory/grade/splch.net?publish&logo=mozilla&style=for-the-badge">
+		<img src="https://img.shields.io/w3c-validation/default?logo=html5&style=for-the-badge&targetUrl=https%3A%2F%2Fsplch.net">
 	</div>
 	<a href="http://u.fsf.org/16e"><img class="badge" src="posts/images/badges/fsf.png" alt="Free Software Foundation"></a>
 	<a href="https://www.eff.org/join"><img class="badge" src="posts/images/badges/eff.png" alt="Join EFF!"></a>
