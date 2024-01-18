@@ -165,7 +165,6 @@ pre>code {
 pre>code:focus,
 pre>code:hover {
   border-left: 0.5em solid rgb(var(--light));
-  filter: invert();
   outline: none;
 }
 

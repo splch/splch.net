@@ -5,8 +5,6 @@ image: multiply.webp
 draft: false
 ---
 
-![New Multiplication Method](images/multiply.webp)
-
 ## Running Average
 
 If I have the average of 1 and 2, I can add 3 to that average:
