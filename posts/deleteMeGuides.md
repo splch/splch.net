@@ -229,4 +229,4 @@ for i, url in enumerate(sorted(guides)):
     sleep(1)
 ```
 
-[Combined Guides](data/deleteme.pdf)
+[Combined Guides](posts/data/deleteme.pdf)

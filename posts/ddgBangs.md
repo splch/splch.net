@@ -54,4 +54,4 @@ On the site, I simply looked at the network history and saw a file requested: ht
 
 Amazingly, there are `13,565` !bangs. This is a short read, but the script may prove useful if <abbr title="DuckDuckGo">DDG</abbr> changes the file from where !bangs are loaded.
 
-You can download [this text file](data/ddgBangs.txt) which contains every !bang organized under category in alphabetical order.
+You can download [this text file](posts/data/ddgBangs.txt) which contains every !bang organized under category in alphabetical order.
