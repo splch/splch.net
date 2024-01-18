@@ -5,11 +5,8 @@ image: friends.webp, buddies.webp
 draft: true
 ---
 
-I'm a quantum advocate and the proud author of [Quantum Tales](https://quantumtales.org).
+I'm a senior software engineer and musician. My dreams are to create art with computers and help quantum grow big. I'm currently working for [IonQ](https://ionq.com/) to integrate quantum frameworks with their quantum computers.
 
-Some of my posts have reached the top of [Hacker News](https://news.ycombinator.com/)!
-
-1. [What is the most free TLD?](https://news.ycombinator.com/item?id=28361320)
-2. [Best Wordle guessing strategy](https://news.ycombinator.com/item?id=29928263)
+The [Posts](#Archive) page contains all my posts, and [About](#About) serves as a repository for miscellaneous information _(contact, interests, etc.)_. My [study guide](https://gist.github.com/splch/d32adc1ecd24cccb1b2f44039b337837) is available as well.
 
 Have a look around and feel free to share! 🥳
