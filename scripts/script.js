@@ -322,11 +322,20 @@ function loadPage(title, pop) {
 }
 
 function toHTML(markdown) {
-  return DOMPurify.sanitize(marked.parse(markdown), {
+  let html = DOMPurify.sanitize(marked.parse(markdown), {
     ADD_TAGS: ["iframe"],
     ADD_ATTR: ["allow"],
     ALLOW_UNKNOWN_PROTOCOLS: true,
   });
+
+  let div = document.createElement("div");
+  div.innerHTML = html;
+
+  div.querySelectorAll('pre code').forEach((element) => {
+    hljs.highlightElement(element);
+  });
+
+  return div.innerHTML;
 }
 
 function parseText(markdown) {
@@ -381,17 +390,7 @@ function startMarkdown() {
       );
     },
   };
-  marked
-    .setOptions({
-      breaks: true,
-      headerIds: false,
-      highlight: (code, language) => {
-        if (hljs.listLanguages().includes(language))
-          return hljs.highlight(code, { language }).value;
-        return code;
-      },
-    })
-    .use({ renderer });
+  marked.use({ renderer });
 }
 
 function start() {
