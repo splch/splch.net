@@ -7,6 +7,7 @@ assemblyPico.md
 averageRGB.md
 backyardQC.md
 backyardQuantumComputer.md
+bangleJS.md
 bestWordleStrategy.md
 blockchain.md
 brownButterCookieRecipe.md
