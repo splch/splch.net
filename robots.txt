@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /posts/images/
+Disallow: /posts/data/
+
+Allow: /#*
