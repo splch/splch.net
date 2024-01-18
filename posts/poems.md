@@ -1,5 +1,5 @@
 ---
-title: Poems
+title: AI-Generated Poems
 date: 2019-09-15
 image: alexandre.jpg
 draft: false
