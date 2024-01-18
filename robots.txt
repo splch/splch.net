@@ -1,7 +1,5 @@
 User-agent: *
 
-Crawl-Delay: 10
-
 Disallow: /posts/images/
 Disallow: /posts/data/
 
