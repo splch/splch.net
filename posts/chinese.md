@@ -11,7 +11,7 @@ I used the [SUBTLEX-CH frequency list](https://doi.org/10.1371/journal.pone.0010
 
 There are 2,683 words on this page. From rough estimates, this should cover <abbr title="26303467 / 33546516">78</abbr>% of spoken Mandarin. The lists are sorted first by total counts of each part of speech, then by the word itself. For example, verbs are the most common words in Mandarin, and the most common verb is "是". So, the list begins with Verbs and its first entry is "是". The second piece of information is the pronunciation in English, called pinyin. After that is the English translation and finally the frequency of the word. This frequency is in scientific notation, so `950,000` is `9.5e5`.
 
-If you'd like to view the entire list, download the [JSON](data/中文.json) file. Its structure is:
+If you'd like to view the entire list, download the [JSON](posts/data/中文.json) file. Its structure is:
 
 ```json
 {
