@@ -9,7 +9,7 @@ After seeing [Kris' solar-powered website](https://solar.lowtechmagazine.com/), 
 
 There is a [thorough article](https://www.jeremymorgan.com/tutorials/raspberry-pi/raspberry-pi-web-server-comparison/) comparing servers' abilities handling different types of data; however, I opted to use Go's built-in web server. My primary reason is the ease of adding new features with Go is too much to trade for C's minor improvements.
 
-The way my site works is it populates the initial HTML with markdown files. Instead of reloading an entire page, files are dynamically requested. Markdown rendering occurs on the client-side, reducing server usage past what an established framework currently offers (to my knowledge). If you'd like to check out how my site works, visit the [GitHub repo](https://github.com/splch/slc.is).
+The way my site works is it populates the initial HTML with markdown files. Instead of reloading an entire page, files are dynamically requested. Markdown rendering occurs on the client-side, reducing server usage past what an established framework currently offers (to my knowledge). If you'd like to check out how my site works, visit the [GitHub repo](https://github.com/splch/splch.net).
 
 This isn't too big of a deal, though, because the Pi uses barely any energy. In fact, an average load only draws around 200 mA.
 

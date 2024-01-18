@@ -5,7 +5,7 @@ image: gocert.webp
 draft: false
 ---
 
-Despite an [earlier post](/#Future%20of%20Blockchain%20Domains) being so optimistic about the <abbr title="InterPlanetary File System">IPFS</abbr>, I decided to self-host this site. I'm only leaving IPFS because this site will never be popular enough to be on any node besides my own. In this way, I was already hosting from the start. It all began as a fun endeavor to apply Go, but has since led to a [certificate](https://github.com/splch/google-go-coursera) and obsessive refinement of the [server](https://observatory.mozilla.org/analyze/slc.is).
+Despite an [earlier post](/#Future%20of%20Blockchain%20Domains) being so optimistic about the <abbr title="InterPlanetary File System">IPFS</abbr>, I decided to self-host this site. I'm only leaving IPFS because this site will never be popular enough to be on any node besides my own. In this way, I was already hosting from the start. It all began as a fun endeavor to apply Go, but has since led to a [certificate](https://github.com/splch/google-go-coursera) and obsessive refinement of the [server](https://observatory.mozilla.org/analyze/splch.net).
 
 Most recently, I have added the ability to edit and create posts from within this site! There's quite a bit going on in the server... particularly in one file 😳, so I should look into splitting the code into separate files: one for setting up the server, and another for parsing the markdown.
 
