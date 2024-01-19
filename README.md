@@ -14,11 +14,7 @@ I'm using this for my own [blog](https://splch.net) and wanted to share the code
 
 # Features
 
-1.  KaTex Math Rendering
+1.  Marked Markdown Rendering
 2.  Highlight.js Syntax Highlighting
-3.  Marked Blog Post Markdown Rendering
+3.  KaTex Math Rendering
 4.  DOMPurify HTML Cleaner
-
-# Tutorial
-
-I explain how the template works in this [video]() if you'd like a quick rundown.
