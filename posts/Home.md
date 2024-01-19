@@ -1,7 +1,7 @@
 ---
 title: Home, Welcome to my site
 date:
-image: friends.webp, buddies.webp
+image: friends.webp, buddies.webp, salcedo.webp
 draft: true
 ---
 

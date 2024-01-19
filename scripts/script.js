@@ -264,8 +264,6 @@ const download = async (path) => {
       .replaceAll("](images/", "](posts/images/")
       .replaceAll("](data/", "](posts/data/");
     allPosts[post?.Title?.[0]] = post;
-    const hashTitle = decodeURI(window.location.hash.substring(1));
-    if (hashTitle === post?.Title?.[0]) loadPage(post?.Title?.[0]);
   } catch (error) {
     console.error("Error occurred while downloading:", error);
   }
@@ -329,7 +327,7 @@ const loadPage = (title, pop) => {
 };
 
 const toHTML = (markdown) => {
-  let html = DOMPurify.sanitize(marked.parse(markdown), {
+  const html = DOMPurify.sanitize(marked.parse(markdown), {
     ADD_TAGS: ["iframe"],
     ADD_ATTR: ["allow"],
     ALLOW_UNKNOWN_PROTOCOLS: true,
@@ -343,7 +341,7 @@ const toHTML = (markdown) => {
 };
 
 const parseText = (markdown) => {
-  let div = document.createElement("div");
+  const div = document.createElement("div");
   div.innerHTML = toHTML(markdown);
   return div.innerText;
 };
@@ -395,8 +393,8 @@ const startMarkdown = () => {
   marked.use({ renderer });
 };
 
-const start = () => {
-  downloadAll("posts/_all.md"); // Download all posts
+const start = async () => {
+  await downloadAll("posts/_all.md"); // Download all posts
   startMarkdown();
   const title = decodeURI(window.location.hash.substring(1)) || "Home";
   window.location.hash = encodeURI(title);
@@ -410,6 +408,7 @@ const start = () => {
   window.onpopstate = (e) => {
     loadPage(e.state, true);
   };
+  loadPage(title, false); // Load page
   console.log(
     "%cQuite a sight, isn't it? 😉",
     "color: " +
