@@ -1,27 +1,27 @@
 let allPosts = {};
 let imageChange = { interval: null, image: 1 };
 
-function createHr() {
+const createHr = () => {
   const hr = document.createElement("hr");
   hr.classList.add("template");
   return hr;
-}
+};
 
-function createP(text) {
+const createP = (text) => {
   const p = document.createElement("p");
   p.innerText = text;
   p.style.color = "#6f6f6f";
   p.style.margin = "0 0 0 2vh";
   p.style.overflow = "auto";
   return p;
-}
+};
 
-function createImg(alt, src) {
+const createImg = (alt, src) => {
   const img = document.createElement("img");
   const firstSrc = src?.[0];
 
   if (firstSrc) {
-    let imgSrc = firstSrc.startsWith("http")
+    const imgSrc = firstSrc.startsWith("http")
       ? firstSrc
       : `posts/images/${firstSrc}`;
     img.alt = alt;
@@ -38,18 +38,18 @@ function createImg(alt, src) {
     img.style.width = "0";
   }
   return img;
-}
+};
 
-function createDiv() {
+const createDiv = () => {
   const div = document.createElement("div");
   div.classList.add("template");
   div.style.alignItems = "center";
   div.style.display = "flex";
   div.style.minHeight = "10vh"; // height for lazy loading
   return div;
-}
+};
 
-function createH2(text) {
+const createH2 = (text) => {
   const h2 = document.createElement("h2");
   h2.classList.add("template");
   h2.innerText = text;
@@ -59,14 +59,14 @@ function createH2(text) {
   };
   h2.tabIndex = "0";
   return h2;
-}
+};
 
-function populatePreview(post) {
-  const title = post["Title"]?.at(post["Title"]?.length - 1);
+const populatePreview = (post) => {
+  const title = post?.Title?.[post?.Title?.length - 1];
   const h2 = createH2(title);
   const div = createDiv();
-  const img = createImg(title, post["Image"]);
-  const p = createP(parseText(post["Body"].split(/\s/).slice(0, 25).join(" ")));
+  const img = createImg(title, post?.Image);
+  const p = createP(parseText(post?.Body?.split(/\s/).slice(0, 25).join(" ")));
   const hr = createHr();
   const bottom = document.getElementById("bottom");
   bottom.appendChild(hr);
@@ -74,9 +74,9 @@ function populatePreview(post) {
   div.appendChild(img);
   div.appendChild(p);
   bottom.appendChild(div);
-}
+};
 
-function createSearch(query = null) {
+const createSearch = (query = null) => {
   const div = document.createElement("div");
   div.style.textAlign = "right";
   div.classList.add("template");
@@ -88,12 +88,12 @@ function createSearch(query = null) {
       if (e.target.value) {
         queryPosts = [];
         for (const [_, post] of Object.entries(allPosts).sort(
-          (a, b) => b[1]["Date"] - a[1]["Date"]
+          (a, b) => b[1]?.Date - a[1]?.Date
         )) {
-          if (!post["Draft"])
+          if (!post?.Draft)
             if (
-              post["Title"].includes(e.target.value) ||
-              post["Body"].includes(e.target.value)
+              post?.Title?.includes(e.target.value) ||
+              post?.Body?.includes(e.target.value)
             )
               // todo fix search casing
               queryPosts.push(post);
@@ -109,11 +109,11 @@ function createSearch(query = null) {
     search.value = query;
     search.focus();
   }
-}
+};
 
-function setBody(markdown, title) {
+const setBody = (markdown, title) => {
   if (markdown) {
-    let el = document.createElement("div");
+    const el = document.createElement("div");
     el.innerHTML = toHTML(markdown);
     el.classList.add("template");
     document.getElementById("top").appendChild(el);
@@ -121,28 +121,26 @@ function setBody(markdown, title) {
   if (title === "Archive") {
     createSearch();
     for (const [_, post] of Object.entries(allPosts).sort(
-      (a, b) => b[1]["Date"] - a[1]["Date"]
+      (a, b) => b[1]?.Date - a[1]?.Date
     )) {
-      if (!post["Draft"]) populatePreview(post);
+      if (!post?.Draft) populatePreview(post);
     }
   }
-}
+};
 
-function updateImg(src, title) {
+const updateImg = (src, title) => {
   if (src) {
-    let imgSrc;
-    if (src.startsWith("http")) imgSrc = src;
-    else imgSrc = `posts/images/${src}`;
+    const imgSrc = src.startsWith("http") ? src : `posts/images/${src}`;
     const cover = document.getElementById("cover");
     cover.alt = title;
     cover.src = imgSrc;
     cover.style.display = "inline";
   }
-}
+};
 
-function setImages(srcs, title) {
+const setImages = (srcs, title) => {
   clearInterval(imageChange.interval);
-  updateImg(srcs?.at(0), title);
+  updateImg(srcs?.[0], title);
   let image = 1;
   if (srcs?.length > 1) {
     imageChange.interval = setInterval((_) => {
@@ -151,9 +149,9 @@ function setImages(srcs, title) {
       image++;
     }, 4000);
   }
-}
+};
 
-function setPageInfo(title, date) {
+const setPageInfo = (title, date) => {
   const titleElement = document.getElementById("title");
   const dateElement = document.getElementById("date");
   titleElement.innerText = title;
@@ -161,17 +159,17 @@ function setPageInfo(title, date) {
     document.head.querySelector("[name~=date][content]").content = date;
     dateElement.innerText = date.toLocaleDateString("en-US");
   }
-}
+};
 
-function setPage(post) {
-  const title = post["Title"]?.at(post["Title"]?.length - 1);
-  setPageInfo(title, post["Date"]);
-  setImages(post["Image"], title);
-  setBody(post["Body"], post["Title"]?.at(0));
+const setPage = (post) => {
+  const title = post?.Title?.[post?.Title?.length - 1];
+  setPageInfo(title, post?.Date);
+  setImages(post?.Image, title);
+  setBody(post?.Body, post?.Title?.[0]);
   window.scrollTo(0, 0);
-}
+};
 
-function parseMarkdown(markdown) {
+const parseMarkdown = (markdown) => {
   let post = {};
   post["Title"] = markdown
     ?.split("title: ")
@@ -190,16 +188,16 @@ function parseMarkdown(markdown) {
     markdown?.split("draft: ")?.at(1)?.split("\n")?.at(0) !== "false";
   post["Body"] = markdown?.split("---\n").slice(2).join("---\n");
   return post;
-}
+};
 
-function clearTemplates() {
+const clearTemplates = () => {
   const templates = document.querySelectorAll(".template");
   templates.forEach((e) => {
     e.parentElement.removeChild(e);
   });
-}
+};
 
-function clearPage() {
+const clearPage = () => {
   clearInterval(imageChange.interval);
   clearTemplates();
   const titleElement = document.getElementById("title");
@@ -212,17 +210,17 @@ function clearPage() {
   cover.src = "";
   cover.alt = "";
   bottom.style.removeProperty("pointer-events");
-}
+};
 
-function newActive(element) {
+const newActive = (element) => {
   const links = document.querySelectorAll(".link");
   links.forEach((link) => {
     link.classList.remove("active");
   });
   element.classList.add("active");
-}
+};
 
-function setSearch(posts, query) {
+const setSearch = (posts, query) => {
   const archiveTitle = decodeURI(window.location.hash.substring(1));
   if (posts && archiveTitle === "Archive") {
     clearTemplates();
@@ -231,60 +229,65 @@ function setSearch(posts, query) {
       populatePreview(post);
     });
   }
-}
+};
 
-function setFull(post) {
+const setFull = (post) => {
   clearPage();
   setPage(post);
   const homeTitle = decodeURI(window.location.hash.substring(1));
   if (homeTitle === "Home") setPreview(latestPost(allPosts));
-}
+};
 
-function latestPost() {
+const latestPost = () => {
   for (const [_, post] of Object.entries(allPosts).sort(
-    (a, b) => b[1]["Date"] - a[1]["Date"]
+    (a, b) => b[1]?.Date - a[1]?.Date
   )) {
-    if (!post["Draft"]) return [post];
+    if (!post?.Draft) return [post];
   }
-}
+};
 
-function setPreview(posts) {
+const setPreview = (posts) => {
   const title = decodeURI(window.location.hash.substring(1));
   if (title === "Archive" || (title === "Home" && posts?.length === 1)) {
     posts.forEach((post) => {
       if (post) populatePreview(post);
     });
   }
-}
+};
 
-function download(path) {
-  fetch(path)
-    .then((response) => response.text())
-    .then((text) => {
-      const post = parseMarkdown(text);
-      post["Body"] = post["Body"].replaceAll("](images/", "](posts/images/");
-      allPosts[post["Title"]?.at(0)] = post;
-      const hashTitle = decodeURI(window.location.hash.substring(1));
-      if (hashTitle === post["Title"]?.at(0)) loadPage(post["Title"]?.at(0));
-    });
-}
+const download = async (path) => {
+  try {
+    const response = await fetch(path);
+    const text = await response.text();
+    const post = parseMarkdown(text);
+    post["Body"] = post["Body"]
+      .replaceAll("](images/", "](posts/images/")
+      .replaceAll("](data/", "](posts/data/");
+    allPosts[post?.Title?.[0]] = post;
+    const hashTitle = decodeURI(window.location.hash.substring(1));
+    if (hashTitle === post?.Title?.[0]) loadPage(post?.Title?.[0]);
+  } catch (error) {
+    console.error("Error occurred while downloading:", error);
+  }
+};
 
-function downloadAll(path) {
-  const parentDirectory = path.split("/")?.at(0);
-  fetch(path)
-    .then((response) => response.text())
-    .then((text) => {
-      text.split("\n").forEach((path) => {
-        if (path.length) download(`${parentDirectory}/${path}`);
-      });
-    });
-}
+const downloadAll = async (path) => {
+  const response = await fetch(path);
+  const text = await response.text();
+  const parentDirectory = path.split("/")?.[0];
+  const paths = text.split("\n");
+  for (const path of paths) {
+    if (path.length) {
+      await download(`${parentDirectory}/${path}`);
+    }
+  }
+};
 
-function setTitle(title) {
+const setTitle = (title) => {
   document.title = title + " | " + window.location.hostname;
-}
+};
 
-function updatePage(element, isBlog, pop = false) {
+const updatePage = (element, isBlog, pop = false) => {
   clearPage();
   const title =
     element.innerText ||
@@ -300,9 +303,9 @@ function updatePage(element, isBlog, pop = false) {
   if (!pop) window.history.pushState(title, title, "#" + encodeURI(title));
   if (allPosts[title]) setFull(allPosts[title]);
   else setFull(allPosts["Error Page Not Found"]);
-}
+};
 
-function getElementByTitle(title) {
+const getElementByTitle = (title) => {
   let element, isBlog;
   switch (title) {
     case "Home":
@@ -318,37 +321,34 @@ function getElementByTitle(title) {
       break;
   }
   return { element, isBlog };
-}
+};
 
-function loadPage(title, pop) {
+const loadPage = (title, pop) => {
   const { element, isBlog } = getElementByTitle(title);
   updatePage(element, isBlog, pop);
-}
+};
 
-function toHTML(markdown) {
+const toHTML = (markdown) => {
   let html = DOMPurify.sanitize(marked.parse(markdown), {
     ADD_TAGS: ["iframe"],
     ADD_ATTR: ["allow"],
     ALLOW_UNKNOWN_PROTOCOLS: true,
   });
-
-  let div = document.createElement("div");
+  const div = document.createElement("div");
   div.innerHTML = html;
-
   div.querySelectorAll("pre code").forEach((element) => {
     hljs.highlightElement(element);
   });
-
   return div.innerHTML;
-}
+};
 
-function parseText(markdown) {
+const parseText = (markdown) => {
   let div = document.createElement("div");
   div.innerHTML = toHTML(markdown);
   return div.innerText;
-}
+};
 
-function startMarkdown() {
+const startMarkdown = () => {
   function makeMath(expr) {
     let n, displayMode;
     if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
@@ -393,9 +393,9 @@ function startMarkdown() {
     },
   };
   marked.use({ renderer });
-}
+};
 
-function start() {
+const start = () => {
   downloadAll("posts/_all.md"); // Download all posts
   startMarkdown();
   const title = decodeURI(window.location.hash.substring(1)) || "Home";
@@ -418,6 +418,6 @@ function start() {
     getComputedStyle(document.body).getPropertyValue("--font-size") +
     ";"
   );
-}
+};
 
 window.onload = start;
