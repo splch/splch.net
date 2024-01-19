@@ -232,7 +232,6 @@ const setSearch = (posts, query) => {
 };
 
 const setFull = (post) => {
-  clearPage();
   setPage(post);
   const homeTitle = decodeURI(window.location.hash.substring(1));
   if (homeTitle === "Home") setPreview(latestPost(allPosts));
