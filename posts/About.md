@@ -10,7 +10,7 @@ draft: true
 Spencer Churchill
 ```
 
-# [Résumé](posts/data/resume/resume.pdf)
+# [Résumé](data/resume/resume.pdf)
 
 I'm always listening to or making music. But when I'm up for a challenge, I like to code all sorts of things. I make [chrome extensions](https://chrome.google.com/webstore/search/splch?_category=extensions) when I need tools and work on quantum and <abbr title="Artificial Intelligence">AI</abbr> projects when I want to push myself.
 

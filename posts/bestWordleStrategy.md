@@ -17,7 +17,7 @@ Another option is to maximize the gradient (<abbr title="Machine Learning">ML</a
 
 This is hand-wavy because I mostly want to dive into the <abbr title="Computer Science">CS</abbr>, but even this can be calculated… I'll maybe do that as well. Instead, I'll see when the letter frequencies plateau and conclude that guessing letters past that point just offer diminishing returns.
 
-Here's the list of all [wordle words](posts/data/wordles.txt) as of writing this, though I doubt it'll change much. It might be helpful to have in case you want to run your own tests or follow along.
+Here's the list of all [wordle words](data/wordles.txt) as of writing this, though I doubt it'll change much. It might be helpful to have in case you want to run your own tests or follow along.
 
 <details>
 
@@ -29,6 +29,7 @@ We'll begin by importing commonly-used packages since it should be highly access
 from matplotlib import pyplot as plt
 from itertools import permutations
 ```
+
 Now, we just define some helper functions that iterate through the Wordle words and keep track of different patterns.
 
 ```python
@@ -81,7 +82,7 @@ plt.show()
 ![Letter Distribution](images/wordLetters.webp)
 
 | Letter | Count |
-|--------|------:|
+| ------ | ----: |
 | s      |  6665 |
 | e      |  6662 |
 | a      |  5990 |
@@ -144,7 +145,7 @@ for word in second:
 ```
 
 | Word  | Score |
-|-------|------:|
+| ----- | ----: |
 | aeros |  8219 |
 | soare |  7138 |
 | arose |  4708 |
@@ -180,7 +181,7 @@ for word in permutations(letters):
 From this analysis, here's a table to help make the best starting Wordle guesses.
 
 | Exploration | Words |       |       |
-|-------------|-------|-------|-------|
+| ----------- | ----- | ----- | ----- |
 | 1           | AEROS |       |       |
 | 2           | AEROS | UNLIT |       |
 | 3           | AEROS | CLINT | DUMPY |
@@ -189,10 +190,10 @@ From this analysis, here's a table to help make the best starting Wordle guesses
 
 # Solution
 
-It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. You can also view updated code as a [PDF](posts/data/wordleCode.pdf).
+It was mentioned in a [Hacker News comment](https://news.ycombinator.com/item?id=29928263#29930961) that there are actually two lists: one for guessing and another for possible answers. Using this, I updated the best first couple words. I'll also include these, but deriving it is simple with the code above. You can also view updated code as a [PDF](data/wordleCode.pdf).
 
 | Exploration | Words |       |       |
-|-------------|-------|-------|-------|
+| ----------- | ----- | ----- | ----- |
 | 1           | ROATE |       |       |
 | 2           | ROATE | PULIS |       |
 | 3           | ROATE | PULIS | CHYND |
