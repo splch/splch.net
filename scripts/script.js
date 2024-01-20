@@ -263,6 +263,8 @@ const download = async (path) => {
       .replaceAll("](images/", "](posts/images/")
       .replaceAll("](data/", "](posts/data/");
     allPosts[post?.Title?.[0]] = post;
+    if (decodeURI(window.location.hash.substring(1)) === post?.Title?.[0] && Object.keys(allPosts).length > 1)
+      loadPage(post?.Title?.[0]);
   } catch (error) {
     console.error("Error occurred while downloading:", error);
   }
