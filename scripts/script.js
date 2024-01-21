@@ -221,8 +221,7 @@ const newActive = (element) => {
 };
 
 const setSearch = (posts, query) => {
-  const archiveTitle = decodeURI(window.location.hash.substring(1));
-  if (posts && archiveTitle === "Archive") {
+  if (posts && decodeURI(window.location.hash.substring(1)) === "Archive") {
     clearTemplates();
     createSearch(query);
     posts.forEach((post) => {
@@ -233,8 +232,8 @@ const setSearch = (posts, query) => {
 
 const setFull = (post) => {
   setPage(post);
-  const homeTitle = decodeURI(window.location.hash.substring(1));
-  if (homeTitle === "Home") setPreview(latestPost(allPosts));
+  if (decodeURI(window.location.hash.substring(1)) === "Home")
+    setPreview(latestPost(allPosts));
 };
 
 const latestPost = () => {
@@ -263,7 +262,10 @@ const download = async (path) => {
       .replaceAll("](images/", "](posts/images/")
       .replaceAll("](data/", "](posts/data/");
     allPosts[post?.Title?.[0]] = post;
-    if (decodeURI(window.location.hash.substring(1)) === post?.Title?.[0] && Object.keys(allPosts).length > 1)
+    if (
+      decodeURI(window.location.hash.substring(1)) === post?.Title?.[0] &&
+      Object.keys(allPosts).length > 1
+    )
       loadPage(post?.Title?.[0]);
   } catch (error) {
     console.error("Error occurred while downloading:", error);
@@ -280,6 +282,7 @@ const downloadAll = async (path) => {
       await download(`${parentDirectory}/${path}`);
     }
   }
+  loadPage(decodeURI(window.location.hash.substring(1)));
 };
 
 const setTitle = (title) => {
@@ -395,7 +398,6 @@ const startMarkdown = () => {
 };
 
 const start = async () => {
-  await downloadAll("posts/_all.md"); // Download all posts
   startMarkdown();
   const title = decodeURI(window.location.hash.substring(1)) || "Home";
   window.location.hash = encodeURI(title);
@@ -409,7 +411,6 @@ const start = async () => {
   window.onpopstate = (e) => {
     loadPage(e.state, true);
   };
-  loadPage(title, false); // Load page
   console.log(
     "%cQuite a sight, isn't it? 😉",
     "color: " +
@@ -420,4 +421,5 @@ const start = async () => {
   );
 };
 
+downloadAll("posts/_all.md"); // Download all posts
 window.onload = start;
