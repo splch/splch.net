@@ -74,6 +74,12 @@ const toHTML = (markdown) => {
   const div = document.createElement("div");
   div.innerHTML = html;
   div.querySelectorAll("pre code").forEach((el) => hljs.highlightElement(el));
+  div.querySelectorAll("table").forEach((table) => {
+    const wrapper = document.createElement("div");
+    wrapper.style.overflowX = "auto";
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
   return div.innerHTML;
 };
 
@@ -278,18 +284,15 @@ const startMarkdown = () => {
 
   marked.use({
     renderer: {
-      code(code, language) {
-        if (!language) {
-          const math = makeMath(code);
+      code({ text, lang }) {
+        if (!lang) {
+          const math = makeMath(text);
           if (math) return math;
         }
         return false;
       },
-      codespan(code) {
-        return makeMath(code) || false;
-      },
-      table(head, body) {
-        return `<div style='overflow-x:auto;'><table><thead>${head}</thead>${body ? `<tbody>${body}</tbody>` : ""}</table></div>\n`;
+      codespan({ text }) {
+        return makeMath(text) || false;
       },
     },
   });

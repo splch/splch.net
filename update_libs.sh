@@ -2,7 +2,7 @@ echo "Updating scripts"
 
 curl -s -S -Lo scripts/highlight.min.js https://unpkg.com/@highlightjs/cdn-assets/highlight.min.js
 curl -s -S -Lo scripts/katex.min.js https://unpkg.com/katex/dist/katex.min.js
-curl -s -S -Lo scripts/marked.min.js https://unpkg.com/marked/marked.min.js
+curl -s -S -Lo scripts/marked.min.js https://unpkg.com/marked/lib/marked.umd.js
 curl -s -S -Lo scripts/purify.min.js https://raw.githubusercontent.com/cure53/DOMPurify/main/dist/purify.min.js
 curl -s -S -Lo scripts/purify.min.js.map https://raw.githubusercontent.com/cure53/DOMPurify/main/dist/purify.min.js.map
 
