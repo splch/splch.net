@@ -21,3 +21,13 @@ p {
 img {
   max-width: 100%;
 }
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.carousel img {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}

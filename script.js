@@ -20,13 +20,20 @@ async function discover() {
   )
 }
 
+const tags = {
+  image: v => `<div class="carousel">${v.split(',').map(s => s.trim()).filter(Boolean)
+    .map(s => `<img src="${s.startsWith('http') ? s : `images/${s}`}">`).join('')}</div>`
+}
+
 const content = document.getElementById('content')
 let entries, posts
 
 function render() {
   const id = location.hash.slice(2)
   if (id) {
-    content.innerHTML = marked.parse((entries[id] || entries['not-found']).body)
+    const entry = entries[id] || entries['not-found']
+    const extras = Object.keys(tags).map(k => entry[k] ? tags[k](entry[k]) : '').join('')
+    content.innerHTML = extras + marked.parse(entry.body)
   } else {
     content.innerHTML = posts
       .map(p => `<a href="#/${p.id}"><strong>${p.title}</strong> <small>${p.date}</small></a>`)
