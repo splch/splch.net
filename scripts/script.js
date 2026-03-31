@@ -1,5 +1,19 @@
 let allPosts = {};
-let imageChange = { interval: null, image: 1 };
+let carouselInterval = null;
+
+const NAV_PAGES = new Set(["Home", "Archive", "Contact", "About"]);
+
+const getHash = () => decodeURI(window.location.hash.substring(1));
+
+const sortedPosts = () =>
+  Object.values(allPosts)
+    .filter((p) => !p.Draft)
+    .sort((a, b) => b.Date - a.Date);
+
+const displayTitle = (post) => post?.Title?.[post.Title.length - 1];
+
+const clearTemplates = () =>
+  document.querySelectorAll(".template").forEach((el) => el.remove());
 
 const createHr = () => {
   const hr = document.createElement("hr");
@@ -10,29 +24,22 @@ const createHr = () => {
 const createP = (text) => {
   const p = document.createElement("p");
   p.innerText = text;
-  p.style.color = "#6f6f6f";
-  p.style.margin = "0 0 0 2vh";
-  p.style.overflow = "auto";
+  p.classList.add("preview-text");
   return p;
 };
 
 const createImg = (alt, src) => {
   const img = document.createElement("img");
   const firstSrc = src?.[0];
-
   if (firstSrc) {
-    const imgSrc = firstSrc.startsWith("http")
-      ? firstSrc
-      : `posts/images/${firstSrc}`;
     img.alt = alt;
     img.loading = "lazy";
-    img.onclick = (e) => updatePage(e.target, true);
+    img.onclick = () => updatePage(alt);
     img.onkeyup = (e) => {
-      if (e.key === "Enter") updatePage(e.target, true);
+      if (e.key === "Enter") updatePage(alt);
     };
-    img.src = imgSrc;
-    img.style.cursor = "pointer";
-    img.style.width = "15vh";
+    img.src = firstSrc.startsWith("http") ? firstSrc : `posts/images/${firstSrc}`;
+    img.classList.add("preview-img");
   } else {
     img.src = "";
     img.style.width = "0";
@@ -42,10 +49,7 @@ const createImg = (alt, src) => {
 
 const createDiv = () => {
   const div = document.createElement("div");
-  div.classList.add("template");
-  div.style.alignItems = "center";
-  div.style.display = "flex";
-  div.style.minHeight = "10vh"; // height for lazy loading
+  div.classList.add("template", "preview-container");
   return div;
 };
 
@@ -53,26 +57,42 @@ const createH2 = (text) => {
   const h2 = document.createElement("h2");
   h2.classList.add("template");
   h2.innerText = text;
-  h2.onclick = (e) => updatePage(e.target, true);
+  h2.onclick = () => updatePage(text);
   h2.onkeyup = (e) => {
-    if (e.key === "Enter") updatePage(e.target, true);
+    if (e.key === "Enter") updatePage(text);
   };
   h2.tabIndex = "0";
   return h2;
 };
 
+const toHTML = (markdown) => {
+  const html = DOMPurify.sanitize(marked.parse(markdown), {
+    ADD_TAGS: ["iframe"],
+    ADD_ATTR: ["allow"],
+    ALLOW_UNKNOWN_PROTOCOLS: true,
+  });
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  div.querySelectorAll("pre code").forEach((el) => hljs.highlightElement(el));
+  return div.innerHTML;
+};
+
+const parseText = (markdown) => {
+  const div = document.createElement("div");
+  div.innerHTML = toHTML(markdown);
+  return div.innerText;
+};
+
 const populatePreview = (post) => {
-  const title = post?.Title?.[post?.Title?.length - 1];
-  const h2 = createH2(title);
-  const div = createDiv();
-  const img = createImg(title, post?.Image);
-  const p = createP(parseText(post?.Body?.split(/\s/).slice(0, 25).join(" ")));
-  const hr = createHr();
+  const title = displayTitle(post);
   const bottom = document.getElementById("bottom");
-  bottom.appendChild(hr);
-  bottom.appendChild(h2);
-  div.appendChild(img);
-  div.appendChild(p);
+  bottom.appendChild(createHr());
+  bottom.appendChild(createH2(title));
+  const div = createDiv();
+  div.appendChild(createImg(title, post?.Image));
+  div.appendChild(
+    createP(parseText(post?.Body?.split(/\s/).slice(0, 25).join(" ")))
+  );
   bottom.appendChild(div);
 };
 
@@ -82,27 +102,19 @@ const createSearch = (query = null) => {
   div.classList.add("template");
   const search = document.createElement("input");
   search.type = "text";
-  search.placeholder = "Search…";
+  search.placeholder = "Search\u2026";
+  search.id = "search";
   search.onkeyup = (e) => {
-    if (e.key === "Enter") {
-      if (e.target.value) {
-        queryPosts = [];
-        for (const [_, post] of Object.entries(allPosts).sort(
-          (a, b) => b[1]?.Date - a[1]?.Date
-        )) {
-          if (!post?.Draft)
-            if (
-              post?.Title?.includes(e.target.value) ||
-              post?.Body?.includes(e.target.value)
-            )
-              // todo fix search casing
-              queryPosts.push(post);
-        }
-        setSearch(queryPosts, e.target.value);
-      }
+    if (e.key === "Enter" && e.target.value) {
+      const q = e.target.value.toLowerCase();
+      const results = sortedPosts().filter(
+        (p) =>
+          p.Title?.join(" ").toLowerCase().includes(q) ||
+          p.Body?.toLowerCase().includes(q)
+      );
+      setSearch(results, e.target.value);
     }
   };
-  search.id = "search";
   div.appendChild(search);
   document.getElementById("top").appendChild(div);
   if (query) {
@@ -120,137 +132,93 @@ const setBody = (markdown, title) => {
   }
   if (title === "Archive") {
     createSearch();
-    for (const [_, post] of Object.entries(allPosts).sort(
-      (a, b) => b[1]?.Date - a[1]?.Date
-    )) {
-      if (!post?.Draft) populatePreview(post);
-    }
+    sortedPosts().forEach((post) => populatePreview(post));
   }
 };
 
 const updateImg = (src, title) => {
-  if (src) {
-    const imgSrc = src.startsWith("http") ? src : `posts/images/${src}`;
-    const cover = document.getElementById("cover");
-    cover.alt = title;
-    cover.src = imgSrc;
-    cover.style.display = "inline";
-  }
+  if (!src) return;
+  const cover = document.getElementById("cover");
+  cover.alt = title;
+  cover.src = src.startsWith("http") ? src : `posts/images/${src}`;
+  cover.style.display = "inline";
 };
 
 const setImages = (srcs, title) => {
-  clearInterval(imageChange.interval);
+  clearInterval(carouselInterval);
   updateImg(srcs?.[0], title);
-  let image = 1;
   if (srcs?.length > 1) {
-    imageChange.interval = setInterval((_) => {
-      const src = srcs[image % srcs.length];
-      updateImg(src, title);
-      image++;
+    let i = 1;
+    carouselInterval = setInterval(() => {
+      updateImg(srcs[i % srcs.length], title);
+      i++;
     }, 4000);
   }
 };
 
 const setPageInfo = (title, date) => {
-  const titleElement = document.getElementById("title");
-  const dateElement = document.getElementById("date");
-  titleElement.innerText = title;
+  document.getElementById("title").innerText = title;
   if (!isNaN(date)) {
     document.head.querySelector("[name~=date][content]").content = date;
-    dateElement.innerText = date.toLocaleDateString("en-US");
+    document.getElementById("date").innerText = date.toLocaleDateString("en-US");
   }
 };
 
 const setPage = (post) => {
-  const title = post?.Title?.[post?.Title?.length - 1];
+  const title = displayTitle(post);
   setPageInfo(title, post?.Date);
   setImages(post?.Image, title);
   setBody(post?.Body, post?.Title?.[0]);
   window.scrollTo(0, 0);
 };
 
-const parseMarkdown = (markdown) => {
-  let post = {};
-  post["Title"] = markdown
-    ?.split("title: ")
-    ?.at(1)
-    ?.split("\n")
-    ?.at(0)
-    ?.split(/,\s*/);
-  post["Date"] = new Date(markdown?.split("date: ")?.at(1)?.split("\n")?.at(0));
-  post["Image"] = markdown
-    ?.split("image: ")
-    ?.at(1)
-    ?.split("\n")
-    ?.at(0)
-    .split(/,\s*/);
-  post["Draft"] =
-    markdown?.split("draft: ")?.at(1)?.split("\n")?.at(0) !== "false";
-  post["Body"] = markdown?.split("---\n").slice(2).join("---\n");
-  return post;
-};
-
-const clearTemplates = () => {
-  const templates = document.querySelectorAll(".template");
-  templates.forEach((e) => {
-    e.parentElement.removeChild(e);
-  });
-};
-
 const clearPage = () => {
-  clearInterval(imageChange.interval);
+  clearInterval(carouselInterval);
   clearTemplates();
-  const titleElement = document.getElementById("title");
-  const dateElement = document.getElementById("date");
   const cover = document.getElementById("cover");
-  const bottom = document.getElementById("bottom");
-  titleElement.innerText = "";
-  dateElement.innerText = "";
+  document.getElementById("title").innerText = "";
+  document.getElementById("date").innerText = "";
   cover.style.display = "none";
   cover.src = "";
   cover.alt = "";
-  bottom.style.removeProperty("pointer-events");
+  document.getElementById("bottom").style.removeProperty("pointer-events");
 };
 
 const newActive = (element) => {
-  const links = document.querySelectorAll(".link");
-  links.forEach((link) => {
-    link.classList.remove("active");
-  });
-  element.classList.add("active");
+  document.querySelector(".link.active")?.classList.remove("active");
+  element?.classList.add("active");
 };
 
 const setSearch = (posts, query) => {
-  if (posts && decodeURI(window.location.hash.substring(1)) === "Archive") {
+  if (posts && getHash() === "Archive") {
     clearTemplates();
     createSearch(query);
-    posts.forEach((post) => {
-      populatePreview(post);
-    });
+    posts.forEach((post) => populatePreview(post));
   }
 };
 
 const setFull = (post) => {
   setPage(post);
-  if (decodeURI(window.location.hash.substring(1)) === "Home")
-    setPreview(latestPost(allPosts));
-};
-
-const latestPost = () => {
-  for (const [_, post] of Object.entries(allPosts).sort(
-    (a, b) => b[1]?.Date - a[1]?.Date
-  )) {
-    if (!post?.Draft) return [post];
+  if (getHash() === "Home") {
+    const latest = sortedPosts()[0];
+    if (latest) populatePreview(latest);
   }
 };
 
-const setPreview = (posts) => {
-  const title = decodeURI(window.location.hash.substring(1));
-  if (title === "Archive" || (title === "Home" && posts?.length === 1)) {
-    posts.forEach((post) => {
-      if (post) populatePreview(post);
-    });
-  }
+const parseMarkdown = (text) => {
+  const [, frontmatter = "", ...bodyParts] = text.split("---\n");
+  const field = (key) =>
+    frontmatter.match(new RegExp(`^${key}: (.+)$`, "m"))?.[1];
+  return {
+    Title: field("title")?.split(/,\s*/),
+    Date: new Date(field("date")),
+    Image: field("image")?.split(/,\s*/),
+    Draft: field("draft") !== "false",
+    Body: bodyParts
+      .join("---\n")
+      .replaceAll("](images/", "](posts/images/")
+      .replaceAll("](data/", "](posts/data/"),
+  };
 };
 
 const download = async (path) => {
@@ -258,15 +226,9 @@ const download = async (path) => {
     const response = await fetch(path);
     const text = await response.text();
     const post = parseMarkdown(text);
-    post["Body"] = post["Body"]
-      .replaceAll("](images/", "](posts/images/")
-      .replaceAll("](data/", "](posts/data/");
     allPosts[post?.Title?.[0]] = post;
-    if (
-      decodeURI(window.location.hash.substring(1)) === post?.Title?.[0] &&
-      Object.keys(allPosts).length > 1
-    )
-      loadPage(post?.Title?.[0]);
+    if (getHash() === post?.Title?.[0] && Object.keys(allPosts).length > 1)
+      updatePage(post.Title[0]);
   } catch (error) {
     console.error("Error occurred while downloading:", error);
   }
@@ -275,151 +237,76 @@ const download = async (path) => {
 const downloadAll = async (path) => {
   const response = await fetch(path);
   const text = await response.text();
-  const parentDirectory = path.split("/")?.[0];
-  const paths = text.split("\n");
-  for (const path of paths) {
-    if (path.length) {
-      await download(`${parentDirectory}/${path}`);
-    }
+  const dir = path.split("/")[0];
+  for (const file of text.split("\n")) {
+    if (file) await download(`${dir}/${file}`);
   }
-  loadPage(decodeURI(window.location.hash.substring(1)));
+  updatePage(getHash());
 };
 
 const setTitle = (title) => {
   document.title = title + " | " + window.location.hostname;
 };
 
-const updatePage = (element, isBlog, pop = false) => {
+const updatePage = (title, pop = false) => {
   clearPage();
-  const title =
-    element.innerText ||
-    element.alt ||
-    decodeURI(window.location.hash.substring(1));
-  if (!isBlog) {
-    newActive(element);
+  const isNav = NAV_PAGES.has(title);
+  if (isNav) {
+    newActive(document.getElementById(title));
     setTitle(title);
-  } else if (!document.getElementsByClassName("active").length) {
-    newActive(document.getElementsByClassName("link")[1]);
+  } else if (!document.querySelector(".link.active")) {
+    newActive(document.getElementById("Archive"));
     setTitle("Archive");
   }
   if (!pop) window.history.pushState(title, title, "#" + encodeURI(title));
-  if (allPosts[title]) setFull(allPosts[title]);
-  else setFull(allPosts["Error Page Not Found"]);
-};
-
-const getElementByTitle = (title) => {
-  let element, isBlog;
-  switch (title) {
-    case "Home":
-    case "Archive":
-    case "Contact":
-    case "About":
-      element = document.getElementById(title);
-      isBlog = false;
-      break;
-    default:
-      element = createH2(title);
-      isBlog = true;
-      break;
-  }
-  return { element, isBlog };
-};
-
-const loadPage = (title, pop) => {
-  const { element, isBlog } = getElementByTitle(title);
-  updatePage(element, isBlog, pop);
-};
-
-const toHTML = (markdown) => {
-  const html = DOMPurify.sanitize(marked.parse(markdown), {
-    ADD_TAGS: ["iframe"],
-    ADD_ATTR: ["allow"],
-    ALLOW_UNKNOWN_PROTOCOLS: true,
-  });
-  const div = document.createElement("div");
-  div.innerHTML = html;
-  div.querySelectorAll("pre code").forEach((element) => {
-    hljs.highlightElement(element);
-  });
-  return div.innerHTML;
-};
-
-const parseText = (markdown) => {
-  const div = document.createElement("div");
-  div.innerHTML = toHTML(markdown);
-  return div.innerText;
+  setFull(allPosts[title] || allPosts["Error Page Not Found"]);
 };
 
 const startMarkdown = () => {
-  function makeMath(expr) {
-    let n, displayMode;
-    if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
-      n = 2;
-      displayMode = true;
-    } else if (expr.match(/^\$[\s\S]*\$$/)) {
-      n = 1;
-      displayMode = false;
-    }
+  const makeMath = (expr) => {
+    const match = expr.match(/^(\${1,2})([\s\S]+)\1$/);
+    if (!match) return null;
     try {
-      return n
-        ? katex.renderToString(expr.substr(n, expr.length - 2 * n), {
-          displayMode,
-        })
-        : null;
+      return katex.renderToString(match[2], {
+        displayMode: match[1] === "$$",
+      });
     } catch (err) {
       console.error(err);
       return null;
     }
-  }
-
-  const renderer = {
-    code(code, language, escaped) {
-      const math = makeMath(code);
-      if (math && !language) return math;
-      return false;
-    },
-    codespan(code) {
-      const math = makeMath(code);
-      if (math) return math;
-      return false;
-    },
-    table(head, body) {
-      head = "<thead>" + head + "</thead>";
-      body = body = body && "<tbody>" + body + "</tbody>";
-      return (
-        "<div style='overflow-x:auto;'><table>" +
-        head +
-        body +
-        "</table></div>\n"
-      );
-    },
   };
-  marked.use({ renderer });
+
+  marked.use({
+    renderer: {
+      code(code, language) {
+        if (!language) {
+          const math = makeMath(code);
+          if (math) return math;
+        }
+        return false;
+      },
+      codespan(code) {
+        return makeMath(code) || false;
+      },
+      table(head, body) {
+        return `<div style='overflow-x:auto;'><table><thead>${head}</thead>${body ? `<tbody>${body}</tbody>` : ""}</table></div>\n`;
+      },
+    },
+  });
 };
 
-const start = async () => {
+const start = () => {
   startMarkdown();
-  const title = decodeURI(window.location.hash.substring(1)) || "Home";
+  const title = getHash() || "Home";
   window.location.hash = encodeURI(title);
-  const links = document.querySelectorAll(".link");
-  links.forEach((link) => {
-    link.onclick = (e) => updatePage(e.target, false);
+  document.querySelectorAll(".link").forEach((link) => {
+    link.onclick = () => updatePage(link.id);
     link.onkeyup = (e) => {
-      if (e.key === "Enter") updatePage(e.target, false);
+      if (e.key === "Enter") updatePage(link.id);
     };
   });
-  window.onpopstate = (e) => {
-    loadPage(e.state, true);
-  };
-  console.log(
-    "%cQuite a sight, isn't it? 😉",
-    "color: " +
-    getComputedStyle(document.body).getPropertyValue("--light") +
-    "; font-size: " +
-    getComputedStyle(document.body).getPropertyValue("--font-size") +
-    ";"
-  );
+  window.onpopstate = (e) => updatePage(e.state, true);
 };
 
-downloadAll("posts/_all.md"); // Download all posts
+downloadAll("posts/_all.md");
 window.onload = start;

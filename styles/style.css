@@ -3,7 +3,7 @@
   --code: 171, 178, 191;
   --font-color: 0, 0, 0;
   --font-size: 1.3rem;
-  --light: 95, 95, 255;
+  --light: 139, 177, 255;
   --round: 5px;
 }
 
@@ -53,6 +53,23 @@ table,
 
 div.template>img:hover {
   box-shadow: 0px 2px 7px 0px black;
+}
+
+.preview-container {
+  align-items: center;
+  display: flex;
+  min-height: 10vh;
+}
+
+.preview-img {
+  cursor: pointer;
+  width: 15vh;
+}
+
+.preview-text {
+  color: #6f6f6f;
+  margin: 0 0 0 2vh;
+  overflow: auto;
 }
 
 /* space elements */
