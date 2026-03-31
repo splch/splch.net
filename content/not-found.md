@@ -2,7 +2,7 @@
 title: Error Page Not Found
 date:
 image: error.webp
-post: false
+archive: true
 ---
 
 ## Sorry, this page does not exist.
