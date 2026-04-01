@@ -1,6 +1,8 @@
 /* ===== Reset ===== */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -13,13 +15,21 @@ html {
   text-size-adjust: 100%;
 }
 
-img, picture, video, svg {
+img,
+picture,
+video,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
   line-height: 1.2;
 }
@@ -78,7 +88,9 @@ hr {
 }
 
 code {
-  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-family:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
   font-size: 0.9em;
 }
 
@@ -233,7 +245,8 @@ figcaption {
   overflow-x: auto;
 }
 
-th, td {
+th,
+td {
   padding: 0.5em 0.75em;
   border: 1px solid var(--border);
   text-align: left;
@@ -280,7 +293,9 @@ article > nav a[rel="next"] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 1ms !important;
@@ -297,7 +312,8 @@ article > nav a[rel="next"] {
     display: block;
   }
 
-  #nav, article > nav {
+  #nav,
+  article > nav {
     display: none;
   }
 
@@ -310,11 +326,16 @@ article > nav a[rel="next"] {
     content: "";
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     break-after: avoid;
   }
 
-  figure, pre, blockquote, table {
+  figure,
+  pre,
+  blockquote,
+  table {
     break-inside: avoid;
   }
 
