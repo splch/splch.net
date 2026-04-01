@@ -1,3 +1,5 @@
+import { marked } from 'https://cdn.jsdelivr.net/npm/marked@17.0.5/lib/marked.esm.js'
+
 function parse(text) {
   const [, front, ...rest] = text.split('---\n')
   const meta = {}
@@ -9,7 +11,7 @@ function parse(text) {
   return { ...meta, body: rest.join('---\n') }
 }
 
-const load = id => load[id] ??= fetch(`content/${id}.md`).then(r => r.ok && r.text()).then(t => t && ({ id, ...parse(t) }))
+const load = id => load[id] ??= fetch(`content/${id}.md`).then(r => r.ok && r.text()).then(t => t && ({ id, ...parse(t) })).catch(e => { delete load[id]; throw e })
 
 async function discover(hi = 1) {
   let lo = 0
@@ -19,8 +21,8 @@ async function discover(hi = 1) {
 }
 
 const tags = {
-  image: v => `<div>${v.split(',').map(s => s.trim()).filter(Boolean)
-    .map(s => `<img src="${s.startsWith('http') ? s : `images/${s}`}">`).join('')}</div>`
+  image: v => `<div class="gallery">${v.split(',').map(s => s.trim()).filter(Boolean)
+    .map(s => `<img src="${s.startsWith('http') ? s : `images/${s}`}" alt="">`).join('')}</div>`
 }
 
 const fmtDate = d => d && new Date(d + 'T00:00').toLocaleDateString('en', { month: 'short', day: 'numeric', year: 'numeric' })
@@ -42,7 +44,7 @@ function show(e) {
     ? `<header><h1>${e.title}</h1><p><time datetime="${e.date}">${fmtDate(e.date)}</time> · ${readTime(e.body)} min read</p></header>`
     : ''
   const older = i >= 0 && posts[i + 1], newer = i >= 0 && posts[i - 1]
-  const nav = older || newer ? '<nav>'
+  const nav = older || newer ? '<nav aria-label="Posts">'
     + (older ? `<a rel="prev" href="#/${older.id}">← ${older.title}</a>` : '')
     + (newer ? `<a rel="next" href="#/${newer.id}">${newer.title} →</a>` : '')
     + '</nav>' : ''

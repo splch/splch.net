@@ -9,8 +9,8 @@
 }
 
 html {
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 img, picture, video, svg {
@@ -39,7 +39,7 @@ p {
 
   --text: #1a1a1a;
   --bg: #fafafa;
-  --text-muted: #6b7280;
+  --text-muted: #596066;
   --link: #2563eb;
   --code-bg: #f4f4f5;
   --border: rgba(0, 0, 0, 0.1);
@@ -213,17 +213,17 @@ article img {
   border-radius: 0.375em;
 }
 
-article > div {
+.gallery {
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
 }
 
-article > div > img {
+.gallery > img {
   max-height: 50vh;
 }
 
-article > div > img:not(:only-child) {
+.gallery > img:not(:only-child) {
   height: 40vh;
   max-width: none;
 }
