@@ -120,6 +120,7 @@ code {
   width: min(var(--measure), 100% - var(--gutter) * 2);
   margin-inline: auto;
   padding-block: 2rem;
+  overflow-x: auto;
 }
 
 /* ===== Post List ===== */
@@ -221,6 +222,15 @@ article > div {
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
+}
+
+article > div > img {
+  max-height: 50vh;
+}
+
+article > div > img:not(:only-child) {
+  height: 40vh;
+  max-width: none;
 }
 
 figure {
