@@ -100,6 +100,16 @@ code {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+#nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+#nav a:hover {
+  color: var(--text);
 }
 
 #content {
