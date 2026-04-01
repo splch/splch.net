@@ -1,5 +1,4 @@
 /* ===== Reset ===== */
-/* Andy Bell / Josh Comeau consensus reset */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -10,7 +9,6 @@
 }
 
 html {
-  -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
@@ -19,10 +17,6 @@ img, picture, video, svg {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-input, button, textarea, select {
-  font: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,8 +72,7 @@ body {
   background: var(--bg);
   display: grid;
   grid-template-rows: auto 1fr;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
 }
 
 a {
@@ -140,13 +133,12 @@ code {
   font-size: 1.125em;
 }
 
-#content > a small {
+#content > a :is(small, span) {
   color: var(--text-muted);
 }
 
 #content > a span {
   display: block;
-  color: var(--text-muted);
   margin-top: 0.25em;
 }
 
@@ -184,14 +176,13 @@ article > hr {
   margin-block: 2em;
 }
 
-/* Inline code — scoped to text containers to avoid conflicts with pre > code */
-:is(p, li, td) > code {
+/* Inline code -- scoped to text containers to avoid pre > code */
+:is(p, li, td, th) > code {
   background: var(--code-bg);
   padding: 0.125em 0.3em;
   border-radius: 0.25em;
 }
 
-/* Code blocks */
 pre {
   background: var(--code-bg);
   padding: 1em 1.25em;
@@ -269,7 +260,6 @@ summary {
   font-weight: 600;
 }
 
-/* Prev/next post navigation */
 article > nav {
   display: flex;
   justify-content: space-between;
