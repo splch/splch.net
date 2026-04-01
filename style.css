@@ -168,6 +168,10 @@ article li + li {
   margin-block-start: 0.25em;
 }
 
+article li:has(> input[type="checkbox"]) {
+  list-style: none;
+}
+
 article :is(blockquote, details) > * + * {
   margin-block-start: 0.75em;
 }
@@ -176,8 +180,7 @@ article > hr {
   margin-block: 2em;
 }
 
-/* Inline code -- scoped to text containers to avoid pre > code */
-:is(p, li, td, th) > code {
+:not(pre) > code {
   background: var(--code-bg);
   padding: 0.125em 0.3em;
   border-radius: 0.25em;
@@ -236,7 +239,6 @@ figcaption {
 table {
   display: block;
   overflow-x: auto;
-  border-spacing: 0;
 }
 
 th, td {
