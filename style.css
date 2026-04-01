@@ -37,26 +37,15 @@ p {
 :root {
   color-scheme: light dark;
 
-  --text: #1a1a1a;
-  --bg: #fafafa;
-  --text-muted: #596066;
-  --link: #2563eb;
-  --code-bg: #f4f4f5;
-  --border: rgba(0, 0, 0, 0.1);
+  --text: light-dark(#1a1a1a, #e4e4e7);
+  --bg: light-dark(#fafafa, #18181b);
+  --text-muted: light-dark(#596066, #a1a1aa);
+  --link: light-dark(#2563eb, #60a5fa);
+  --code-bg: light-dark(#f4f4f5, #27272a);
+  --border: light-dark(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.12));
 
   --measure: 65ch;
   --gutter: clamp(1rem, 6vw, 3rem);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #e4e4e7;
-    --bg: #18181b;
-    --text-muted: #a1a1aa;
-    --link: #60a5fa;
-    --code-bg: #27272a;
-    --border: rgba(255, 255, 255, 0.12);
-  }
 }
 
 /* ===== Base ===== */
@@ -240,8 +229,7 @@ figcaption {
   margin-block-start: 0.5em;
 }
 
-table {
-  display: block;
+.table-wrap {
   overflow-x: auto;
 }
 
@@ -281,6 +269,10 @@ article > nav a[rel="next"] {
 }
 
 /* ===== Focus & Accessibility ===== */
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
 
 :focus-visible {
   outline: 2px solid var(--link);

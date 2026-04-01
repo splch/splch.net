@@ -9,10 +9,22 @@
   <meta name="description" content="Sharpest corner of the IPFS.">
   <title>Posts</title>
   <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "marked": "https://cdn.jsdelivr.net/npm/marked@17.0.5/lib/marked.esm.js"
+    },
+    "integrity": {
+      "https://cdn.jsdelivr.net/npm/marked@17.0.5/lib/marked.esm.js": "sha384-MRr+cCnsI0W3Xo53kNEY+lZNEtFz7HjMKePN/TiBJQKPF1qaHVhnjE9kwWym2FEk"
+    }
+  }
+  </script>
   <script type="module" src="script.js"></script>
 </head>
 <body>
   <nav id="nav" aria-label="Site"><a href="#/">Posts</a></nav>
-  <main id="content"></main>
+  <main id="content">
+    <noscript><p>This site requires JavaScript to display posts.</p></noscript>
+  </main>
 </body>
 </html>
