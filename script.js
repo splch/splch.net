@@ -23,27 +23,50 @@ const tags = {
     .map(s => `<img src="${s.startsWith('http') ? s : `images/${s}`}">`).join('')}</div>`
 }
 
+const fmtDate = d => d && new Date(d + 'T00:00').toLocaleDateString('en', { month: 'short', day: 'numeric', year: 'numeric' })
+const readTime = t => Math.max(1, Math.ceil(t.split(/\s+/).length / 230))
+const excerpt = body => {
+  const clean = (body.split('\n').find(l => /^\w/.test(l)) || '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*_`]/g, '')
+  return clean.length > 160 ? clean.slice(0, 160) + '…' : clean
+}
+
 const content = document.getElementById('content')
+let posts = []
 
 function show(e) {
-  if (e) content.innerHTML = Object.keys(tags).map(k => e[k] ? tags[k](e[k]) : '').join('') + marked.parse(e.body)
+  if (!e) return
+  const i = posts.indexOf(e)
+  const media = Object.keys(tags).filter(k => e[k]).map(k => tags[k](e[k])).join('')
+  const header = e.date
+    ? `<header><h1>${e.title}</h1><p class="meta"><time datetime="${e.date}">${fmtDate(e.date)}</time> · ${readTime(e.body)} min read</p></header>`
+    : ''
+  const older = i >= 0 && posts[i + 1], newer = i >= 0 && posts[i - 1]
+  const nav = older || newer ? '<nav class="post-nav">'
+    + (older ? `<a rel="prev" href="#/${older.id}">← ${older.title}</a>` : '')
+    + (newer ? `<a rel="next" href="#/${newer.id}">${newer.title} →</a>` : '')
+    + '</nav>' : ''
+  content.innerHTML = `<article>${header}${media}${marked.parse(e.body)}${nav}</article>`
+  document.title = `${e.title || 'Posts'} | ${location.hostname}`
 }
 
 function render() {
+  scrollTo(0, 0)
   const id = location.hash.slice(2)
-  if (id) show(entries[id] || entries.at(-1))
-  else content.innerHTML = posts
-    .map(p => `<a href="#/${p.id}"><strong>${p.title}</strong> <small>${p.date}</small></a>`)
-    .join('')
+  if (id) return show(entries[id] || entries.at(-1))
+  document.title = `Posts | ${location.hostname}`
+  content.innerHTML = posts.map(p =>
+    `<a href="#/${p.id}"><strong>${p.title}</strong> `
+    + `<small>${fmtDate(p.date)} · ${readTime(p.body)} min read</small>`
+    + `<span class="excerpt">${excerpt(p.body)}</span></a>`
+  ).join('')
 }
 
 const id = location.hash.slice(2)
 if (id) load(id).then(show)
-
 const entries = await discover(+id || 1)
-const posts = entries.filter(e => e.post && e.archive !== 'true').sort((a, b) => b.date.localeCompare(a.date))
-
-document.getElementById('nav').innerHTML = entries
+posts = entries.filter(e => e.post && e.archive !== 'true').sort((a, b) => b.date.localeCompare(a.date))
+document.getElementById('nav').innerHTML += ' ' + entries
   .filter(e => !e.post)
   .map(p => `<a href="#/${p.id}">${p.title}</a>`)
   .join(' ')
