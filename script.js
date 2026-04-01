@@ -19,7 +19,7 @@ async function discover(hi = 1) {
 }
 
 const tags = {
-  image: v => `<div class="carousel">${v.split(',').map(s => s.trim()).filter(Boolean)
+  image: v => `<div>${v.split(',').map(s => s.trim()).filter(Boolean)
     .map(s => `<img src="${s.startsWith('http') ? s : `images/${s}`}">`).join('')}</div>`
 }
 
@@ -39,10 +39,10 @@ function show(e) {
   const i = posts.indexOf(e)
   const media = Object.keys(tags).filter(k => e[k]).map(k => tags[k](e[k])).join('')
   const header = e.date
-    ? `<header><h1>${e.title}</h1><p class="meta"><time datetime="${e.date}">${fmtDate(e.date)}</time> · ${readTime(e.body)} min read</p></header>`
+    ? `<header><h1>${e.title}</h1><p><time datetime="${e.date}">${fmtDate(e.date)}</time> · ${readTime(e.body)} min read</p></header>`
     : ''
   const older = i >= 0 && posts[i + 1], newer = i >= 0 && posts[i - 1]
-  const nav = older || newer ? '<nav class="post-nav">'
+  const nav = older || newer ? '<nav>'
     + (older ? `<a rel="prev" href="#/${older.id}">← ${older.title}</a>` : '')
     + (newer ? `<a rel="next" href="#/${newer.id}">${newer.title} →</a>` : '')
     + '</nav>' : ''
@@ -58,7 +58,7 @@ function render() {
   content.innerHTML = posts.map(p =>
     `<a href="#/${p.id}"><strong>${p.title}</strong> `
     + `<small>${fmtDate(p.date)} · ${readTime(p.body)} min read</small>`
-    + `<span class="excerpt">${excerpt(p.body)}</span></a>`
+    + `<span>${excerpt(p.body)}</span></a>`
   ).join('')
 }
 
