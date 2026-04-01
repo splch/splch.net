@@ -283,7 +283,7 @@ article > nav a[rel="next"] {
 
 /* ===== Focus & Accessibility ===== */
 
-:focus:not(:focus-visible) {
+[tabindex="-1"]:focus {
   outline: none;
 }
 
