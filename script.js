@@ -2,11 +2,10 @@ import { marked } from "marked";
 marked.setOptions({ breaks: true });
 
 const esc = (s) =>
-  s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+  s.replace(
+    /[&<>"]/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+  );
 history.scrollRestoration = "manual";
 
 function parse(text) {
@@ -33,32 +32,34 @@ const load = (id) =>
 async function discover(hi = 1) {
   for (let p = hi; p < hi * 2 ** 16; p *= 2) load(p);
   while (await load(hi)) hi *= 2;
-  const all = await Promise.all([...Array(hi).keys(), "not-found"].map(load));
-  return all.filter(Boolean);
+  return (
+    await Promise.all([...Array(hi).keys(), "not-found"].map(load))
+  ).filter(Boolean);
 }
 
 const tags = {
-  image: (v, meta) =>
-    `<div class="gallery" tabindex="0" role="region" aria-label="Image gallery">${v
+  image: (v, meta) => {
+    const imgs = v
       .split(",")
       .map((s) => s.trim())
       .filter(Boolean)
       .map(
         (s) =>
-          `<img src="${s.startsWith("http") ? s : `images/${s}`}" alt="${esc(meta.title || "")}">`,
+          `<img src="${esc(s.startsWith("http") ? s : `images/${s}`)}" alt="${esc(meta.title || "")}">`,
       )
-      .join("")}</div>`,
+      .join("");
+    return `<div class="gallery" tabindex="0" role="region" aria-label="Image gallery">${imgs}</div>`;
+  },
 };
 
-function postprocess(html) {
-  return html
+const postprocess = (html) =>
+  html
     .replace(
       /<table>/g,
       '<div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table"><table>',
     )
     .replace(/<\/table>/g, "</table></div>")
     .replace(/<pre>/g, '<pre tabindex="0">');
-}
 
 const fmtDate = (d) =>
   d &&
@@ -69,13 +70,14 @@ const fmtDate = (d) =>
   });
 const readTime = (t) => Math.max(1, Math.ceil(t.split(/\s+/).length / 230));
 const excerpt = (body) => {
-  const clean = (body.split("\n").find((l) => /^[\p{L}\p{N}]/u.test(l)) || "")
+  const c = (body.split("\n").find((l) => /^[\p{L}\p{N}]/u.test(l)) || "")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replace(/[*_`]/g, "");
-  return clean.length > 160 ? clean.slice(0, 160) + "…" : clean;
+  return c.length > 160 ? c.slice(0, 160) + "…" : c;
 };
 
 const content = document.getElementById("content");
+const announcer = document.getElementById("announcer");
 const focus = (el) => {
   el.setAttribute("tabindex", "-1");
   el.focus({ preventScroll: true });
@@ -94,17 +96,13 @@ function show(e) {
     : "";
   const older = i >= 0 && posts[i + 1],
     newer = i >= 0 && posts[i - 1];
-  const nav =
-    older || newer
-      ? '<nav aria-label="Posts">' +
-        (older
-          ? `<a rel="prev" href="#/${older.id}">← ${esc(older.title)}</a>`
-          : "") +
-        (newer
-          ? `<a rel="next" href="#/${newer.id}">${esc(newer.title)} →</a>`
-          : "") +
-        "</nav>"
-      : "";
+  const links = [
+    older && `<a rel="prev" href="#/${older.id}">← ${esc(older.title)}</a>`,
+    newer && `<a rel="next" href="#/${newer.id}">${esc(newer.title)} →</a>`,
+  ]
+    .filter(Boolean)
+    .join("");
+  const nav = links ? `<nav aria-label="Posts">${links}</nav>` : "";
   content.innerHTML = `<article>${header}${media}${postprocess(marked.parse(e.body))}${nav}</article>`;
   document.title = `${e.title || "Posts"} | ${location.hostname}`;
   focus(content.querySelector("h1") || content);
@@ -113,31 +111,39 @@ function show(e) {
 function render() {
   scrollTo(0, 0);
   const id = location.hash.slice(2);
-  if (id) return show(entries[id] || entries.at(-1));
-  document.title = `Posts | ${location.hostname}`;
-  content.innerHTML = posts
-    .map(
-      (p) =>
-        `<a href="#/${p.id}"><strong>${esc(p.title)}</strong> ` +
-        `<small>${fmtDate(p.date)} · ${readTime(p.body)} min read</small>` +
-        `<span>${excerpt(p.body)}</span></a>`,
-    )
-    .join("");
-  focus(content);
+  if (id) show(entries[id] || entries["not-found"]);
+  else {
+    document.title = `Posts | ${location.hostname}`;
+    content.innerHTML = posts
+      .map(
+        (p) =>
+          `<a href="#/${p.id}"><strong>${esc(p.title)}</strong> ` +
+          `<small>${fmtDate(p.date)} · ${readTime(p.body)} min read</small>` +
+          `<span>${excerpt(p.body)}</span></a>`,
+      )
+      .join("");
+    focus(content);
+  }
+  announcer.textContent = document.title;
+  const cur = id ? `#/${id}` : "#/";
+  for (const a of document.querySelectorAll("#nav a"))
+    if (a.getAttribute("href") === cur) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
 }
 
 const id = location.hash.slice(2);
 if (id) load(id).then(show);
 else content.textContent = "Loading…";
-const entries = await discover(+id || 1).catch(() => null);
-if (entries) {
-  posts = entries
+const all = await discover(+id || 1).catch(() => null);
+const entries = all && Object.fromEntries(all.map((e) => [e.id, e]));
+if (all) {
+  posts = all
     .filter((e) => e.post && e.archive !== "true")
     .sort((a, b) => b.date.localeCompare(a.date));
   document.getElementById("nav").insertAdjacentHTML(
     "beforeend",
     " " +
-      entries
+      all
         .filter((e) => !e.post)
         .map((p) => `<a href="#/${p.id}">${esc(p.title)}</a>`)
         .join(" "),

@@ -15,7 +15,13 @@
       media="(prefers-color-scheme: dark)"
     />
     <meta name="description" content="Sharpest corner of the IPFS." />
+    <meta property="og:title" content="Posts" />
+    <meta property="og:description" content="Sharpest corner of the IPFS." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <title>Posts</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="stylesheet" href="style.css" />
     <script type="importmap">
       {
@@ -36,5 +42,10 @@
         ><p>This site requires JavaScript to display posts.</p></noscript
       >
     </main>
+    <div
+      id="announcer"
+      aria-live="polite"
+      style="position: absolute; clip-path: inset(50%)"
+    ></div>
   </body>
 </html>

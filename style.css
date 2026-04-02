@@ -109,7 +109,8 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
+nav a:hover,
+nav a[aria-current] {
   color: var(--text);
 }
 
@@ -320,10 +321,6 @@ article > nav a[rel="next"] {
   a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.85em;
-  }
-
-  a[href^="#"]::after {
-    content: "";
   }
 
   h2,
