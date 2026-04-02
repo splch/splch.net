@@ -3,8 +3,11 @@ marked.setOptions({ breaks: true });
 
 const esc = (s) =>
   s.replace(
-    /[&<>"]/g,
-    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ],
   );
 history.scrollRestoration = "manual";
 
@@ -45,7 +48,7 @@ const tags = {
       .filter(Boolean)
       .map(
         (s) =>
-          `<img src="${esc(s.startsWith("http") ? s : `images/${s}`)}" alt="${esc(meta.title || "")}">`,
+          `<img src="${esc(s.startsWith("http") ? s : `images/${s}`)}" alt="${esc(meta.title || "")}" loading="lazy">`,
       )
       .join("");
     return `<div class="gallery" tabindex="0" role="region" aria-label="Image gallery">${imgs}</div>`;
