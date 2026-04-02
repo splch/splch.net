@@ -71,7 +71,7 @@ const fmtDate = (d) =>
     day: "numeric",
     year: "numeric",
   });
-const readTime = (t) => Math.max(1, Math.ceil(t.split(/\s+/).length / 230));
+const readTime = (t) => Math.ceil(t.split(/\s+/).length / 230);
 const excerpt = (body) => {
   const c = (body.split("\n").find((l) => /^[\p{L}\p{N}]/u.test(l)) || "")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")

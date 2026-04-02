@@ -11,7 +11,6 @@
 }
 
 html {
-  -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
@@ -228,18 +227,6 @@ article img {
 .gallery > img:not(:only-child) {
   height: 40vh;
   max-width: none;
-}
-
-figure {
-  inline-size: fit-content;
-  margin-inline: auto;
-}
-
-figcaption {
-  font-size: 0.875em;
-  color: var(--text-muted);
-  text-align: center;
-  margin-block-start: 0.5em;
 }
 
 .table-wrap {
