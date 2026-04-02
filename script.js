@@ -1,4 +1,5 @@
 import { marked } from "marked";
+marked.setOptions({ breaks: true });
 
 const esc = (s) =>
   s
