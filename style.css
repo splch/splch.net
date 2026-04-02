@@ -104,12 +104,12 @@ code {
   border-bottom: 1px solid var(--border);
 }
 
-#nav a {
+nav a {
   color: var(--text-muted);
   text-decoration: none;
 }
 
-#nav a:hover {
+nav a:hover {
   color: var(--text);
 }
 
