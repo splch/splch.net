@@ -48,7 +48,7 @@ const tags = {
       .filter(Boolean)
       .map(
         (s) =>
-          `<img src="${esc(s.startsWith("http") ? s : `images/${s}`)}" alt="${esc(meta.title || "")}" loading="lazy">`,
+          `<img src="${esc(s.includes("://") ? s : `images/${s}`)}" alt="${esc(meta.title || "")}" loading="lazy">`,
       )
       .join("");
     return `<div class="gallery" tabindex="0" role="region" aria-label="Image gallery">${imgs}</div>`;
@@ -95,7 +95,7 @@ function show(e) {
     .map((k) => tags[k](e[k], e))
     .join("");
   const header = e.date
-    ? `<header><h1>${esc(e.title)}</h1><p><time datetime="${e.date}">${fmtDate(e.date)}</time> · ${readTime(e.body)} min read</p></header>`
+    ? `<header><h1>${esc(e.title)}</h1><p><time datetime="${esc(e.date)}">${fmtDate(e.date)}</time> · ${readTime(e.body)} min read</p></header>`
     : "";
   const older = i >= 0 && posts[i + 1],
     newer = i >= 0 && posts[i - 1];
