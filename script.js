@@ -30,16 +30,10 @@ const load = (id) =>
     }));
 
 async function discover(hi = 1) {
-  let lo = 0;
-  while (await load(hi)) {
-    lo = hi + 1;
-    hi *= 2;
-  }
-  while (lo < hi) {
-    const m = (lo + hi) >> 1;
-    (await load(m)) ? (lo = m + 1) : (hi = m);
-  }
-  return Promise.all([...Array(lo).keys(), "not-found"].map(load));
+  for (let p = hi; p < hi * 2 ** 16; p *= 2) load(p);
+  while (await load(hi)) hi *= 2;
+  const all = await Promise.all([...Array(hi).keys(), "not-found"].map(load));
+  return all.filter(Boolean);
 }
 
 const tags = {
@@ -133,6 +127,7 @@ function render() {
 
 const id = location.hash.slice(2);
 if (id) load(id).then(show);
+else content.textContent = "Loading…";
 const entries = await discover(+id || 1).catch(() => null);
 if (entries) {
   posts = entries
