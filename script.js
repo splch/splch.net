@@ -1,5 +1,5 @@
 import { marked } from "marked";
-marked.setOptions({ breaks: true });
+marked.use({ breaks: true });
 
 const esc = (s) =>
   s.replace(
@@ -43,8 +43,7 @@ async function discover(hi = 1) {
 const tags = {
   image: (v, meta) => {
     const imgs = v
-      .split(",")
-      .map((s) => s.trim())
+      .split(/\s*,\s*/)
       .filter(Boolean)
       .map(
         (s) =>
