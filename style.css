@@ -38,6 +38,10 @@ p {
   text-wrap: pretty;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 :target {
   scroll-margin-block: 5ex;
 }
@@ -203,6 +207,7 @@ pre {
 
 pre code {
   font-size: 0.875em;
+  background: transparent;
 }
 
 blockquote {

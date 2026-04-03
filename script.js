@@ -1,5 +1,16 @@
 import { marked } from "marked";
-marked.use({ breaks: true });
+import { markedHighlight } from "marked-highlight";
+import hljs from "highlight.js";
+
+marked.use(
+  markedHighlight({
+    highlight: (code, lang) =>
+      hljs.getLanguage(lang)
+        ? hljs.highlight(code, { language: lang }).value
+        : code,
+  }),
+  { breaks: true },
+);
 
 const esc = (s) =>
   s.replace(
@@ -116,14 +127,22 @@ function render() {
   if (id) show(entries[id] || entries["not-found"]);
   else {
     document.title = `Posts | ${location.hostname}`;
-    content.innerHTML = posts
-      .map(
-        (p) =>
-          `<a href="#/${p.id}"><strong>${esc(p.title)}</strong> ` +
-          `<small>${fmtDate(p.date)} · ${readTime(p.body)} min read</small>` +
-          `<span>${excerpt(p.body)}</span></a>`,
-      )
-      .join("");
+    content.innerHTML =
+      `<input id="q" type="search" placeholder="Filter" aria-label="Filter posts">` +
+      posts
+        .map(
+          (p) =>
+            `<a href="#/${p.id}"><strong>${esc(p.title)}</strong> ` +
+            `<small>${fmtDate(p.date)} · ${readTime(p.body)} min read</small>` +
+            `<span>${excerpt(p.body)}</span></a>`,
+        )
+        .join("");
+    const links = content.querySelectorAll("a");
+    content.querySelector("#q").oninput = (e) => {
+      const q = e.target.value.toLowerCase();
+      for (const a of links)
+        a.hidden = q && !a.textContent.toLowerCase().includes(q);
+    };
     focus(content);
   }
   announcer.textContent = document.title;
