@@ -25,7 +25,7 @@ function parse(text) {
 const cache = {};
 const load = (id) =>
   (cache[id] ??= fetch(`content/${id}.md`)
-    .then((r) => (r.ok ? r.text() : null))
+    .then((r) => r.ok && r.text())
     .then((t) => t && { id, ...parse(t) })
     .catch((e) => {
       delete cache[id];
@@ -104,7 +104,7 @@ function show(e) {
   ]
     .filter(Boolean)
     .join("");
-  const nav = links ? `<nav aria-label="Posts">${links}</nav>` : "";
+  const nav = links && `<nav aria-label="Posts">${links}</nav>`;
   content.innerHTML = `<article>${header}${media}${postprocess(marked.parse(e.body))}${nav}</article>`;
   document.title = `${e.title || "Posts"} | ${location.hostname}`;
   focus(content.querySelector("h1") || content);

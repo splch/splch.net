@@ -362,10 +362,7 @@ article > nav a[rel="next"] {
 
   .gallery > img {
     height: auto;
-  }
-
-  thead {
-    display: table-header-group;
+    max-width: 100%;
   }
 
   p {
