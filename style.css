@@ -207,7 +207,6 @@ pre {
 
 pre code {
   font-size: 0.875em;
-  background: transparent;
 }
 
 blockquote {
@@ -248,11 +247,11 @@ th,
 td {
   padding: 0.5em 0.75em;
   border: 1px solid var(--border);
-  text-align: left;
 }
 
 th {
   font-weight: 600;
+  text-align: left;
 }
 
 details {

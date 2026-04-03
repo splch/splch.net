@@ -12,14 +12,14 @@ marked.use(
   { breaks: true },
 );
 
-const esc = (s) =>
-  s.replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
-        c
-      ],
-  );
+const escMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
+};
+const esc = (s) => s.replace(/[&<>"']/g, (c) => escMap[c]);
 history.scrollRestoration = "manual";
 
 function parse(text) {
