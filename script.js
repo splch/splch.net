@@ -141,7 +141,7 @@ const entries = all && Object.fromEntries(all.map((e) => [e.id, e]));
 if (all) {
   posts = all
     .filter((e) => e.post && e.archive !== "true")
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
   document.getElementById("nav").insertAdjacentHTML(
     "beforeend",
     " " +

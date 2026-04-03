@@ -11,6 +11,7 @@
 }
 
 html {
+  -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
@@ -285,6 +286,15 @@ article > nav a[rel="next"] {
   outline-offset: 2px;
 }
 
+#announcer {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -299,10 +309,18 @@ article > nav a[rel="next"] {
 /* ===== Print ===== */
 
 @media print {
+  @page {
+    margin: 2cm;
+  }
+
   body {
     color: #000;
     background: #fff;
     display: block;
+  }
+
+  a {
+    color: #000;
   }
 
   #nav,
@@ -321,11 +339,33 @@ article > nav a[rel="next"] {
     break-after: avoid;
   }
 
-  figure,
+  img,
   pre,
   blockquote,
   table {
     break-inside: avoid;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    overflow: visible;
+  }
+
+  video {
+    display: none;
+  }
+
+  .gallery {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  .gallery > img {
+    height: auto;
+  }
+
+  thead {
+    display: table-header-group;
   }
 
   p {
