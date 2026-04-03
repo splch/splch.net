@@ -98,6 +98,10 @@ code {
   font-size: 0.9em;
 }
 
+input[type="search"] {
+  font-size: 1rem;
+}
+
 /* ===== Layout ===== */
 
 #nav {
