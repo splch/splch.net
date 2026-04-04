@@ -53,14 +53,13 @@ async function discover(hi = 1) {
 
 const tags = {
   canvas: (v, meta) => {
-    const seed = `${v === "true" ? meta.id : v}`;
     queueMicrotask(() => {
       const c = document.getElementById("gen-canvas");
       if (!c) return;
       const g = c.getContext("2d"),
         W = c.width,
         H = c.height;
-      let s = [...seed].reduce(
+      let s = [...`${meta.id}`].reduce(
         (a, ch) => Math.imul(a ^ ch.charCodeAt(0), 16777619),
         0,
       );
