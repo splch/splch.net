@@ -18,10 +18,15 @@ html {
 img,
 picture,
 video,
+audio,
 svg {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+audio {
+  width: 100%;
 }
 
 h1,
@@ -220,7 +225,8 @@ blockquote {
   font-style: italic;
 }
 
-article img {
+article img,
+#gen-canvas {
   border-radius: 0.375em;
 }
 
@@ -237,6 +243,13 @@ article img {
 .gallery > img:not(:only-child) {
   height: 40vh;
   max-width: none;
+}
+
+.gallery > :is(iframe, video) {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border: none;
+  border-radius: 0.375em;
 }
 
 .table-wrap {
@@ -359,7 +372,9 @@ article > nav a[rel="next"] {
     overflow: visible;
   }
 
-  video {
+  video,
+  iframe,
+  #gen-canvas {
     display: none;
   }
 

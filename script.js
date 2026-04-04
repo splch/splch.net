@@ -52,6 +52,31 @@ async function discover(hi = 1) {
 }
 
 const tags = {
+  canvas: (v, meta) => {
+    return `<canvas></canvas>`;
+  },
+  audio: (v) =>
+    v
+      .split(/\s*,\s*/)
+      .filter(Boolean)
+      .map((s) => {
+        const name = esc(s.replace(/.*\//, "").replace(/\.[^.]+$/, ""));
+        return `<label>${name}<audio controls preload="metadata" src="data/${esc(s)}" aria-label="${name}"></audio></label>`;
+      })
+      .join(""),
+  video: (v, meta) => {
+    const t = esc(meta.title || "");
+    const items = v
+      .split(/\s*,\s*/)
+      .filter(Boolean)
+      .map((s) =>
+        s.includes("://")
+          ? `<iframe src="${esc(s)}" title="${t}" loading="lazy" allow="autoplay; encrypted-media; fullscreen"></iframe>`
+          : `<video controls preload="metadata" src="data/${esc(s)}" aria-label="${t}"></video>`,
+      )
+      .join("");
+    return `<div class="gallery" tabindex="0" role="region" aria-label="Video gallery">${items}</div>`;
+  },
   image: (v, meta) => {
     const imgs = v
       .split(/\s*,\s*/)
