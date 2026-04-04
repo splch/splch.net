@@ -53,7 +53,38 @@ async function discover(hi = 1) {
 
 const tags = {
   canvas: (v, meta) => {
-    return `<canvas></canvas>`;
+    const seed = `${v === "true" ? meta.id : v}`;
+    queueMicrotask(() => {
+      const c = document.getElementById("gen-canvas");
+      if (!c) return;
+      const g = c.getContext("2d"),
+        W = c.width,
+        H = c.height;
+      let s = [...seed].reduce(
+        (a, ch) => Math.imul(a ^ ch.charCodeAt(0), 16777619),
+        0,
+      );
+      const r = () =>
+        ((s = Math.imul(s ^ (s >>> 15), 2246822507)) >>> 0) / 4294967296;
+      const sets = [
+        [1.4, -2.3, 2.4, -2.1],
+        [-2, -2, -1.2, 2],
+        [1.641, 1.902, 0.316, 1.525],
+        [0.97, -1.899, 1.381, -1.506],
+      ];
+      const [A, B, C, D] = sets[(r() * sets.length) | 0].map(
+        (n) => n + (r() - 0.5) * 0.3,
+      );
+      g.fillStyle = `hsla(${(r() * 360) | 0},70%,55%,.05)`;
+      for (let i = 0, x = 0, y = 0; i < 60000; i++) {
+        [x, y] = [
+          Math.sin(A * y) - Math.cos(B * x),
+          Math.sin(C * x) - Math.cos(D * y),
+        ];
+        g.fillRect(W / 2 + (x * W) / 5, H / 2 + (y * H) / 5, 1, 1);
+      }
+    });
+    return `<canvas id="gen-canvas" width="1200" height="300" style="max-width:100%;height:auto"></canvas>`;
   },
   audio: (v) =>
     v
