@@ -117,13 +117,12 @@ const postprocess = (html) =>
     .replace(/<\/table>/g, "</table></div>")
     .replace(/<pre>/g, '<pre tabindex="0">');
 
-const fmtDate = (d) =>
-  d &&
-  new Date(d + "T00:00").toLocaleDateString("en", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+const dateFmt = new Intl.DateTimeFormat("en", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
+const fmtDate = (d) => d && dateFmt.format(new Date(d + "T00:00"));
 const readTime = (t) => Math.ceil(t.split(/\s+/).length / 230);
 const excerpt = (body) => {
   const c = (body.split("\n").find((l) => /^[\p{L}\p{N}]/u.test(l)) || "")
@@ -206,11 +205,10 @@ if (all) {
     .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
   document.getElementById("nav").insertAdjacentHTML(
     "beforeend",
-    " " +
-      all
-        .filter((e) => !e.post)
-        .map((p) => `<a href="#/${p.id}">${esc(p.title)}</a>`)
-        .join(" "),
+    all
+      .filter((e) => !e.post)
+      .map((p) => `<a href="#/${p.id}">${esc(p.title)}</a>`)
+      .join(""),
   );
   render();
   addEventListener("hashchange", render);
