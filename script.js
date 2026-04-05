@@ -62,11 +62,13 @@ const tags = {
       const [A, B, C, D] = [1.4, -2.3, 2.4, -2.1].map(
         (n, i) => n + (((meta.id * 0.618 * (i + 1)) % 1) - 0.5) * 0.6,
       );
+      const cx = W * (0.3 + ((meta.id * 0.618) % 1) * 0.4),
+        cy = H * (0.3 + ((meta.id * 1.414) % 1) * 0.4);
       g.fillStyle = `hsla(${((meta.id * 137.5) % 360) | 0},70%,55%,.05)`;
       for (let i = 0, x = 0, y = 0, t; i < 60000; i++) {
         t = Math.sin(A * y) - Math.cos(B * x);
         y = Math.sin(C * x) - Math.cos(D * y);
-        g.fillRect(W / 2 + ((x = t) * W) / 5, H / 2 + (y * H) / 5, 1, 1);
+        g.fillRect(cx + ((x = t) * W) / 7, cy + (y * H) / 7, 1, 1);
       }
     });
     return `<canvas id="gen-canvas" width="1200" height="300" style="max-width:100%;height:auto"></canvas>`;
